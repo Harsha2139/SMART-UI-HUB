@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Bright User Dashboard">
+
+    <title>UserHub Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">U</div>
+
+            <div>
+                <strong>UserHub</strong>
+                <small>User Dashboard</small>
+            </div>
+        </div>
+
+        <nav class="navigation">
+
+            <button class="nav active" id="dashboardNav">
+                📊 <span>Dashboard</span>
+            </button>
+
+            <button class="nav" id="usersNav">
+                👥 <span>Users</span>
+            </button>
+
+            <button class="nav" id="analyticsNav">
+                📈 <span>Analytics</span>
+            </button>
+
+            <button class="nav" id="notificationsNav">
+                🔔 <span>Notifications</span>
+            </button>
+
+            <button class="nav" id="settingsNav">
+                ⚙️ <span>Settings</span>
+            </button>
+
+        </nav>
+
+        <div class="side-bottom">
+
+            <button id="exportBtn">
+                📤 Export Users
+            </button>
+
+            <button id="resetBtn">
+                🔄 Reset Demo
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <div class="header-left">
+
+                <button
+                    id="mobileMenu"
+                    class="mobile-menu">
+                    ☰
+                </button>
+
+                <div>
+                    <h2>User Dashboard</h2>
+                    <p>Monitor and manage your users</p>
+                </div>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <div class="search">
+
+                    🔎
+
+                    <input
+                        id="search"
+                        type="text"
+                        placeholder="Search users..."
+                    >
+
+                </div>
+
+                <button
+                    class="add-btn"
+                    id="addUserBtn">
+
+                    + Add User
+
+                </button>
+
+                <div class="avatar">
+                    D
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+        <div class="content">
+
+
+            <!-- DASHBOARD PAGE -->
+            <section id="dashboardPage"
+                     class="page-section">
+
+                <div class="welcome">
+
+                    <div>
+
+                        <span>OVERVIEW</span>
+
+                        <h1>
+                            Welcome back, darling 👋
+                        </h1>
+
+                        <p>
+                            Here is what's happening
+                            with your users today.
+                        </p>
+
+                    </div>
+
+                    <div class="date-box">
+
+                        📅
+
+                        <span id="today"></span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STATS -->
+                <div class="stats">
+
+                    <div class="stat blue">
+
+                        <div class="stat-icon">
+                            👥
+                        </div>
+
+                        <div>
+                            <small>Total Users</small>
+                            <strong id="totalUsers">0</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat green">
+
+                        <div class="stat-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <small>Active Users</small>
+                            <strong id="activeUsers">0</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat orange">
+
+                        <div class="stat-icon">
+                            ⏳
+                        </div>
+
+                        <div>
+                            <small>Pending</small>
+                            <strong id="pendingUsers">0</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat pink">
+
+                        <div class="stat-icon">
+                            ★
+                        </div>
+
+                        <div>
+                            <small>Admins</small>
+                            <strong id="adminUsers">0</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- USERS + ACTIVITY -->
+                <div class="main-grid">
+
+
+                    <!-- USERS -->
+                    <section
+                        class="card users-card"
+                        id="usersSection">
+
+                        <div class="card-header">
+
+                            <div>
+                                <h2>Users</h2>
+
+                                <p>
+                                    Manage registered users
+                                </p>
+                            </div>
+
+
+                            <select id="statusFilter">
+
+                                <option value="all">
+                                    All Status
+                                </option>
+
+                                <option value="active">
+                                    Active
+                                </option>
+
+                                <option value="pending">
+                                    Pending
+                                </option>
+
+                                <option value="inactive">
+                                    Inactive
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="table-wrap">
+
+                            <table>
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>User</th>
+                                        <th>Role</th>
+                                        <th>Status</th>
+                                        <th>Joined</th>
+                                        <th>Actions</th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="userTable"></tbody>
+
+                            </table>
+
+                        </div>
+
+
+                        <div
+                            id="emptyState"
+                            class="empty"
+                            style="display:none;">
+
+                            No users found.
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- ACTIVITY -->
+                    <section class="card activity-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h2>Activity</h2>
+
+                                <p>
+                                    Recent user activity
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div id="activity"></div>
+
+                    </section>
+
+                </div>
+
+            </section>
+
+
+            <!-- ANALYTICS PAGE -->
+            <section
+                id="analyticsPage"
+                class="page-section"
+                style="display:none;">
+
+                <div class="analytics-heading">
+
+                    <div>
+
+                        <span>INSIGHTS</span>
+
+                        <h1>
+                            User Analytics 📈
+                        </h1>
+
+                        <p>
+                            Understand your user
+                            population.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        id="refreshAnalytics"
+                        class="refresh-btn">
+
+                        🔄 Refresh
+
+                    </button>
+
+                </div>
+
+
+                <!-- ANALYTICS SUMMARY -->
+                <div class="analytics-summary">
+
+                    <div class="analytics-box">
+
+                        <small>Total Users</small>
+
+                        <strong id="analyticsTotal">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="analytics-box">
+
+                        <small>Active Rate</small>
+
+                        <strong id="activeRate">
+                            0%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="analytics-box">
+
+                        <small>Administrators</small>
+
+                        <strong id="analyticsAdmins">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="analytics-box">
+
+                        <small>New This Month</small>
+
+                        <strong id="newThisMonth">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CHARTS -->
+                <div class="analytics-grid">
+
+                    <div class="analytics-card">
+
+                        <h2>User Growth</h2>
+
+                        <p>
+                            Users added during
+                            recent months
+                        </p>
+
+                        <div
+                            id="growthChart"
+                            class="growth-chart">
+                        </div>
+
+                    </div>
+
+
+                    <div class="analytics-card">
+
+                        <h2>User Status</h2>
+
+                        <p>
+                            Current account status
+                        </p>
+
+                        <div
+                            id="statusChart"
+                            class="status-chart">
+                        </div>
+
+                    </div>
+
+
+                    <div class="analytics-card">
+
+                        <h2>Roles</h2>
+
+                        <p>
+                            Distribution by role
+                        </p>
+
+                        <div
+                            id="roleChart"
+                            class="role-chart">
+                        </div>
+
+                    </div>
+
+
+                    <div class="analytics-card">
+
+                        <h2>Quick Insights</h2>
+
+                        <div
+                            id="analyticsInsights"
+                            class="insights">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- USER MODAL -->
+
+<div
+    class="modal"
+    id="userModal"
+    aria-hidden="true">
+
+    <div class="modal-box">
+
+        <div class="modal-head">
+
+            <div>
+
+                <h2 id="modalTitle">
+                    Add User
+                </h2>
+
+                <p id="modalDescription">
+                    Create a new user account
+                </p>
+
+            </div>
+
+
+            <button
+                class="close"
+                id="closeModalBtn">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <form id="userForm">
+
+            <input
+                type="hidden"
+                id="userId">
+
+
+            <label>
+
+                Full Name
+
+                <input
+                    id="userName"
+                    type="text"
+                    required>
+
+            </label>
+
+
+            <label>
+
+                Email
+
+                <input
+                    id="userEmail"
+                    type="email"
+                    required>
+
+            </label>
+
+
+            <label>
+
+                Role
+
+                <select id="userRole">
+
+                    <option>User</option>
+                    <option>Manager</option>
+                    <option>Admin</option>
+
+                </select>
+
+            </label>
+
+
+            <label>
+
+                Status
+
+                <select id="userStatus">
+
+                    <option value="active">
+                        Active
+                    </option>
+
+                    <option value="pending">
+                        Pending
+                    </option>
+
+                    <option value="inactive">
+                        Inactive
+                    </option>
+
+                </select>
+
+            </label>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel"
+                    id="cancelBtn">
+
+                    Cancel
+
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="save">
+
+                    Save User
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div id="toast"></div>
+
+</body>
+</html>

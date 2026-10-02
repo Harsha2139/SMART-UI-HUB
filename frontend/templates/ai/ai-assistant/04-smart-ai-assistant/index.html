@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart AI Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================
+     SIDEBAR
+========================= -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+        <div class="logo-icon">✦</div>
+        <div>
+            <h2>SmartAI</h2>
+            <span>Assistant</span>
+        </div>
+    </div>
+
+    <button class="new-chat-btn" id="newChatBtn">
+        ＋ New Chat
+    </button>
+
+    <nav>
+
+        <button class="nav-btn active" data-section="home">
+            🏠 <span>Dashboard</span>
+        </button>
+
+        <button class="nav-btn" data-section="chat">
+            💬 <span>AI Chat</span>
+        </button>
+
+        <button class="nav-btn" data-section="tasks">
+            ✅ <span>Tasks</span>
+        </button>
+
+        <button class="nav-btn" data-section="notes">
+            📝 <span>Notes</span>
+        </button>
+
+        <button class="nav-btn" data-section="tools">
+            🛠️ <span>AI Tools</span>
+        </button>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+
+        <button class="nav-btn" id="clearDataBtn">
+            🗑️ <span>Clear Data</span>
+        </button>
+
+        <button class="nav-btn" id="themeBtn">
+            🌙 <span>Dark Mode</span>
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main class="main">
+
+    <!-- TOP BAR -->
+
+    <header class="topbar">
+
+        <div>
+            <h1 id="pageTitle">Smart AI Dashboard</h1>
+            <p id="dateText"></p>
+        </div>
+
+        <div class="top-actions">
+
+            <button class="icon-btn" id="notificationBtn">
+                🔔
+                <span class="notification-dot"></span>
+            </button>
+
+            <div class="profile">
+                <div class="avatar">J</div>
+
+                <div>
+                    <strong>Jayanth</strong>
+                    <small>Student</small>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         HOME
+    ========================= -->
+
+    <section class="section active" id="home">
+
+        <div class="welcome-card">
+
+            <div>
+                <span class="badge">AI ASSISTANT</span>
+
+                <h2>
+                    Hello Jayanth 👋
+                </h2>
+
+                <p>
+                    What would you like to accomplish today?
+                    Your smart assistant is ready.
+                </p>
+
+                <button class="primary-btn" id="startChatBtn">
+                    Start AI Chat →
+                </button>
+            </div>
+
+            <div class="robot">
+                🤖
+            </div>
+
+        </div>
+
+
+        <!-- STATISTICS -->
+
+        <div class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon purple">💬</div>
+                <div>
+                    <span>Messages</span>
+                    <strong id="messageCount">0</strong>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon green">✅</div>
+                <div>
+                    <span>Completed Tasks</span>
+                    <strong id="completedCount">0</strong>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon orange">📋</div>
+                <div>
+                    <span>Total Tasks</span>
+                    <strong id="taskCount">0</strong>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon blue">📝</div>
+                <div>
+                    <span>Notes</span>
+                    <strong id="noteCount">0</strong>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- QUICK ACTIONS -->
+
+        <div class="section-heading">
+            <div>
+                <h2>Quick Actions</h2>
+                <p>Use your assistant instantly.</p>
+            </div>
+        </div>
+
+        <div class="quick-grid">
+
+            <button class="quick-card" data-action="chat">
+                <span>💬</span>
+                <strong>Ask AI</strong>
+                <small>Chat with assistant</small>
+            </button>
+
+            <button class="quick-card" data-action="task">
+                <span>✅</span>
+                <strong>Add Task</strong>
+                <small>Create a new task</small>
+            </button>
+
+            <button class="quick-card" data-action="note">
+                <span>📝</span>
+                <strong>Create Note</strong>
+                <small>Save an important note</small>
+            </button>
+
+            <button class="quick-card" data-action="summarize">
+                <span>✨</span>
+                <strong>AI Summary</strong>
+                <small>Summarize text</small>
+            </button>
+
+        </div>
+
+
+        <!-- RECENT -->
+
+        <div class="recent-card">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Recent Activity</h2>
+                    <p>Your latest assistant activity.</p>
+                </div>
+            </div>
+
+            <div id="recentActivity" class="activity-list">
+                <div class="empty">
+                    No activity yet.
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CHAT
+    ========================= -->
+
+    <section class="section" id="chat">
+
+        <div class="chat-layout">
+
+            <div class="chat-container">
+
+                <div class="chat-header">
+
+                    <div class="ai-status">
+                        <div class="ai-avatar">🤖</div>
+
+                        <div>
+                            <strong>Smart AI</strong>
+                            <span>
+                                <i></i> Online
+                            </span>
+                        </div>
+                    </div>
+
+                    <button class="small-btn" id="clearChatBtn">
+                        Clear Chat
+                    </button>
+
+                </div>
+
+
+                <div class="messages" id="messages">
+
+                    <div class="message ai">
+                        <div class="message-avatar">🤖</div>
+
+                        <div class="bubble">
+                            Hello! 👋 I'm your Smart AI Assistant.
+                            Ask me something or try one of the quick commands.
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="suggestions">
+
+                    <button data-question="Explain Python in simple words">
+                        Explain Python
+                    </button>
+
+                    <button data-question="Give me a study plan">
+                        Study Plan
+                    </button>
+
+                    <button data-question="What can you help me with?">
+                        What can you do?
+                    </button>
+
+                </div>
+
+
+                <form class="chat-input" id="chatForm">
+
+                    <button type="button" id="voiceBtn" class="input-btn">
+                        🎤
+                    </button>
+
+                    <input
+                        type="text"
+                        id="chatInput"
+                        placeholder="Ask your AI assistant..."
+                        autocomplete="off"
+                    >
+
+                    <button type="submit" class="send-btn">
+                        ➤
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- CHAT COMMANDS -->
+
+            <div class="command-card">
+
+                <h3>AI Commands</h3>
+
+                <button class="command" data-command="study">
+                    📚 Study Planner
+                </button>
+
+                <button class="command" data-command="code">
+                    💻 Coding Helper
+                </button>
+
+                <button class="command" data-command="career">
+                    🚀 Career Guide
+                </button>
+
+                <button class="command" data-command="ideas">
+                    💡 Project Ideas
+                </button>
+
+                <button class="command" data-command="motivate">
+                    🔥 Motivation
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TASKS
+    ========================= -->
+
+    <section class="section" id="tasks">
+
+        <div class="section-heading">
+
+            <div>
+                <h2>Task Manager</h2>
+                <p>Manage your daily work.</p>
+            </div>
+
+            <button class="primary-btn" id="addTaskBtn">
+                ＋ Add Task
+            </button>
+
+        </div>
+
+
+        <div class="task-stats">
+
+            <div>
+                <span>Total</span>
+                <strong id="taskTotal">0</strong>
+            </div>
+
+            <div>
+                <span>Completed</span>
+                <strong id="taskCompleted">0</strong>
+            </div>
+
+            <div>
+                <span>Pending</span>
+                <strong id="taskPending">0</strong>
+            </div>
+
+        </div>
+
+
+        <div class="task-list" id="taskList">
+
+            <div class="empty">
+                No tasks available.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         NOTES
+    ========================= -->
+
+    <section class="section" id="notes">
+
+        <div class="section-heading">
+
+            <div>
+                <h2>My Notes</h2>
+                <p>Save your ideas and important information.</p>
+            </div>
+
+            <button class="primary-btn" id="addNoteBtn">
+                ＋ New Note
+            </button>
+
+        </div>
+
+
+        <div class="notes-grid" id="notesGrid">
+
+            <div class="empty">
+                No notes available.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         AI TOOLS
+    ========================= -->
+
+    <section class="section" id="tools">
+
+        <div class="section-heading">
+
+            <div>
+                <h2>AI Tools</h2>
+                <p>Useful tools powered by browser JavaScript.</p>
+            </div>
+
+        </div>
+
+
+        <div class="tools-grid">
+
+            <div class="tool-card">
+
+                <div class="tool-icon">✨</div>
+
+                <h3>Text Summarizer</h3>
+
+                <p>
+                    Turn a long paragraph into a short summary.
+                </p>
+
+                <textarea
+                    id="summaryInput"
+                    placeholder="Paste your text here..."
+                ></textarea>
+
+                <button class="primary-btn" id="summarizeBtn">
+                    Summarize
+                </button>
+
+                <div class="result" id="summaryResult">
+                    Your summary will appear here.
+                </div>
+
+            </div>
+
+
+            <div class="tool-card">
+
+                <div class="tool-icon">🔢</div>
+
+                <h3>Word Counter</h3>
+
+                <p>
+                    Count words, characters and sentences.
+                </p>
+
+                <textarea
+                    id="counterInput"
+                    placeholder="Type or paste text..."
+                ></textarea>
+
+                <div class="counter-result">
+
+                    <div>
+                        <strong id="words">0</strong>
+                        <span>Words</span>
+                    </div>
+
+                    <div>
+                        <strong id="characters">0</strong>
+                        <span>Characters</span>
+                    </div>
+
+                    <div>
+                        <strong id="sentences">0</strong>
+                        <span>Sentences</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="tool-card">
+
+                <div class="tool-icon">🧮</div>
+
+                <h3>Calculator</h3>
+
+                <p>
+                    Simple calculator for daily calculations.
+                </p>
+
+                <input
+                    type="text"
+                    id="calculatorInput"
+                    class="calculator-display"
+                    placeholder="Example: 10 + 20 * 2"
+                >
+
+                <button class="primary-btn" id="calculateBtn">
+                    Calculate
+                </button>
+
+                <div class="result" id="calculatorResult">
+                    Result will appear here.
+                </div>
+
+            </div>
+
+
+            <div class="tool-card">
+
+                <div class="tool-icon">🎯</div>
+
+                <h3>Daily Goal</h3>
+
+                <p>
+                    Set a goal and track your progress.
+                </p>
+
+                <input
+                    type="text"
+                    id="goalInput"
+                    placeholder="Example: Complete DSA practice"
+                >
+
+                <button class="primary-btn" id="saveGoalBtn">
+                    Save Goal
+                </button>
+
+                <div class="goal-box">
+
+                    <strong id="goalText">
+                        No goal set
+                    </strong>
+
+                    <button id="completeGoalBtn">
+                        ✓ Complete
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================
+     TASK MODAL
+========================= -->
+
+<div class="modal" id="taskModal">
+
+    <div class="modal-box">
+
+        <button class="close-modal" data-close="taskModal">
+            ×
+        </button>
+
+        <h2>Add New Task</h2>
+
+        <input
+            type="text"
+            id="taskInput"
+            placeholder="Task name"
+        >
+
+        <select id="taskPriority">
+
+            <option value="Low">Low Priority</option>
+            <option value="Medium" selected>Medium Priority</option>
+            <option value="High">High Priority</option>
+
+        </select>
+
+        <button class="primary-btn full" id="saveTaskBtn">
+            Save Task
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     NOTE MODAL
+========================= -->
+
+<div class="modal" id="noteModal">
+
+    <div class="modal-box">
+
+        <button class="close-modal" data-close="noteModal">
+            ×
+        </button>
+
+        <h2>Create Note</h2>
+
+        <input
+            type="text"
+            id="noteTitle"
+            placeholder="Note title"
+        >
+
+        <textarea
+            id="noteContent"
+            placeholder="Write your note..."
+        ></textarea>
+
+        <button class="primary-btn full" id="saveNoteBtn">
+            Save Note
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     NOTIFICATION
+========================= -->
+
+<div class="toast" id="toast">
+    <span>✓</span>
+    <p id="toastText">Done</p>
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

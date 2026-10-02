@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PeopleHub | Team Members</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+
+<body>
+
+<div class="app">
+
+<aside class="sidebar">
+
+    <div class="brand">
+        <div class="logo">PH</div>
+        <div>
+            <h2>PeopleHub</h2>
+            <small>Team Members</small>
+        </div>
+    </div>
+
+    <nav>
+        <button class="nav active" data-view="members">👥 Members</button>
+        <button class="nav" data-view="directory">📒 Directory</button>
+        <button class="nav" data-view="departments">🏢 Departments</button>
+        <button class="nav" data-view="skills">⭐ Skills</button>
+        <button class="nav" data-view="settings">⚙️ Settings</button>
+    </nav>
+
+    <div class="sidebar-footer">
+        <div class="help">💡<span>Need help?<br><b>Contact Admin</b></span></div>
+    </div>
+
+</aside>
+
+<main>
+
+<header class="topbar">
+
+    <button id="menu" class="menu">☰</button>
+
+    <div>
+        <h1 id="heading">Team Members</h1>
+        <p>Manage your people in one place.</p>
+    </div>
+
+    <div class="top-actions">
+        <button id="notify">🔔</button>
+        <div class="user">BJ</div>
+    </div>
+
+</header>
+
+<div class="content">
+
+<section id="members" class="view active">
+
+    <div class="hero">
+
+        <div>
+            <span class="tag">PEOPLE</span>
+            <h2>Your Team</h2>
+            <p>View, search and manage all team members.</p>
+        </div>
+
+        <button class="add-btn" id="openModal">+ Add Member</button>
+
+    </div>
+
+    <div class="stats">
+
+        <div class="stat">
+            <span>👥</span>
+            <div><small>Total Members</small><strong id="total">8</strong></div>
+        </div>
+
+        <div class="stat">
+            <span>🟢</span>
+            <div><small>Online</small><strong id="online">0</strong></div>
+        </div>
+
+        <div class="stat">
+            <span>💼</span>
+            <div><small>Departments</small><strong>5</strong></div>
+        </div>
+
+        <div class="stat">
+            <span>🚀</span>
+            <div><small>Projects</small><strong>24</strong></div>
+        </div>
+
+    </div>
+
+    <div class="panel">
+
+        <div class="toolbar">
+
+            <div class="search">
+                🔎
+                <input id="search" placeholder="Search name, email or role">
+            </div>
+
+            <select id="role">
+                <option value="all">All Roles</option>
+                <option>Developer</option>
+                <option>Designer</option>
+                <option>Manager</option>
+                <option>Analyst</option>
+            </select>
+
+            <select id="status">
+                <option value="all">All Status</option>
+                <option>Online</option>
+                <option>Offline</option>
+            </select>
+
+        </div>
+
+        <div id="memberGrid" class="member-grid"></div>
+
+    </div>
+
+</section>
+
+
+<section id="directory" class="view">
+
+    <div class="hero">
+        <div>
+            <span class="tag">DIRECTORY</span>
+            <h2>Company Directory</h2>
+            <p>Quickly find people and their contact information.</p>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div id="directoryList" class="directory-list"></div>
+    </div>
+
+</section>
+
+
+<section id="departments" class="view">
+
+    <div class="hero">
+        <div>
+            <span class="tag">ORGANIZATION</span>
+            <h2>Departments</h2>
+            <p>See how your team is distributed.</p>
+        </div>
+    </div>
+
+    <div class="department-grid">
+
+        <div class="department">💻<h3>Engineering</h3><strong>3</strong><small>Members</small></div>
+        <div class="department">🎨<h3>Design</h3><strong>2</strong><small>Members</small></div>
+        <div class="department">📢<h3>Marketing</h3><strong>1</strong><small>Member</small></div>
+        <div class="department">📊<h3>Analytics</h3><strong>1</strong><small>Member</small></div>
+        <div class="department">👔<h3>Management</h3><strong>1</strong><small>Member</small></div>
+
+    </div>
+
+</section>
+
+
+<section id="skills" class="view">
+
+    <div class="hero">
+        <div>
+            <span class="tag">EXPERTISE</span>
+            <h2>Team Skills</h2>
+            <p>Discover the skills available across your organization.</p>
+        </div>
+    </div>
+
+    <div class="panel">
+
+        <div class="skill"><span>JavaScript</span><div><i style="width:85%"></i></div><b>85%</b></div>
+        <div class="skill"><span>Python</span><div><i style="width:78%"></i></div><b>78%</b></div>
+        <div class="skill"><span>UI/UX</span><div><i style="width:65%"></i></div><b>65%</b></div>
+        <div class="skill"><span>Data Analysis</span><div><i style="width:58%"></i></div><b>58%</b></div>
+        <div class="skill"><span>Project Management</span><div><i style="width:72%"></i></div><b>72%</b></div>
+
+    </div>
+
+</section>
+
+
+<section id="settings" class="view">
+
+    <div class="hero">
+        <div>
+            <span class="tag">SETTINGS</span>
+            <h2>Member Settings</h2>
+            <p>Configure PeopleHub.</p>
+        </div>
+    </div>
+
+    <div class="panel settings">
+
+        <label>Company Name
+            <input id="company" value="PeopleHub">
+        </label>
+
+        <label>Admin Email
+            <input id="email" value="admin@peoplehub.com">
+        </label>
+
+        <label class="toggle-row">
+            Email Notifications
+            <input type="checkbox" id="emails" checked>
+        </label>
+
+        <button class="add-btn" id="save">Save Settings</button>
+
+    </div>
+
+</section>
+
+</div>
+</main>
+</div>
+
+
+<div class="modal-bg" id="modal">
+
+<div class="modal">
+
+    <button class="close" id="close">×</button>
+
+    <h2>Add Team Member</h2>
+    <p>Create a new member profile.</p>
+
+    <form id="form">
+
+        <label>Name
+            <input id="name" required placeholder="Full name">
+        </label>
+
+        <label>Email
+            <input id="mail" type="email" required placeholder="email@example.com">
+        </label>
+
+        <label>Role
+            <select id="newRole">
+                <option>Developer</option>
+                <option>Designer</option>
+                <option>Manager</option>
+                <option>Analyst</option>
+            </select>
+        </label>
+
+        <label>Department
+            <select id="dept">
+                <option>Engineering</option>
+                <option>Design</option>
+                <option>Marketing</option>
+                <option>Analytics</option>
+                <option>Management</option>
+            </select>
+        </label>
+
+        <button class="add-btn">Create Member</button>
+
+    </form>
+
+</div>
+</div>
+
+<div id="toast" class="toast">Action completed.</div>
+
+</body>
+</html>

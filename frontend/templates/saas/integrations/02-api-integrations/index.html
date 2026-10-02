@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>API Integrations</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="logo">
+        <div class="logo-box">API</div>
+        <div>
+            <b>FlowAPI</b>
+            <small>Developer Console</small>
+        </div>
+    </div>
+
+    <div class="workspace">
+        <small>WORKSPACE</small>
+        <button>Production <span>⌄</span></button>
+    </div>
+
+    <nav>
+
+        <button class="nav active" data-view="dashboard">
+            <span>▦</span> Dashboard
+        </button>
+
+        <button class="nav" data-view="endpoints">
+            <span>⇄</span> Endpoints
+        </button>
+
+        <button class="nav" data-view="keys">
+            <span>🔑</span> API Keys
+        </button>
+
+        <button class="nav" data-view="logs">
+            <span>≋</span> Request Logs
+        </button>
+
+        <button class="nav" data-view="webhooks">
+            <span>⚡</span> Webhooks
+        </button>
+
+        <button class="nav" data-view="settings">
+            <span>⚙</span> Settings
+        </button>
+
+    </nav>
+
+    <div class="server">
+        <span class="pulse"></span>
+        All systems operational
+    </div>
+
+</aside>
+
+<main>
+
+<header>
+
+    <div class="header-left">
+        <button class="menu" id="menu">☰</button>
+        <div>
+            <small>API CONSOLE</small>
+            <h1 id="title">API Dashboard</h1>
+        </div>
+    </div>
+
+    <div class="header-actions">
+
+        <div class="search">
+            🔍
+            <input id="search" placeholder="Search...">
+        </div>
+
+        <button class="header-btn" id="copyBase">Copy Base URL</button>
+
+        <div class="user">J</div>
+
+    </div>
+
+</header>
+
+<!-- DASHBOARD -->
+
+<section class="view active" id="dashboard">
+
+    <div class="welcome">
+
+        <div>
+            <span>API PLATFORM</span>
+            <h2>Build. Connect. <b>Scale.</b></h2>
+            <p>
+                Monitor your APIs, credentials, webhooks and
+                integration traffic from one developer workspace.
+            </p>
+        </div>
+
+        <div class="api-url">
+            <small>BASE API URL</small>
+            <code id="baseUrl">https://api.flowapi.dev/v1</code>
+        </div>
+
+    </div>
+
+    <div class="metrics">
+
+        <div class="metric blue">
+            <span>Total Requests</span>
+            <strong id="requests">1,284,632</strong>
+            <small>↑ 18.4%</small>
+        </div>
+
+        <div class="metric green">
+            <span>Success Rate</span>
+            <strong id="success">99.82%</strong>
+            <small>Excellent</small>
+        </div>
+
+        <div class="metric orange">
+            <span>Avg Latency</span>
+            <strong>142ms</strong>
+            <small>↓ 12ms</small>
+        </div>
+
+        <div class="metric purple">
+            <span>Active Keys</span>
+            <strong id="keyCount">4</strong>
+            <small>2 environments</small>
+        </div>
+
+    </div>
+
+    <div class="grid-two">
+
+        <div class="panel chart-panel">
+
+            <div class="panel-title">
+                <div>
+                    <small>TRAFFIC</small>
+                    <h3>API Requests</h3>
+                </div>
+
+                <select id="trafficRange">
+                    <option>24 hours</option>
+                    <option>7 days</option>
+                    <option>30 days</option>
+                </select>
+            </div>
+
+            <canvas id="trafficChart"></canvas>
+
+        </div>
+
+        <div class="panel">
+
+            <div class="panel-title">
+                <div>
+                    <small>HEALTH</small>
+                    <h3>Endpoint health</h3>
+                </div>
+            </div>
+
+            <div class="health-list">
+
+                <div>
+                    <span>GET /users</span>
+                    <b class="green-text">99.99%</b>
+                </div>
+
+                <div>
+                    <span>POST /users</span>
+                    <b class="green-text">99.96%</b>
+                </div>
+
+                <div>
+                    <span>GET /orders</span>
+                    <b class="green-text">99.91%</b>
+                </div>
+
+                <div>
+                    <span>POST /payments</span>
+                    <b class="yellow-text">98.82%</b>
+                </div>
+
+                <div>
+                    <span>GET /analytics</span>
+                    <b class="green-text">99.98%</b>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ENDPOINTS -->
+
+<section class="view" id="endpoints">
+
+    <div class="section-head">
+        <div>
+            <small>API REFERENCE</small>
+            <h2>Endpoints</h2>
+            <p>Explore and test available API endpoints.</p>
+        </div>
+
+        <button class="primary" id="newEndpoint">+ New Endpoint</button>
+    </div>
+
+    <div class="endpoint-list" id="endpointList"></div>
+
+</section>
+
+<!-- KEYS -->
+
+<section class="view" id="keys">
+
+    <div class="section-head">
+
+        <div>
+            <small>SECURITY</small>
+            <h2>API Keys</h2>
+            <p>Manage authentication credentials.</p>
+        </div>
+
+        <button class="primary" id="createKey">+ Create API Key</button>
+
+    </div>
+
+    <div class="keys-table">
+
+        <div class="table-header">
+            <span>Name</span>
+            <span>Key</span>
+            <span>Environment</span>
+            <span>Created</span>
+            <span>Action</span>
+        </div>
+
+        <div id="keysList"></div>
+
+    </div>
+
+</section>
+
+<!-- LOGS -->
+
+<section class="view" id="logs">
+
+    <div class="section-head">
+
+        <div>
+            <small>OBSERVABILITY</small>
+            <h2>Request Logs</h2>
+        </div>
+
+        <button class="secondary" id="clearLogs">Clear logs</button>
+
+    </div>
+
+    <div class="logs" id="logsList"></div>
+
+</section>
+
+<!-- WEBHOOKS -->
+
+<section class="view" id="webhooks">
+
+    <div class="section-head">
+
+        <div>
+            <small>EVENT AUTOMATION</small>
+            <h2>Webhooks</h2>
+            <p>Send real-time events to your applications.</p>
+        </div>
+
+        <button class="primary" id="addWebhook">+ Add Webhook</button>
+
+    </div>
+
+    <div class="webhook-grid" id="webhookGrid"></div>
+
+</section>
+
+<!-- SETTINGS -->
+
+<section class="view" id="settings">
+
+    <div class="section-head">
+        <div>
+            <small>CONFIGURATION</small>
+            <h2>API Settings</h2>
+        </div>
+    </div>
+
+    <div class="settings">
+
+        <div class="setting">
+            <div>
+                <b>Request logging</b>
+                <p>Store API request logs for debugging.</p>
+            </div>
+            <label>
+                <input type="checkbox" checked>
+                <span></span>
+            </label>
+        </div>
+
+        <div class="setting">
+            <div>
+                <b>Rate-limit notifications</b>
+                <p>Notify administrators when limits are reached.</p>
+            </div>
+            <label>
+                <input type="checkbox" checked>
+                <span></span>
+            </label>
+        </div>
+
+        <div class="setting">
+            <div>
+                <b>Automatic API monitoring</b>
+                <p>Monitor API uptime and response times.</p>
+            </div>
+            <label>
+                <input type="checkbox">
+                <span></span>
+            </label>
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+</div>
+
+<div class="modal" id="modal">
+
+    <div class="modal-box">
+
+        <button class="close" id="close">×</button>
+
+        <h2 id="modalTitle">Test API</h2>
+
+        <div class="method-box">
+            <select id="method">
+                <option>GET</option>
+                <option>POST</option>
+                <option>PUT</option>
+                <option>DELETE</option>
+            </select>
+
+            <input id="endpointInput" value="/users">
+        </div>
+
+        <textarea id="requestBody"
+                  placeholder='{"name":"Jayanth"}'></textarea>
+
+        <button class="primary full" id="sendRequest">
+            Send Request
+        </button>
+
+        <pre id="response"></pre>
+
+    </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Enterprise Integrations</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+<aside id="sidebar">
+
+    <div class="brand">
+        <div class="brand-mark">E</div>
+        <div>
+            <b>ENTERPRISE</b>
+            <small>Integration OS</small>
+        </div>
+    </div>
+
+    <div class="company">
+        <span>ORGANIZATION</span>
+        <strong>Nova Technologies</strong>
+        <small>Enterprise workspace</small>
+    </div>
+
+    <nav>
+
+        <button class="nav active" data-view="overview">
+            <span>▦</span>
+            Executive Overview
+        </button>
+
+        <button class="nav" data-view="portfolio">
+            <span>◈</span>
+            Integration Portfolio
+        </button>
+
+        <button class="nav" data-view="teams">
+            <span>♟</span>
+            Teams
+        </button>
+
+        <button class="nav" data-view="governance">
+            <span>✓</span>
+            Governance
+        </button>
+
+        <button class="nav" data-view="costs">
+            <span>◉</span>
+            Costs & Usage
+        </button>
+
+        <button class="nav" data-view="activity">
+            <span>≋</span>
+            Activity
+        </button>
+
+        <button class="nav" data-view="settings">
+            <span>⚙</span>
+            Settings
+        </button>
+
+    </nav>
+
+    <div class="enterprise-status">
+        <div class="status-circle">✓</div>
+        <div>
+            <b>Enterprise Health</b>
+            <small>99.4% operational</small>
+        </div>
+    </div>
+
+</aside>
+
+<main>
+
+<header>
+
+    <button class="menu" id="menu">☰</button>
+
+    <div class="breadcrumb">
+        <small>ENTERPRISE / INTEGRATIONS</small>
+        <h1 id="pageTitle">Executive Overview</h1>
+    </div>
+
+    <div class="header-actions">
+
+        <div class="search">
+            🔍
+            <input id="search" placeholder="Search workspace...">
+        </div>
+
+        <button class="notification" id="notification">🔔</button>
+
+        <div class="avatar">J</div>
+
+    </div>
+
+</header>
+
+<!-- OVERVIEW -->
+
+<section class="view active" id="overview">
+
+    <div class="executive">
+
+        <div>
+            <span>ENTERPRISE COMMAND CENTER</span>
+            <h2>Your integration<br><b>ecosystem at a glance.</b></h2>
+            <p>
+                Monitor enterprise applications, teams, costs,
+                governance and operational health from one place.
+            </p>
+        </div>
+
+        <div class="executive-number">
+            <small>GLOBAL HEALTH</small>
+            <strong>99.4%</strong>
+            <span>● All critical systems operational</span>
+        </div>
+
+    </div>
+
+    <div class="kpis">
+
+        <div class="kpi blue">
+            <span>Active Integrations</span>
+            <strong id="integrationCount">42</strong>
+            <small>↑ 6 this quarter</small>
+        </div>
+
+        <div class="kpi cyan">
+            <span>Connected Systems</span>
+            <strong>68</strong>
+            <small>Across 12 departments</small>
+        </div>
+
+        <div class="kpi yellow">
+            <span>Monthly Spend</span>
+            <strong>$18.4K</strong>
+            <small>↓ 4.8% vs last month</small>
+        </div>
+
+        <div class="kpi pink">
+            <span>Governance Score</span>
+            <strong>96%</strong>
+            <small>2 items need review</small>
+        </div>
+
+    </div>
+
+    <div class="dashboard-grid">
+
+        <div class="card budget">
+
+            <div class="card-head">
+                <div>
+                    <small>COST ANALYTICS</small>
+                    <h3>Integration spend</h3>
+                </div>
+
+                <select id="budgetRange">
+                    <option>Monthly</option>
+                    <option>Quarterly</option>
+                    <option>Yearly</option>
+                </select>
+            </div>
+
+            <canvas id="budgetChart"></canvas>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-head">
+                <div>
+                    <small>GOVERNANCE</small>
+                    <h3>Compliance status</h3>
+                </div>
+            </div>
+
+            <div class="compliance">
+
+                <div>
+                    <span>Security</span>
+                    <b>100%</b>
+                </div>
+
+                <div>
+                    <span>Access Control</span>
+                    <b>98%</b>
+                </div>
+
+                <div>
+                    <span>Data Privacy</span>
+                    <b>94%</b>
+                </div>
+
+                <div>
+                    <span>API Policies</span>
+                    <b>92%</b>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="card project-health">
+
+        <div class="card-head">
+            <div>
+                <small>PORTFOLIO</small>
+                <h3>Integration projects</h3>
+            </div>
+
+            <button class="secondary" onclick="showView('portfolio')">
+                View portfolio →
+            </button>
+        </div>
+
+        <div class="project-mini-grid" id="miniProjects"></div>
+
+    </div>
+
+</section>
+
+<!-- PORTFOLIO -->
+
+<section class="view" id="portfolio">
+
+    <div class="section-head">
+
+        <div>
+            <small>ENTERPRISE PORTFOLIO</small>
+            <h2>Integration projects</h2>
+            <p>Manage enterprise-wide integration projects.</p>
+        </div>
+
+        <button class="primary" id="addProject">+ New Project</button>
+
+    </div>
+
+    <div class="portfolio-tools">
+
+        <div class="filters">
+
+            <button class="filter active" data-status="all">All</button>
+            <button class="filter" data-status="Active">Active</button>
+            <button class="filter" data-status="Planning">Planning</button>
+            <button class="filter" data-status="Review">Review</button>
+
+        </div>
+
+    </div>
+
+    <div class="projects" id="projects"></div>
+
+</section>
+
+<!-- TEAMS -->
+
+<section class="view" id="teams">
+
+    <div class="section-head">
+
+        <div>
+            <small>ORGANIZATION</small>
+            <h2>Integration teams</h2>
+        </div>
+
+    </div>
+
+    <div class="teams" id="teamsList"></div>
+
+</section>
+
+<!-- GOVERNANCE -->
+
+<section class="view" id="governance">
+
+    <div class="section-head">
+
+        <div>
+            <small>RISK & COMPLIANCE</small>
+            <h2>Governance center</h2>
+            <p>Review enterprise integration policies.</p>
+        </div>
+
+        <button class="primary" id="runAudit">Run audit</button>
+
+    </div>
+
+    <div class="governance-grid" id="governanceList"></div>
+
+</section>
+
+<!-- COSTS -->
+
+<section class="view" id="costs">
+
+    <div class="section-head">
+
+        <div>
+            <small>FINOPS</small>
+            <h2>Costs & usage</h2>
+        </div>
+
+        <button class="secondary" id="exportCosts">
+            Export CSV
+        </button>
+
+    </div>
+
+    <div class="cost-cards">
+
+        <div>
+            <span>Current month</span>
+            <strong>$18,420</strong>
+        </div>
+
+        <div>
+            <span>Projected</span>
+            <strong>$20,110</strong>
+        </div>
+
+        <div>
+            <span>Budget</span>
+            <strong>$25,000</strong>
+        </div>
+
+    </div>
+
+    <div class="card cost-chart">
+
+        <canvas id="costChart"></canvas>
+
+    </div>
+
+</section>
+
+<!-- ACTIVITY -->
+
+<section class="view" id="activity">
+
+    <div class="section-head">
+
+        <div>
+            <small>AUDIT TRAIL</small>
+            <h2>Enterprise activity</h2>
+        </div>
+
+    </div>
+
+    <div class="activity" id="activityList"></div>
+
+</section>
+
+<!-- SETTINGS -->
+
+<section class="view" id="settings">
+
+    <div class="section-head">
+
+        <div>
+            <small>ORGANIZATION CONFIGURATION</small>
+            <h2>Enterprise settings</h2>
+        </div>
+
+    </div>
+
+    <div class="settings">
+
+        <div class="setting">
+            <div>
+                <b>Enterprise monitoring</b>
+                <p>Continuously monitor all integrations.</p>
+            </div>
+
+            <label>
+                <input type="checkbox" checked>
+                <span></span>
+            </label>
+        </div>
+
+        <div class="setting">
+            <div>
+                <b>Governance alerts</b>
+                <p>Notify administrators about compliance events.</p>
+            </div>
+
+            <label>
+                <input type="checkbox" checked>
+                <span></span>
+            </label>
+        </div>
+
+        <div class="setting">
+            <div>
+                <b>Cost anomaly detection</b>
+                <p>Detect unexpected integration spending.</p>
+            </div>
+
+            <label>
+                <input type="checkbox" checked>
+                <span></span>
+            </label>
+        </div>
+
+        <div class="setting">
+            <div>
+                <b>Weekly executive report</b>
+                <p>Send a weekly integration summary.</p>
+            </div>
+
+            <label>
+                <input type="checkbox">
+                <span></span>
+            </label>
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+</div>
+
+<div class="modal" id="modal">
+
+<div class="modal-box">
+
+<button class="close" id="close">×</button>
+
+<h2>New Integration Project</h2>
+
+<label>Project name</label>
+<input id="projectName" placeholder="e.g. Customer Data Platform">
+
+<label>Department</label>
+<select id="projectDepartment">
+    <option>Engineering</option>
+    <option>Sales</option>
+    <option>Marketing</option>
+    <option>Finance</option>
+    <option>Operations</option>
+</select>
+
+<button class="primary full" id="saveProject">
+    Create project
+</button>
+
+</div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

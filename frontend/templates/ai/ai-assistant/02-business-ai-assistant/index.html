@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width,initial-scale=1.0"
+>
+
+<title>Business AI Command Center</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<aside>
+
+    <div class="brand">
+        <span>⚡</span>
+        <b>BizPilot AI</b>
+    </div>
+
+    <button class="nav active" data-page="dashboard">
+        ▦ Dashboard
+    </button>
+
+    <button class="nav" data-page="leads">
+        ◉ Leads
+    </button>
+
+    <button class="nav" data-page="invoices">
+        ▣ Invoices
+    </button>
+
+    <button class="nav" data-page="assistant">
+        ✦ AI Assistant
+    </button>
+
+    <div class="side-bottom">
+
+        <small>Business Workspace</small>
+
+        <button id="exportBtn" class="outline">
+            Export Data
+        </button>
+
+    </div>
+
+</aside>
+
+
+<main>
+
+<header>
+
+    <div>
+
+        <span class="eyebrow">
+            BUSINESS INTELLIGENCE
+        </span>
+
+        <h1 id="pageTitle">
+            Dashboard
+        </h1>
+
+    </div>
+
+    <button id="addLeadTop" class="primary">
+        + Add Lead
+    </button>
+
+</header>
+
+
+<!-- DASHBOARD -->
+
+<section id="dashboard" class="page">
+
+    <div class="metrics">
+
+        <div>
+            <span>Revenue</span>
+            <b>₹8.42L</b>
+            <em>+18.4%</em>
+        </div>
+
+        <div>
+            <span>Open Leads</span>
+            <b id="leadCount">0</b>
+            <em>Active</em>
+        </div>
+
+        <div>
+            <span>Invoices</span>
+            <b id="invoiceCount">0</b>
+            <em>Tracked</em>
+        </div>
+
+        <div>
+            <span>Conversion</span>
+            <b>24.8%</b>
+            <em>+4.2%</em>
+        </div>
+
+    </div>
+
+
+    <div class="dash-grid">
+
+        <div class="panel">
+
+            <div class="panel-head">
+
+                <h2>Revenue Overview</h2>
+
+                <select id="range">
+
+                    <option>
+                        Last 7 days
+                    </option>
+
+                    <option>
+                        Last 30 days
+                    </option>
+
+                    <option>
+                        This year
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="bars" id="bars"></div>
+
+        </div>
+
+
+        <div class="panel">
+
+            <h2>AI Business Tips</h2>
+
+            <div class="tip">
+                🎯 Follow up with warm leads within 24 hours.
+            </div>
+
+            <div class="tip">
+                💰 Review overdue invoices before new proposals.
+            </div>
+
+            <div class="tip">
+                📈 Track conversion by lead source weekly.
+            </div>
+
+            <button
+                class="secondary"
+                onclick="showPage('assistant')"
+            >
+                Ask AI →
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="panel">
+
+        <div class="panel-head">
+
+            <h2>Recent Leads</h2>
+
+            <button
+                class="link"
+                onclick="showPage('leads')"
+            >
+                View all
+            </button>
+
+        </div>
+
+        <div id="recentLeads"></div>
+
+    </div>
+
+</section>
+
+
+<!-- LEADS -->
+
+<section id="leads" class="page hidden">
+
+    <div class="panel">
+
+        <div class="panel-head">
+
+            <h2>Lead Management</h2>
+
+            <button class="primary" id="addLead">
+                + New Lead
+            </button>
+
+        </div>
+
+        <input
+            id="leadSearch"
+            class="search"
+            placeholder="Search leads..."
+        >
+
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Name</th>
+                        <th>Company</th>
+                        <th>Value</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="leadTable"></tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INVOICES -->
+
+<section id="invoices" class="page hidden">
+
+    <div class="panel">
+
+        <div class="panel-head">
+
+            <h2>Invoices</h2>
+
+            <button
+                class="primary"
+                id="newInvoice"
+            >
+                + Create Invoice
+            </button>
+
+        </div>
+
+        <div
+            class="invoice-grid"
+            id="invoiceGrid"
+        ></div>
+
+    </div>
+
+</section>
+
+
+<!-- AI -->
+
+<section id="assistant" class="page hidden">
+
+    <div class="ai-shell">
+
+        <div class="ai-head">
+
+            <div class="ai-avatar">
+                ✦
+            </div>
+
+            <div>
+
+                <h2>BizPilot AI</h2>
+
+                <span>
+                    Business strategy assistant
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div id="aiChat" class="ai-chat">
+
+            <div class="bubble bot">
+                Hello! Ask me about sales, leads,
+                invoices, marketing or business planning.
+            </div>
+
+        </div>
+
+
+        <div class="quick">
+
+            <button data-q="Give me a sales plan">
+                Sales plan
+            </button>
+
+            <button data-q="How can I improve conversion?">
+                Improve conversion
+            </button>
+
+            <button data-q="Write a follow-up email">
+                Follow-up email
+            </button>
+
+        </div>
+
+
+        <form id="aiForm">
+
+            <input
+                id="aiInput"
+                placeholder="Ask your business assistant..."
+                required
+            >
+
+            <button class="primary">
+                Send
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- MODAL -->
+
+<div id="modal" class="modal hidden">
+
+    <div class="modal-box">
+
+        <button
+            class="close"
+            id="closeModal"
+        >
+            ×
+        </button>
+
+        <h2>Add Lead</h2>
+
+        <form id="leadForm">
+
+            <input
+                id="lname"
+                placeholder="Lead name"
+                required
+            >
+
+            <input
+                id="lcompany"
+                placeholder="Company"
+                required
+            >
+
+            <input
+                id="lvalue"
+                type="number"
+                placeholder="Deal value ₹"
+                required
+            >
+
+            <select id="lstatus">
+
+                <option>New</option>
+                <option>Contacted</option>
+                <option>Qualified</option>
+                <option>Won</option>
+
+            </select>
+
+            <button class="primary">
+                Save Lead
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

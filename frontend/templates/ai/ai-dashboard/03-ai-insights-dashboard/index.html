@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>InsightFlow AI</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+<aside class="sidebar">
+
+<div class="logo">
+<div class="logo-symbol">✦</div>
+<div>
+<b>InsightFlow</b>
+<small>AI Intelligence</small>
+</div>
+</div>
+
+<nav>
+
+<button class="nav active" data-page="overview">
+<span>✦</span> Overview
+</button>
+
+<button class="nav" data-page="insights">
+<span>◈</span> Insights
+</button>
+
+<button class="nav" data-page="trends">
+<span>⌁</span> Trends
+</button>
+
+<button class="nav" data-page="recommendations">
+<span>⚡</span> Recommendations
+</button>
+
+<button class="nav" data-page="reports">
+<span>▣</span> Reports
+</button>
+
+</nav>
+
+<div class="copilot">
+
+<div class="copilot-orb">✦</div>
+
+<b>AI Copilot</b>
+
+<p>Ask your AI assistant anything about your data.</p>
+
+<button id="openCopilot">Ask AI</button>
+
+</div>
+
+</aside>
+
+
+<main>
+
+<header>
+
+<div>
+<span class="eyebrow">AI INTELLIGENCE CENTER</span>
+<h1 id="title">Overview</h1>
+<p id="description">Your most important AI-generated discoveries.</p>
+</div>
+
+<div class="header-actions">
+
+<div class="search">
+🔍
+<input id="search" placeholder="Search insights...">
+</div>
+
+<button id="bell">🔔</button>
+
+<div class="avatar">J</div>
+
+</div>
+
+</header>
+
+
+<!-- OVERVIEW -->
+
+<section class="page active" id="overview">
+
+<div class="welcome">
+
+<div>
+<h2>Good afternoon 👋</h2>
+<p>AI analyzed your latest business activity.</p>
+</div>
+
+<button class="primary" id="runAnalysis">
+✦ Run New Analysis
+</button>
+
+</div>
+
+<div class="insight-grid">
+
+<div class="big-insight purple">
+
+<span>REVENUE OPPORTUNITY</span>
+<strong>+18.6%</strong>
+<p>AI predicts potential revenue growth from optimized campaigns.</p>
+<button class="explore">Explore Insight →</button>
+
+</div>
+
+<div class="big-insight pink">
+
+<span>CUSTOMER SIGNAL</span>
+<strong>3,421</strong>
+<p>Customers show increased engagement this week.</p>
+<button class="explore">Explore Insight →</button>
+
+</div>
+
+<div class="big-insight blue">
+
+<span>ANOMALIES</span>
+<strong>12</strong>
+<p>Unusual patterns detected across recent transactions.</p>
+<button class="explore">Review Anomalies →</button>
+
+</div>
+
+</div>
+
+
+<div class="overview-grid">
+
+<div class="panel">
+
+<div class="panel-header">
+<div>
+<h2>Intelligence Map</h2>
+<p>AI relationships between your metrics</p>
+</div>
+</div>
+
+<div class="intelligence-map">
+
+<div class="core">✦<small>AI CORE</small></div>
+
+<div class="map-node node1">
+<b>Revenue</b>
+<span>+18%</span>
+</div>
+
+<div class="map-node node2">
+<b>Customers</b>
+<span>+24%</span>
+</div>
+
+<div class="map-node node3">
+<b>Retention</b>
+<span>+8%</span>
+</div>
+
+<div class="map-node node4">
+<b>Risk</b>
+<span>-12%</span>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="panel">
+
+<div class="panel-header">
+<div>
+<h2>AI Confidence</h2>
+<p>Current prediction confidence</p>
+</div>
+</div>
+
+<div class="confidence">
+<div class="confidence-circle">
+<div>
+<strong>94</strong>
+<small>%</small>
+</div>
+</div>
+
+<h3>High confidence</h3>
+
+<p>
+AI models have strong confidence in current insights.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- INSIGHTS -->
+
+<section class="page" id="insights">
+
+<div class="page-heading">
+<h2>AI Insights</h2>
+<p>Discover patterns identified by artificial intelligence.</p>
+</div>
+
+<div class="insight-list">
+
+<div class="detail-card">
+<span class="number">01</span>
+<div>
+<h3>Mobile engagement increased</h3>
+<p>Mobile users generated 24% more activity than the previous period.</p>
+<span class="confidence-tag">94% confidence</span>
+</div>
+<button class="detail-btn">View</button>
+</div>
+
+<div class="detail-card">
+<span class="number">02</span>
+<div>
+<h3>Evening conversion peak</h3>
+<p>Conversion rate reaches its highest point between 7 PM and 10 PM.</p>
+<span class="confidence-tag">91% confidence</span>
+</div>
+<button class="detail-btn">View</button>
+</div>
+
+<div class="detail-card">
+<span class="number">03</span>
+<div>
+<h3>Product demand increasing</h3>
+<p>Product A has shown consistent growth during the last 14 days.</p>
+<span class="confidence-tag">88% confidence</span>
+</div>
+<button class="detail-btn">View</button>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TRENDS -->
+
+<section class="page" id="trends">
+
+<div class="page-heading">
+<h2>AI Trends</h2>
+<p>Track important changes discovered in your data.</p>
+</div>
+
+<div class="trend-controls">
+
+<button class="trend-filter active" data-period="week">Week</button>
+<button class="trend-filter" data-period="month">Month</button>
+<button class="trend-filter" data-period="year">Year</button>
+
+</div>
+
+<div class="trend-panel">
+
+<div class="trend-chart">
+
+<div class="line l1"></div>
+
+<div class="trend-bars">
+<i style="height:35%"></i>
+<i style="height:50%"></i>
+<i style="height:42%"></i>
+<i style="height:65%"></i>
+<i style="height:58%"></i>
+<i style="height:82%"></i>
+<i style="height:75%"></i>
+<i style="height:95%"></i>
+</div>
+
+</div>
+
+<div class="trend-stats">
+
+<div>
+<span>Growth</span>
+<strong>+24.8%</strong>
+</div>
+
+<div>
+<span>Engagement</span>
+<strong>+18.4%</strong>
+</div>
+
+<div>
+<span>Retention</span>
+<strong>+8.7%</strong>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RECOMMENDATIONS -->
+
+<section class="page" id="recommendations">
+
+<div class="page-heading">
+<h2>AI Recommendations</h2>
+<p>Actions generated from your latest insights.</p>
+</div>
+
+<div id="recommendationList">
+
+<div class="recommendation">
+
+<div class="rec-icon">⚡</div>
+
+<div>
+<h3>Increase campaign budget</h3>
+<p>AI predicts a 21% improvement in conversion.</p>
+</div>
+
+<button class="accept">Accept</button>
+
+</div>
+
+<div class="recommendation">
+
+<div class="rec-icon">🎯</div>
+
+<div>
+<h3>Target evening users</h3>
+<p>Activity is highest between 7 PM and 10 PM.</p>
+</div>
+
+<button class="accept">Accept</button>
+
+</div>
+
+<div class="recommendation">
+
+<div class="rec-icon">🔍</div>
+
+<div>
+<h3>Review anomaly cluster</h3>
+<p>12 unusual transactions require review.</p>
+</div>
+
+<button class="accept">Review</button>
+
+</div>
+
+</div>
+
+<button class="primary" id="acceptAll">
+Accept All Recommendations
+</button>
+
+</section>
+
+
+<!-- REPORTS -->
+
+<section class="page" id="reports">
+
+<div class="page-heading">
+<h2>AI Reports</h2>
+<p>Generate and manage intelligence reports.</p>
+</div>
+
+<button class="primary" id="generateReport">
+＋ Generate Report
+</button>
+
+<div class="reports">
+
+<div class="report">
+<div>
+<b>Weekly Intelligence Report</b>
+<small>Generated today</small>
+</div>
+<button class="download">Download</button>
+</div>
+
+<div class="report">
+<div>
+<b>Customer Behavior Report</b>
+<small>Generated yesterday</small>
+</div>
+<button class="download">Download</button>
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+
+<!-- COPILOT MODAL -->
+
+<div class="modal" id="copilotModal">
+
+<div class="modal-box">
+
+<button class="close" id="closeCopilot">×</button>
+
+<div class="modal-orb">✦</div>
+
+<h2>AI Copilot</h2>
+
+<p>Ask your AI assistant.</p>
+
+<input id="question" placeholder="e.g. What changed this week?">
+
+<button class="primary" id="askAI">Analyze</button>
+
+<div class="ai-answer" id="answer">
+AI response will appear here.
+</div>
+
+</div>
+
+</div>
+
+<div id="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

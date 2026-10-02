@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Workspace Management</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">W</div>
+            <div>
+                <h2>WorkSpace</h2>
+                <span>Management</span>
+            </div>
+        </div>
+
+        <button class="create-workspace-btn" id="openWorkspaceBtn">
+            <span>＋</span>
+            New Workspace
+        </button>
+
+        <div class="sidebar-title">
+            YOUR WORKSPACES
+        </div>
+
+        <div id="workspaceList" class="workspace-list"></div>
+
+        <div class="sidebar-bottom">
+
+            <button class="side-action" id="exportBtn">
+                <span>📤</span>
+                Export Data
+            </button>
+
+            <button class="side-action" id="resetBtn">
+                <span>↻</span>
+                Reset Demo
+            </button>
+
+        </div>
+
+    </aside>
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <button class="mobile-menu" id="mobileMenu">
+                ☰
+            </button>
+
+            <div class="breadcrumb">
+                Workspace
+                <span>/</span>
+                <strong id="breadcrumbWorkspace">
+                    Product Team
+                </strong>
+            </div>
+
+            <div class="top-actions">
+
+                <div class="search-box">
+                    <span>⌕</span>
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search tasks or projects..."
+                    >
+                </div>
+
+                <button class="icon-button" id="notificationBtn">
+                    🔔
+                </button>
+
+                <div class="profile">
+                    <div class="profile-avatar">
+                        J
+                    </div>
+
+                    <div class="profile-info">
+                        <strong>Jayanth</strong>
+                        <small>Admin</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ================= CONTENT ================= -->
+
+        <section class="content">
+
+            <!-- PAGE HEADER -->
+
+            <div class="page-header">
+
+                <div>
+                    <p class="eyebrow">
+                        WORKSPACE
+                    </p>
+
+                    <h1 id="workspaceTitle">
+                        Product Team
+                    </h1>
+
+                    <p id="workspaceDescription">
+                        Manage your projects, tasks and team activities.
+                    </p>
+                </div>
+
+                <div class="header-buttons">
+
+                    <button
+                        class="secondary-btn"
+                        id="settingsBtn"
+                    >
+                        ⚙ Settings
+                    </button>
+
+                    <button
+                        class="primary-btn"
+                        id="addProjectBtn"
+                    >
+                        ＋ Add Project
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= STATISTICS ================= -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card purple">
+                    <div class="stat-icon">📁</div>
+
+                    <div>
+                        <span>Projects</span>
+                        <strong id="projectCount">0</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card blue">
+                    <div class="stat-icon">✓</div>
+
+                    <div>
+                        <span>Total Tasks</span>
+                        <strong id="taskCount">0</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card green">
+                    <div class="stat-icon">👥</div>
+
+                    <div>
+                        <span>Members</span>
+                        <strong id="memberCount">0</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card orange">
+                    <div class="stat-icon">⚡</div>
+
+                    <div>
+                        <span>Completed</span>
+                        <strong id="completedCount">0</strong>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- ================= PROJECTS ================= -->
+
+            <section class="section">
+
+                <div class="section-header">
+
+                    <div>
+                        <h2>Projects</h2>
+                        <p>Track your active projects.</p>
+                    </div>
+
+                    <button
+                        class="text-button"
+                        id="viewAllProjects"
+                    >
+                        View all →
+                    </button>
+
+                </div>
+
+                <div
+                    class="project-grid"
+                    id="projectGrid"
+                ></div>
+
+            </section>
+
+
+            <!-- ================= KANBAN ================= -->
+
+            <section class="section">
+
+                <div class="section-header">
+
+                    <div>
+                        <h2>Task Board</h2>
+                        <p>Drag tasks between columns.</p>
+                    </div>
+
+                    <button
+                        class="primary-btn small"
+                        id="addTaskBtn"
+                    >
+                        ＋ Add Task
+                    </button>
+
+                </div>
+
+
+                <div class="kanban">
+
+                    <!-- TODO -->
+
+                    <div
+                        class="kanban-column"
+                        data-status="todo"
+                    >
+
+                        <div class="column-header">
+
+                            <div>
+                                <span class="column-dot todo-dot"></span>
+                                <strong>To Do</strong>
+                            </div>
+
+                            <span
+                                class="column-count"
+                                id="todoCount"
+                            >
+                                0
+                            </span>
+
+                        </div>
+
+                        <div
+                            class="task-list"
+                            id="todoTasks"
+                        ></div>
+
+                    </div>
+
+
+                    <!-- IN PROGRESS -->
+
+                    <div
+                        class="kanban-column"
+                        data-status="progress"
+                    >
+
+                        <div class="column-header">
+
+                            <div>
+                                <span class="column-dot progress-dot"></span>
+                                <strong>In Progress</strong>
+                            </div>
+
+                            <span
+                                class="column-count"
+                                id="progressCount"
+                            >
+                                0
+                            </span>
+
+                        </div>
+
+                        <div
+                            class="task-list"
+                            id="progressTasks"
+                        ></div>
+
+                    </div>
+
+
+                    <!-- DONE -->
+
+                    <div
+                        class="kanban-column"
+                        data-status="done"
+                    >
+
+                        <div class="column-header">
+
+                            <div>
+                                <span class="column-dot done-dot"></span>
+                                <strong>Done</strong>
+                            </div>
+
+                            <span
+                                class="column-count"
+                                id="doneCount"
+                            >
+                                0
+                            </span>
+
+                        </div>
+
+                        <div
+                            class="task-list"
+                            id="doneTasks"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= BOTTOM ================= -->
+
+            <div class="bottom-grid">
+
+                <!-- ACTIVITY -->
+
+                <section class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h2>Recent Activity</h2>
+                            <p>Latest workspace actions.</p>
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="activity-list"
+                        id="activityList"
+                    ></div>
+
+                </section>
+
+
+                <!-- TEAM -->
+
+                <section class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h2>Workspace Team</h2>
+                            <p>People working in this workspace.</p>
+                        </div>
+
+                        <button
+                            class="text-button"
+                            id="addMemberBtn"
+                        >
+                            + Add
+                        </button>
+
+                    </div>
+
+                    <div
+                        class="team-list"
+                        id="teamList"
+                    ></div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =====================================================
+     WORKSPACE MODAL
+===================================================== -->
+
+<div class="modal-overlay" id="workspaceModal">
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+                <h2 id="workspaceModalTitle">
+                    Create Workspace
+                </h2>
+
+                <p>
+                    Create or edit your workspace.
+                </p>
+            </div>
+
+            <button
+                class="close-btn"
+                data-close="workspaceModal"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <form id="workspaceForm">
+
+            <input
+                type="hidden"
+                id="workspaceId"
+            >
+
+            <label>
+                Workspace Name
+
+                <input
+                    type="text"
+                    id="workspaceName"
+                    placeholder="e.g. Marketing Team"
+                    required
+                >
+            </label>
+
+            <label>
+                Description
+
+                <textarea
+                    id="workspaceDesc"
+                    placeholder="Describe your workspace..."
+                    required
+                ></textarea>
+            </label>
+
+            <label>
+                Workspace Color
+
+                <input
+                    type="color"
+                    id="workspaceColor"
+                    value="#7c3aed"
+                >
+            </label>
+
+            <div class="modal-buttons">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    data-close="workspaceModal"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Save Workspace
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROJECT MODAL
+===================================================== -->
+
+<div class="modal-overlay" id="projectModal">
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+                <h2 id="projectModalTitle">
+                    Add Project
+                </h2>
+
+                <p>
+                    Create a project for this workspace.
+                </p>
+            </div>
+
+            <button
+                class="close-btn"
+                data-close="projectModal"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <form id="projectForm">
+
+            <input
+                type="hidden"
+                id="projectId"
+            >
+
+            <label>
+                Project Name
+
+                <input
+                    type="text"
+                    id="projectName"
+                    placeholder="Website Redesign"
+                    required
+                >
+            </label>
+
+            <label>
+                Owner
+
+                <input
+                    type="text"
+                    id="projectOwner"
+                    placeholder="Jayanth"
+                    required
+                >
+            </label>
+
+            <label>
+                Due Date
+
+                <input
+                    type="date"
+                    id="projectDate"
+                    required
+                >
+            </label>
+
+            <label>
+                Progress
+
+                <input
+                    type="number"
+                    id="projectProgress"
+                    min="0"
+                    max="100"
+                    value="0"
+                    required
+                >
+            </label>
+
+            <div class="modal-buttons">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    data-close="projectModal"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Save Project
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TASK MODAL
+===================================================== -->
+
+<div class="modal-overlay" id="taskModal">
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+                <h2 id="taskModalTitle">
+                    Add Task
+                </h2>
+
+                <p>
+                    Add a task to your board.
+                </p>
+            </div>
+
+            <button
+                class="close-btn"
+                data-close="taskModal"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <form id="taskForm">
+
+            <input
+                type="hidden"
+                id="taskId"
+            >
+
+            <label>
+                Task Title
+
+                <input
+                    type="text"
+                    id="taskTitle"
+                    placeholder="Design login page"
+                    required
+                >
+            </label>
+
+            <label>
+                Project
+
+                <select id="taskProject" required></select>
+            </label>
+
+            <label>
+                Assignee
+
+                <input
+                    type="text"
+                    id="taskAssignee"
+                    placeholder="Jayanth"
+                    required
+                >
+            </label>
+
+            <label>
+                Priority
+
+                <select id="taskPriority">
+
+                    <option value="low">
+                        Low
+                    </option>
+
+                    <option value="medium" selected>
+                        Medium
+                    </option>
+
+                    <option value="high">
+                        High
+                    </option>
+
+                </select>
+
+            </label>
+
+            <label>
+                Status
+
+                <select id="taskStatus">
+
+                    <option value="todo">
+                        To Do
+                    </option>
+
+                    <option value="progress">
+                        In Progress
+                    </option>
+
+                    <option value="done">
+                        Done
+                    </option>
+
+                </select>
+
+            </label>
+
+            <div class="modal-buttons">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    data-close="taskModal"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Save Task
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MEMBER MODAL
+===================================================== -->
+
+<div class="modal-overlay" id="memberModal">
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+                <h2>Add Team Member</h2>
+
+                <p>
+                    Add someone to this workspace.
+                </p>
+            </div>
+
+            <button
+                class="close-btn"
+                data-close="memberModal"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <form id="memberForm">
+
+            <label>
+                Name
+
+                <input
+                    type="text"
+                    id="memberName"
+                    placeholder="Member name"
+                    required
+                >
+            </label>
+
+            <label>
+                Role
+
+                <input
+                    type="text"
+                    id="memberRole"
+                    placeholder="Developer"
+                    required
+                >
+            </label>
+
+            <div class="modal-buttons">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    data-close="memberModal"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Add Member
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SETTINGS MODAL
+===================================================== -->
+
+<div class="modal-overlay" id="settingsModal">
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+                <h2>Workspace Settings</h2>
+
+                <p>
+                    Manage this workspace.
+                </p>
+            </div>
+
+            <button
+                class="close-btn"
+                data-close="settingsModal"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <div class="settings-content">
+
+            <button
+                class="danger-btn full"
+                id="deleteWorkspaceBtn"
+            >
+                🗑 Delete Current Workspace
+            </button>
+
+            <p class="danger-note">
+                This will delete the workspace, projects and tasks.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div id="toast" class="toast">
+    <span id="toastIcon">✓</span>
+    <span id="toastMessage">
+        Saved successfully
+    </span>
+</div>
+
+</body>
+</html>

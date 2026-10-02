@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#020914">
+  <title>SMARTUI HUB</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="background-glow glow-1"></div>
+  <div class="background-glow glow-2"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+
+    <a href="#home" class="logo">
+      <span class="logo-star">✦</span>
+      <span>SMARTUI</span>
+      <b>HUB</b>
+    </a>
+
+    <nav>
+      <a href="#home" class="active">Explore</a>
+      <a href="#categories">Categories</a>
+    </nav>
+
+    <div class="nav-actions">
+
+      <button class="nav-button" id="focusSearch">⌕</button>
+
+      <button class="nav-button" id="themeButton">☾</button>
+
+      <a
+        class="github-button"
+        href="https://github.com/"
+        target="_blank"
+        rel="noopener"
+      >
+        ◉ GitHub
+      </a>
+
+      <div class="profile-button">●</div>
+
+    </div>
+
+  </header>
+
+
+  <!-- HERO -->
+  <main id="home">
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="hero-badge">
+          ⚡ Modern UI Templates for Real Projects
+        </div>
+
+        <h1>
+          SMARTUI <span>HUB</span>
+        </h1>
+
+        <h2>
+          Build Stunning Web Applications<br>
+          with Reusable UI Templates
+        </h2>
+
+        <p>
+          Discover high-quality, modern and responsive templates
+          for your next big idea. Save time, build faster, create better.
+        </p>
+
+        <form class="search-box" id="searchForm">
+
+          <span class="search-icon">⌕</span>
+
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Search templates..."
+            autocomplete="off"
+          >
+
+          <button type="submit">→</button>
+
+        </form>
+
+        <div class="hero-stats">
+
+          <span>▰ <b>130+</b> Templates</span>
+          <span>◇ <b>11</b> Categories</span>
+          <span>▣ <b>Modern</b> & Responsive</span>
+          <span>↻ <b>Lifetime</b> Updates</span>
+
+        </div>
+
+      </div>
+
+
+      <!-- FOUR PART DOMAIN CIRCLE -->
+      <div class="hero-visual">
+
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+
+        <div class="floating-icon floating-one">♛</div>
+        <div class="floating-icon floating-two">⌘</div>
+        <div class="floating-icon floating-three">ϟ</div>
+
+        <div class="domain-circle">
+
+          <div class="domain-box domain-ai">
+            <span>✦</span>
+            <strong>AI</strong>
+            <small>Artificial Intelligence</small>
+          </div>
+
+          <div class="domain-box domain-sports">
+            <span>🏏</span>
+            <strong>SPORTS</strong>
+            <small>Live Sports</small>
+          </div>
+
+          <div class="domain-box domain-film">
+            <span>🎬</span>
+            <strong>FILM</strong>
+            <small>Entertainment</small>
+          </div>
+
+          <div class="domain-box domain-book">
+            <span>🎟</span>
+            <strong>BOOKMYSHOW</strong>
+            <small>Movies & Events</small>
+          </div>
+
+          <div class="domain-center">✦</div>
+
+        </div>
+
+        <div class="team-pill">
+          ✦ <b>SMARTUI HUB</b>
+        </div>
+
+        <div class="domain-caption">
+          <b>4 Domains</b>
+          <i>•</i>
+          <b>1 Vision</b>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+    <section class="section" id="categories">
+
+      <div class="section-heading">
+
+        <div>
+          <span class="section-kicker">EXPLORE COLLECTION</span>
+
+          <h2>Browse by Categories</h2>
+
+          <p>
+            Explore templates across different domains and find
+            what fits your project.
+          </p>
+        </div>
+
+        <button
+          class="outline-button"
+          id="viewCategories"
+        >
+          View All Categories →
+        </button>
+
+      </div>
+
+      <div
+        class="category-grid"
+        id="categoryGrid"
+      ></div>
+
+    </section>
+
+
+    <!-- TEMPLATES -->
+    <section class="section" id="templates">
+
+      <div class="section-heading">
+
+        <div>
+
+          <span class="section-kicker">
+            PREMIUM UI COLLECTION
+          </span>
+
+          <h2 id="templateHeading">
+            Popular Templates
+          </h2>
+
+          <p id="templateDescription">
+            Real template previews from your project folders.
+          </p>
+
+        </div>
+
+        <button
+          class="outline-button"
+          id="viewAllTemplates"
+        >
+          View All Templates →
+        </button>
+
+      </div>
+
+      <div
+        class="template-grid"
+        id="templateGrid"
+      ></div>
+
+      <div
+        class="empty-state"
+        id="emptyState"
+        hidden
+      >
+        <div>⌕</div>
+        <h3>No templates found</h3>
+        <p>Try another template name or category.</p>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-logo">
+      ✦ SMARTUI <b>HUB</b>
+    </div>
+
+    <span>
+      Premium UI templates for modern web applications.
+    </span>
+
+  </footer>
+
+
+  <!-- BOTTOM SHEET -->
+  <div
+    class="sheet-overlay"
+    id="sheetOverlay"
+  ></div>
+
+  <section
+    class="bottom-sheet"
+    id="bottomSheet"
+  >
+
+    <div class="sheet-handle"></div>
+
+    <div class="sheet-heading">
+
+      <div>
+
+        <span id="sheetCategory">
+          CATEGORY
+        </span>
+
+        <h2>
+          Choose a Collection
+        </h2>
+
+        <p>
+          Select a collection to explore its templates.
+        </p>
+
+      </div>
+
+      <button
+        class="close-button"
+        id="closeSheet"
+      >
+        ×
+      </button>
+
+    </div>
+
+    <div
+      class="collection-grid"
+      id="collectionGrid"
+    ></div>
+
+  </section>
+
+
+  <div
+    class="toast"
+    id="toast"
+  ></div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

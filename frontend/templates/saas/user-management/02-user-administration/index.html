@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AdminCenter - User Administration</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="script.js" defer></script>
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">A</div>
+
+            <div>
+                <strong>AdminCenter</strong>
+                <small>Control Panel</small>
+            </div>
+        </div>
+
+
+        <nav>
+
+            <button class="nav active"
+                    data-page="overview">
+
+                🏠 Overview
+
+            </button>
+
+            <button class="nav"
+                    data-page="administrators">
+
+                👨‍💼 Administrators
+
+            </button>
+
+            <button class="nav"
+                    data-page="permissions">
+
+                🔐 Permissions
+
+            </button>
+
+            <button class="nav"
+                    data-page="activity">
+
+                📋 Activity Log
+
+            </button>
+
+        </nav>
+
+
+        <div class="admin-profile">
+
+            <div class="admin-avatar">
+                A
+            </div>
+
+            <div>
+
+                <strong>Administrator</strong>
+
+                <small>Super Admin</small>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <button
+                id="menuBtn"
+                class="menu-btn">
+
+                ☰
+
+            </button>
+
+            <div>
+
+                <h1 id="pageTitle">
+                    Administration
+                </h1>
+
+                <p>
+                    Control your platform users
+                </p>
+
+            </div>
+
+
+            <div class="top-actions">
+
+                <input
+                    id="search"
+                    placeholder="Search administrators...">
+
+                <button
+                    id="addAdmin"
+                    class="primary">
+
+                    + Add Admin
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <div class="container">
+
+
+            <!-- OVERVIEW -->
+
+            <section
+                id="overview"
+                class="page active-page">
+
+                <div class="hero">
+
+                    <div>
+
+                        <span>ADMIN CENTER</span>
+
+                        <h2>
+                            Welcome to your control room 🚀
+                        </h2>
+
+                        <p>
+                            Manage administrators,
+                            permissions and security.
+                        </p>
+
+                    </div>
+
+                    <div class="hero-icon">
+                        🛡️
+                    </div>
+
+                </div>
+
+
+                <div class="stat-grid">
+
+                    <div class="stat-card cyan">
+
+                        <span>Administrators</span>
+
+                        <strong id="adminCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat-card green">
+
+                        <span>Active</span>
+
+                        <strong id="activeCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat-card yellow">
+
+                        <span>Pending</span>
+
+                        <strong id="pendingCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stat-card red">
+
+                        <span>Suspended</span>
+
+                        <strong id="suspendedCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <div class="panel-title">
+
+                        <div>
+
+                            <h3>
+                                Administrator Management
+                            </h3>
+
+                            <p>
+                                Review and control administrator accounts.
+                            </p>
+
+                        </div>
+
+
+                        <div class="bulk-buttons">
+
+                            <button id="approveSelected">
+                                ✓ Approve
+                            </button>
+
+                            <button id="suspendSelected">
+                                ⛔ Suspend
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-wrap">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        <input
+                                            type="checkbox"
+                                            id="selectAll">
+                                    </th>
+
+                                    <th>Administrator</th>
+
+                                    <th>Role</th>
+
+                                    <th>Status</th>
+
+                                    <th>Last Login</th>
+
+                                    <th>Actions</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody
+                                id="adminTable">
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ADMINISTRATORS -->
+
+            <section
+                id="administrators"
+                class="page">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span>ACCOUNTS</span>
+
+                        <h2>
+                            Administrator Accounts
+                        </h2>
+
+                    </div>
+
+                    <button
+                        class="primary"
+                        id="addAdmin2">
+
+                        + New Administrator
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="adminCards"
+                    class="admin-cards">
+                </div>
+
+            </section>
+
+
+            <!-- PERMISSIONS -->
+
+            <section
+                id="permissions"
+                class="page">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span>SECURITY</span>
+
+                        <h2>
+                            Permission Management
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="permission-grid">
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            checked>
+                        Manage Users
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            checked>
+                        Manage Administrators
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox">
+                        Delete Accounts
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            checked>
+                        View Analytics
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox">
+                        Export Data
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            checked>
+                        Manage Settings
+                    </label>
+
+                </div>
+
+
+                <button
+                    id="savePermissions"
+                    class="primary save-permissions">
+
+                    Save Permissions
+
+                </button>
+
+            </section>
+
+
+            <!-- ACTIVITY -->
+
+            <section
+                id="activity"
+                class="page">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span>AUDIT</span>
+
+                        <h2>
+                            Activity Log
+                        </h2>
+
+                    </div>
+
+                    <button
+                        id="clearActivity"
+                        class="danger">
+
+                        Clear Log
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="activityLog"
+                    class="activity-log">
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- MODAL -->
+
+<div
+    class="modal"
+    id="adminModal">
+
+    <div class="modal-box">
+
+        <button
+            id="closeModal"
+            class="close">
+
+            ×
+
+        </button>
+
+        <h2 id="modalTitle">
+            Add Administrator
+        </h2>
+
+        <form id="adminForm">
+
+            <input
+                type="hidden"
+                id="adminId">
+
+            <label>
+                Name
+                <input
+                    id="adminName"
+                    required>
+            </label>
+
+            <label>
+                Email
+                <input
+                    id="adminEmail"
+                    type="email"
+                    required>
+            </label>
+
+            <label>
+                Role
+
+                <select id="adminRole">
+
+                    <option>Super Admin</option>
+                    <option>Administrator</option>
+                    <option>Moderator</option>
+
+                </select>
+
+            </label>
+
+            <label>
+                Status
+
+                <select id="adminStatus">
+
+                    <option value="active">
+                        Active
+                    </option>
+
+                    <option value="pending">
+                        Pending
+                    </option>
+
+                    <option value="suspended">
+                        Suspended
+                    </option>
+
+                </select>
+
+            </label>
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    id="cancelModal">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    class="primary">
+
+                    Save Administrator
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<div id="toast"></div>
+
+</body>
+</html>

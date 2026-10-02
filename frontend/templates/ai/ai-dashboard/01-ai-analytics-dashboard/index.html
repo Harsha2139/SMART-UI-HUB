@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Analytics Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+    <div class="logo">
+        <div class="logoIcon">AI</div>
+        <div>
+            <strong>Neura</strong>
+            <small>Analytics</small>
+        </div>
+    </div>
+
+    <nav>
+        <button class="nav active" data-page="overview">⌂ <span>Overview</span></button>
+        <button class="nav" data-page="analytics">◈ <span>Analytics</span></button>
+        <button class="nav" data-page="models">◉ <span>AI Models</span></button>
+        <button class="nav" data-page="reports">▣ <span>Reports</span></button>
+        <button class="nav" data-page="users">♟ <span>Users</span></button>
+    </nav>
+
+    <div class="sideBottom">
+        <button class="nav" id="settingsBtn">⚙ <span>Settings</span></button>
+        <button class="nav" id="logoutBtn">↪ <span>Logout</span></button>
+    </div>
+
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+<header>
+
+    <div>
+        <h1>AI Analytics</h1>
+        <p>Real-time intelligence overview</p>
+    </div>
+
+    <div class="headerActions">
+
+        <div class="search">
+            🔍
+            <input id="search" placeholder="Search...">
+        </div>
+
+        <button class="iconBtn" id="notificationBtn">🔔</button>
+
+        <button class="avatar" id="profileBtn">J</button>
+
+    </div>
+
+</header>
+
+<!-- OVERVIEW -->
+
+<section id="overview" class="page activePage">
+
+<div class="hero">
+    <div>
+        <span class="tag">● AI SYSTEM ONLINE</span>
+        <h2>Your AI is getting smarter.</h2>
+        <p>Monitor performance, users and intelligent predictions from one place.</p>
+    </div>
+
+    <button class="primary" id="generateBtn">
+        ✨ Generate AI Report
+    </button>
+</div>
+
+<div class="cards">
+
+    <div class="card">
+        <span>AI Requests</span>
+        <strong id="requests">128,420</strong>
+        <small class="positive">▲ 18.4%</small>
+    </div>
+
+    <div class="card">
+        <span>Predictions</span>
+        <strong id="predictions">84,921</strong>
+        <small class="positive">▲ 24.8%</small>
+    </div>
+
+    <div class="card">
+        <span>Accuracy</span>
+        <strong>96.8%</strong>
+        <small class="positive">▲ 2.1%</small>
+    </div>
+
+    <div class="card">
+        <span>Active Users</span>
+        <strong id="users">12,842</strong>
+        <small class="positive">▲ 12.6%</small>
+    </div>
+
+</div>
+
+<div class="grid">
+
+<div class="panel chartPanel">
+
+    <div class="panelHead">
+        <div>
+            <h3>AI Activity</h3>
+            <small>Requests during the week</small>
+        </div>
+
+        <select id="period">
+            <option>7 Days</option>
+            <option>30 Days</option>
+            <option>90 Days</option>
+        </select>
+    </div>
+
+    <div class="chart" id="chart">
+
+        <div class="bars">
+            <i style="height:40%"></i>
+            <i style="height:65%"></i>
+            <i style="height:48%"></i>
+            <i style="height:80%"></i>
+            <i style="height:62%"></i>
+            <i style="height:92%"></i>
+            <i style="height:75%"></i>
+        </div>
+
+        <div class="days">
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
+            <span>Sat</span>
+            <span>Sun</span>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="panel">
+
+    <div class="panelHead">
+        <h3>AI Models</h3>
+        <button class="textBtn" id="viewModels">View all</button>
+    </div>
+
+    <div class="model">
+        <div class="modelIcon purple">✦</div>
+        <div>
+            <b>NeuraGPT</b>
+            <small>Text Intelligence</small>
+        </div>
+        <strong>98%</strong>
+    </div>
+
+    <div class="model">
+        <div class="modelIcon pink">◉</div>
+        <div>
+            <b>VisionX</b>
+            <small>Computer Vision</small>
+        </div>
+        <strong>94%</strong>
+    </div>
+
+    <div class="model">
+        <div class="modelIcon cyan">◆</div>
+        <div>
+            <b>PredictAI</b>
+            <small>Prediction Engine</small>
+        </div>
+        <strong>97%</strong>
+    </div>
+
+</div>
+
+</div>
+
+<div class="panel activity">
+
+<h3>Recent AI Activity</h3>
+
+<table>
+
+<thead>
+<tr>
+<th>Model</th>
+<th>Task</th>
+<th>Status</th>
+<th>Time</th>
+</tr>
+</thead>
+
+<tbody id="activityTable">
+
+<tr>
+<td>NeuraGPT</td>
+<td>Text Generation</td>
+<td><span class="status success">Completed</span></td>
+<td>2 min ago</td>
+</tr>
+
+<tr>
+<td>VisionX</td>
+<td>Image Analysis</td>
+<td><span class="status success">Completed</span></td>
+<td>8 min ago</td>
+</tr>
+
+<tr>
+<td>PredictAI</td>
+<td>Sales Prediction</td>
+<td><span class="status running">Running</span></td>
+<td>12 min ago</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- OTHER PAGES -->
+
+<section id="analytics" class="page">
+
+<div class="pageTitle">
+<h2>Advanced Analytics</h2>
+<p>Explore AI performance metrics.</p>
+</div>
+
+<div class="analyticsBox">
+
+<div class="metric">
+<span>Model Accuracy</span>
+<strong>96.8%</strong>
+<div class="progress"><i style="width:96%"></i></div>
+</div>
+
+<div class="metric">
+<span>Response Quality</span>
+<strong>92.4%</strong>
+<div class="progress"><i style="width:92%"></i></div>
+</div>
+
+<div class="metric">
+<span>User Satisfaction</span>
+<strong>94.7%</strong>
+<div class="progress"><i style="width:95%"></i></div>
+</div>
+
+</div>
+
+</section>
+
+<section id="models" class="page">
+
+<div class="pageTitle">
+<h2>AI Models</h2>
+<p>Manage your artificial intelligence models.</p>
+</div>
+
+<div class="modelGrid">
+
+<div class="bigModel">
+<h3>NeuraGPT</h3>
+<p>Advanced language intelligence model.</p>
+<button class="primary modelAction">Run Model</button>
+</div>
+
+<div class="bigModel">
+<h3>VisionX</h3>
+<p>Computer vision processing engine.</p>
+<button class="primary modelAction">Run Model</button>
+</div>
+
+<div class="bigModel">
+<h3>PredictAI</h3>
+<p>Predictive analytics model.</p>
+<button class="primary modelAction">Run Model</button>
+</div>
+
+</div>
+
+</section>
+
+<section id="reports" class="page">
+
+<div class="pageTitle">
+<h2>Reports</h2>
+<p>Generate and manage AI reports.</p>
+</div>
+
+<button class="primary" id="reportBtn">Generate New Report</button>
+
+<div id="reportList" class="reportList">
+
+<div class="report">
+📊 Weekly AI Performance
+<button class="download">Download</button>
+</div>
+
+<div class="report">
+📈 Monthly Intelligence Report
+<button class="download">Download</button>
+</div>
+
+</div>
+
+</section>
+
+<section id="users" class="page">
+
+<div class="pageTitle">
+<h2>Users</h2>
+<p>AI platform users.</p>
+</div>
+
+<div class="userStats">
+<div>Active Users <b>12,842</b></div>
+<div>New Users <b>1,284</b></div>
+<div>Enterprise <b>324</b></div>
+</div>
+
+</section>
+
+</main>
+</div>
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+
+<div class="modalBox">
+
+<button class="close" id="closeModal">×</button>
+
+<h2>AI Report Generated</h2>
+
+<p>Your latest AI analytics report has been generated successfully.</p>
+
+<div class="reportPreview">
+Accuracy: 96.8%<br>
+Requests: 128,420<br>
+Predictions: 84,921
+</div>
+
+<button class="primary" id="modalDone">Done</button>
+
+</div>
+
+</div>
+
+<div id="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

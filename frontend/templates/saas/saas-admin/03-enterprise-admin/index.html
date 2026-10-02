@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Enterprise Admin Console</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+<body>
+
+<div class="enterprise-app">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="enterprise-sidebar">
+
+        <div class="enterprise-brand">
+
+            <div class="enterprise-logo">
+                E
+            </div>
+
+            <div>
+                <strong>EnterpriseOS</strong>
+                <small>Control Console</small>
+            </div>
+
+        </div>
+
+
+        <div class="organization">
+
+            <small>ORGANIZATION</small>
+
+            <button id="organizationButton">
+
+                <span class="organization-icon">
+                    AC
+                </span>
+
+                <span>
+                    Acme Corporation
+                    <small>Enterprise</small>
+                </span>
+
+                <b>⌄</b>
+
+            </button>
+
+        </div>
+
+
+        <nav class="enterprise-nav">
+
+            <span class="nav-section">
+                WORKSPACE
+            </span>
+
+            <button
+                class="enterprise-link active"
+                data-view="enterpriseDashboard">
+
+                <span>▦</span>
+                Command Center
+
+            </button>
+
+
+            <button
+                class="enterprise-link"
+                data-view="projects">
+
+                <span>◈</span>
+                Projects
+
+            </button>
+
+
+            <button
+                class="enterprise-link"
+                data-view="teams">
+
+                <span>♟</span>
+                Teams
+
+            </button>
+
+
+            <span class="nav-section">
+                GOVERNANCE
+            </span>
+
+
+            <button
+                class="enterprise-link"
+                data-view="security">
+
+                <span>◉</span>
+                Security
+
+            </button>
+
+
+            <button
+                class="enterprise-link"
+                data-view="audit">
+
+                <span>☷</span>
+                Audit Logs
+
+            </button>
+
+
+            <button
+                class="enterprise-link"
+                data-view="governance">
+
+                <span>◇</span>
+                Governance
+
+            </button>
+
+
+            <span class="nav-section">
+                FINANCE
+            </span>
+
+
+            <button
+                class="enterprise-link"
+                data-view="billing">
+
+                <span>$</span>
+                Billing
+
+            </button>
+
+
+            <button
+                class="enterprise-link"
+                data-view="enterpriseSettings">
+
+                <span>⚙</span>
+                Settings
+
+            </button>
+
+        </nav>
+
+
+        <div class="enterprise-bottom">
+
+            <div class="security-status">
+
+                <div class="security-check">
+                    ✓
+                </div>
+
+                <div>
+
+                    <strong>
+                        Security Healthy
+                    </strong>
+
+                    <small>
+                        Last scan 8 min ago
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="enterpriseLogout"
+                class="enterprise-logout">
+
+                ⇥ Sign out
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="enterprise-main">
+
+
+        <!-- HEADER -->
+
+        <header class="enterprise-header">
+
+            <div class="enterprise-title">
+
+                <button
+                    id="enterpriseMobileMenu"
+                    class="enterprise-mobile">
+                    ☰
+                </button>
+
+                <div>
+
+                    <span id="enterpriseSection">
+                        COMMAND CENTER
+                    </span>
+
+                    <h1 id="enterpriseTitle">
+                        Command Center
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <div class="enterprise-header-actions">
+
+                <div class="enterprise-search">
+
+                    <span>⌕</span>
+
+                    <input
+                        id="enterpriseSearch"
+                        placeholder="Search organization..."
+                    >
+
+                </div>
+
+
+                <button
+                    id="enterpriseTheme"
+                    class="enterprise-icon">
+                    ☾
+                </button>
+
+
+                <button
+                    id="enterpriseNotifications"
+                    class="enterprise-icon">
+                    🔔
+                </button>
+
+
+                <div class="enterprise-user">
+
+                    <div class="enterprise-avatar">
+                        JD
+                    </div>
+
+                    <div>
+                        <strong>John Doe</strong>
+                        <small>Owner</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <div class="enterprise-content">
+
+
+            <!-- =================================================
+                 DASHBOARD
+            ================================================== -->
+
+            <section
+                class="enterprise-view active"
+                id="enterpriseDashboard">
+
+
+                <div class="command-banner">
+
+                    <div>
+
+                        <span>
+                            ENTERPRISE OPERATIONS
+                        </span>
+
+                        <h2>
+                            Organization Command Center
+                        </h2>
+
+                        <p>
+                            Monitor projects, people,
+                            security and financial operations.
+                        </p>
+
+                    </div>
+
+
+                    <div class="command-date">
+
+                        <strong id="currentDate">
+                            OCT 01
+                        </strong>
+
+                        <small>
+                            2026
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- KPI -->
+
+                <div class="enterprise-kpis">
+
+                    <div class="enterprise-kpi blue">
+
+                        <span>ACTIVE USERS</span>
+
+                        <strong>
+                            12,482
+                        </strong>
+
+                        <small>
+                            +8.4% this quarter
+                        </small>
+
+                    </div>
+
+
+                    <div class="enterprise-kpi gold">
+
+                        <span>PROJECTS</span>
+
+                        <strong>
+                            148
+                        </strong>
+
+                        <small>
+                            32 currently active
+                        </small>
+
+                    </div>
+
+
+                    <div class="enterprise-kpi cyan">
+
+                        <span>MONTHLY SPEND</span>
+
+                        <strong>
+                            $284K
+                        </strong>
+
+                        <small>
+                            7.2% under budget
+                        </small>
+
+                    </div>
+
+
+                    <div class="enterprise-kpi green">
+
+                        <span>SECURITY SCORE</span>
+
+                        <strong>
+                            96/100
+                        </strong>
+
+                        <small>
+                            No critical issues
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- COMMAND GRID -->
+
+                <div class="enterprise-grid">
+
+
+                    <div class="enterprise-panel wide">
+
+                        <div class="enterprise-panel-head">
+
+                            <div>
+
+                                <span>
+                                    PORTFOLIO
+                                </span>
+
+                                <h3>
+                                    Project Portfolio
+                                </h3>
+
+                            </div>
+
+                            <button
+                                data-view-target="projects">
+                                View Portfolio
+                            </button>
+
+                        </div>
+
+
+                        <div class="portfolio-list">
+
+                            <div class="portfolio-row">
+
+                                <div class="project-symbol blue">
+                                    AI
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        AI Platform
+                                    </strong>
+
+                                    <small>
+                                        Product Engineering
+                                    </small>
+
+                                </div>
+
+                                <div class="project-progress">
+
+                                    <div>
+                                        <span
+                                            style="width:84%">
+                                        </span>
+                                    </div>
+
+                                    <small>
+                                        84%
+                                    </small>
+
+                                </div>
+
+                                <b>
+                                    $84K
+                                </b>
+
+                            </div>
+
+
+                            <div class="portfolio-row">
+
+                                <div class="project-symbol gold">
+                                    CL
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Cloud Migration
+                                    </strong>
+
+                                    <small>
+                                        Infrastructure
+                                    </small>
+
+                                </div>
+
+                                <div class="project-progress">
+
+                                    <div>
+                                        <span
+                                            style="width:63%">
+                                        </span>
+                                    </div>
+
+                                    <small>
+                                        63%
+                                    </small>
+
+                                </div>
+
+                                <b>
+                                    $62K
+                                </b>
+
+                            </div>
+
+
+                            <div class="portfolio-row">
+
+                                <div class="project-symbol cyan">
+                                    CX
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Customer Experience
+                                    </strong>
+
+                                    <small>
+                                        Digital Transformation
+                                    </small>
+
+                                </div>
+
+                                <div class="project-progress">
+
+                                    <div>
+                                        <span
+                                            style="width:48%">
+                                        </span>
+                                    </div>
+
+                                    <small>
+                                        48%
+                                    </small>
+
+                                </div>
+
+                                <b>
+                                    $42K
+                                </b>
+
+                            </div>
+
+
+                            <div class="portfolio-row">
+
+                                <div class="project-symbol green">
+                                    DS
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Data Strategy
+                                    </strong>
+
+                                    <small>
+                                        Analytics
+                                    </small>
+
+                                </div>
+
+                                <div class="project-progress">
+
+                                    <div>
+                                        <span
+                                            style="width:71%">
+                                        </span>
+                                    </div>
+
+                                    <small>
+                                        71%
+                                    </small>
+
+                                </div>
+
+                                <b>
+                                    $31K
+                                </b>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SECURITY -->
+
+                    <div class="enterprise-panel">
+
+                        <div class="enterprise-panel-head">
+
+                            <div>
+
+                                <span>
+                                    SECURITY
+                                </span>
+
+                                <h3>
+                                    Security Health
+                                </h3>
+
+                            </div>
+
+                            <button
+                                data-view-target="security">
+                                Details
+                            </button>
+
+                        </div>
+
+
+                        <div class="security-score">
+
+                            <div class="score-circle">
+                                <strong>
+                                    96
+                                </strong>
+
+                                <span>
+                                    /100
+                                </span>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Excellent
+                                </strong>
+
+                                <p>
+                                    Your organization
+                                    is securely configured.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="security-items">
+
+                            <div>
+                                <span>
+                                    MFA coverage
+                                </span>
+                                <b>
+                                    98%
+                                </b>
+                            </div>
+
+                            <div>
+                                <span>
+                                    Encryption
+                                </span>
+                                <b>
+                                    100%
+                                </b>
+                            </div>
+
+                            <div>
+                                <span>
+                                    Admin protection
+                                </span>
+                                <b>
+                                    94%
+                                </b>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- BOTTOM -->
+
+                <div class="enterprise-grid">
+
+
+                    <div class="enterprise-panel">
+
+                        <div class="enterprise-panel-head">
+
+                            <div>
+
+                                <span>
+                                    PEOPLE
+                                </span>
+
+                                <h3>
+                                    Teams
+                                </h3>
+
+                            </div>
+
+                            <button
+                                data-view-target="teams">
+                                Manage
+                            </button>
+
+                        </div>
+
+
+                        <div class="team-mini">
+
+                            <div class="team-icon blue">
+                                E
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Engineering
+                                </strong>
+
+                                <small>
+                                    84 members
+                                </small>
+                            </div>
+
+                            <b>
+                                $82K
+                            </b>
+
+                        </div>
+
+
+                        <div class="team-mini">
+
+                            <div class="team-icon gold">
+                                D
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Data Science
+                                </strong>
+
+                                <small>
+                                    42 members
+                                </small>
+                            </div>
+
+                            <b>
+                                $41K
+                            </b>
+
+                        </div>
+
+
+                        <div class="team-mini">
+
+                            <div class="team-icon cyan">
+                                M
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Marketing
+                                </strong>
+
+                                <small>
+                                    28 members
+                                </small>
+                            </div>
+
+                            <b>
+                                $24K
+                            </b>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="enterprise-panel">
+
+                        <div class="enterprise-panel-head">
+
+                            <div>
+
+                                <span>
+                                    ACTIVITY
+                                </span>
+
+                                <h3>
+                                    Latest Events
+                                </h3>
+
+                            </div>
+
+                            <button
+                                data-view-target="audit">
+                                Audit
+                            </button>
+
+                        </div>
+
+
+                        <div class="enterprise-event">
+
+                            <i class="blue"></i>
+
+                            <div>
+
+                                <strong>
+                                    New administrator
+                                </strong>
+
+                                <small>
+                                    Olivia added to Engineering
+                                </small>
+
+                            </div>
+
+                            <time>
+                                8m
+                            </time>
+
+                        </div>
+
+
+                        <div class="enterprise-event">
+
+                            <i class="gold"></i>
+
+                            <div>
+
+                                <strong>
+                                    Policy updated
+                                </strong>
+
+                                <small>
+                                    MFA policy modified
+                                </small>
+
+                            </div>
+
+                            <time>
+                                22m
+                            </time>
+
+                        </div>
+
+
+                        <div class="enterprise-event">
+
+                            <i class="green"></i>
+
+                            <div>
+
+                                <strong>
+                                    Payment processed
+                                </strong>
+
+                                <small>
+                                    $28,420 monthly payment
+                                </small>
+
+                            </div>
+
+                            <time>
+                                1h
+                            </time>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PROJECTS
+            ================================================== -->
+
+            <section
+                class="enterprise-view"
+                id="projects">
+
+                <div class="enterprise-page-header">
+
+                    <div>
+                        <span>PORTFOLIO</span>
+                        <h2>Projects</h2>
+                        <p>
+                            Manage enterprise projects.
+                        </p>
+                    </div>
+
+                    <button
+                        class="enterprise-primary"
+                        id="addProject">
+                        + New Project
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="project-grid"
+                    id="projectGrid">
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 TEAMS
+            ================================================== -->
+
+            <section
+                class="enterprise-view"
+                id="teams">
+
+                <div class="enterprise-page-header">
+
+                    <div>
+                        <span>PEOPLE</span>
+                        <h2>Teams</h2>
+                        <p>
+                            Organization teams and members.
+                        </p>
+                    </div>
+
+                    <button
+                        class="enterprise-primary"
+                        id="addTeam">
+                        + Create Team
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="teams-grid"
+                    id="teamsGrid">
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SECURITY
+            ================================================== -->
+
+            <section
+                class="enterprise-view"
+                id="security">
+
+                <div class="enterprise-page-header">
+
+                    <div>
+                        <span>GOVERNANCE</span>
+                        <h2>Security Center</h2>
+                        <p>
+                            Monitor organization security.
+                        </p>
+                    </div>
+
+                    <button
+                        class="enterprise-primary"
+                        id="runSecurityScan">
+                        Run Security Scan
+                    </button>
+
+                </div>
+
+
+                <div class="security-dashboard">
+
+                    <div class="security-main-card">
+
+                        <div class="large-score">
+                            96
+                        </div>
+
+                        <span>
+                            SECURITY SCORE
+                        </span>
+
+                        <strong>
+                            Organization secure
+                        </strong>
+
+                        <p>
+                            No critical security
+                            issues detected.
+                        </p>
+
+                    </div>
+
+
+                    <div class="security-check-list">
+
+                        <div>
+                            <span>
+                                ✓
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Multi-factor authentication
+                                </strong>
+
+                                <small>
+                                    98% coverage
+                                </small>
+                            </div>
+
+                            <b>
+                                Healthy
+                            </b>
+                        </div>
+
+
+                        <div>
+                            <span>
+                                ✓
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Data encryption
+                                </strong>
+
+                                <small>
+                                    All enterprise data encrypted
+                                </small>
+                            </div>
+
+                            <b>
+                                Healthy
+                            </b>
+                        </div>
+
+
+                        <div>
+                            <span>
+                                !
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Password policy
+                                </strong>
+
+                                <small>
+                                    2 recommendations
+                                </small>
+                            </div>
+
+                            <b class="warning">
+                                Review
+                            </b>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 AUDIT
+            ================================================== -->
+
+            <section
+                class="enterprise-view"
+                id="audit">
+
+                <div class="enterprise-page-header">
+
+                    <div>
+                        <span>COMPLIANCE</span>
+                        <h2>Audit Logs</h2>
+                        <p>
+                            Track administrative activity.
+                        </p>
+                    </div>
+
+                    <button
+                        class="enterprise-primary"
+                        id="exportAudit">
+                        Export CSV
+                    </button>
+
+                </div>
+
+
+                <div class="audit-toolbar">
+
+                    <input
+                        id="auditSearch"
+                        placeholder="Search audit events..."
+                    >
+
+                    <select id="auditType">
+
+                        <option value="all">
+                            All events
+                        </option>
+
+                        <option value="security">
+                            Security
+                        </option>
+
+                        <option value="billing">
+                            Billing
+                        </option>
+
+                        <option value="users">
+                            Users
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="audit-card">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Time</th>
+                                <th>Actor</th>
+                                <th>Action</th>
+                                <th>Category</th>
+                                <th>IP</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody
+                            id="auditTable">
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 GOVERNANCE
+            ================================================== -->
+
+            <section
+                class="enterprise-view"
+                id="governance">
+
+                <div class="enterprise-page-header">
+
+                    <div>
+                        <span>POLICIES</span>
+                        <h2>Governance</h2>
+                        <p>
+                            Organization rules and controls.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="governance-list">
+
+                    <div class="policy-row">
+
+                        <div class="policy-icon blue">
+                            🔐
+                        </div>
+
+                        <div>
+                            <strong>
+                                Multi-factor authentication
+                            </strong>
+
+                            <small>
+                                Require MFA for administrators.
+                            </small>
+                        </div>
+
+                        <label class="enterprise-toggle">
+                            <input
+                                type="checkbox"
+                                checked>
+                            <span></span>
+                        </label>
+
+                    </div>
+
+
+                    <div class="policy-row">
+
+                        <div class="policy-icon gold">
+                            ◈
+                        </div>
+
+                        <div>
+                            <strong>
+                                Session controls
+                            </strong>
+
+                            <small>
+                                Automatically expire sessions.
+                            </small>
+                        </div>
+
+                        <label class="enterprise-toggle">
+                            <input
+                                type="checkbox"
+                                checked>
+                            <span></span>
+                        </label>
+
+                    </div>
+
+
+                    <div class="policy-row">
+
+                        <div class="policy-icon cyan">
+                            ◉
+                        </div>
+
+                        <div>
+                            <strong>
+                                IP restrictions
+                            </strong>
+
+                            <small>
+                                Restrict administrative access.
+                            </small>
+                        </div>
+
+                        <label class="enterprise-toggle">
+                            <input
+                                type="checkbox">
+                            <span></span>
+                        </label>
+
+                    </div>
+
+
+                    <div class="policy-row">
+
+                        <div class="policy-icon green">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>
+                                Audit retention
+                            </strong>
+
+                            <small>
+                                Retain audit logs for 365 days.
+                            </small>
+                        </div>
+
+                        <label class="enterprise-toggle">
+                            <input
+                                type="checkbox"
+                                checked>
+                            <span></span>
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 BILLING
+            ================================================== -->
+
+            <section
+                class="enterprise-view"
+                id="billing">
+
+                <div class="enterprise-page-header">
+
+                    <div>
+                        <span>FINANCE</span>
+                        <h2>Billing</h2>
+                        <p>
+                            Enterprise spending and invoices.
+                        </p>
+                    </div>
+
+                    <button
+                        class="enterprise-primary"
+                        id="downloadBilling">
+                        Download Statement
+                    </button>
+
+                </div>
+
+
+                <div class="billing-kpis">
+
+                    <div>
+                        <span>
+                            CURRENT MONTH
+                        </span>
+
+                        <strong>
+                            $284,420
+                        </strong>
+
+                        <small>
+                            7.2% under budget
+                        </small>
+                    </div>
+
+
+                    <div>
+                        <span>
+                            ANNUAL BUDGET
+                        </span>
+
+                        <strong>
+                            $3.4M
+                        </strong>
+
+                        <small>
+                            62% utilized
+                        </small>
+                    </div>
+
+
+                    <div>
+                        <span>
+                            NEXT PAYMENT
+                        </span>
+
+                        <strong>
+                            $28,420
+                        </strong>
+
+                        <small>
+                            October 15
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="billing-card">
+
+                    <h3>
+                        Recent invoices
+                    </h3>
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Invoice</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>#ENT-1024</td>
+                                <td>Sep 15</td>
+                                <td>$28,420</td>
+                                <td>
+                                    <span class="paid">
+                                        Paid
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>#ENT-1023</td>
+                                <td>Aug 15</td>
+                                <td>$27,820</td>
+                                <td>
+                                    <span class="paid">
+                                        Paid
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>#ENT-1022</td>
+                                <td>Jul 15</td>
+                                <td>$29,120</td>
+                                <td>
+                                    <span class="paid">
+                                        Paid
+                                    </span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SETTINGS
+            ================================================== -->
+
+            <section
+                class="enterprise-view"
+                id="enterpriseSettings">
+
+                <div class="enterprise-page-header">
+
+                    <div>
+                        <span>CONFIGURATION</span>
+                        <h2>Enterprise Settings</h2>
+                        <p>
+                            Configure organization preferences.
+                        </p>
+                    </div>
+
+                    <button
+                        class="enterprise-primary"
+                        id="saveEnterpriseSettings">
+                        Save Changes
+                    </button>
+
+                </div>
+
+
+                <div class="enterprise-settings">
+
+                    <label>
+                        Organization Name
+
+                        <input
+                            id="enterpriseOrgName"
+                            value="Acme Corporation">
+
+                    </label>
+
+
+                    <label>
+                        Primary Domain
+
+                        <input
+                            value="acme.com">
+
+                    </label>
+
+
+                    <label>
+                        Support Email
+
+                        <input
+                            value="support@acme.com">
+
+                    </label>
+
+
+                    <label>
+                        Default Region
+
+                        <select>
+
+                            <option>
+                                Asia Pacific
+                            </option>
+
+                            <option>
+                                North America
+                            </option>
+
+                            <option>
+                                Europe
+                            </option>
+
+                        </select>
+
+                    </label>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =====================================================
+     TOAST
+====================================================== -->
+
+<div
+    class="enterprise-toast"
+    id="enterpriseToast">
+
+    <strong id="enterpriseToastTitle">
+        Success
+    </strong>
+
+    <span id="enterpriseToastMessage">
+        Operation completed.
+    </span>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

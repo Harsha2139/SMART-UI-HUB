@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SaaS Control Center</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="control-app">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="control-header">
+
+
+        <div class="control-brand">
+
+            <div class="control-logo">
+                S
+            </div>
+
+            <div>
+
+                <strong>
+                    SaaS Control
+                </strong>
+
+                <small>
+                    Operations Center
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="environment">
+
+            <span></span>
+
+            Production
+
+            <b>
+                v4.8.2
+            </b>
+
+        </div>
+
+
+        <div class="control-actions">
+
+            <div class="control-search">
+
+                <span>
+                    ⌕
+                </span>
+
+                <input
+                    id="controlSearch"
+                    placeholder="Search..."
+                >
+
+            </div>
+
+
+            <button
+                id="controlTheme"
+                class="control-icon">
+                ☾
+            </button>
+
+
+            <button
+                id="controlNotification"
+                class="control-icon">
+                🔔
+            </button>
+
+
+            <div class="control-user">
+
+                <div>
+                    JD
+                </div>
+
+                <span>
+                    John
+                </span>
+
+            </div>
+
+
+            <button
+                id="controlMobileMenu"
+                class="control-mobile">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <nav class="control-navigation"
+         id="controlNavigation">
+
+
+        <button
+            class="control-nav active"
+            data-view="controlOverview">
+
+            <span>
+                ◉
+            </span>
+
+            Overview
+
+        </button>
+
+
+        <button
+            class="control-nav"
+            data-view="services">
+
+            <span>
+                ◈
+            </span>
+
+            Services
+
+        </button>
+
+
+        <button
+            class="control-nav"
+            data-view="subscriptions">
+
+            <span>
+                $
+            </span>
+
+            Subscriptions
+
+        </button>
+
+
+        <button
+            class="control-nav"
+            data-view="usage">
+
+            <span>
+                ◫
+            </span>
+
+            Usage
+
+        </button>
+
+
+        <button
+            class="control-nav"
+            data-view="incidents">
+
+            <span>
+                !
+            </span>
+
+            Incidents
+
+        </button>
+
+
+        <button
+            class="control-nav"
+            data-view="controlUsers">
+
+            <span>
+                ♟
+            </span>
+
+            Users
+
+        </button>
+
+
+        <button
+            class="control-nav"
+            data-view="controlBilling">
+
+            <span>
+                ◇
+            </span>
+
+            Billing
+
+        </button>
+
+
+        <button
+            class="control-nav"
+            data-view="controlActivity">
+
+            <span>
+                ≋
+            </span>
+
+            Activity
+
+        </button>
+
+
+    </nav>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="control-main">
+
+
+        <!-- =================================================
+             OVERVIEW
+        ================================================== -->
+
+        <section
+            class="control-view active"
+            id="controlOverview">
+
+
+            <div class="control-intro">
+
+                <div>
+
+                    <span>
+                        LIVE OPERATIONS
+                    </span>
+
+                    <h1>
+                        Control Center
+                    </h1>
+
+                    <p>
+                        Monitor your SaaS platform
+                        in real time.
+                    </p>
+
+                </div>
+
+
+                <div class="system-state">
+
+                    <i></i>
+
+                    All systems operational
+
+                </div>
+
+            </div>
+
+
+            <!-- HEALTH STRIP -->
+
+            <div class="health-strip">
+
+                <div>
+
+                    <span>
+                        API
+                    </span>
+
+                    <strong>
+                        99.99%
+                    </strong>
+
+                    <small>
+                        uptime
+                    </small>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        DATABASE
+                    </span>
+
+                    <strong>
+                        99.98%
+                    </strong>
+
+                    <small>
+                        uptime
+                    </small>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        QUEUE
+                    </span>
+
+                    <strong>
+                        18ms
+                    </strong>
+
+                    <small>
+                        latency
+                    </small>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        STORAGE
+                    </span>
+
+                    <strong>
+                        42%
+                    </strong>
+
+                    <small>
+                        capacity
+                    </small>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        ERROR RATE
+                    </span>
+
+                    <strong>
+                        0.04%
+                    </strong>
+
+                    <small>
+                        last hour
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- OPERATIONS GRID -->
+
+            <div class="operations-grid">
+
+
+                <!-- SERVICES -->
+
+                <div class="control-card services-card">
+
+                    <div class="control-card-heading">
+
+                        <div>
+
+                            <span>
+                                SERVICES
+                            </span>
+
+                            <h2>
+                                Service Health
+                            </h2>
+
+                        </div>
+
+                        <button
+                            data-view-target="services">
+                            Manage
+                        </button>
+
+                    </div>
+
+
+                    <div class="service-summary">
+
+                        <div class="service-summary-icon green">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                8 / 8
+                            </strong>
+
+                            <span>
+                                services healthy
+                            </span>
+
+                        </div>
+
+                        <b>
+                            100%
+                        </b>
+
+                    </div>
+
+
+                    <div class="service-bars">
+
+                        <div>
+
+                            <span>
+                                API Gateway
+                            </span>
+
+                            <div>
+                                <i
+                                    style="width:98%">
+                                </i>
+                            </div>
+
+                            <b>
+                                98%
+                            </b>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Database
+                            </span>
+
+                            <div>
+                                <i
+                                    style="width:96%">
+                                </i>
+                            </div>
+
+                            <b>
+                                96%
+                            </b>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Workers
+                            </span>
+
+                            <div>
+                                <i
+                                    style="width:91%">
+                                </i>
+                            </div>
+
+                            <b>
+                                91%
+                            </b>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SUBSCRIPTIONS -->
+
+                <div class="control-card subscription-card">
+
+                    <div class="control-card-heading">
+
+                        <div>
+
+                            <span>
+                                REVENUE
+                            </span>
+
+                            <h2>
+                                Subscription Mix
+                            </h2>
+
+                        </div>
+
+                        <button
+                            data-view-target="subscriptions">
+                            Details
+                        </button>
+
+                    </div>
+
+
+                    <div class="donut-area">
+
+                        <div class="donut">
+
+                            <div>
+                                <strong>
+                                    $84K
+                                </strong>
+
+                                <small>
+                                    MRR
+                                </small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="donut-legend">
+
+                            <div>
+                                <i class="green"></i>
+                                Enterprise
+                                <b>42%</b>
+                            </div>
+
+                            <div>
+                                <i class="cyan"></i>
+                                Business
+                                <b>31%</b>
+                            </div>
+
+                            <div>
+                                <i class="pink"></i>
+                                Pro
+                                <b>21%</b>
+                            </div>
+
+                            <div>
+                                <i class="orange"></i>
+                                Free
+                                <b>6%</b>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INCIDENTS -->
+
+                <div class="control-card incident-card">
+
+                    <div class="control-card-heading">
+
+                        <div>
+
+                            <span>
+                                MONITORING
+                            </span>
+
+                            <h2>
+                                Incidents
+                            </h2>
+
+                        </div>
+
+                        <button
+                            data-view-target="incidents">
+                            View
+                        </button>
+
+                    </div>
+
+
+                    <div class="incident-state">
+
+                        <div class="incident-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                No active incidents
+                            </strong>
+
+                            <span>
+                                Everything is operating normally.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="incident-history">
+
+                        <div>
+
+                            <span>
+                                API latency
+                            </span>
+
+                            <b class="resolved">
+                                Resolved
+                            </b>
+
+                            <small>
+                                2h ago
+                            </small>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Queue delay
+                            </span>
+
+                            <b class="resolved">
+                                Resolved
+                            </b>
+
+                            <small>
+                                Yesterday
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- USAGE -->
+
+                <div class="control-card usage-card">
+
+                    <div class="control-card-heading">
+
+                        <div>
+
+                            <span>
+                                CONSUMPTION
+                            </span>
+
+                            <h2>
+                                Usage
+                            </h2>
+
+                        </div>
+
+                        <button
+                            data-view-target="usage">
+                            Details
+                        </button>
+
+                    </div>
+
+
+                    <div class="usage-meter">
+
+                        <div>
+
+                            <strong>
+                                68%
+                            </strong>
+
+                            <span>
+                                API quota
+                            </span>
+
+                        </div>
+
+                        <div class="usage-progress">
+
+                            <i
+                                style="width:68%">
+                            </i>
+
+                        </div>
+
+                        <small>
+                            680K / 1M requests
+                        </small>
+
+                    </div>
+
+
+                    <div class="usage-meter">
+
+                        <div>
+
+                            <strong>
+                                42%
+                            </strong>
+
+                            <span>
+                                Storage
+                            </span>
+
+                        </div>
+
+                        <div class="usage-progress cyan">
+
+                            <i
+                                style="width:42%">
+                            </i>
+
+                        </div>
+
+                        <small>
+                            420 GB / 1 TB
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTIVITY -->
+
+            <div class="control-card full-card">
+
+                <div class="control-card-heading">
+
+                    <div>
+
+                        <span>
+                            LIVE FEED
+                        </span>
+
+                        <h2>
+                            Recent Activity
+                        </h2>
+
+                    </div>
+
+                    <button
+                        data-view-target="controlActivity">
+                        Open Feed
+                    </button>
+
+                </div>
+
+
+                <div class="live-feed">
+
+                    <div>
+
+                        <i class="green"></i>
+
+                        <div>
+
+                            <strong>
+                                Deployment successful
+                            </strong>
+
+                            <span>
+                                api-gateway v4.8.2
+                            </span>
+
+                        </div>
+
+                        <time>
+                            2m
+                        </time>
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="cyan"></i>
+
+                        <div>
+
+                            <strong>
+                                New enterprise subscription
+                            </strong>
+
+                            <span>
+                                Acme Corporation
+                            </span>
+
+                        </div>
+
+                        <time>
+                            8m
+                        </time>
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="pink"></i>
+
+                        <div>
+
+                            <strong>
+                                API key created
+                            </strong>
+
+                            <span>
+                                Production application
+                            </span>
+
+                        </div>
+
+                        <time>
+                            15m
+                        </time>
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="orange"></i>
+
+                        <div>
+
+                            <strong>
+                                User permissions changed
+                            </strong>
+
+                            <span>
+                                John Doe
+                            </span>
+
+                        </div>
+
+                        <time>
+                            28m
+                        </time>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SERVICES
+        ================================================== -->
+
+        <section
+            class="control-view"
+            id="services">
+
+
+            <div class="control-page-header">
+
+                <div>
+
+                    <span>
+                        INFRASTRUCTURE
+                    </span>
+
+                    <h1>
+                        Services
+                    </h1>
+
+                    <p>
+                        Manage platform services.
+                    </p>
+
+                </div>
+
+                <button
+                    class="control-primary"
+                    id="restartAll">
+                    Restart All
+                </button>
+
+            </div>
+
+
+            <div
+                class="service-grid"
+                id="serviceGrid">
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SUBSCRIPTIONS
+        ================================================== -->
+
+        <section
+            class="control-view"
+            id="subscriptions">
+
+
+            <div class="control-page-header">
+
+                <div>
+
+                    <span>
+                        REVENUE
+                    </span>
+
+                    <h1>
+                        Subscriptions
+                    </h1>
+
+                    <p>
+                        Manage SaaS plans and customers.
+                    </p>
+
+                </div>
+
+                <button
+                    class="control-primary"
+                    id="newSubscription">
+                    + New Subscription
+                </button>
+
+            </div>
+
+
+            <div class="subscription-metrics">
+
+                <div>
+                    <span>
+                        MRR
+                    </span>
+
+                    <strong>
+                        $84,290
+                    </strong>
+
+                    <b>
+                        +18.4%
+                    </b>
+                </div>
+
+
+                <div>
+                    <span>
+                        ACTIVE
+                    </span>
+
+                    <strong>
+                        2,842
+                    </strong>
+
+                    <b>
+                        +12.2%
+                    </b>
+                </div>
+
+
+                <div>
+                    <span>
+                        CHURN
+                    </span>
+
+                    <strong>
+                        2.18%
+                    </strong>
+
+                    <b>
+                        -0.7%
+                    </b>
+                </div>
+
+
+                <div>
+                    <span>
+                        LTV
+                    </span>
+
+                    <strong>
+                        $2,842
+                    </strong>
+
+                    <b>
+                        +11.9%
+                    </b>
+                </div>
+
+            </div>
+
+
+            <div class="control-table-card">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Customer</th>
+                            <th>Plan</th>
+                            <th>MRR</th>
+                            <th>Renewal</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody
+                        id="subscriptionTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             USAGE
+        ================================================== -->
+
+        <section
+            class="control-view"
+            id="usage">
+
+
+            <div class="control-page-header">
+
+                <div>
+
+                    <span>
+                        CONSUMPTION
+                    </span>
+
+                    <h1>
+                        Usage Center
+                    </h1>
+
+                    <p>
+                        Monitor resource consumption.
+                    </p>
+
+                </div>
+
+                <select
+                    id="usagePeriod"
+                    class="control-select">
+
+                    <option>
+                        Current Month
+                    </option>
+
+                    <option>
+                        Previous Month
+                    </option>
+
+                    <option>
+                        Current Quarter
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="usage-cards">
+
+
+                <div class="usage-big-card">
+
+                    <div>
+
+                        <span>
+                            API REQUESTS
+                        </span>
+
+                        <strong>
+                            680,420
+                        </strong>
+
+                        <small>
+                            of 1,000,000
+                        </small>
+
+                    </div>
+
+                    <div class="big-progress">
+                        <i
+                            style="width:68%">
+                        </i>
+                    </div>
+
+                    <b>
+                        68%
+                    </b>
+
+                </div>
+
+
+                <div class="usage-big-card cyan-card">
+
+                    <div>
+
+                        <span>
+                            STORAGE
+                        </span>
+
+                        <strong>
+                            420 GB
+                        </strong>
+
+                        <small>
+                            of 1 TB
+                        </small>
+
+                    </div>
+
+                    <div class="big-progress">
+                        <i
+                            style="width:42%">
+                        </i>
+                    </div>
+
+                    <b>
+                        42%
+                    </b>
+
+                </div>
+
+
+                <div class="usage-big-card pink-card">
+
+                    <div>
+
+                        <span>
+                            BANDWIDTH
+                        </span>
+
+                        <strong>
+                            2.4 TB
+                        </strong>
+
+                        <small>
+                            of 5 TB
+                        </small>
+
+                    </div>
+
+                    <div class="big-progress">
+                        <i
+                            style="width:48%">
+                        </i>
+                    </div>
+
+                    <b>
+                        48%
+                    </b>
+
+                </div>
+
+            </div>
+
+
+            <div class="usage-chart-card">
+
+                <h2>
+                    API Requests
+                </h2>
+
+                <div class="usage-chart">
+
+                    <div class="usage-bars">
+
+                        <i style="height:40%"></i>
+                        <i style="height:58%"></i>
+                        <i style="height:45%"></i>
+                        <i style="height:67%"></i>
+                        <i style="height:60%"></i>
+                        <i style="height:82%"></i>
+                        <i style="height:76%"></i>
+                        <i style="height:92%"></i>
+                        <i style="height:72%"></i>
+                        <i style="height:88%"></i>
+                        <i style="height:80%"></i>
+                        <i style="height:95%"></i>
+
+                    </div>
+
+                </div>
+
+                <div class="usage-months">
+
+                    <span>Jan</span>
+                    <span>Feb</span>
+                    <span>Mar</span>
+                    <span>Apr</span>
+                    <span>May</span>
+                    <span>Jun</span>
+                    <span>Jul</span>
+                    <span>Aug</span>
+                    <span>Sep</span>
+                    <span>Oct</span>
+                    <span>Nov</span>
+                    <span>Dec</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             INCIDENTS
+        ================================================== -->
+
+        <section
+            class="control-view"
+            id="incidents">
+
+
+            <div class="control-page-header">
+
+                <div>
+
+                    <span>
+                        RELIABILITY
+                    </span>
+
+                    <h1>
+                        Incidents
+                    </h1>
+
+                    <p>
+                        Monitor service incidents.
+                    </p>
+
+                </div>
+
+                <button
+                    class="control-primary"
+                    id="createIncident">
+                    + Report Incident
+                </button>
+
+            </div>
+
+
+            <div class="incident-banner">
+
+                <div class="incident-banner-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <strong>
+                        No active incidents
+                    </strong>
+
+                    <p>
+                        All monitored services are operating normally.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="incident-list"
+                id="incidentList">
+
+                <article>
+
+                    <div class="incident-status resolved">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            API latency
+                        </strong>
+
+                        <p>
+                            Elevated API response times.
+                        </p>
+
+                        <small>
+                            Resolved 2 hours ago
+                        </small>
+
+                    </div>
+
+                    <span>
+                        Resolved
+                    </span>
+
+                </article>
+
+
+                <article>
+
+                    <div class="incident-status resolved">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Queue delay
+                        </strong>
+
+                        <p>
+                            Background processing delay.
+                        </p>
+
+                        <small>
+                            Resolved yesterday
+                        </small>
+
+                    </div>
+
+                    <span>
+                        Resolved
+                    </span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             USERS
+        ================================================== -->
+
+        <section
+            class="control-view"
+            id="controlUsers">
+
+
+            <div class="control-page-header">
+
+                <div>
+
+                    <span>
+                        ACCESS
+                    </span>
+
+                    <h1>
+                        Users
+                    </h1>
+
+                    <p>
+                        Manage platform users.
+                    </p>
+
+                </div>
+
+                <button
+                    class="control-primary"
+                    id="addControlUser">
+                    + Add User
+                </button>
+
+            </div>
+
+
+            <div class="control-user-toolbar">
+
+                <input
+                    id="controlUserSearch"
+                    placeholder="Search users..."
+                >
+
+                <select
+                    id="controlUserRole">
+
+                    <option value="all">
+                        All roles
+                    </option>
+
+                    <option value="Admin">
+                        Admin
+                    </option>
+
+                    <option value="Developer">
+                        Developer
+                    </option>
+
+                    <option value="Viewer">
+                        Viewer
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="control-table-card">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>User</th>
+                            <th>Role</th>
+                            <th>Last Active</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody
+                        id="controlUserTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             BILLING
+        ================================================== -->
+
+        <section
+            class="control-view"
+            id="controlBilling">
+
+
+            <div class="control-page-header">
+
+                <div>
+
+                    <span>
+                        FINANCE
+                    </span>
+
+                    <h1>
+                        Billing
+                    </h1>
+
+                    <p>
+                        SaaS billing and payments.
+                    </p>
+
+                </div>
+
+                <button
+                    class="control-primary"
+                    id="downloadControlBilling">
+                    Export Statement
+                </button>
+
+            </div>
+
+
+            <div class="billing-summary">
+
+                <div>
+
+                    <span>
+                        CURRENT MRR
+                    </span>
+
+                    <strong>
+                        $84,290
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        PAYMENTS
+                    </span>
+
+                    <strong>
+                        $78,420
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        PENDING
+                    </span>
+
+                    <strong>
+                        $5,870
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="billing-panel">
+
+                <h2>
+                    Payment History
+                </h2>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Invoice</th>
+                            <th>Customer</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>#INV-8291</td>
+                            <td>Acme Corp</td>
+                            <td>$4,820</td>
+                            <td>Oct 01</td>
+                            <td>
+                                <b class="paid">
+                                    Paid
+                                </b>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>#INV-8290</td>
+                            <td>Wilson Labs</td>
+                            <td>$2,420</td>
+                            <td>Sep 30</td>
+                            <td>
+                                <b class="paid">
+                                    Paid
+                                </b>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>#INV-8289</td>
+                            <td>Kumar Tech</td>
+                            <td>$1,280</td>
+                            <td>Sep 29</td>
+                            <td>
+                                <b class="pending">
+                                    Pending
+                                </b>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ACTIVITY
+        ================================================== -->
+
+        <section
+            class="control-view"
+            id="controlActivity">
+
+
+            <div class="control-page-header">
+
+                <div>
+
+                    <span>
+                        SYSTEM
+                    </span>
+
+                    <h1>
+                        Activity
+                    </h1>
+
+                    <p>
+                        Live platform activity.
+                    </p>
+
+                </div>
+
+                <button
+                    class="control-primary"
+                    id="clearControlActivity">
+                    Clear Feed
+                </button>
+
+            </div>
+
+
+            <div
+                class="large-activity-feed"
+                id="largeActivityFeed">
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<!-- =====================================================
+     TOAST
+====================================================== -->
+
+<div
+    class="control-toast"
+    id="controlToast">
+
+    <strong
+        id="controlToastTitle">
+        Success
+    </strong>
+
+    <span
+        id="controlToastMessage">
+        Operation completed.
+    </span>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

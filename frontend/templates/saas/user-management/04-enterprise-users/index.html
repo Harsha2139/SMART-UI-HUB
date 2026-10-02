@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>EnterpriseHub</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="script.js" defer></script>
+
+</head>
+
+<body>
+
+<div class="enterprise">
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-box">
+                E
+            </div>
+
+            <div>
+                <strong>EnterpriseHub</strong>
+                <small>Workforce Center</small>
+            </div>
+
+        </div>
+
+
+        <button
+            class="side active"
+            data-section="overview">
+
+            🏢 Overview
+
+        </button>
+
+        <button
+            class="side"
+            data-section="employees">
+
+            👥 Employees
+
+        </button>
+
+        <button
+            class="side"
+            data-section="departments">
+
+            🏷️ Departments
+
+        </button>
+
+
+        <div class="enterprise-info">
+
+            <small>COMPANY PLAN</small>
+
+            <strong>Enterprise Pro</strong>
+
+            <div class="seat-bar">
+
+                <div
+                    id="seatProgress">
+                </div>
+
+            </div>
+
+            <span id="seatText">
+                0 / 100 seats
+            </span>
+
+        </div>
+
+    </aside>
+
+
+    <main>
+
+        <header class="header">
+
+            <div>
+
+                <h1>
+                    Enterprise Users
+                </h1>
+
+                <p>
+                    Manage your organization's workforce.
+                </p>
+
+            </div>
+
+
+            <div class="header-actions">
+
+                <input
+                    id="search"
+                    placeholder="Search employees...">
+
+                <button
+                    id="exportBtn"
+                    class="export">
+
+                    📤 Export
+
+                </button>
+
+                <button
+                    id="addEmployee"
+                    class="add">
+
+                    + Employee
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <div class="content">
+
+
+            <!-- OVERVIEW -->
+
+            <section
+                id="overview"
+                class="section active">
+
+                <div class="enterprise-hero">
+
+                    <div>
+
+                        <span>
+                            ENTERPRISE WORKSPACE
+                        </span>
+
+                        <h2>
+                            Your organization at a glance 🌐
+                        </h2>
+
+                        <p>
+                            Monitor employees,
+                            departments and
+                            workforce utilization.
+                        </p>
+
+                    </div>
+
+                    <div class="globe">
+                        🌐
+                    </div>
+
+                </div>
+
+
+                <div class="stats">
+
+                    <div class="stat">
+                        <span>Employees</span>
+                        <strong id="totalEmployees">
+                            0
+                        </strong>
+                    </div>
+
+                    <div class="stat">
+                        <span>Active</span>
+                        <strong id="activeEmployees">
+                            0
+                        </strong>
+                    </div>
+
+                    <div class="stat">
+                        <span>Departments</span>
+                        <strong id="departmentCount">
+                            0
+                        </strong>
+                    </div>
+
+                    <div class="stat">
+                        <span>Managers</span>
+                        <strong id="managerCount">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="overview-grid">
+
+                    <div class="panel">
+
+                        <div class="panel-head">
+
+                            <div>
+
+                                <h3>
+                                    Department Distribution
+                                </h3>
+
+                                <p>
+                                    Workforce by department
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div
+                            id="departmentChart"
+                            class="department-chart">
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-head">
+
+                            <div>
+
+                                <h3>
+                                    Recent Employees
+                                </h3>
+
+                                <p>
+                                    Recently added team members
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div
+                            id="recentEmployees">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- EMPLOYEES -->
+
+            <section
+                id="employees"
+                class="section">
+
+                <div class="section-head">
+
+                    <div>
+
+                        <span>WORKFORCE</span>
+
+                        <h2>
+                            Employee Directory
+                        </h2>
+
+                    </div>
+
+
+                    <select id="departmentFilter">
+
+                        <option value="all">
+                            All Departments
+                        </option>
+
+                        <option>Engineering</option>
+                        <option>Marketing</option>
+                        <option>Finance</option>
+                        <option>HR</option>
+                        <option>Sales</option>
+
+                    </select>
+
+                </div>
+
+
+                <div
+                    id="employeeGrid"
+                    class="employee-grid">
+                </div>
+
+            </section>
+
+
+            <!-- DEPARTMENTS -->
+
+            <section
+                id="departments"
+                class="section">
+
+                <div class="section-head">
+
+                    <div>
+
+                        <span>ORGANIZATION</span>
+
+                        <h2>
+                            Departments
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="departmentCards"
+                    class="department-cards">
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- MODAL -->
+
+<div
+    id="employeeModal"
+    class="modal">
+
+    <div class="modal-box">
+
+        <button
+            id="closeModal"
+            class="close">
+
+            ×
+
+        </button>
+
+        <h2 id="modalTitle">
+            Add Employee
+        </h2>
+
+
+        <form id="employeeForm">
+
+            <input
+                type="hidden"
+                id="employeeId">
+
+
+            <label>
+                Full Name
+
+                <input
+                    id="employeeName"
+                    required>
+
+            </label>
+
+
+            <label>
+                Email
+
+                <input
+                    id="employeeEmail"
+                    type="email"
+                    required>
+
+            </label>
+
+
+            <label>
+                Department
+
+                <select id="employeeDepartment">
+
+                    <option>Engineering</option>
+                    <option>Marketing</option>
+                    <option>Finance</option>
+                    <option>HR</option>
+                    <option>Sales</option>
+
+                </select>
+
+            </label>
+
+
+            <label>
+                Position
+
+                <input
+                    id="employeePosition"
+                    required>
+
+            </label>
+
+
+            <label>
+                Status
+
+                <select id="employeeStatus">
+
+                    <option value="active">
+                        Active
+                    </option>
+
+                    <option value="inactive">
+                        Inactive
+                    </option>
+
+                </select>
+
+            </label>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    id="cancel">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    class="save">
+
+                    Save Employee
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<div id="toast"></div>
+
+</body>
+</html>

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaFlow - Modern SaaS Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">N</div>
+            <div>
+                <strong>NovaFlow</strong>
+                <small>SaaS Platform</small>
+            </div>
+        </div>
+
+        <nav>
+            <button class="nav-btn active" data-view="overview">
+                <span>📊</span> Overview
+            </button>
+
+            <button class="nav-btn" data-view="customers">
+                <span>👥</span> Customers
+            </button>
+
+            <button class="nav-btn" data-view="projects">
+                <span>📁</span> Projects
+            </button>
+
+            <button class="nav-btn" data-view="tasks">
+                <span>✅</span> Tasks
+            </button>
+
+            <button class="nav-btn" data-view="reports">
+                <span>📈</span> Reports
+            </button>
+
+            <button class="nav-btn" data-view="settings">
+                <span>⚙️</span> Settings
+            </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="upgrade-box">
+                <strong>Pro Plan</strong>
+                <p>18 days remaining</p>
+                <button id="upgradeBtn">Upgrade</button>
+            </div>
+
+            <div class="user-card">
+                <div class="avatar">BJ</div>
+                <div>
+                    <strong>Jayanth</strong>
+                    <small>Administrator</small>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <button class="mobile-menu" id="menuBtn">☰</button>
+
+            <div class="search">
+                <span>🔎</span>
+                <input id="globalSearch" type="text" placeholder="Search customers, tasks...">
+            </div>
+
+            <div class="top-actions">
+
+                <button class="icon-btn" id="notifyBtn">🔔</button>
+
+                <button class="profile-btn" id="profileBtn">
+                    <span class="avatar small">BJ</span>
+                    <span>Jayanth</span>
+                    <span>⌄</span>
+                </button>
+
+            </div>
+
+        </header>
+
+        <div class="content">
+
+            <div class="page-header">
+                <div>
+                    <p class="eyebrow">SaaS WORKSPACE</p>
+                    <h1 id="pageTitle">Modern Dashboard</h1>
+                    <p id="pageSubtitle">Monitor your business from one place.</p>
+                </div>
+
+                <button class="primary-btn" id="quickAddBtn">
+                    + Quick Add
+                </button>
+            </div>
+
+            <!-- OVERVIEW -->
+
+            <section class="view active" id="view-overview">
+
+                <div class="stats-grid">
+
+                    <div class="stat-card blue">
+                        <div class="stat-top">
+                            <span>Monthly Revenue</span>
+                            <b>↗ 12.5%</b>
+                        </div>
+                        <h2>$48,290</h2>
+                        <p>Compared with last month</p>
+                    </div>
+
+                    <div class="stat-card purple">
+                        <div class="stat-top">
+                            <span>Customers</span>
+                            <b>↗ 8.2%</b>
+                        </div>
+                        <h2 id="customerCount">1,248</h2>
+                        <p>Active customers</p>
+                    </div>
+
+                    <div class="stat-card orange">
+                        <div class="stat-top">
+                            <span>Projects</span>
+                            <b>↗ 4.6%</b>
+                        </div>
+                        <h2>38</h2>
+                        <p>Currently running</p>
+                    </div>
+
+                    <div class="stat-card green">
+                        <div class="stat-top">
+                            <span>Tasks</span>
+                            <b id="taskRate">78%</b>
+                        </div>
+                        <h2 id="taskCount">126</h2>
+                        <p>Tasks completed this month</p>
+                    </div>
+
+                </div>
+
+                <div class="dashboard-grid">
+
+                    <div class="panel chart-panel">
+
+                        <div class="panel-header">
+                            <div>
+                                <h3>Revenue Overview</h3>
+                                <p>Monthly revenue performance</p>
+                            </div>
+
+                            <select id="chartPeriod">
+                                <option value="6">Last 6 months</option>
+                                <option value="12">Last 12 months</option>
+                            </select>
+                        </div>
+
+                        <canvas id="revenueChart"></canvas>
+
+                    </div>
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+                            <div>
+                                <h3>Activity</h3>
+                                <p>Latest workspace activity</p>
+                            </div>
+                        </div>
+
+                        <div id="activityList" class="activity-list"></div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- CUSTOMERS -->
+
+            <section class="view" id="view-customers">
+
+                <div class="toolbar">
+                    <div>
+                        <h2>Customers</h2>
+                        <p>Manage your customer database.</p>
+                    </div>
+
+                    <button class="primary-btn" id="addCustomerBtn">
+                        + Add Customer
+                    </button>
+                </div>
+
+                <div class="panel">
+
+                    <div class="table-tools">
+                        <input id="customerSearch" type="text" placeholder="Search customers...">
+
+                        <select id="customerFilter">
+                            <option value="all">All Customers</option>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+                    </div>
+
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Customer</th>
+                                    <th>Company</th>
+                                    <th>Status</th>
+                                    <th>Plan</th>
+                                    <th>Revenue</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="customerTable"></tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- PROJECTS -->
+
+            <section class="view" id="view-projects">
+
+                <div class="toolbar">
+                    <div>
+                        <h2>Projects</h2>
+                        <p>Track project progress.</p>
+                    </div>
+
+                    <button class="primary-btn" id="newProjectBtn">
+                        + New Project
+                    </button>
+                </div>
+
+                <div class="project-grid" id="projectGrid"></div>
+
+            </section>
+
+            <!-- TASKS -->
+
+            <section class="view" id="view-tasks">
+
+                <div class="toolbar">
+                    <div>
+                        <h2>Tasks</h2>
+                        <p>Manage your daily work.</p>
+                    </div>
+
+                    <button class="primary-btn" id="addTaskBtn">
+                        + Add Task
+                    </button>
+                </div>
+
+                <div class="panel">
+
+                    <div class="task-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="pending">Pending</button>
+                        <button class="filter-btn" data-filter="completed">Completed</button>
+                    </div>
+
+                    <div id="taskList"></div>
+
+                </div>
+
+            </section>
+
+            <!-- REPORTS -->
+
+            <section class="view" id="view-reports">
+
+                <div class="toolbar">
+                    <div>
+                        <h2>Reports</h2>
+                        <p>Business performance reports.</p>
+                    </div>
+
+                    <button class="secondary-btn" id="exportReportBtn">
+                        ⬇ Export CSV
+                    </button>
+                </div>
+
+                <div class="report-cards">
+
+                    <div class="report-card">
+                        <span>Revenue</span>
+                        <strong>$48,290</strong>
+                        <b>+12.5%</b>
+                    </div>
+
+                    <div class="report-card">
+                        <span>Conversion</span>
+                        <strong>7.82%</strong>
+                        <b>+2.1%</b>
+                    </div>
+
+                    <div class="report-card">
+                        <span>Retention</span>
+                        <strong>92.4%</strong>
+                        <b>+4.3%</b>
+                    </div>
+
+                    <div class="report-card">
+                        <span>Churn</span>
+                        <strong>2.8%</strong>
+                        <b>−0.6%</b>
+                    </div>
+
+                </div>
+
+                <div class="panel report-panel">
+                    <h3>Business Summary</h3>
+
+                    <div class="summary-row">
+                        <span>New Customers</span>
+                        <strong>186</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Completed Projects</span>
+                        <strong>24</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Completed Tasks</span>
+                        <strong>98</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Average Order Value</span>
+                        <strong>$386</strong>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- SETTINGS -->
+
+            <section class="view" id="view-settings">
+
+                <div class="toolbar">
+                    <div>
+                        <h2>Settings</h2>
+                        <p>Configure your workspace.</p>
+                    </div>
+
+                    <button class="primary-btn" id="saveSettingsBtn">
+                        Save Changes
+                    </button>
+                </div>
+
+                <div class="settings-grid">
+
+                    <div class="panel">
+                        <h3>Notifications</h3>
+
+                        <label class="switch-row">
+                            <span>
+                                Email notifications
+                                <small>Receive important account updates.</small>
+                            </span>
+                            <input type="checkbox" checked class="setting">
+                            <i></i>
+                        </label>
+
+                        <label class="switch-row">
+                            <span>
+                                Task reminders
+                                <small>Get reminders for upcoming tasks.</small>
+                            </span>
+                            <input type="checkbox" checked class="setting">
+                            <i></i>
+                        </label>
+
+                        <label class="switch-row">
+                            <span>
+                                Weekly report
+                                <small>Receive weekly business reports.</small>
+                            </span>
+                            <input type="checkbox" class="setting">
+                            <i></i>
+                        </label>
+
+                    </div>
+
+                    <div class="panel">
+                        <h3>Workspace</h3>
+
+                        <label class="field">
+                            Workspace name
+                            <input id="workspaceName" value="NovaFlow Workspace">
+                        </label>
+
+                        <label class="field">
+                            Timezone
+                            <select id="timezone">
+                                <option>Asia/Kolkata</option>
+                                <option>UTC</option>
+                                <option>America/New_York</option>
+                            </select>
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+<!-- CUSTOMER MODAL -->
+
+<div class="modal" id="customerModal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+            <h3>Add Customer</h3>
+            <button class="close-btn" data-close="customerModal">×</button>
+        </div>
+
+        <form id="customerForm">
+
+            <label>
+                Customer Name
+                <input id="customerName" required>
+            </label>
+
+            <label>
+                Company
+                <input id="customerCompany" required>
+            </label>
+
+            <label>
+                Plan
+                <select id="customerPlan">
+                    <option>Starter</option>
+                    <option>Pro</option>
+                    <option>Enterprise</option>
+                </select>
+            </label>
+
+            <button class="primary-btn full" type="submit">
+                Add Customer
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- TASK MODAL -->
+
+<div class="modal" id="taskModal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+            <h3>Add Task</h3>
+            <button class="close-btn" data-close="taskModal">×</button>
+        </div>
+
+        <form id="taskForm">
+
+            <label>
+                Task Name
+                <input id="taskName" required>
+            </label>
+
+            <label>
+                Priority
+                <select id="taskPriority">
+                    <option value="High">High</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+            </label>
+
+            <button class="primary-btn full" type="submit">
+                Create Task
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<div id="toast" class="toast"></div>
+
+</body>
+</html>

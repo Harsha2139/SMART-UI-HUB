@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>FlowTask Productivity SaaS</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
+</head>
+
+<body>
+
+<div class="app">
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+        <span>⚡</span> FlowTask
+    </div>
+
+    <button class="nav active" data-view="day">☀️ My Day</button>
+    <button class="nav" data-view="tasks">✓ Tasks</button>
+    <button class="nav" data-view="projects">📁 Projects</button>
+    <button class="nav" data-view="calendar">📅 Calendar</button>
+    <button class="nav" data-view="team">👥 Team</button>
+    <button class="nav" data-view="settings">⚙️ Settings</button>
+
+    <div class="sidebar-footer">
+        <div class="productivity">
+            <span>Today's productivity</span>
+            <strong id="productivityPercent">78%</strong>
+            <div><i></i></div>
+        </div>
+        <button id="upgradeBtn">🚀 Upgrade</button>
+    </div>
+
+</aside>
+
+<main class="main">
+
+<header class="topbar">
+
+    <button id="menuBtn" class="menu">☰</button>
+
+    <div>
+        <h2 id="title">My Day</h2>
+        <small>Thursday, October 1, 2026</small>
+    </div>
+
+    <div class="actions">
+        <input id="search" placeholder="Search tasks...">
+        <button id="quickAdd">＋</button>
+        <button id="bell">🔔</button>
+        <div class="avatar">BJ</div>
+    </div>
+
+</header>
+
+<div class="content">
+
+<!-- MY DAY -->
+
+<section id="day" class="view active">
+
+    <div class="welcome">
+        <div>
+            <h1>Good evening 👋</h1>
+            <p>Let's finish your important work today.</p>
+        </div>
+
+        <button class="add-btn" id="addTaskDay">＋ Add Task</button>
+    </div>
+
+    <div class="day-grid">
+
+        <div class="panel focus-panel">
+
+            <div class="panel-title">
+                <h3>Focus Timer</h3>
+                <span>Pomodoro</span>
+            </div>
+
+            <div id="timer">25:00</div>
+
+            <div class="timer-controls">
+                <button id="startTimer">▶ Start</button>
+                <button id="pauseTimer">Ⅱ Pause</button>
+                <button id="resetTimer">↻ Reset</button>
+            </div>
+
+            <p class="focus-message" id="timerMessage">
+                Focus for 25 minutes.
+            </p>
+
+        </div>
+
+        <div class="panel stats-panel">
+
+            <h3>Today's Progress</h3>
+
+            <div class="stat-row">
+                <span>Completed</span>
+                <strong id="completedCount">4</strong>
+            </div>
+
+            <div class="stat-row">
+                <span>Remaining</span>
+                <strong id="remainingCount">6</strong>
+            </div>
+
+            <div class="stat-row">
+                <span>Focus time</span>
+                <strong>2h 40m</strong>
+            </div>
+
+            <div class="progress">
+                <span id="dayProgress"></span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="panel">
+
+        <div class="panel-title">
+            <h3>Today's Tasks</h3>
+            <button id="viewAllTasks">View all</button>
+        </div>
+
+        <div id="dayTasks"></div>
+
+    </div>
+
+</section>
+
+
+<!-- TASKS -->
+
+<section id="tasks" class="view">
+
+    <div class="section-head">
+        <div>
+            <h1>Tasks</h1>
+            <p>Manage all your tasks.</p>
+        </div>
+
+        <button class="add-btn" id="addTask">＋ New Task</button>
+    </div>
+
+    <div class="task-toolbar">
+
+        <button class="task-filter active" data-filter="all">All</button>
+        <button class="task-filter" data-filter="high">High Priority</button>
+        <button class="task-filter" data-filter="completed">Completed</button>
+
+    </div>
+
+    <div class="panel">
+        <div id="allTasks"></div>
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects" class="view">
+
+    <div class="section-head">
+        <div>
+            <h1>Projects</h1>
+            <p>Track your active projects.</p>
+        </div>
+
+        <button class="add-btn" id="newProject">＋ Project</button>
+    </div>
+
+    <div class="project-grid" id="projectGrid"></div>
+
+</section>
+
+
+<!-- CALENDAR -->
+
+<section id="calendar" class="view">
+
+    <div class="section-head">
+
+        <div>
+            <h1>Calendar</h1>
+            <p>Plan your schedule.</p>
+        </div>
+
+        <div class="calendar-controls">
+            <button id="prevMonth">←</button>
+            <strong id="monthTitle"></strong>
+            <button id="nextMonth">→</button>
+        </div>
+
+    </div>
+
+    <div class="calendar panel">
+
+        <div class="weekdays">
+            <span>Sun</span>
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
+            <span>Sat</span>
+        </div>
+
+        <div id="calendarDays" class="calendar-days"></div>
+
+    </div>
+
+</section>
+
+
+<!-- TEAM -->
+
+<section id="team" class="view">
+
+    <div class="section-head">
+
+        <div>
+            <h1>Team</h1>
+            <p>Collaborate with your team.</p>
+        </div>
+
+        <button class="add-btn" id="inviteBtn">＋ Invite Member</button>
+
+    </div>
+
+    <input id="teamSearch" class="team-search" placeholder="Search team members">
+
+    <div id="teamGrid" class="team-grid"></div>
+
+</section>
+
+
+<!-- SETTINGS -->
+
+<section id="settings" class="view">
+
+    <div class="section-head">
+        <div>
+            <h1>Settings</h1>
+            <p>Customize your productivity workspace.</p>
+        </div>
+    </div>
+
+    <div class="settings">
+
+        <div class="panel">
+
+            <h3>Preferences</h3>
+
+            <label class="setting">
+                <span>
+                    <strong>Desktop notifications</strong>
+                    <small>Receive task notifications</small>
+                </span>
+                <input class="toggle" type="checkbox" checked>
+            </label>
+
+            <label class="setting">
+                <span>
+                    <strong>Daily reminders</strong>
+                    <small>Remind me about unfinished tasks</small>
+                </span>
+                <input class="toggle" type="checkbox" checked>
+            </label>
+
+            <label class="setting">
+                <span>
+                    <strong>Focus mode</strong>
+                    <small>Hide distractions while working</small>
+                </span>
+                <input class="toggle" type="checkbox">
+            </label>
+
+            <button class="add-btn" id="saveSettings">Save Settings</button>
+
+        </div>
+
+        <div class="panel">
+
+            <h3>Account</h3>
+
+            <label>Name</label>
+            <input id="accountName" value="Boodati Jayanth">
+
+            <label>Email</label>
+            <input id="accountEmail" value="jayanth@example.com">
+
+            <button class="danger" id="deleteAccount">
+                Delete Account
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+</div>
+</main>
+</div>
+
+
+<!-- TASK MODAL -->
+
+<div class="modal" id="taskModal">
+
+    <div class="modal-box">
+
+        <button class="close" id="closeTask">×</button>
+
+        <h2>Create Task</h2>
+
+        <label>Task title</label>
+        <input id="taskTitle" placeholder="e.g. Complete Python project">
+
+        <label>Priority</label>
+        <select id="taskPriority">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+        </select>
+
+        <label>Due date</label>
+        <input id="taskDate" type="date">
+
+        <button class="add-btn full" id="saveTask">Create Task</button>
+
+    </div>
+
+</div>
+
+<div id="toast" class="toast"></div>
+
+</body>
+</html>

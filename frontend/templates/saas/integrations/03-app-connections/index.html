@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>App Connections</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+<aside id="sidebar">
+
+    <div class="brand">
+        <div class="brand-icon">∞</div>
+        <div>
+            <b>Connectly</b>
+            <small>App Connections</small>
+        </div>
+    </div>
+
+    <div class="nav-title">MANAGE</div>
+
+    <button class="nav active" data-view="home">⌂ <span>Connection Home</span></button>
+    <button class="nav" data-view="apps">▦ <span>All Apps</span></button>
+    <button class="nav" data-view="active">✓ <span>Active Connections</span></button>
+    <button class="nav" data-view="sync">↻ <span>Sync Center</span></button>
+    <button class="nav" data-view="activity">◷ <span>Activity</span></button>
+
+    <div class="nav-title">WORKSPACE</div>
+
+    <button class="nav" data-view="settings">⚙ <span>Settings</span></button>
+
+    <div class="bottom-card">
+        <b>Connection Health</b>
+        <strong>97.8%</strong>
+        <div class="health-bar"><span></span></div>
+        <small>Everything looks good</small>
+    </div>
+
+</aside>
+
+<main>
+
+<header>
+
+    <button class="menu" id="menu">☰</button>
+
+    <div>
+        <small>CONNECTIONS</small>
+        <h1 id="title">Connection Home</h1>
+    </div>
+
+    <div class="header-right">
+
+        <div class="search">
+            🔍
+            <input id="search" placeholder="Find an app...">
+        </div>
+
+        <button class="bell" id="bell">🔔</button>
+
+        <div class="profile">J</div>
+
+    </div>
+
+</header>
+
+<section class="view active" id="home">
+
+    <div class="hero">
+
+        <div>
+            <span>YOUR DIGITAL WORKSPACE</span>
+            <h2>Everything connected.<br><b>Nothing complicated.</b></h2>
+            <p>
+                Bring your favorite business applications together
+                and automate your everyday workflow.
+            </p>
+
+            <button class="primary" id="browseApps">
+                Browse applications →
+            </button>
+        </div>
+
+        <div class="connection-visual">
+
+            <div class="main-node">⚡</div>
+
+            <div class="node n1">S</div>
+            <div class="node n2">G</div>
+            <div class="node n3">N</div>
+            <div class="node n4">A</div>
+
+        </div>
+
+    </div>
+
+    <div class="numbers">
+
+        <div>
+            <span>Connected Apps</span>
+            <strong id="count">8</strong>
+        </div>
+
+        <div>
+            <span>Successful Syncs</span>
+            <strong>24.8K</strong>
+        </div>
+
+        <div>
+            <span>Data Processed</span>
+            <strong>1.8TB</strong>
+        </div>
+
+        <div>
+            <span>Health</span>
+            <strong>97.8%</strong>
+        </div>
+
+    </div>
+
+    <div class="section-title">
+        <div>
+            <small>QUICK CONNECT</small>
+            <h2>Popular applications</h2>
+        </div>
+    </div>
+
+    <div class="app-grid" id="homeApps"></div>
+
+</section>
+
+<section class="view" id="apps">
+
+    <div class="section-title">
+        <div>
+            <small>APPLICATION DIRECTORY</small>
+            <h2>All applications</h2>
+            <p>Connect your favorite tools.</p>
+        </div>
+
+        <button class="primary" id="refresh">↻ Refresh</button>
+    </div>
+
+    <div class="categories">
+        <button class="category active" data-cat="all">All</button>
+        <button class="category" data-cat="communication">Communication</button>
+        <button class="category" data-cat="sales">Sales</button>
+        <button class="category" data-cat="marketing">Marketing</button>
+        <button class="category" data-cat="productivity">Productivity</button>
+    </div>
+
+    <div class="app-grid" id="allApps"></div>
+
+</section>
+
+<section class="view" id="active">
+
+    <div class="section-title">
+        <div>
+            <small>CONNECTED NOW</small>
+            <h2>Active connections</h2>
+        </div>
+    </div>
+
+    <div class="active-grid" id="activeApps"></div>
+
+</section>
+
+<section class="view" id="sync">
+
+    <div class="section-title">
+        <div>
+            <small>DATA PIPELINES</small>
+            <h2>Sync Center</h2>
+            <p>Monitor application synchronization.</p>
+        </div>
+
+        <button class="primary" id="syncAll">↻ Sync all</button>
+    </div>
+
+    <div class="sync-list" id="syncList"></div>
+
+</section>
+
+<section class="view" id="activity">
+
+    <div class="section-title">
+        <div>
+            <small>AUDIT LOG</small>
+            <h2>Recent activity</h2>
+        </div>
+    </div>
+
+    <div class="activity" id="activityList"></div>
+
+</section>
+
+<section class="view" id="settings">
+
+    <div class="section-title">
+        <div>
+            <small>CONFIGURATION</small>
+            <h2>Connection settings</h2>
+        </div>
+    </div>
+
+    <div class="settings">
+
+        <div class="setting">
+            <div>
+                <b>Automatic synchronization</b>
+                <p>Automatically synchronize connected applications.</p>
+            </div>
+            <label>
+                <input type="checkbox" checked>
+                <span></span>
+            </label>
+        </div>
+
+        <div class="setting">
+            <div>
+                <b>Connection failure alerts</b>
+                <p>Receive notifications when a connection fails.</p>
+            </div>
+            <label>
+                <input type="checkbox" checked>
+                <span></span>
+            </label>
+        </div>
+
+        <div class="setting">
+            <div>
+                <b>Daily summary</b>
+                <p>Receive a daily connection report.</p>
+            </div>
+            <label>
+                <input type="checkbox">
+                <span></span>
+            </label>
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+</div>
+
+<div class="modal" id="modal">
+
+<div class="modal-box">
+
+<button class="close" id="close">×</button>
+
+<div class="big-icon" id="modalIcon">S</div>
+
+<h2 id="modalTitle">Slack</h2>
+
+<p id="modalDescription"></p>
+
+<div class="connection-info">
+
+    <div>
+        <small>STATUS</small>
+        <b id="modalStatus">Connected</b>
+    </div>
+
+    <div>
+        <small>LAST SYNC</small>
+        <b>2 minutes ago</b>
+    </div>
+
+    <div>
+        <small>DATA</small>
+        <b>Healthy</b>
+    </div>
+
+</div>
+
+<button class="primary full" id="modalAction">
+    Disconnect
+</button>
+
+</div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

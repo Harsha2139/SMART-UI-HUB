@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Revenue Billing</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-symbol">R</div>
+
+            <div>
+                <strong>RevCore</strong>
+                <small>Revenue Intelligence</small>
+            </div>
+
+        </div>
+
+        <nav>
+
+            <button class="nav active"
+                    data-view="dashboard">
+                ◈ Revenue Overview
+            </button>
+
+            <button class="nav"
+                    data-view="mrr">
+                ↑ MRR Analytics
+            </button>
+
+            <button class="nav"
+                    data-view="arr">
+                ◆ ARR Analytics
+            </button>
+
+            <button class="nav"
+                    data-view="customers">
+                ♙ Revenue Customers
+            </button>
+
+            <button class="nav"
+                    data-view="reports">
+                ▤ Reports
+            </button>
+
+            <button class="nav"
+                    data-view="settings">
+                ⚙ Settings
+            </button>
+
+        </nav>
+
+        <div class="sidebar-revenue">
+
+            <span>Today's Revenue</span>
+
+            <strong>$12,840</strong>
+
+            <small>↑ 18.2% vs yesterday</small>
+
+        </div>
+
+    </aside>
+
+    <main>
+
+        <header>
+
+            <button id="menu">☰</button>
+
+            <div>
+
+                <h1 id="pageTitle">
+                    Revenue Overview
+                </h1>
+
+                <p>
+                    Understand your SaaS revenue performance.
+                </p>
+
+            </div>
+
+            <div class="header-actions">
+
+                <select id="globalPeriod">
+
+                    <option>This Month</option>
+                    <option>Last 3 Months</option>
+                    <option>This Year</option>
+
+                </select>
+
+                <button onclick="generateReport()">
+                    Generate Report
+                </button>
+
+                <div class="avatar">
+                    BJ
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- DASHBOARD -->
+
+        <section class="view active"
+                 id="dashboard">
+
+            <div class="revenue-cards">
+
+                <div class="revenue-card purple">
+
+                    <span>Monthly Recurring Revenue</span>
+
+                    <strong>$84,260</strong>
+
+                    <small>↑ 18.6%</small>
+
+                    <div class="mini-bar">
+                        <i style="width:78%"></i>
+                    </div>
+
+                </div>
+
+                <div class="revenue-card yellow">
+
+                    <span>Annual Recurring Revenue</span>
+
+                    <strong>$1.01M</strong>
+
+                    <small>↑ 22.4%</small>
+
+                    <div class="mini-bar">
+                        <i style="width:86%"></i>
+                    </div>
+
+                </div>
+
+                <div class="revenue-card pink">
+
+                    <span>Average Revenue / User</span>
+
+                    <strong>$142</strong>
+
+                    <small>↑ 9.8%</small>
+
+                    <div class="mini-bar">
+                        <i style="width:68%"></i>
+                    </div>
+
+                </div>
+
+                <div class="revenue-card blue">
+
+                    <span>Revenue Growth</span>
+
+                    <strong>24.8%</strong>
+
+                    <small>vs last year</small>
+
+                    <div class="mini-bar">
+                        <i style="width:91%"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="dashboard-grid">
+
+                <div class="panel">
+
+                    <div class="panel-title">
+
+                        <div>
+                            <h2>Revenue Trend</h2>
+                            <p>Monthly recurring revenue</p>
+                        </div>
+
+                        <select id="chartPeriod">
+                            <option>6 Months</option>
+                            <option>12 Months</option>
+                        </select>
+
+                    </div>
+
+                    <canvas id="revenueChart"></canvas>
+
+                </div>
+
+                <div class="panel">
+
+                    <div class="panel-title">
+
+                        <div>
+                            <h2>Revenue Sources</h2>
+                            <p>Current revenue mix</p>
+                        </div>
+
+                    </div>
+
+                    <div class="source">
+
+                        <div>
+                            <span>Subscriptions</span>
+                            <b>64%</b>
+                        </div>
+
+                        <div class="source-bar">
+                            <i style="width:64%"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="source">
+
+                        <div>
+                            <span>Enterprise</span>
+                            <b>21%</b>
+                        </div>
+
+                        <div class="source-bar">
+                            <i style="width:21%"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="source">
+
+                        <div>
+                            <span>Add-ons</span>
+                            <b>10%</b>
+                        </div>
+
+                        <div class="source-bar">
+                            <i style="width:10%"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="source">
+
+                        <div>
+                            <span>Other</span>
+                            <b>5%</b>
+                        </div>
+
+                        <div class="source-bar">
+                            <i style="width:5%"></i>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="panel">
+
+                <div class="panel-title">
+
+                    <div>
+                        <h2>Top Revenue Customers</h2>
+                        <p>Customers generating the highest revenue.</p>
+                    </div>
+
+                    <button class="primary"
+                            onclick="exportCustomers()">
+                        Export
+                    </button>
+
+                </div>
+
+                <div class="table-wrap">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Customer</th>
+                                <th>Plan</th>
+                                <th>MRR</th>
+                                <th>ARR</th>
+                                <th>Growth</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="customerTable"></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- MRR -->
+
+        <section class="view"
+                 id="mrr">
+
+            <div class="page-title">
+
+                <h2>MRR Analytics</h2>
+
+                <p>
+                    Analyze monthly recurring revenue.
+                </p>
+
+            </div>
+
+            <div class="analytics-grid">
+
+                <div class="analytics-card">
+                    <span>New MRR</span>
+                    <strong>$12,840</strong>
+                    <small>+18.2%</small>
+                </div>
+
+                <div class="analytics-card">
+                    <span>Expansion MRR</span>
+                    <strong>$8,420</strong>
+                    <small>+12.7%</small>
+                </div>
+
+                <div class="analytics-card">
+                    <span>Contraction MRR</span>
+                    <strong>$2,180</strong>
+                    <small>-4.2%</small>
+                </div>
+
+                <div class="analytics-card">
+                    <span>Churned MRR</span>
+                    <strong>$1,840</strong>
+                    <small>-2.1%</small>
+                </div>
+
+            </div>
+
+            <div class="panel">
+
+                <div class="panel-title">
+                    <h2>MRR Movement</h2>
+                </div>
+
+                <canvas id="mrrChart"></canvas>
+
+            </div>
+
+        </section>
+
+        <!-- ARR -->
+
+        <section class="view"
+                 id="arr">
+
+            <div class="page-title">
+
+                <h2>ARR Analytics</h2>
+
+                <p>
+                    Track annual recurring revenue.
+                </p>
+
+            </div>
+
+            <div class="arr-banner">
+
+                <div>
+                    <span>Current ARR</span>
+                    <strong>$1,011,120</strong>
+                </div>
+
+                <div>
+                    <span>Target ARR</span>
+                    <strong>$1,500,000</strong>
+                </div>
+
+                <div>
+                    <span>Target Progress</span>
+                    <strong>67.4%</strong>
+                </div>
+
+            </div>
+
+            <div class="target-progress">
+
+                <div>
+                    <span>Annual Revenue Target</span>
+                    <b>67.4%</b>
+                </div>
+
+                <div class="progress">
+                    <i></i>
+                </div>
+
+            </div>
+
+            <div class="panel">
+
+                <div class="panel-title">
+                    <h2>ARR Growth</h2>
+                </div>
+
+                <canvas id="arrChart"></canvas>
+
+            </div>
+
+        </section>
+
+        <!-- CUSTOMERS -->
+
+        <section class="view"
+                 id="customers">
+
+            <div class="page-title">
+
+                <h2>Revenue Customers</h2>
+
+                <p>
+                    Customer revenue contribution.
+                </p>
+
+            </div>
+
+            <div class="filters">
+
+                <input id="customerSearch"
+                       placeholder="Search customer...">
+
+                <select id="customerPlan">
+
+                    <option value="all">
+                        All Plans
+                    </option>
+
+                    <option value="Enterprise">
+                        Enterprise
+                    </option>
+
+                    <option value="Business">
+                        Business
+                    </option>
+
+                    <option value="Pro">
+                        Pro
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="panel table-wrap">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Customer</th>
+                            <th>Plan</th>
+                            <th>MRR</th>
+                            <th>ARR</th>
+                            <th>Growth</th>
+                            <th>Status</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="customerFullTable"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- REPORTS -->
+
+        <section class="view"
+                 id="reports">
+
+            <div class="page-title">
+
+                <h2>Revenue Reports</h2>
+
+                <p>
+                    Generate and download billing reports.
+                </p>
+
+            </div>
+
+            <div class="report-grid">
+
+                <div class="report-card">
+
+                    <div class="report-icon">
+                        📊
+                    </div>
+
+                    <h3>Monthly Revenue Report</h3>
+
+                    <p>
+                        Complete monthly revenue breakdown.
+                    </p>
+
+                    <button onclick="downloadReport('Monthly Revenue')">
+                        Download
+                    </button>
+
+                </div>
+
+                <div class="report-card">
+
+                    <div class="report-icon">
+                        📈
+                    </div>
+
+                    <h3>Growth Report</h3>
+
+                    <p>
+                        Revenue growth and performance.
+                    </p>
+
+                    <button onclick="downloadReport('Growth')">
+                        Download
+                    </button>
+
+                </div>
+
+                <div class="report-card">
+
+                    <div class="report-icon">
+                        💰
+                    </div>
+
+                    <h3>Customer Revenue</h3>
+
+                    <p>
+                        Customer-level revenue analysis.
+                    </p>
+
+                    <button onclick="downloadReport('Customer Revenue')">
+                        Download
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SETTINGS -->
+
+        <section class="view"
+                 id="settings">
+
+            <div class="page-title">
+
+                <h2>Revenue Settings</h2>
+
+                <p>
+                    Configure revenue calculations.
+                </p>
+
+            </div>
+
+            <div class="settings">
+
+                <label>
+
+                    Default Currency
+
+                    <select>
+
+                        <option>USD</option>
+                        <option>INR</option>
+                        <option>EUR</option>
+
+                    </select>
+
+                </label>
+
+                <label>
+
+                    Revenue Recognition
+
+                    <select>
+
+                        <option>Monthly</option>
+                        <option>Daily</option>
+                        <option>Annual</option>
+
+                    </select>
+
+                </label>
+
+                <label class="toggle">
+
+                    Include Discounts
+
+                    <input type="checkbox" checked>
+
+                </label>
+
+                <label class="toggle">
+
+                    Include Refunds
+
+                    <input type="checkbox" checked>
+
+                </label>
+
+                <button class="primary"
+                        onclick="saveRevenueSettings()">
+                    Save Settings
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<div id="toast"></div>
+
+</body>
+</html>

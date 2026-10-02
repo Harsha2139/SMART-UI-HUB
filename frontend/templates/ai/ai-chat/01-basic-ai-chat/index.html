@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic AI Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div>
+        <h1>🤖 Basic AI Chat</h1>
+        <p>Your simple AI assistant</p>
+    </div>
+
+    <div class="header-actions">
+        <button id="themeBtn" title="Toggle theme">🌙</button>
+        <button id="clearBtn" title="Clear chat">🗑️</button>
+    </div>
+</header>
+
+<main class="chat-wrapper">
+
+    <section class="chat-box">
+
+        <div class="chat-header">
+            <div class="ai-avatar">🤖</div>
+
+            <div>
+                <strong>AI Assistant</strong>
+                <span>● Online</span>
+            </div>
+        </div>
+
+        <div id="messages" class="messages">
+            <div class="message ai">
+                <div class="avatar">🤖</div>
+                <div class="bubble">
+                    Hello! 👋 I'm your AI assistant. How can I help you?
+                </div>
+            </div>
+        </div>
+
+        <div class="suggestions">
+            <button>What is AI?</button>
+            <button>Explain Python</button>
+            <button>Give me a study plan</button>
+            <button>Tell me a joke</button>
+        </div>
+
+        <form id="chatForm" class="input-area">
+
+            <input
+                id="messageInput"
+                type="text"
+                placeholder="Type your message..."
+                autocomplete="off"
+            >
+
+            <button type="submit">➤</button>
+
+        </form>
+
+    </section>
+
+</main>
+
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

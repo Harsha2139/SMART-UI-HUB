@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Billing</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-mark">S</div>
+            <div>
+                <strong>Subscript</strong>
+                <small>Billing Center</small>
+            </div>
+        </div>
+
+        <nav>
+            <button class="nav active" data-view="overview">⌂ Overview</button>
+            <button class="nav" data-view="plans">◈ Plans</button>
+            <button class="nav" data-view="subscribers">♙ Subscribers</button>
+            <button class="nav" data-view="renewals">↻ Renewals</button>
+            <button class="nav" data-view="coupons">% Coupons</button>
+            <button class="nav" data-view="settings">⚙ Settings</button>
+        </nav>
+
+        <div class="sidebar-card">
+            <span>MRR</span>
+            <strong>$42,860</strong>
+            <small>↑ 16.8%</small>
+        </div>
+
+    </aside>
+
+    <main>
+
+        <header>
+
+            <button id="menuBtn">☰</button>
+
+            <div>
+                <h1 id="title">Subscription Overview</h1>
+                <p>Manage plans and recurring subscriptions</p>
+            </div>
+
+            <div class="header-right">
+                <button id="bell">🔔</button>
+                <div class="profile">BJ</div>
+            </div>
+
+        </header>
+
+        <!-- OVERVIEW -->
+
+        <section class="view active" id="overview">
+
+            <div class="metrics">
+
+                <div class="metric green">
+                    <span>Active Subscriptions</span>
+                    <strong id="activeCount">2,486</strong>
+                    <small>+8.4%</small>
+                </div>
+
+                <div class="metric orange">
+                    <span>Monthly Recurring Revenue</span>
+                    <strong>$42,860</strong>
+                    <small>+16.8%</small>
+                </div>
+
+                <div class="metric purple">
+                    <span>Annual Recurring Revenue</span>
+                    <strong>$514K</strong>
+                    <small>+21.4%</small>
+                </div>
+
+                <div class="metric blue">
+                    <span>Churn Rate</span>
+                    <strong>2.4%</strong>
+                    <small>↓ 0.8%</small>
+                </div>
+
+            </div>
+
+            <div class="plan-summary">
+
+                <div class="chart-card">
+                    <div class="card-title">
+                        <div>
+                            <h2>Subscription Growth</h2>
+                            <p>Last 6 months</p>
+                        </div>
+
+                        <select id="growthRange">
+                            <option>6 Months</option>
+                            <option>12 Months</option>
+                        </select>
+                    </div>
+
+                    <canvas id="growthChart"></canvas>
+                </div>
+
+                <div class="card">
+                    <h2>Plan Distribution</h2>
+
+                    <div class="donut">
+                        <div>
+                            <strong>2,486</strong>
+                            <span>Subscribers</span>
+                        </div>
+                    </div>
+
+                    <div class="distribution">
+                        <p><i class="starter"></i> Starter <b>38%</b></p>
+                        <p><i class="pro"></i> Pro <b>44%</b></p>
+                        <p><i class="business"></i> Business <b>18%</b></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-title">
+                    <div>
+                        <h2>Recent Subscribers</h2>
+                        <p>Latest subscription activity</p>
+                    </div>
+
+                    <button class="primary" onclick="openPlanModal()">+ New Plan</button>
+                </div>
+
+                <div class="table-wrap">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Customer</th>
+                                <th>Plan</th>
+                                <th>Billing</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="recentTable"></tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- PLANS -->
+
+        <section class="view" id="plans">
+
+            <div class="page-head">
+                <div>
+                    <h2>Pricing Plans</h2>
+                    <p>Create and manage subscription plans.</p>
+                </div>
+
+                <button class="primary" onclick="openPlanModal()">+ Create Plan</button>
+            </div>
+
+            <div class="pricing-grid" id="pricingGrid"></div>
+
+        </section>
+
+        <!-- SUBSCRIBERS -->
+
+        <section class="view" id="subscribers">
+
+            <div class="page-head">
+                <div>
+                    <h2>Subscribers</h2>
+                    <p>Manage active and cancelled subscriptions.</p>
+                </div>
+            </div>
+
+            <div class="filters">
+                <input id="subscriberSearch" placeholder="Search subscriber...">
+
+                <select id="subscriberFilter">
+                    <option value="all">All</option>
+                    <option value="Active">Active</option>
+                    <option value="Cancelled">Cancelled</option>
+                    <option value="Trial">Trial</option>
+                </select>
+            </div>
+
+            <div class="card table-wrap">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Customer</th>
+                            <th>Email</th>
+                            <th>Plan</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="subscriberTable"></tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+        <!-- RENEWALS -->
+
+        <section class="view" id="renewals">
+
+            <div class="page-head">
+                <div>
+                    <h2>Upcoming Renewals</h2>
+                    <p>Subscriptions scheduled for renewal.</p>
+                </div>
+            </div>
+
+            <div class="renewal-list" id="renewalList"></div>
+
+        </section>
+
+        <!-- COUPONS -->
+
+        <section class="view" id="coupons">
+
+            <div class="page-head">
+                <div>
+                    <h2>Coupons</h2>
+                    <p>Manage discounts and promotional codes.</p>
+                </div>
+
+                <button class="primary" id="couponBtn">+ Create Coupon</button>
+            </div>
+
+            <div class="coupon-grid">
+
+                <div class="coupon">
+                    <strong>WELCOME20</strong>
+                    <span>20% discount</span>
+                    <b>1,248 uses</b>
+                    <button onclick="disableCoupon(this)">Disable</button>
+                </div>
+
+                <div class="coupon">
+                    <strong>PRO50</strong>
+                    <span>50% discount</span>
+                    <b>482 uses</b>
+                    <button onclick="disableCoupon(this)">Disable</button>
+                </div>
+
+                <div class="coupon">
+                    <strong>YEARLY10</strong>
+                    <span>10% discount</span>
+                    <b>762 uses</b>
+                    <button onclick="disableCoupon(this)">Disable</button>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SETTINGS -->
+
+        <section class="view" id="settings">
+
+            <div class="page-head">
+                <div>
+                    <h2>Subscription Settings</h2>
+                    <p>Configure recurring billing.</p>
+                </div>
+            </div>
+
+            <div class="settings">
+
+                <label>
+                    Grace Period
+                    <select>
+                        <option>3 Days</option>
+                        <option>7 Days</option>
+                        <option>14 Days</option>
+                    </select>
+                </label>
+
+                <label>
+                    Default Currency
+                    <select>
+                        <option>USD</option>
+                        <option>INR</option>
+                        <option>EUR</option>
+                    </select>
+                </label>
+
+                <label class="switch-row">
+                    Automatic renewal reminders
+                    <input type="checkbox" checked>
+                </label>
+
+                <label class="switch-row">
+                    Automatic failed payment retry
+                    <input type="checkbox" checked>
+                </label>
+
+                <button class="primary" id="saveBtn">Save Settings</button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- PLAN MODAL -->
+
+<div class="modal" id="planModal">
+
+    <div class="modal-content">
+
+        <button class="close" onclick="closePlanModal()">×</button>
+
+        <h2>Create Subscription Plan</h2>
+
+        <form id="planForm">
+
+            <label>
+                Plan Name
+                <input id="planName" required>
+            </label>
+
+            <label>
+                Monthly Price
+                <input type="number" id="planPrice" required>
+            </label>
+
+            <label>
+                Description
+                <textarea id="planDescription"></textarea>
+            </label>
+
+            <button class="primary">Create Plan</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<div id="toast"></div>
+
+</body>
+</html>

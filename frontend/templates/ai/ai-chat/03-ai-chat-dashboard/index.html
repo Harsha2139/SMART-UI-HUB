@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>AI Assistant Dashboard</title>
+
+<link rel="stylesheet"
+      href="style.css">
+
+</head>
+
+<body>
+
+<aside class="sidebar">
+
+    <div class="logo">
+        <div class="logo-icon">🤖</div>
+
+        <div>
+            <h2>Smart AI</h2>
+            <span>Assistant</span>
+        </div>
+    </div>
+
+    <button id="newChat"
+            class="new-chat">
+        ＋ New Chat
+    </button>
+
+    <nav>
+
+        <button class="nav-btn active"
+                data-section="home">
+            🏠 <span>Dashboard</span>
+        </button>
+
+        <button class="nav-btn"
+                data-section="chat">
+            💬 <span>AI Chat</span>
+        </button>
+
+        <button class="nav-btn"
+                data-section="tasks">
+            ✅ <span>Tasks</span>
+        </button>
+
+        <button class="nav-btn"
+                data-section="notes">
+            📝 <span>Notes</span>
+        </button>
+
+        <button class="nav-btn"
+                data-section="tools">
+            🛠️ <span>Tools</span>
+        </button>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+
+        <button id="themeBtn"
+                class="nav-btn">
+            🌙 <span>Dark Mode</span>
+        </button>
+
+    </div>
+
+</aside>
+
+
+<main class="main">
+
+<header class="topbar">
+
+    <div>
+        <h1>Smart AI Assistant</h1>
+        <p>Your personal productivity dashboard</p>
+    </div>
+
+    <div class="profile">
+        <div>
+            <strong>Student</strong>
+            <small>Online</small>
+        </div>
+
+        <div class="avatar">S</div>
+    </div>
+
+</header>
+
+
+<!-- HOME -->
+
+<section id="home"
+         class="section active">
+
+    <div class="welcome-card">
+
+        <div>
+
+            <span class="badge">
+                AI ASSISTANT
+            </span>
+
+            <h2>
+                Welcome back! 👋
+            </h2>
+
+            <p>
+                Use your AI assistant to chat,
+                manage tasks, create notes and
+                use productivity tools.
+            </p>
+
+            <button class="primary-btn"
+                    onclick="showSection('chat')">
+                Start Chat →
+            </button>
+
+        </div>
+
+        <div class="robot">
+            🤖
+        </div>
+
+    </div>
+
+
+    <div class="stats">
+
+        <div class="stat-card">
+
+            <div class="stat-icon purple">
+                💬
+            </div>
+
+            <div>
+                <span>Messages</span>
+                <strong id="messageCount">
+                    0
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon green">
+                ✅
+            </div>
+
+            <div>
+                <span>Tasks</span>
+                <strong id="taskCount">
+                    0
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon orange">
+                📝
+            </div>
+
+            <div>
+                <span>Notes</span>
+                <strong id="noteCount">
+                    0
+                </strong>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-icon blue">
+                ⚡
+            </div>
+
+            <div>
+                <span>AI Status</span>
+                <strong>ON</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="section-heading">
+        <div>
+            <h2>Quick Actions</h2>
+            <p>Frequently used features</p>
+        </div>
+    </div>
+
+
+    <div class="quick-grid">
+
+        <button class="quick-card"
+                onclick="showSection('chat')">
+
+            <span>💬</span>
+
+            <strong>Ask AI</strong>
+
+            <small>
+                Start an AI conversation
+            </small>
+
+        </button>
+
+
+        <button class="quick-card"
+                onclick="showSection('tasks')">
+
+            <span>✅</span>
+
+            <strong>Tasks</strong>
+
+            <small>
+                Manage your tasks
+            </small>
+
+        </button>
+
+
+        <button class="quick-card"
+                onclick="showSection('notes')">
+
+            <span>📝</span>
+
+            <strong>Notes</strong>
+
+            <small>
+                Save important notes
+            </small>
+
+        </button>
+
+
+        <button class="quick-card"
+                onclick="showSection('tools')">
+
+            <span>🛠️</span>
+
+            <strong>Tools</strong>
+
+            <small>
+                Productivity tools
+            </small>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- CHAT -->
+
+<section id="chat"
+         class="section">
+
+    <div class="chat-layout">
+
+        <div class="chat-container">
+
+            <div class="chat-header">
+
+                <div class="ai-status">
+
+                    <div class="ai-avatar">
+                        🤖
+                    </div>
+
+                    <div>
+                        <strong>Smart AI</strong>
+
+                        <span>
+                            <i></i>
+                            Online
+                        </span>
+                    </div>
+
+                </div>
+
+                <button id="clearChat"
+                        class="small-btn">
+                    Clear
+                </button>
+
+            </div>
+
+
+            <div id="messages"
+                 class="messages">
+
+                <div class="message ai">
+
+                    <div class="message-avatar">
+                        🤖
+                    </div>
+
+                    <div class="bubble">
+                        Hello! 👋
+                        Ask me anything.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="suggestions">
+
+                <button>Explain AI</button>
+                <button>Study plan</button>
+                <button>Python help</button>
+                <button>Project ideas</button>
+
+            </div>
+
+
+            <form id="chatForm"
+                  class="chat-input">
+
+                <input
+                    id="messageInput"
+                    placeholder="Ask your AI assistant..."
+                    autocomplete="off"
+                >
+
+                <button class="send-btn">
+                    ➤
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <div class="command-card">
+
+            <h3>Quick Commands</h3>
+
+            <button class="command">
+                📚 Study
+            </button>
+
+            <button class="command">
+                💻 Coding
+            </button>
+
+            <button class="command">
+                📊 Data Science
+            </button>
+
+            <button class="command">
+                🤖 AI/ML
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TASKS -->
+
+<section id="tasks"
+         class="section">
+
+    <div class="section-heading">
+
+        <div>
+            <h2>Tasks</h2>
+            <p>Manage your daily tasks</p>
+        </div>
+
+        <button id="addTask"
+                class="primary-btn">
+            + Add Task
+        </button>
+
+    </div>
+
+
+    <div class="task-stats">
+
+        <div>
+            <span>Total</span>
+            <strong id="totalTasks">0</strong>
+        </div>
+
+        <div>
+            <span>Completed</span>
+            <strong id="completedTasks">0</strong>
+        </div>
+
+        <div>
+            <span>Pending</span>
+            <strong id="pendingTasks">0</strong>
+        </div>
+
+    </div>
+
+
+    <div id="taskList"
+         class="task-list">
+    </div>
+
+</section>
+
+
+<!-- NOTES -->
+
+<section id="notes"
+         class="section">
+
+    <div class="section-heading">
+
+        <div>
+            <h2>Notes</h2>
+            <p>Save your important information</p>
+        </div>
+
+        <button id="addNote"
+                class="primary-btn">
+            + Add Note
+        </button>
+
+    </div>
+
+
+    <div id="notesGrid"
+         class="notes-grid">
+    </div>
+
+</section>
+
+
+<!-- TOOLS -->
+
+<section id="tools"
+         class="section">
+
+    <div class="section-heading">
+
+        <div>
+            <h2>AI Tools</h2>
+            <p>Useful productivity utilities</p>
+        </div>
+
+    </div>
+
+
+    <div class="tools-grid">
+
+        <div class="tool-card">
+
+            <div class="tool-icon">
+                🔢
+            </div>
+
+            <h3>Word Counter</h3>
+
+            <p>
+                Count words and characters.
+            </p>
+
+            <textarea id="counterInput"
+                      placeholder="Type or paste text...">
+            </textarea>
+
+            <div class="counter-result">
+
+                <div>
+                    <strong id="words">0</strong>
+                    <span>Words</span>
+                </div>
+
+                <div>
+                    <strong id="chars">0</strong>
+                    <span>Characters</span>
+                </div>
+
+                <div>
+                    <strong id="lines">0</strong>
+                    <span>Lines</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="tool-card">
+
+            <div class="tool-icon">
+                🧮
+            </div>
+
+            <h3>Calculator</h3>
+
+            <p>
+                Perform basic calculations.
+            </p>
+
+            <input id="calculator"
+                   placeholder="Example: 25 * 4 + 10">
+
+            <button id="calculate"
+                    class="primary-btn full">
+                Calculate
+            </button>
+
+            <div id="calcResult"
+                 class="result">
+                Result will appear here.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<div id="toast"
+     class="toast">
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

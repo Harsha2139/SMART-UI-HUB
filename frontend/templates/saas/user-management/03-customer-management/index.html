@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>CustomerFlow CRM</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="script.js" defer></script>
+
+</head>
+
+<body>
+
+<div class="crm">
+
+    <header class="top">
+
+        <div class="brand">
+            <div class="brand-mark">C</div>
+
+            <div>
+                <strong>CustomerFlow</strong>
+                <small>CRM Workspace</small>
+            </div>
+        </div>
+
+
+        <div class="top-right">
+
+            <div class="search">
+
+                🔎
+
+                <input
+                    id="search"
+                    placeholder="Search customers...">
+
+            </div>
+
+            <button
+                id="addCustomer"
+                class="add">
+
+                + Customer
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <div>
+
+                <span>CUSTOMER MANAGEMENT</span>
+
+                <h1>
+                    Build stronger customer relationships 💜
+                </h1>
+
+                <p>
+                    Track customers, activity and revenue
+                    from one simple workspace.
+                </p>
+
+            </div>
+
+            <div class="hero-art">
+                💬
+            </div>
+
+        </section>
+
+
+        <!-- STATS -->
+
+        <section class="stats">
+
+            <div class="stat">
+                <small>Total Customers</small>
+                <strong id="total">0</strong>
+            </div>
+
+            <div class="stat">
+                <small>Active Customers</small>
+                <strong id="active">0</strong>
+            </div>
+
+            <div class="stat">
+                <small>VIP Customers</small>
+                <strong id="vip">0</strong>
+            </div>
+
+            <div class="stat">
+                <small>Total Revenue</small>
+                <strong id="revenue">₹0</strong>
+            </div>
+
+        </section>
+
+
+        <!-- TOOLBAR -->
+
+        <section class="toolbar">
+
+            <div>
+
+                <h2>Customers</h2>
+
+                <p>
+                    View and manage your customer database.
+                </p>
+
+            </div>
+
+
+            <select id="category">
+
+                <option value="all">
+                    All Customers
+                </option>
+
+                <option value="Regular">
+                    Regular
+                </option>
+
+                <option value="VIP">
+                    VIP
+                </option>
+
+                <option value="Business">
+                    Business
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- CUSTOMER GRID -->
+
+        <section
+            id="customerGrid"
+            class="customer-grid">
+        </section>
+
+
+        <div
+            id="empty"
+            class="empty">
+
+            No customers found.
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- CUSTOMER MODAL -->
+
+<div
+    id="customerModal"
+    class="modal">
+
+    <div class="modal-box">
+
+        <button
+            id="closeCustomer"
+            class="close">
+
+            ×
+
+        </button>
+
+        <h2 id="customerModalTitle">
+            Add Customer
+        </h2>
+
+        <form id="customerForm">
+
+            <input
+                type="hidden"
+                id="customerId">
+
+            <label>
+                Customer Name
+                <input
+                    id="customerName"
+                    required>
+            </label>
+
+            <label>
+                Email
+                <input
+                    id="customerEmail"
+                    type="email"
+                    required>
+            </label>
+
+            <label>
+                Phone
+                <input
+                    id="customerPhone"
+                    required>
+            </label>
+
+            <label>
+                Category
+
+                <select id="customerCategory">
+
+                    <option>Regular</option>
+                    <option>VIP</option>
+                    <option>Business</option>
+
+                </select>
+
+            </label>
+
+            <label>
+                Status
+
+                <select id="customerStatus">
+
+                    <option value="active">
+                        Active
+                    </option>
+
+                    <option value="inactive">
+                        Inactive
+                    </option>
+
+                </select>
+
+            </label>
+
+            <label>
+                Revenue
+                <input
+                    id="customerRevenue"
+                    type="number"
+                    min="0"
+                    required>
+            </label>
+
+            <label>
+                Notes
+
+                <textarea
+                    id="customerNotes"
+                    rows="4"></textarea>
+
+            </label>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    id="cancelCustomer">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    class="save">
+
+                    Save Customer
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<div id="toast"></div>
+
+</body>
+</html>

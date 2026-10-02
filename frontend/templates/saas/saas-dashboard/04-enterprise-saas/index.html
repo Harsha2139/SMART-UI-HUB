@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CoreEnterprise SaaS</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="script.js"></script>
+</head>
+
+<body>
+
+<div class="app">
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+        <div class="brand-icon">◆</div>
+        <div>
+            <strong>CoreEnterprise</strong>
+            <small>Command Center</small>
+        </div>
+    </div>
+
+    <div class="workspace">
+        <span>WORKSPACE</span>
+        <select id="workspace">
+            <option>Global Organization</option>
+            <option>India Operations</option>
+            <option>US Operations</option>
+        </select>
+    </div>
+
+    <nav>
+
+        <button class="nav active" data-view="overview">
+            <span>▦</span> Executive Overview
+        </button>
+
+        <button class="nav" data-view="departments">
+            <span>◉</span> Departments
+        </button>
+
+        <button class="nav" data-view="workflows">
+            <span>⚙</span> Workflows
+        </button>
+
+        <button class="nav" data-view="security">
+            <span>♜</span> Security
+        </button>
+
+        <button class="nav" data-view="billing">
+            <span>▣</span> Billing
+        </button>
+
+        <button class="nav" data-view="audit">
+            <span>☷</span> Audit Logs
+        </button>
+
+        <button class="nav" data-view="settings">
+            <span>⚙</span> Settings
+        </button>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+        <div class="health">
+            <span>System Health</span>
+            <strong>99.98%</strong>
+            <div><i></i></div>
+            <small>All systems operational</small>
+        </div>
+
+        <button id="supportBtn">🎧 Enterprise Support</button>
+    </div>
+
+</aside>
+
+<main class="main">
+
+<header class="topbar">
+
+    <button id="menuBtn" class="menu">☰</button>
+
+    <div>
+        <h2 id="pageTitle">Executive Overview</h2>
+        <small>Organization command center</small>
+    </div>
+
+    <div class="top-actions">
+
+        <div class="status">
+            <i></i> All systems operational
+        </div>
+
+        <button id="alertBtn">🔔</button>
+
+        <div class="user">
+            <span>BJ</span>
+            <div>
+                <strong>Admin</strong>
+                <small>Enterprise Owner</small>
+            </div>
+        </div>
+
+    </div>
+
+</header>
+
+<div class="content">
+
+<!-- OVERVIEW -->
+
+<section class="view active" id="overview">
+
+    <div class="section-head">
+        <div>
+            <h1>Executive Overview</h1>
+            <p>Organization-wide performance.</p>
+        </div>
+
+        <button class="primary" id="generateReport">
+            📄 Generate Report
+        </button>
+    </div>
+
+    <div class="kpis">
+
+        <div class="kpi cyan">
+            <span>Annual Revenue</span>
+            <strong>$8.42M</strong>
+            <small>↑ 18.4% YoY</small>
+        </div>
+
+        <div class="kpi purple">
+            <span>Employees</span>
+            <strong>2,840</strong>
+            <small>↑ 126 this year</small>
+        </div>
+
+        <div class="kpi orange">
+            <span>Active Projects</span>
+            <strong>184</strong>
+            <small>23 due this month</small>
+        </div>
+
+        <div class="kpi green">
+            <span>System Uptime</span>
+            <strong>99.98%</strong>
+            <small>Excellent</small>
+        </div>
+
+    </div>
+
+    <div class="overview-grid">
+
+        <div class="panel large">
+
+            <div class="panel-title">
+                <div>
+                    <h3>Business Performance</h3>
+                    <small>Revenue and operational index</small>
+                </div>
+
+                <select id="chartPeriod">
+                    <option>2026</option>
+                    <option>2025</option>
+                    <option>2024</option>
+                </select>
+            </div>
+
+            <canvas id="enterpriseChart"></canvas>
+
+        </div>
+
+        <div class="panel">
+
+            <div class="panel-title">
+                <h3>Organization Health</h3>
+            </div>
+
+            <div class="health-score">
+                <strong>94</strong>
+                <span>/100</span>
+            </div>
+
+            <div class="health-item">
+                <span>Security</span>
+                <b>98%</b>
+            </div>
+
+            <div class="health-item">
+                <span>Infrastructure</span>
+                <b>96%</b>
+            </div>
+
+            <div class="health-item">
+                <span>Operations</span>
+                <b>91%</b>
+            </div>
+
+            <div class="health-item">
+                <span>Compliance</span>
+                <b>92%</b>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="panel">
+
+        <div class="panel-title">
+            <h3>Recent Enterprise Activity</h3>
+            <button data-go="audit">View audit logs</button>
+        </div>
+
+        <div id="recentActivity"></div>
+
+    </div>
+
+</section>
+
+
+<!-- DEPARTMENTS -->
+
+<section class="view" id="departments">
+
+    <div class="section-head">
+
+        <div>
+            <h1>Departments</h1>
+            <p>Organization-wide department performance.</p>
+        </div>
+
+        <button class="primary" id="addDepartment">＋ Department</button>
+
+    </div>
+
+    <div class="toolbar">
+        <input id="departmentSearch" placeholder="Search department">
+
+        <select id="departmentStatus">
+            <option value="all">All</option>
+            <option value="healthy">Healthy</option>
+            <option value="attention">Needs Attention</option>
+        </select>
+    </div>
+
+    <div class="panel">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Department</th>
+                    <th>Employees</th>
+                    <th>Projects</th>
+                    <th>Budget</th>
+                    <th>Performance</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody id="departmentTable"></tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- WORKFLOWS -->
+
+<section class="view" id="workflows">
+
+    <div class="section-head">
+
+        <div>
+            <h1>Enterprise Workflows</h1>
+            <p>Automate organization processes.</p>
+        </div>
+
+        <button class="primary" id="createWorkflow">
+            ＋ Workflow
+        </button>
+
+    </div>
+
+    <div id="workflowList" class="workflow-grid"></div>
+
+</section>
+
+
+<!-- SECURITY -->
+
+<section class="view" id="security">
+
+    <div class="section-head">
+
+        <div>
+            <h1>Security Center</h1>
+            <p>Organization security controls.</p>
+        </div>
+
+        <span class="security-score">Security Score: 96%</span>
+
+    </div>
+
+    <div class="security-grid">
+
+        <div class="panel">
+
+            <h3>Security Controls</h3>
+
+            <label class="security-control">
+                <span>
+                    <strong>Multi-factor authentication</strong>
+                    <small>Require MFA for all employees</small>
+                </span>
+                <input class="toggle securityToggle" type="checkbox" checked>
+            </label>
+
+            <label class="security-control">
+                <span>
+                    <strong>Single Sign-On</strong>
+                    <small>Use organization identity provider</small>
+                </span>
+                <input class="toggle securityToggle" type="checkbox" checked>
+            </label>
+
+            <label class="security-control">
+                <span>
+                    <strong>IP Allowlist</strong>
+                    <small>Restrict access to approved networks</small>
+                </span>
+                <input class="toggle securityToggle" type="checkbox">
+            </label>
+
+            <label class="security-control">
+                <span>
+                    <strong>Automatic session timeout</strong>
+                    <small>Expire inactive sessions</small>
+                </span>
+                <input class="toggle securityToggle" type="checkbox" checked>
+            </label>
+
+        </div>
+
+        <div class="panel">
+
+            <h3>Security Summary</h3>
+
+            <div class="security-stat">
+                <span>Protected Accounts</span>
+                <strong>2,840</strong>
+            </div>
+
+            <div class="security-stat">
+                <span>Blocked Attempts</span>
+                <strong>184</strong>
+            </div>
+
+            <div class="security-stat">
+                <span>Active Sessions</span>
+                <strong>1,294</strong>
+            </div>
+
+            <div class="security-stat">
+                <span>Open Incidents</span>
+                <strong class="danger-text">2</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="panel">
+
+        <div class="panel-title">
+            <h3>Recent Sessions</h3>
+            <button id="logoutSessions">Logout All Sessions</button>
+        </div>
+
+        <div id="sessions"></div>
+
+    </div>
+
+</section>
+
+
+<!-- BILLING -->
+
+<section class="view" id="billing">
+
+    <div class="section-head">
+
+        <div>
+            <h1>Enterprise Billing</h1>
+            <p>Manage subscriptions, invoices and payments.</p>
+        </div>
+
+        <button class="primary" id="downloadInvoice">
+            ⬇ Invoice
+        </button>
+
+    </div>
+
+    <div class="billing-grid">
+
+        <div class="billing-card">
+
+            <small>Current Plan</small>
+
+            <h2>Enterprise</h2>
+
+            <strong>$6,999 / month</strong>
+
+            <p>Next billing: November 1, 2026</p>
+
+            <button id="managePlan">Manage Plan</button>
+
+        </div>
+
+        <div class="billing-card accent">
+
+            <small>Monthly Usage</small>
+
+            <h2>72%</h2>
+
+            <div class="usage">
+                <i></i>
+            </div>
+
+            <p>72% of included resources used</p>
+
+        </div>
+
+    </div>
+
+    <div class="panel">
+
+        <div class="panel-title">
+            <h3>Invoices</h3>
+            <button id="exportInvoices">Export CSV</button>
+        </div>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Invoice</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="invoiceTable"></tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- AUDIT -->
+
+<section class="view" id="audit">
+
+    <div class="section-head">
+
+        <div>
+            <h1>Audit Logs</h1>
+            <p>Track organization activity.</p>
+        </div>
+
+        <button class="primary" id="exportAudit">
+            ⬇ Export Logs
+        </button>
+
+    </div>
+
+    <div class="toolbar">
+
+        <input id="auditSearch" placeholder="Search audit logs">
+
+        <select id="auditType">
+            <option value="all">All Activities</option>
+            <option value="login">Login</option>
+            <option value="admin">Admin</option>
+            <option value="security">Security</option>
+            <option value="billing">Billing</option>
+        </select>
+
+    </div>
+
+    <div class="panel">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Activity</th>
+                    <th>User</th>
+                    <th>Type</th>
+                    <th>IP</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+
+            <tbody id="auditTable"></tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- SETTINGS -->
+
+<section class="view" id="settings">
+
+    <div class="section-head">
+
+        <div>
+            <h1>Enterprise Settings</h1>
+            <p>Configure organization preferences.</p>
+        </div>
+
+    </div>
+
+    <div class="settings-grid">
+
+        <div class="panel">
+
+            <h3>Organization</h3>
+
+            <label>Organization Name</label>
+            <input id="orgName" value="CoreEnterprise">
+
+            <label>Industry</label>
+            <select id="industry">
+                <option>Technology</option>
+                <option>Finance</option>
+                <option>Healthcare</option>
+                <option>Education</option>
+                <option>Manufacturing</option>
+            </select>
+
+            <button class="primary" id="saveOrg">Save Changes</button>
+
+        </div>
+
+        <div class="panel">
+
+            <h3>Notifications</h3>
+
+            <label class="security-control">
+                <span>
+                    <strong>Security alerts</strong>
+                    <small>Critical security notifications</small>
+                </span>
+                <input class="toggle" type="checkbox" checked>
+            </label>
+
+            <label class="security-control">
+                <span>
+                    <strong>Billing notifications</strong>
+                    <small>Invoice and payment alerts</small>
+                </span>
+                <input class="toggle" type="checkbox" checked>
+            </label>
+
+            <label class="security-control">
+                <span>
+                    <strong>Weekly reports</strong>
+                    <small>Executive performance reports</small>
+                </span>
+                <input class="toggle" type="checkbox">
+            </label>
+
+        </div>
+
+    </div>
+
+</section>
+
+</div>
+</main>
+</div>
+
+<div id="toast" class="toast"></div>
+
+</body>
+</html>

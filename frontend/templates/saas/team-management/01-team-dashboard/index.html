@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TeamPulse | Team Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">TP</div>
+
+            <div>
+                <h2>TeamPulse</h2>
+                <span>Team Management</span>
+            </div>
+        </div>
+
+        <nav class="navigation">
+
+            <button class="nav-item active" data-page="dashboard">
+                <span>📊</span>
+                <span>Dashboard</span>
+            </button>
+
+            <button class="nav-item" data-page="members">
+                <span>👥</span>
+                <span>Members</span>
+            </button>
+
+            <button class="nav-item" data-page="projects">
+                <span>📁</span>
+                <span>Projects</span>
+            </button>
+
+            <button class="nav-item" data-page="tasks">
+                <span>✅</span>
+                <span>Tasks</span>
+            </button>
+
+            <button class="nav-item" data-page="reports">
+                <span>📈</span>
+                <span>Reports</span>
+            </button>
+
+            <button class="nav-item" data-page="settings">
+                <span>⚙️</span>
+                <span>Settings</span>
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="upgrade-card">
+                <div class="upgrade-icon">🚀</div>
+                <h3>Team Pro</h3>
+                <p>Unlock advanced team analytics.</p>
+                <button id="upgradeBtn">Upgrade</button>
+            </div>
+
+            <button class="logout-btn" id="logoutBtn">
+                🚪 <span>Log out</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <button class="menu-btn" id="menuBtn">☰</button>
+
+            <div class="top-search">
+                <span>🔎</span>
+                <input
+                    type="text"
+                    id="globalSearch"
+                    placeholder="Search team, projects, tasks..."
+                >
+            </div>
+
+            <div class="top-actions">
+
+                <button class="notification-btn" id="notificationBtn">
+                    🔔
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="profile">
+
+                    <div class="avatar">BJ</div>
+
+                    <div class="profile-info">
+                        <strong>Boodati Jayanth</strong>
+                        <small>Administrator</small>
+                    </div>
+
+                    <button id="profileMenuBtn">⌄</button>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- CONTENT -->
+
+        <div class="content">
+
+            <!-- ================= DASHBOARD ================= -->
+
+            <section class="page active" id="dashboardPage">
+
+                <div class="page-header">
+
+                    <div>
+                        <span class="eyebrow">TEAM OVERVIEW</span>
+                        <h1>Good morning, Jayanth 👋</h1>
+                        <p>Here's what's happening with your team today.</p>
+                    </div>
+
+                    <button class="primary-btn" id="addMemberBtn">
+                        + Add Member
+                    </button>
+
+                </div>
+
+                <!-- STATS -->
+
+                <div class="stats-grid">
+
+                    <div class="stat-card blue">
+                        <div class="stat-icon">👥</div>
+                        <div>
+                            <span>Total Members</span>
+                            <h2 id="memberCount">12</h2>
+                            <small>+2 this month</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card purple">
+                        <div class="stat-icon">📁</div>
+                        <div>
+                            <span>Active Projects</span>
+                            <h2 id="projectCount">8</h2>
+                            <small>3 due this week</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card green">
+                        <div class="stat-icon">✅</div>
+                        <div>
+                            <span>Completed Tasks</span>
+                            <h2 id="completedCount">126</h2>
+                            <small>+18 this week</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card orange">
+                        <div class="stat-icon">⚡</div>
+                        <div>
+                            <span>Productivity</span>
+                            <h2>87%</h2>
+                            <small>+6.4% this week</small>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- CHART + ACTIVITY -->
+
+                <div class="dashboard-grid">
+
+                    <div class="panel chart-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h2>Team Performance</h2>
+                                <p>Tasks completed this week</p>
+                            </div>
+
+                            <select id="chartPeriod">
+                                <option value="week">This Week</option>
+                                <option value="month">This Month</option>
+                                <option value="quarter">Quarter</option>
+                            </select>
+
+                        </div>
+
+                        <canvas id="performanceChart"></canvas>
+
+                    </div>
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+                            <div>
+                                <h2>Recent Activity</h2>
+                                <p>Latest team updates</p>
+                            </div>
+
+                            <button class="text-btn" id="viewActivityBtn">
+                                View all
+                            </button>
+                        </div>
+
+                        <div class="activity-list" id="activityList">
+
+                            <div class="activity">
+                                <div class="activity-icon purple-bg">📁</div>
+                                <div>
+                                    <strong>Priya created a project</strong>
+                                    <span>Website Redesign</span>
+                                    <small>10 minutes ago</small>
+                                </div>
+                            </div>
+
+                            <div class="activity">
+                                <div class="activity-icon green-bg">✅</div>
+                                <div>
+                                    <strong>Arjun completed a task</strong>
+                                    <span>API Integration</span>
+                                    <small>35 minutes ago</small>
+                                </div>
+                            </div>
+
+                            <div class="activity">
+                                <div class="activity-icon blue-bg">👤</div>
+                                <div>
+                                    <strong>New member joined</strong>
+                                    <span>Rahul Sharma</span>
+                                    <small>1 hour ago</small>
+                                </div>
+                            </div>
+
+                            <div class="activity">
+                                <div class="activity-icon orange-bg">💬</div>
+                                <div>
+                                    <strong>Meena commented</strong>
+                                    <span>Mobile Application</span>
+                                    <small>2 hours ago</small>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- PROJECTS -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h2>Active Projects</h2>
+                            <p>Current team projects</p>
+                        </div>
+
+                        <button class="text-btn" id="viewProjectsBtn">
+                            View projects →
+                        </button>
+
+                    </div>
+
+                    <div class="project-grid">
+
+                        <div class="project-card">
+
+                            <div class="project-top">
+                                <div class="project-logo purple">W</div>
+
+                                <button class="more-btn"
+                                        data-project-menu="Website Redesign">
+                                    ⋮
+                                </button>
+                            </div>
+
+                            <h3>Website Redesign</h3>
+                            <p>Marketing Team</p>
+
+                            <div class="progress-info">
+                                <span>Progress</span>
+                                <strong>78%</strong>
+                            </div>
+
+                            <div class="progress">
+                                <div style="width:78%"></div>
+                            </div>
+
+                            <div class="project-footer">
+                                <div class="mini-avatars">
+                                    <span>AR</span>
+                                    <span>PM</span>
+                                    <span>RK</span>
+                                    <span>+3</span>
+                                </div>
+
+                                <small>Due Oct 12</small>
+                            </div>
+
+                        </div>
+
+                        <div class="project-card">
+
+                            <div class="project-top">
+                                <div class="project-logo blue">M</div>
+
+                                <button class="more-btn"
+                                        data-project-menu="Mobile Application">
+                                    ⋮
+                                </button>
+                            </div>
+
+                            <h3>Mobile Application</h3>
+                            <p>Engineering Team</p>
+
+                            <div class="progress-info">
+                                <span>Progress</span>
+                                <strong>56%</strong>
+                            </div>
+
+                            <div class="progress">
+                                <div style="width:56%"></div>
+                            </div>
+
+                            <div class="project-footer">
+                                <div class="mini-avatars">
+                                    <span>JS</span>
+                                    <span>AK</span>
+                                    <span>SM</span>
+                                    <span>+4</span>
+                                </div>
+
+                                <small>Due Oct 18</small>
+                            </div>
+
+                        </div>
+
+                        <div class="project-card">
+
+                            <div class="project-top">
+                                <div class="project-logo green">A</div>
+
+                                <button class="more-btn"
+                                        data-project-menu="AI Assistant">
+                                    ⋮
+                                </button>
+                            </div>
+
+                            <h3>AI Assistant</h3>
+                            <p>AI Research Team</p>
+
+                            <div class="progress-info">
+                                <span>Progress</span>
+                                <strong>42%</strong>
+                            </div>
+
+                            <div class="progress">
+                                <div style="width:42%"></div>
+                            </div>
+
+                            <div class="project-footer">
+                                <div class="mini-avatars">
+                                    <span>BK</span>
+                                    <span>RN</span>
+                                    <span>VP</span>
+                                    <span>+2</span>
+                                </div>
+
+                                <small>Due Oct 24</small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ================= MEMBERS ================= -->
+
+            <section class="page" id="membersPage">
+
+                <div class="page-header">
+
+                    <div>
+                        <span class="eyebrow">TEAM</span>
+                        <h1>Team Members</h1>
+                        <p>Manage everyone in your organization.</p>
+                    </div>
+
+                    <button class="primary-btn" id="addMemberBtn2">
+                        + Add Member
+                    </button>
+
+                </div>
+
+                <div class="panel">
+
+                    <div class="toolbar">
+
+                        <div class="local-search">
+                            🔎
+                            <input
+                                type="text"
+                                id="memberSearch"
+                                placeholder="Search members..."
+                            >
+                        </div>
+
+                        <select id="roleFilter">
+                            <option value="all">All Roles</option>
+                            <option value="Developer">Developer</option>
+                            <option value="Designer">Designer</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Analyst">Analyst</option>
+                        </select>
+
+                        <select id="statusFilter">
+                            <option value="all">All Status</option>
+                            <option value="Online">Online</option>
+                            <option value="Offline">Offline</option>
+                        </select>
+
+                    </div>
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Member</th>
+                                    <th>Role</th>
+                                    <th>Department</th>
+                                    <th>Status</th>
+                                    <th>Projects</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="membersTable"></tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ================= PROJECTS ================= -->
+
+            <section class="page" id="projectsPage">
+
+                <div class="page-header">
+
+                    <div>
+                        <span class="eyebrow">WORK</span>
+                        <h1>Projects</h1>
+                        <p>Track your team's active projects.</p>
+                    </div>
+
+                    <button class="primary-btn" id="newProjectBtn">
+                        + New Project
+                    </button>
+
+                </div>
+
+                <div class="project-grid large" id="allProjects"></div>
+
+            </section>
+
+            <!-- ================= TASKS ================= -->
+
+            <section class="page" id="tasksPage">
+
+                <div class="page-header">
+
+                    <div>
+                        <span class="eyebrow">WORKFLOW</span>
+                        <h1>Team Tasks</h1>
+                        <p>Manage and track team tasks.</p>
+                    </div>
+
+                </div>
+
+                <div class="task-layout">
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+                            <div>
+                                <h2>Add Task</h2>
+                                <p>Create a task for your team.</p>
+                            </div>
+                        </div>
+
+                        <form id="taskForm">
+
+                            <input
+                                type="text"
+                                id="taskTitle"
+                                placeholder="Enter task title"
+                                required
+                            >
+
+                            <select id="taskPriority">
+                                <option value="High">High Priority</option>
+                                <option value="Medium">Medium Priority</option>
+                                <option value="Low">Low Priority</option>
+                            </select>
+
+                            <button class="primary-btn" type="submit">
+                                Add Task
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+                            <div>
+                                <h2>Task List</h2>
+                                <p id="taskSummary">0 tasks</p>
+                            </div>
+                        </div>
+
+                        <div class="task-list" id="taskList"></div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ================= REPORTS ================= -->
+
+            <section class="page" id="reportsPage">
+
+                <div class="page-header">
+
+                    <div>
+                        <span class="eyebrow">ANALYTICS</span>
+                        <h1>Team Reports</h1>
+                        <p>Understand your team's performance.</p>
+                    </div>
+
+                    <button class="primary-btn" id="exportBtn">
+                        ↓ Export Report
+                    </button>
+
+                </div>
+
+                <div class="stats-grid">
+
+                    <div class="stat-card blue">
+                        <div class="stat-icon">📊</div>
+                        <div>
+                            <span>Completion Rate</span>
+                            <h2>91%</h2>
+                            <small>+4.2%</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card green">
+                        <div class="stat-icon">⚡</div>
+                        <div>
+                            <span>Avg. Productivity</span>
+                            <h2>87%</h2>
+                            <small>+6.4%</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card purple">
+                        <div class="stat-icon">⏱️</div>
+                        <div>
+                            <span>Avg. Task Time</span>
+                            <h2>4.2h</h2>
+                            <small>-12%</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card orange">
+                        <div class="stat-icon">🎯</div>
+                        <div>
+                            <span>Goals Reached</span>
+                            <h2>84%</h2>
+                            <small>+8.1%</small>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="panel chart-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h2>Productivity Report</h2>
+                            <p>Team productivity over time</p>
+                        </div>
+
+                        <select id="reportPeriod">
+                            <option value="7">Last 7 days</option>
+                            <option value="14">Last 14 days</option>
+                            <option value="30">Last 30 days</option>
+                        </select>
+
+                    </div>
+
+                    <canvas id="reportChart"></canvas>
+
+                </div>
+
+            </section>
+
+            <!-- ================= SETTINGS ================= -->
+
+            <section class="page" id="settingsPage">
+
+                <div class="page-header">
+
+                    <div>
+                        <span class="eyebrow">CONFIGURATION</span>
+                        <h1>Settings</h1>
+                        <p>Manage your TeamPulse preferences.</p>
+                    </div>
+
+                </div>
+
+                <div class="settings-grid">
+
+                    <div class="panel">
+
+                        <h2>Organization</h2>
+                        <p class="panel-description">
+                            Basic organization information.
+                        </p>
+
+                        <form id="settingsForm">
+
+                            <label>
+                                Organization Name
+                                <input
+                                    type="text"
+                                    id="organizationName"
+                                    value="TeamPulse"
+                                >
+                            </label>
+
+                            <label>
+                                Admin Email
+                                <input
+                                    type="email"
+                                    id="adminEmail"
+                                    value="admin@teampulse.com"
+                                >
+                            </label>
+
+                            <label>
+                                Timezone
+                                <select id="timezone">
+                                    <option>Asia/Kolkata</option>
+                                    <option>Asia/Singapore</option>
+                                    <option>Europe/London</option>
+                                    <option>America/New_York</option>
+                                </select>
+                            </label>
+
+                            <button class="primary-btn" type="submit">
+                                Save Changes
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                    <div class="panel">
+
+                        <h2>Notifications</h2>
+                        <p class="panel-description">
+                            Control how you receive updates.
+                        </p>
+
+                        <div class="setting-row">
+
+                            <div>
+                                <strong>Email Notifications</strong>
+                                <p>Receive important team updates.</p>
+                            </div>
+
+                            <label class="switch">
+                                <input type="checkbox" id="emailNotifications" checked>
+                                <span></span>
+                            </label>
+
+                        </div>
+
+                        <div class="setting-row">
+
+                            <div>
+                                <strong>Weekly Report</strong>
+                                <p>Receive weekly team performance reports.</p>
+                            </div>
+
+                            <label class="switch">
+                                <input type="checkbox" id="weeklyReport" checked>
+                                <span></span>
+                            </label>
+
+                        </div>
+
+                        <div class="setting-row">
+
+                            <div>
+                                <strong>Dark Mode</strong>
+                                <p>Use a darker interface.</p>
+                            </div>
+
+                            <label class="switch">
+                                <input type="checkbox" id="darkMode">
+                                <span></span>
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- ================= ADD MEMBER MODAL ================= -->
+
+<div class="modal-overlay" id="memberModal">
+
+    <div class="modal">
+
+        <div class="modal-header">
+            <div>
+                <h2>Add Team Member</h2>
+                <p>Add someone to your organization.</p>
+            </div>
+
+            <button class="close-btn" id="closeModal">×</button>
+        </div>
+
+        <form id="memberForm">
+
+            <label>
+                Full Name
+                <input
+                    type="text"
+                    id="newMemberName"
+                    placeholder="Enter full name"
+                    required
+                >
+            </label>
+
+            <label>
+                Email
+                <input
+                    type="email"
+                    id="newMemberEmail"
+                    placeholder="member@example.com"
+                    required
+                >
+            </label>
+
+            <label>
+                Role
+                <select id="newMemberRole">
+                    <option>Developer</option>
+                    <option>Designer</option>
+                    <option>Manager</option>
+                    <option>Analyst</option>
+                </select>
+            </label>
+
+            <label>
+                Department
+                <select id="newMemberDepartment">
+                    <option>Engineering</option>
+                    <option>Design</option>
+                    <option>Marketing</option>
+                    <option>Analytics</option>
+                    <option>Management</option>
+                </select>
+            </label>
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="cancelModal"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Add Member
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div class="toast" id="toast">
+
+    <div class="toast-icon">✓</div>
+
+    <div>
+        <strong id="toastTitle">Success</strong>
+        <p id="toastMessage">Action completed.</p>
+    </div>
+
+</div>
+
+
+<!-- ================= MOBILE OVERLAY ================= -->
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+</body>
+</html>

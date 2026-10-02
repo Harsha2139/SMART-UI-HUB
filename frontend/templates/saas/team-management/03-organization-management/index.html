@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>OrgFlow | Organization Management</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+
+<body>
+
+<header class="top">
+
+    <div class="brand">
+        <div class="logo">O</div>
+        <div>
+            <h2>OrgFlow</h2>
+            <small>Organization Management</small>
+        </div>
+    </div>
+
+    <nav>
+        <button class="active" data-page="overview">Overview</button>
+        <button data-page="departments">Departments</button>
+        <button data-page="roles">Roles</button>
+        <button data-page="members">Members</button>
+        <button data-page="activity">Activity</button>
+    </nav>
+
+    <button id="menu" class="menu">☰</button>
+
+</header>
+
+
+<main>
+
+<!-- OVERVIEW -->
+
+<section class="page active" id="overview">
+
+    <div class="hero">
+        <div>
+            <span>ORGANIZATION</span>
+            <h1>Welcome to OrgFlow</h1>
+            <p>Manage your entire organization from one dashboard.</p>
+        </div>
+
+        <button class="orange-btn" id="inviteTop">+ Invite Member</button>
+    </div>
+
+    <div class="stats">
+
+        <div><b>🏢</b><small>Departments</small><strong id="deptCount">6</strong></div>
+        <div><b>👥</b><small>Members</small><strong id="memberCount">48</strong></div>
+        <div><b>🔐</b><small>Roles</small><strong>12</strong></div>
+        <div><b>📈</b><small>Growth</small><strong>24%</strong></div>
+
+    </div>
+
+    <div class="grid">
+
+        <div class="card chart">
+
+            <div class="card-title">
+                <div>
+                    <h2>Organization Growth</h2>
+                    <p>Members added during the year</p>
+                </div>
+
+                <select id="growthPeriod">
+                    <option>2026</option>
+                    <option>2025</option>
+                </select>
+            </div>
+
+            <canvas id="growthChart"></canvas>
+
+        </div>
+
+        <div class="card">
+
+            <div class="card-title">
+                <div>
+                    <h2>Quick Actions</h2>
+                    <p>Common organization tasks</p>
+                </div>
+            </div>
+
+            <div class="quick">
+
+                <button id="inviteBtn">👤 Invite Member</button>
+                <button id="departmentBtn">🏢 Add Department</button>
+                <button id="roleBtn">🔐 Create Role</button>
+                <button id="auditBtn">📋 View Audit Log</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DEPARTMENTS -->
+
+<section class="page" id="departments">
+
+    <div class="hero">
+        <div>
+            <span>STRUCTURE</span>
+            <h1>Departments</h1>
+            <p>Organize people into departments.</p>
+        </div>
+
+        <button class="orange-btn" id="addDept">+ Department</button>
+    </div>
+
+    <div class="department-grid" id="departmentGrid"></div>
+
+</section>
+
+
+<!-- ROLES -->
+
+<section class="page" id="roles">
+
+    <div class="hero">
+        <div>
+            <span>ACCESS CONTROL</span>
+            <h1>Roles & Permissions</h1>
+            <p>Control what each role can access.</p>
+        </div>
+
+        <button class="orange-btn" id="addRole">+ Create Role</button>
+    </div>
+
+    <div class="card">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Role</th>
+                    <th>Members</th>
+                    <th>Permissions</th>
+                    <th>Access</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="roleTable"></tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- MEMBERS -->
+
+<section class="page" id="members">
+
+    <div class="hero">
+        <div>
+            <span>PEOPLE</span>
+            <h1>Organization Members</h1>
+            <p>All people in your organization.</p>
+        </div>
+
+        <button class="orange-btn" id="inviteMember">+ Invite</button>
+    </div>
+
+    <div class="card">
+
+        <div class="search">
+            🔎
+            <input id="memberSearch" placeholder="Search members...">
+        </div>
+
+        <div id="membersList"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ACTIVITY -->
+
+<section class="page" id="activity">
+
+    <div class="hero">
+        <div>
+            <span>AUDIT</span>
+            <h1>Activity Log</h1>
+            <p>Track organization changes.</p>
+        </div>
+    </div>
+
+    <div class="card" id="activityList"></div>
+
+</section>
+
+</main>
+
+
+<div class="modal-bg" id="modal">
+
+<div class="modal">
+
+    <button id="close">×</button>
+
+    <h2 id="modalTitle">Create</h2>
+
+    <form id="modalForm">
+
+        <label id="fieldLabel">Name
+            <input id="field" required>
+        </label>
+
+        <button class="orange-btn">Save</button>
+
+    </form>
+
+</div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+</body>
+</html>

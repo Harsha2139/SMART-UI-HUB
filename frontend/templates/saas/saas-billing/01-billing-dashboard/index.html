@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">B</div>
+            <div>
+                <strong>BillFlow</strong>
+                <small>Billing Suite</small>
+            </div>
+        </div>
+
+        <nav>
+            <button class="nav-btn active" data-view="dashboard">
+                <span>▦</span> Dashboard
+            </button>
+
+            <button class="nav-btn" data-view="invoices">
+                <span>▤</span> Invoices
+            </button>
+
+            <button class="nav-btn" data-view="customers">
+                <span>♙</span> Customers
+            </button>
+
+            <button class="nav-btn" data-view="payments">
+                <span>◉</span> Payments
+            </button>
+
+            <button class="nav-btn" data-view="expenses">
+                <span>◆</span> Expenses
+            </button>
+
+            <button class="nav-btn" data-view="settings">
+                <span>⚙</span> Settings
+            </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="upgrade">
+                <strong>Business Plan</strong>
+                <span>82% storage used</span>
+                <div class="progress">
+                    <i></i>
+                </div>
+            </div>
+
+            <button class="logout" id="logoutBtn">↪ Logout</button>
+        </div>
+
+    </aside>
+
+    <main>
+
+        <header class="topbar">
+
+            <button class="mobile-menu" id="mobileMenu">☰</button>
+
+            <div>
+                <h1 id="pageTitle">Billing Dashboard</h1>
+                <p>Manage your business billing</p>
+            </div>
+
+            <div class="top-actions">
+                <div class="search">
+                    🔎
+                    <input id="globalSearch" placeholder="Search invoices...">
+                </div>
+
+                <button class="notification">🔔<b>3</b></button>
+
+                <div class="avatar">BJ</div>
+            </div>
+
+        </header>
+
+        <!-- DASHBOARD -->
+
+        <section class="view active" id="dashboard">
+
+            <div class="stats">
+
+                <div class="stat-card blue">
+                    <div>
+                        <span>Total Revenue</span>
+                        <h2>$84,250</h2>
+                        <small>↑ 18.4% this month</small>
+                    </div>
+                    <div class="stat-icon">💰</div>
+                </div>
+
+                <div class="stat-card purple">
+                    <div>
+                        <span>Outstanding</span>
+                        <h2>$12,840</h2>
+                        <small>14 invoices pending</small>
+                    </div>
+                    <div class="stat-icon">⏳</div>
+                </div>
+
+                <div class="stat-card green">
+                    <div>
+                        <span>Paid Invoices</span>
+                        <h2>248</h2>
+                        <small>↑ 12.5% this month</small>
+                    </div>
+                    <div class="stat-icon">✓</div>
+                </div>
+
+                <div class="stat-card orange">
+                    <div>
+                        <span>Customers</span>
+                        <h2>1,284</h2>
+                        <small>+84 new customers</small>
+                    </div>
+                    <div class="stat-icon">♙</div>
+                </div>
+
+            </div>
+
+            <div class="dashboard-grid">
+
+                <div class="panel revenue-panel">
+
+                    <div class="panel-head">
+                        <div>
+                            <h2>Revenue Overview</h2>
+                            <p>Monthly revenue performance</p>
+                        </div>
+
+                        <select id="revenuePeriod">
+                            <option>Last 6 months</option>
+                            <option>Last 12 months</option>
+                            <option>This year</option>
+                        </select>
+                    </div>
+
+                    <canvas id="revenueChart"></canvas>
+
+                </div>
+
+                <div class="panel">
+
+                    <div class="panel-head">
+                        <h2>Payment Status</h2>
+                    </div>
+
+                    <div class="payment-circle">
+                        <div>
+                            <strong>92%</strong>
+                            <span>Paid</span>
+                        </div>
+                    </div>
+
+                    <div class="legend">
+                        <span><i class="paid"></i> Paid 92%</span>
+                        <span><i class="pending"></i> Pending 6%</span>
+                        <span><i class="failed"></i> Failed 2%</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="panel">
+
+                <div class="panel-head">
+                    <div>
+                        <h2>Recent Invoices</h2>
+                        <p>Latest billing activity</p>
+                    </div>
+
+                    <button class="primary" id="newInvoiceBtn">+ New Invoice</button>
+                </div>
+
+                <div class="table-wrap">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Invoice</th>
+                                <th>Customer</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="invoiceTable"></tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- INVOICES -->
+
+        <section class="view" id="invoices">
+
+            <div class="section-head">
+                <div>
+                    <h2>Invoices</h2>
+                    <p>Create and manage customer invoices.</p>
+                </div>
+
+                <button class="primary" id="invoiceBtn">+ Create Invoice</button>
+            </div>
+
+            <div class="toolbar">
+                <input id="invoiceSearch" placeholder="Search customer or invoice...">
+
+                <select id="statusFilter">
+                    <option value="all">All Status</option>
+                    <option value="Paid">Paid</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Overdue">Overdue</option>
+                </select>
+            </div>
+
+            <div class="panel">
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Invoice</th>
+                                <th>Customer</th>
+                                <th>Email</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="invoiceFullTable"></tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- CUSTOMERS -->
+
+        <section class="view" id="customers">
+
+            <div class="section-head">
+                <div>
+                    <h2>Customers</h2>
+                    <p>Manage your billing customers.</p>
+                </div>
+
+                <button class="primary" id="customerBtn">+ Add Customer</button>
+            </div>
+
+            <div class="customer-grid" id="customerGrid"></div>
+
+        </section>
+
+        <!-- PAYMENTS -->
+
+        <section class="view" id="payments">
+
+            <div class="section-head">
+                <div>
+                    <h2>Payments</h2>
+                    <p>Track incoming payments.</p>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card blue">
+                    <span>Today's Payments</span>
+                    <h2>$8,420</h2>
+                    <small>24 transactions</small>
+                </div>
+
+                <div class="stat-card green">
+                    <span>Successful</span>
+                    <h2>96.8%</h2>
+                    <small>Excellent payment rate</small>
+                </div>
+
+                <div class="stat-card orange">
+                    <span>Refunds</span>
+                    <h2>$1,240</h2>
+                    <small>8 refunds</small>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-head">
+                    <h2>Recent Payments</h2>
+                </div>
+
+                <div class="payment-list" id="paymentList"></div>
+            </div>
+
+        </section>
+
+        <!-- EXPENSES -->
+
+        <section class="view" id="expenses">
+
+            <div class="section-head">
+                <div>
+                    <h2>Expenses</h2>
+                    <p>Monitor business expenses.</p>
+                </div>
+
+                <button class="primary" id="expenseBtn">+ Add Expense</button>
+            </div>
+
+            <div class="expense-grid">
+
+                <div class="expense-card">
+                    <span>Software</span>
+                    <strong>$4,280</strong>
+                    <small>32% of expenses</small>
+                </div>
+
+                <div class="expense-card">
+                    <span>Marketing</span>
+                    <strong>$3,640</strong>
+                    <small>27% of expenses</small>
+                </div>
+
+                <div class="expense-card">
+                    <span>Operations</span>
+                    <strong>$5,120</strong>
+                    <small>41% of expenses</small>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SETTINGS -->
+
+        <section class="view" id="settings">
+
+            <div class="section-head">
+                <div>
+                    <h2>Billing Settings</h2>
+                    <p>Configure your billing preferences.</p>
+                </div>
+            </div>
+
+            <div class="settings-panel">
+
+                <label>
+                    Company Name
+                    <input id="companyName" value="BillFlow Technologies">
+                </label>
+
+                <label>
+                    Billing Email
+                    <input value="billing@billflow.com">
+                </label>
+
+                <label>
+                    Currency
+                    <select>
+                        <option>USD - US Dollar</option>
+                        <option>INR - Indian Rupee</option>
+                        <option>EUR - Euro</option>
+                    </select>
+                </label>
+
+                <label class="toggle-row">
+                    Send payment reminders
+                    <input type="checkbox" checked>
+                </label>
+
+                <button class="primary" id="saveSettings">Save Settings</button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- MODAL -->
+
+<div class="modal" id="invoiceModal">
+
+    <div class="modal-box">
+
+        <button class="close" id="closeModal">×</button>
+
+        <h2>Create Invoice</h2>
+        <p>Create a new customer invoice.</p>
+
+        <form id="invoiceForm">
+
+            <label>
+                Customer
+                <input id="customerName" required>
+            </label>
+
+            <label>
+                Email
+                <input type="email" id="customerEmail" required>
+            </label>
+
+            <label>
+                Amount
+                <input type="number" id="invoiceAmount" required>
+            </label>
+
+            <button class="primary" type="submit">Create Invoice</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<div id="toast"></div>
+
+</body>
+</html>

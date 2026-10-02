@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Modern SaaS Admin</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="modern-app">
+
+    <!-- =====================================================
+         TOP NAVIGATION
+    ====================================================== -->
+
+    <header class="top-navigation">
+
+        <div class="brand-area">
+
+            <div class="brand-logo">
+                M
+            </div>
+
+            <div>
+                <strong>ModernFlow</strong>
+                <small>Admin Studio</small>
+            </div>
+
+        </div>
+
+
+        <nav class="top-menu">
+
+            <button class="top-link active"
+                    data-view="overview">
+                Overview
+            </button>
+
+            <button class="top-link"
+                    data-view="analytics">
+                Analytics
+            </button>
+
+            <button class="top-link"
+                    data-view="customers">
+                Customers
+            </button>
+
+            <button class="top-link"
+                    data-view="invoices">
+                Invoices
+            </button>
+
+            <button class="top-link"
+                    data-view="activity">
+                Activity
+            </button>
+
+            <button class="top-link"
+                    data-view="settings">
+                Settings
+            </button>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <button id="searchOpen"
+                    class="round-button">
+                ⌕
+            </button>
+
+            <button id="themeToggle"
+                    class="round-button">
+                ☾
+            </button>
+
+            <button id="notificationButton"
+                    class="round-button notification-button">
+                🔔
+                <span></span>
+            </button>
+
+            <div class="modern-profile">
+
+                <div class="profile-photo">
+                    JD
+                </div>
+
+                <div class="profile-text">
+                    <strong>John Doe</strong>
+                    <small>Admin</small>
+                </div>
+
+            </div>
+
+            <button id="mobileMenu"
+                    class="mobile-button">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MOBILE MENU
+    ====================================================== -->
+
+    <div class="mobile-navigation"
+         id="mobileNavigation">
+
+        <button data-view="overview">Overview</button>
+        <button data-view="analytics">Analytics</button>
+        <button data-view="customers">Customers</button>
+        <button data-view="invoices">Invoices</button>
+        <button data-view="activity">Activity</button>
+        <button data-view="settings">Settings</button>
+
+    </div>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="modern-main">
+
+        <!-- =================================================
+             OVERVIEW
+        ================================================== -->
+
+        <section class="modern-view active"
+                 id="overview">
+
+            <div class="hero-section">
+
+                <div class="hero-content">
+
+                    <span class="hero-label">
+                        OCTOBER 2026
+                    </span>
+
+                    <h1>
+                        Your business,
+                        <span>beautifully managed.</span>
+                    </h1>
+
+                    <p>
+                        Track customers, revenue and growth
+                        from one modern workspace.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <button class="gradient-button"
+                                id="createInvoice">
+                            + Create Invoice
+                        </button>
+
+                        <button class="outline-button"
+                                data-view-target="analytics">
+                            View Analytics →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-orbit">
+
+                    <div class="orbit-circle circle-one"></div>
+                    <div class="orbit-circle circle-two"></div>
+
+                    <div class="orbit-center">
+                        <strong>$84.2K</strong>
+                        <small>Monthly Revenue</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- METRICS -->
+
+            <div class="floating-metrics">
+
+                <div class="metric-box">
+
+                    <div class="metric-top">
+                        <span>Revenue</span>
+                        <b>↗</b>
+                    </div>
+
+                    <strong>$84,290</strong>
+
+                    <small class="green">
+                        +18.4%
+                    </small>
+
+                </div>
+
+
+                <div class="metric-box">
+
+                    <div class="metric-top">
+                        <span>Customers</span>
+                        <b>◎</b>
+                    </div>
+
+                    <strong>8,492</strong>
+
+                    <small class="green">
+                        +12.8%
+                    </small>
+
+                </div>
+
+
+                <div class="metric-box">
+
+                    <div class="metric-top">
+                        <span>Conversion</span>
+                        <b>%</b>
+                    </div>
+
+                    <strong>9.42%</strong>
+
+                    <small class="orange">
+                        +2.1%
+                    </small>
+
+                </div>
+
+
+                <div class="metric-box">
+
+                    <div class="metric-top">
+                        <span>Churn</span>
+                        <b>↓</b>
+                    </div>
+
+                    <strong>2.18%</strong>
+
+                    <small class="pink">
+                        -0.7%
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- DASHBOARD CONTENT -->
+
+            <div class="modern-grid">
+
+                <div class="modern-card large-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <h2>Revenue Growth</h2>
+                            <p>Monthly performance</p>
+                        </div>
+
+                        <select id="chartSelect">
+                            <option>Revenue</option>
+                            <option>Customers</option>
+                            <option>Subscriptions</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="modern-chart">
+
+                        <div class="chart-labels">
+                            <span>100K</span>
+                            <span>80K</span>
+                            <span>60K</span>
+                            <span>40K</span>
+                            <span>20K</span>
+                            <span>0</span>
+                        </div>
+
+                        <div class="chart-area">
+
+                            <div class="chart-line line-one"></div>
+                            <div class="chart-line line-two"></div>
+
+                            <div class="chart-points">
+
+                                <i style="height:30%"></i>
+                                <i style="height:45%"></i>
+                                <i style="height:38%"></i>
+                                <i style="height:55%"></i>
+                                <i style="height:63%"></i>
+                                <i style="height:71%"></i>
+                                <i style="height:88%"></i>
+                                <i style="height:82%"></i>
+                                <i style="height:96%"></i>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="months">
+                        <span>Jan</span>
+                        <span>Feb</span>
+                        <span>Mar</span>
+                        <span>Apr</span>
+                        <span>May</span>
+                        <span>Jun</span>
+                        <span>Jul</span>
+                        <span>Aug</span>
+                        <span>Sep</span>
+                    </div>
+
+                </div>
+
+
+                <div class="modern-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <h2>Quick Stats</h2>
+                            <p>Today's activity</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-stat">
+
+                        <div class="quick-icon violet">
+                            👥
+                        </div>
+
+                        <div>
+                            <strong>184</strong>
+                            <span>New customers</span>
+                        </div>
+
+                        <b>+14%</b>
+
+                    </div>
+
+
+                    <div class="quick-stat">
+
+                        <div class="quick-icon orange">
+                            💳
+                        </div>
+
+                        <div>
+                            <strong>328</strong>
+                            <span>Payments</span>
+                        </div>
+
+                        <b>+8%</b>
+
+                    </div>
+
+
+                    <div class="quick-stat">
+
+                        <div class="quick-icon pink">
+                            ⚡
+                        </div>
+
+                        <div>
+                            <strong>94%</strong>
+                            <span>System health</span>
+                        </div>
+
+                        <b>Good</b>
+
+                    </div>
+
+
+                    <div class="quick-stat">
+
+                        <div class="quick-icon green">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>1,284</strong>
+                            <span>Tasks completed</span>
+                        </div>
+
+                        <b>+21%</b>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTTOM -->
+
+            <div class="modern-grid">
+
+                <div class="modern-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <h2>Top Customers</h2>
+                            <p>Highest lifetime value</p>
+                        </div>
+
+                        <button
+                            class="small-link"
+                            data-view-target="customers">
+                            View all
+                        </button>
+
+                    </div>
+
+
+                    <div class="customer-mini-list">
+
+                        <div class="customer-mini">
+
+                            <div class="customer-avatar purple">
+                                SW
+                            </div>
+
+                            <div>
+                                <strong>Sarah Wilson</strong>
+                                <small>Enterprise</small>
+                            </div>
+
+                            <b>$18,420</b>
+
+                        </div>
+
+
+                        <div class="customer-mini">
+
+                            <div class="customer-avatar pink">
+                                MK
+                            </div>
+
+                            <div>
+                                <strong>Mike Kumar</strong>
+                                <small>Business</small>
+                            </div>
+
+                            <b>$12,840</b>
+
+                        </div>
+
+
+                        <div class="customer-mini">
+
+                            <div class="customer-avatar orange">
+                                AR
+                            </div>
+
+                            <div>
+                                <strong>Alex Roy</strong>
+                                <small>Pro</small>
+                            </div>
+
+                            <b>$9,280</b>
+
+                        </div>
+
+
+                        <div class="customer-mini">
+
+                            <div class="customer-avatar green">
+                                PS
+                            </div>
+
+                            <div>
+                                <strong>Priya Sharma</strong>
+                                <small>Business</small>
+                            </div>
+
+                            <b>$7,920</b>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="modern-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <h2>Recent Activity</h2>
+                            <p>Latest events</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline">
+
+                        <div>
+                            <i class="timeline-dot violet"></i>
+
+                            <strong>
+                                New subscription
+                            </strong>
+
+                            <span>
+                                Sarah upgraded to Enterprise
+                            </span>
+
+                            <small>
+                                4 minutes ago
+                            </small>
+                        </div>
+
+
+                        <div>
+                            <i class="timeline-dot orange"></i>
+
+                            <strong>
+                                Invoice paid
+                            </strong>
+
+                            <span>
+                                INV-8291 received payment
+                            </span>
+
+                            <small>
+                                18 minutes ago
+                            </small>
+                        </div>
+
+
+                        <div>
+                            <i class="timeline-dot pink"></i>
+
+                            <strong>
+                                New customer
+                            </strong>
+
+                            <span>
+                                Alex joined Pro plan
+                            </span>
+
+                            <small>
+                                42 minutes ago
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ANALYTICS
+        ================================================== -->
+
+        <section class="modern-view"
+                 id="analytics">
+
+            <div class="page-intro">
+
+                <div>
+                    <span>INSIGHTS</span>
+                    <h1>Analytics</h1>
+                    <p>
+                        Understand your business performance.
+                    </p>
+                </div>
+
+                <div class="date-control">
+
+                    <select id="analyticsPeriod">
+                        <option>Last 30 days</option>
+                        <option>Last 90 days</option>
+                        <option>This year</option>
+                    </select>
+
+                    <button id="exportAnalytics">
+                        Export CSV
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="analytics-cards">
+
+                <div>
+                    <span>MRR</span>
+                    <strong>$84,290</strong>
+                    <b>+18.4%</b>
+                </div>
+
+                <div>
+                    <span>ARR</span>
+                    <strong>$1.01M</strong>
+                    <b>+22.7%</b>
+                </div>
+
+                <div>
+                    <span>ARPU</span>
+                    <strong>$48.22</strong>
+                    <b>+5.4%</b>
+                </div>
+
+                <div>
+                    <span>LTV</span>
+                    <strong>$2,842</strong>
+                    <b>+11.9%</b>
+                </div>
+
+            </div>
+
+
+            <div class="analytics-panel">
+
+                <h2>Performance Breakdown</h2>
+
+                <div class="horizontal-chart">
+
+                    <div>
+                        <span>Enterprise</span>
+                        <div>
+                            <i style="width:91%"></i>
+                        </div>
+                        <b>91%</b>
+                    </div>
+
+                    <div>
+                        <span>Business</span>
+                        <div>
+                            <i style="width:76%"></i>
+                        </div>
+                        <b>76%</b>
+                    </div>
+
+                    <div>
+                        <span>Pro</span>
+                        <div>
+                            <i style="width:64%"></i>
+                        </div>
+                        <b>64%</b>
+                    </div>
+
+                    <div>
+                        <span>Free</span>
+                        <div>
+                            <i style="width:39%"></i>
+                        </div>
+                        <b>39%</b>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CUSTOMERS
+        ================================================== -->
+
+        <section class="modern-view"
+                 id="customers">
+
+            <div class="page-intro">
+
+                <div>
+                    <span>RELATIONSHIPS</span>
+                    <h1>Customers</h1>
+                    <p>Manage your customer base.</p>
+                </div>
+
+                <button class="gradient-button"
+                        id="addCustomer">
+                    + Add Customer
+                </button>
+
+            </div>
+
+
+            <div class="customer-toolbar">
+
+                <input id="customerSearch"
+                       placeholder="Search customers...">
+
+                <select id="customerPlan">
+                    <option value="all">All plans</option>
+                    <option value="Enterprise">Enterprise</option>
+                    <option value="Business">Business</option>
+                    <option value="Pro">Pro</option>
+                    <option value="Free">Free</option>
+                </select>
+
+            </div>
+
+
+            <div class="customer-table-card">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Customer</th>
+                            <th>Company</th>
+                            <th>Plan</th>
+                            <th>Revenue</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="customerTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             INVOICES
+        ================================================== -->
+
+        <section class="modern-view"
+                 id="invoices">
+
+            <div class="page-intro">
+
+                <div>
+                    <span>BILLING</span>
+                    <h1>Invoices</h1>
+                    <p>Track payments and billing.</p>
+                </div>
+
+                <button class="gradient-button"
+                        id="newInvoiceButton">
+                    + New Invoice
+                </button>
+
+            </div>
+
+
+            <div class="invoice-stats">
+
+                <div>
+                    <span>Total billed</span>
+                    <strong>$124,820</strong>
+                </div>
+
+                <div>
+                    <span>Paid</span>
+                    <strong>$108,420</strong>
+                </div>
+
+                <div>
+                    <span>Pending</span>
+                    <strong>$12,840</strong>
+                </div>
+
+                <div>
+                    <span>Overdue</span>
+                    <strong>$3,560</strong>
+                </div>
+
+            </div>
+
+
+            <div class="customer-table-card">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Invoice</th>
+                            <th>Customer</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>#INV-8291</td>
+                            <td>Sarah Wilson</td>
+                            <td>$4,820</td>
+                            <td>Oct 01</td>
+                            <td>
+                                <span class="invoice-status paid">
+                                    Paid
+                                </span>
+                            </td>
+                            <td>
+                                <button class="view-invoice">
+                                    View
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>#INV-8290</td>
+                            <td>Mike Kumar</td>
+                            <td>$2,420</td>
+                            <td>Sep 30</td>
+                            <td>
+                                <span class="invoice-status pending">
+                                    Pending
+                                </span>
+                            </td>
+                            <td>
+                                <button class="view-invoice">
+                                    View
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>#INV-8289</td>
+                            <td>Alex Roy</td>
+                            <td>$1,280</td>
+                            <td>Sep 29</td>
+                            <td>
+                                <span class="invoice-status overdue">
+                                    Overdue
+                                </span>
+                            </td>
+                            <td>
+                                <button class="view-invoice">
+                                    View
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ACTIVITY
+        ================================================== -->
+
+        <section class="modern-view"
+                 id="activity">
+
+            <div class="page-intro">
+
+                <div>
+                    <span>SYSTEM</span>
+                    <h1>Activity</h1>
+                    <p>Everything happening in your workspace.</p>
+                </div>
+
+                <button id="clearActivity">
+                    Clear activity
+                </button>
+
+            </div>
+
+
+            <div class="activity-feed"
+                 id="activityFeed">
+
+                <article>
+                    <div class="feed-icon violet">✓</div>
+                    <div>
+                        <strong>Subscription upgraded</strong>
+                        <p>Sarah Wilson upgraded to Enterprise.</p>
+                        <small>4 minutes ago</small>
+                    </div>
+                </article>
+
+                <article>
+                    <div class="feed-icon orange">$</div>
+                    <div>
+                        <strong>Payment received</strong>
+                        <p>Invoice #INV-8291 was paid.</p>
+                        <small>18 minutes ago</small>
+                    </div>
+                </article>
+
+                <article>
+                    <div class="feed-icon pink">+</div>
+                    <div>
+                        <strong>New customer</strong>
+                        <p>Alex Roy joined the Pro plan.</p>
+                        <small>42 minutes ago</small>
+                    </div>
+                </article>
+
+                <article>
+                    <div class="feed-icon green">⚡</div>
+                    <div>
+                        <strong>Deployment completed</strong>
+                        <p>Production version 5.1.0 deployed.</p>
+                        <small>1 hour ago</small>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SETTINGS
+        ================================================== -->
+
+        <section class="modern-view"
+                 id="settings">
+
+            <div class="page-intro">
+
+                <div>
+                    <span>CONFIGURATION</span>
+                    <h1>Settings</h1>
+                    <p>Customize your workspace.</p>
+                </div>
+
+                <button class="gradient-button"
+                        id="saveModernSettings">
+                    Save Changes
+                </button>
+
+            </div>
+
+
+            <div class="settings-layout">
+
+                <div class="settings-menu">
+
+                    <button class="selected">
+                        General
+                    </button>
+
+                    <button>
+                        Billing
+                    </button>
+
+                    <button>
+                        Security
+                    </button>
+
+                    <button>
+                        Notifications
+                    </button>
+
+                </div>
+
+
+                <div class="modern-settings-card">
+
+                    <h2>General Settings</h2>
+
+                    <label>
+                        Workspace Name
+
+                        <input id="workspaceName"
+                               value="ModernFlow">
+
+                    </label>
+
+
+                    <label>
+                        Admin Email
+
+                        <input value="admin@modernflow.com">
+
+                    </label>
+
+
+                    <label>
+                        Default Currency
+
+                        <select>
+                            <option>USD - Dollar</option>
+                            <option>EUR - Euro</option>
+                            <option>INR - Rupee</option>
+                        </select>
+
+                    </label>
+
+
+                    <div class="modern-switch">
+
+                        <div>
+                            <strong>Marketing emails</strong>
+                            <p>Receive product announcements.</p>
+                        </div>
+
+                        <label class="toggle">
+                            <input type="checkbox" checked>
+                            <span></span>
+                        </label>
+
+                    </div>
+
+
+                    <div class="modern-switch">
+
+                        <div>
+                            <strong>Security alerts</strong>
+                            <p>Receive important security alerts.</p>
+                        </div>
+
+                        <label class="toggle">
+                            <input type="checkbox" checked>
+                            <span></span>
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =====================================================
+     INVOICE MODAL
+====================================================== -->
+
+<div class="modern-modal"
+     id="invoiceModal">
+
+    <div class="invoice-modal-box">
+
+        <button class="modal-close"
+                id="closeInvoice">
+            ×
+        </button>
+
+        <span class="modal-label">
+            NEW INVOICE
+        </span>
+
+        <h2>Create Invoice</h2>
+
+        <p>Create a new customer invoice.</p>
+
+
+        <form id="invoiceForm">
+
+            <label>
+                Customer
+
+                <input id="invoiceCustomer"
+                       required
+                       placeholder="Customer name">
+
+            </label>
+
+
+            <label>
+                Amount
+
+                <input id="invoiceAmount"
+                       type="number"
+                       required
+                       placeholder="0.00">
+
+            </label>
+
+
+            <label>
+                Description
+
+                <textarea id="invoiceDescription"
+                          placeholder="Invoice description"></textarea>
+
+            </label>
+
+
+            <button class="gradient-button"
+                    type="submit">
+                Create Invoice
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     SEARCH MODAL
+====================================================== -->
+
+<div class="search-overlay"
+     id="searchOverlay">
+
+    <div class="search-dialog">
+
+        <button id="closeSearch">
+            ×
+        </button>
+
+        <h2>Search workspace</h2>
+
+        <input id="workspaceSearch"
+               placeholder="Search customers, invoices, activity...">
+
+        <div id="searchResults"></div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOAST
+====================================================== -->
+
+<div class="modern-toast"
+     id="modernToast">
+
+    <strong id="toastModernTitle">
+        Success
+    </strong>
+
+    <span id="toastModernMessage">
+        Operation completed.
+    </span>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

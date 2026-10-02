@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Basic Admin Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">SA</div>
+            <div>
+                <h2>SaaSAdmin</h2>
+                <span>Basic Admin</span>
+            </div>
+        </div>
+
+        <nav class="navigation">
+
+            <button class="nav-item active" data-view="dashboard">
+                <span>▦</span>
+                Dashboard
+            </button>
+
+            <button class="nav-item" data-view="users">
+                <span>👥</span>
+                Users
+            </button>
+
+            <button class="nav-item" data-view="orders">
+                <span>🛒</span>
+                Orders
+            </button>
+
+            <button class="nav-item" data-view="products">
+                <span>📦</span>
+                Products
+            </button>
+
+            <button class="nav-item" data-view="reports">
+                <span>📊</span>
+                Reports
+            </button>
+
+            <button class="nav-item" data-view="notifications">
+                <span>🔔</span>
+                Notifications
+                <b class="notification-count">3</b>
+            </button>
+
+            <button class="nav-item" data-view="settings">
+                <span>⚙</span>
+                Settings
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="upgrade-box">
+                <strong>Pro Plan</strong>
+                <p>Get more features and storage.</p>
+                <button id="upgradeBtn">Upgrade</button>
+            </div>
+
+            <button id="logoutBtn" class="logout">
+                🚪 Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="mobile-menu" id="mobileMenu">
+                ☰
+            </div>
+
+            <div class="page-heading">
+                <h1 id="pageTitle">Dashboard</h1>
+                <p id="pageSubtitle">
+                    Welcome back! Here's what's happening today.
+                </p>
+            </div>
+
+            <div class="top-actions">
+
+                <div class="search-box">
+                    <span>⌕</span>
+                    <input
+                        type="text"
+                        id="globalSearch"
+                        placeholder="Search..."
+                    >
+                </div>
+
+                <button class="icon-button" id="themeBtn">
+                    🌙
+                </button>
+
+                <button class="icon-button" id="notificationBtn">
+                    🔔
+                    <span class="dot"></span>
+                </button>
+
+                <div class="profile">
+
+                    <div class="avatar">
+                        JD
+                    </div>
+
+                    <div>
+                        <strong>John Doe</strong>
+                        <small>Administrator</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <section class="content">
+
+            <!-- ================= DASHBOARD ================= -->
+
+            <div class="view active" id="dashboard">
+
+                <div class="welcome-banner">
+
+                    <div>
+                        <span class="badge">ADMIN PANEL</span>
+
+                        <h2>
+                            Good morning, John! 👋
+                        </h2>
+
+                        <p>
+                            Monitor your SaaS application from one place.
+                        </p>
+                    </div>
+
+                    <button id="quickActionBtn">
+                        + Quick Action
+                    </button>
+
+                </div>
+
+
+                <div class="stats-grid">
+
+                    <div class="stat-card purple">
+
+                        <div class="stat-icon">
+                            👥
+                        </div>
+
+                        <div>
+                            <span>Total Users</span>
+                            <h3 id="totalUsers">1,248</h3>
+                            <small class="positive">
+                                ↑ 12.5% this month
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card cyan">
+
+                        <div class="stat-icon">
+                            💰
+                        </div>
+
+                        <div>
+                            <span>Revenue</span>
+                            <h3>$48,290</h3>
+                            <small class="positive">
+                                ↑ 8.4% this month
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card lime">
+
+                        <div class="stat-icon">
+                            🛒
+                        </div>
+
+                        <div>
+                            <span>Orders</span>
+                            <h3>3,842</h3>
+                            <small class="positive">
+                                ↑ 18.2% this month
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card pink">
+
+                        <div class="stat-icon">
+                            📈
+                        </div>
+
+                        <div>
+                            <span>Conversion</span>
+                            <h3>7.82%</h3>
+                            <small class="negative">
+                                ↓ 1.2% this month
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-grid">
+
+                    <!-- Revenue -->
+
+                    <div class="panel revenue-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h3>Revenue Overview</h3>
+                                <p>Monthly revenue performance</p>
+                            </div>
+
+                            <select id="revenuePeriod">
+
+                                <option>Last 7 months</option>
+                                <option>Last 12 months</option>
+                                <option>This year</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="chart">
+
+                            <div class="chart-y">
+                                <span>$50k</span>
+                                <span>$40k</span>
+                                <span>$30k</span>
+                                <span>$20k</span>
+                                <span>$10k</span>
+                                <span>$0</span>
+                            </div>
+
+                            <div class="bars">
+
+                                <div class="bar-wrap">
+                                    <div class="bar" style="height:45%"></div>
+                                    <span>Jan</span>
+                                </div>
+
+                                <div class="bar-wrap">
+                                    <div class="bar" style="height:62%"></div>
+                                    <span>Feb</span>
+                                </div>
+
+                                <div class="bar-wrap">
+                                    <div class="bar" style="height:52%"></div>
+                                    <span>Mar</span>
+                                </div>
+
+                                <div class="bar-wrap">
+                                    <div class="bar" style="height:76%"></div>
+                                    <span>Apr</span>
+                                </div>
+
+                                <div class="bar-wrap">
+                                    <div class="bar" style="height:68%"></div>
+                                    <span>May</span>
+                                </div>
+
+                                <div class="bar-wrap">
+                                    <div class="bar" style="height:88%"></div>
+                                    <span>Jun</span>
+                                </div>
+
+                                <div class="bar-wrap">
+                                    <div class="bar active-bar" style="height:94%"></div>
+                                    <span>Jul</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Activity -->
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h3>Recent Activity</h3>
+                                <p>Latest system events</p>
+                            </div>
+
+                            <button
+                                class="text-button"
+                                data-view-target="notifications"
+                            >
+                                View all
+                            </button>
+
+                        </div>
+
+                        <div class="activity-list">
+
+                            <div class="activity">
+                                <div class="activity-icon green">
+                                    ✓
+                                </div>
+
+                                <div>
+                                    <strong>New user registered</strong>
+                                    <p>Sarah Wilson joined</p>
+                                    <small>5 min ago</small>
+                                </div>
+                            </div>
+
+
+                            <div class="activity">
+                                <div class="activity-icon blue">
+                                    $
+                                </div>
+
+                                <div>
+                                    <strong>Payment received</strong>
+                                    <p>Invoice #INV-1024 paid</p>
+                                    <small>18 min ago</small>
+                                </div>
+                            </div>
+
+
+                            <div class="activity">
+                                <div class="activity-icon orange">
+                                    !
+                                </div>
+
+                                <div>
+                                    <strong>System warning</strong>
+                                    <p>Storage reached 78%</p>
+                                    <small>1 hour ago</small>
+                                </div>
+                            </div>
+
+
+                            <div class="activity">
+                                <div class="activity-icon purple">
+                                    ↑
+                                </div>
+
+                                <div>
+                                    <strong>Deployment completed</strong>
+                                    <p>Version 2.4.1 deployed</p>
+                                    <small>2 hours ago</small>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Recent Users -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h3>Recent Users</h3>
+                            <p>Recently registered customers</p>
+                        </div>
+
+                        <button
+                            class="primary-button"
+                            data-view-target="users"
+                        >
+                            View Users
+                        </button>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>User</th>
+                                    <th>Email</th>
+                                    <th>Plan</th>
+                                    <th>Status</th>
+                                    <th>Joined</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="mini-avatar purple-bg">SW</div>
+                                            Sarah Wilson
+                                        </div>
+                                    </td>
+
+                                    <td>sarah@example.com</td>
+
+                                    <td>Pro</td>
+
+                                    <td>
+                                        <span class="status active">
+                                            Active
+                                        </span>
+                                    </td>
+
+                                    <td>Today</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="mini-avatar cyan-bg">MK</div>
+                                            Mike Kumar
+                                        </div>
+                                    </td>
+
+                                    <td>mike@example.com</td>
+
+                                    <td>Business</td>
+
+                                    <td>
+                                        <span class="status active">
+                                            Active
+                                        </span>
+                                    </td>
+
+                                    <td>Yesterday</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>
+                                        <div class="user-cell">
+                                            <div class="mini-avatar orange-bg">AR</div>
+                                            Alex Roy
+                                        </div>
+                                    </td>
+
+                                    <td>alex@example.com</td>
+
+                                    <td>Free</td>
+
+                                    <td>
+                                        <span class="status pending">
+                                            Pending
+                                        </span>
+                                    </td>
+
+                                    <td>2 days ago</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= USERS ================= -->
+
+            <div class="view" id="users">
+
+                <div class="section-toolbar">
+
+                    <div>
+                        <h2>Users</h2>
+                        <p>Manage all registered users.</p>
+                    </div>
+
+                    <button class="primary-button" id="addUserBtn">
+                        + Add User
+                    </button>
+
+                </div>
+
+
+                <div class="filter-row">
+
+                    <input
+                        type="text"
+                        id="userSearch"
+                        placeholder="Search users..."
+                    >
+
+                    <select id="statusFilter">
+
+                        <option value="all">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="pending">Pending</option>
+                        <option value="blocked">Blocked</option>
+
+                    </select>
+
+                    <button id="clearFilters">
+                        Clear
+                    </button>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <div class="table-container">
+
+                        <table id="usersTable">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Status</th>
+                                    <th>Plan</th>
+                                    <th>Actions</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="usersBody">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= ORDERS ================= -->
+
+            <div class="view" id="orders">
+
+                <div class="section-toolbar">
+
+                    <div>
+                        <h2>Orders</h2>
+                        <p>Track customer orders.</p>
+                    </div>
+
+                    <button class="primary-button" id="exportOrders">
+                        ↓ Export
+                    </button>
+
+                </div>
+
+
+                <div class="order-cards">
+
+                    <div class="order-summary">
+                        <span>Total Orders</span>
+                        <strong>3,842</strong>
+                    </div>
+
+                    <div class="order-summary">
+                        <span>Completed</span>
+                        <strong>3,214</strong>
+                    </div>
+
+                    <div class="order-summary">
+                        <span>Processing</span>
+                        <strong>428</strong>
+                    </div>
+
+                    <div class="order-summary">
+                        <span>Cancelled</span>
+                        <strong>200</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Amount</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>#ORD-1024</td>
+                                    <td>Sarah Wilson</td>
+                                    <td>$249</td>
+                                    <td>Oct 1, 2026</td>
+                                    <td>
+                                        <span class="status active">
+                                            Completed
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>#ORD-1023</td>
+                                    <td>Mike Kumar</td>
+                                    <td>$129</td>
+                                    <td>Oct 1, 2026</td>
+                                    <td>
+                                        <span class="status pending">
+                                            Processing
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>#ORD-1022</td>
+                                    <td>Alex Roy</td>
+                                    <td>$499</td>
+                                    <td>Sep 30, 2026</td>
+                                    <td>
+                                        <span class="status active">
+                                            Completed
+                                        </span>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= PRODUCTS ================= -->
+
+            <div class="view" id="products">
+
+                <div class="section-toolbar">
+
+                    <div>
+                        <h2>Products</h2>
+                        <p>Manage your SaaS products.</p>
+                    </div>
+
+                    <button class="primary-button" id="addProductBtn">
+                        + Add Product
+                    </button>
+
+                </div>
+
+
+                <div class="product-grid">
+
+                    <div class="product-card">
+
+                        <div class="product-icon purple-product">
+                            ☁
+                        </div>
+
+                        <h3>Cloud Storage</h3>
+
+                        <p>
+                            Secure cloud storage for businesses.
+                        </p>
+
+                        <div class="product-bottom">
+                            <strong>$19/month</strong>
+                            <span class="status active">Active</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-card">
+
+                        <div class="product-icon cyan-product">
+                            ⚡
+                        </div>
+
+                        <h3>Automation Pro</h3>
+
+                        <p>
+                            Automate repetitive business tasks.
+                        </p>
+
+                        <div class="product-bottom">
+                            <strong>$29/month</strong>
+                            <span class="status active">Active</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="product-card">
+
+                        <div class="product-icon orange-product">
+                            🔐
+                        </div>
+
+                        <h3>Security Suite</h3>
+
+                        <p>
+                            Advanced security monitoring.
+                        </p>
+
+                        <div class="product-bottom">
+                            <strong>$49/month</strong>
+                            <span class="status pending">Beta</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= REPORTS ================= -->
+
+            <div class="view" id="reports">
+
+                <div class="section-toolbar">
+
+                    <div>
+                        <h2>Reports</h2>
+                        <p>Analyze your SaaS performance.</p>
+                    </div>
+
+                    <button class="primary-button" id="downloadReport">
+                        ↓ Download Report
+                    </button>
+
+                </div>
+
+
+                <div class="report-grid">
+
+                    <div class="report-card">
+
+                        <span>Monthly Revenue</span>
+                        <strong>$48,290</strong>
+
+                        <div class="progress">
+                            <div style="width:82%"></div>
+                        </div>
+
+                        <small>82% of target</small>
+
+                    </div>
+
+
+                    <div class="report-card">
+
+                        <span>Active Users</span>
+                        <strong>1,102</strong>
+
+                        <div class="progress cyan-progress">
+                            <div style="width:74%"></div>
+                        </div>
+
+                        <small>74% of target</small>
+
+                    </div>
+
+
+                    <div class="report-card">
+
+                        <span>Retention</span>
+                        <strong>91.4%</strong>
+
+                        <div class="progress lime-progress">
+                            <div style="width:91%"></div>
+                        </div>
+
+                        <small>Excellent retention</small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= NOTIFICATIONS ================= -->
+
+            <div class="view" id="notifications">
+
+                <div class="section-toolbar">
+
+                    <div>
+                        <h2>Notifications</h2>
+                        <p>System and account notifications.</p>
+                    </div>
+
+                    <button class="primary-button" id="markAllRead">
+                        Mark All Read
+                    </button>
+
+                </div>
+
+
+                <div class="notification-list">
+
+                    <div class="notification unread">
+
+                        <div class="notification-icon blue">
+                            👤
+                        </div>
+
+                        <div>
+                            <strong>New user registered</strong>
+                            <p>Sarah Wilson created an account.</p>
+                            <small>5 minutes ago</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="notification unread">
+
+                        <div class="notification-icon green">
+                            $
+                        </div>
+
+                        <div>
+                            <strong>Payment received</strong>
+                            <p>Invoice #INV-1024 was successfully paid.</p>
+                            <small>18 minutes ago</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="notification unread">
+
+                        <div class="notification-icon orange">
+                            !
+                        </div>
+
+                        <div>
+                            <strong>Storage warning</strong>
+                            <p>Your storage usage reached 78%.</p>
+                            <small>1 hour ago</small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="notification">
+
+                        <div class="notification-icon purple">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>Deployment successful</strong>
+                            <p>Version 2.4.1 was deployed.</p>
+                            <small>2 hours ago</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= SETTINGS ================= -->
+
+            <div class="view" id="settings">
+
+                <div class="section-toolbar">
+
+                    <div>
+                        <h2>Settings</h2>
+                        <p>Configure your admin panel.</p>
+                    </div>
+
+                    <button class="primary-button" id="saveSettings">
+                        Save Changes
+                    </button>
+
+                </div>
+
+
+                <div class="settings-grid">
+
+                    <div class="settings-card">
+
+                        <h3>General Settings</h3>
+
+                        <label>
+                            Company Name
+                            <input
+                                id="companyName"
+                                value="SaaSAdmin"
+                            >
+                        </label>
+
+                        <label>
+                            Admin Email
+                            <input
+                                type="email"
+                                value="admin@example.com"
+                            >
+                        </label>
+
+                        <label>
+                            Timezone
+
+                            <select>
+                                <option>Asia/Kolkata</option>
+                                <option>UTC</option>
+                                <option>America/New_York</option>
+                            </select>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="settings-card">
+
+                        <h3>Preferences</h3>
+
+                        <div class="toggle-row">
+
+                            <div>
+                                <strong>Email Notifications</strong>
+                                <p>Receive admin alerts.</p>
+                            </div>
+
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span></span>
+                            </label>
+
+                        </div>
+
+
+                        <div class="toggle-row">
+
+                            <div>
+                                <strong>Login Alerts</strong>
+                                <p>Notify when admin logs in.</p>
+                            </div>
+
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span></span>
+                            </label>
+
+                        </div>
+
+
+                        <div class="toggle-row">
+
+                            <div>
+                                <strong>Auto Updates</strong>
+                                <p>Install system updates.</p>
+                            </div>
+
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span></span>
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================= USER MODAL ================= -->
+
+<div class="modal-overlay" id="userModal">
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+                <h2 id="modalTitle">Add User</h2>
+                <p>Create a new user account.</p>
+            </div>
+
+            <button class="close-modal" id="closeModal">
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="userForm">
+
+            <input type="hidden" id="editUserId">
+
+            <label>
+                Full Name
+                <input
+                    type="text"
+                    id="userName"
+                    required
+                    placeholder="Enter name"
+                >
+            </label>
+
+
+            <label>
+                Email
+                <input
+                    type="email"
+                    id="userEmail"
+                    required
+                    placeholder="Enter email"
+                >
+            </label>
+
+
+            <label>
+                Role
+
+                <select id="userRole">
+
+                    <option>Customer</option>
+                    <option>Manager</option>
+                    <option>Administrator</option>
+
+                </select>
+
+            </label>
+
+
+            <label>
+                Plan
+
+                <select id="userPlan">
+
+                    <option>Free</option>
+                    <option>Pro</option>
+                    <option>Business</option>
+
+                </select>
+
+            </label>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="cancelModal"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Save User
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div class="toast" id="toast">
+
+    <span id="toastIcon">✓</span>
+
+    <div>
+        <strong id="toastTitle">Success</strong>
+        <p id="toastMessage">Operation completed.</p>
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

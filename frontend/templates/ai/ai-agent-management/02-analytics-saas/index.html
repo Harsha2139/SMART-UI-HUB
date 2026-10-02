@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Pulse Analytics</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<aside class="sidebar">
+
+    <div class="logo">
+        <div class="logo-box">P</div>
+        <div>
+            <strong>Pulse</strong>
+            <small>Analytics</small>
+        </div>
+    </div>
+
+    <div class="workspace">
+        <span class="online"></span>
+        <div>
+            <strong>Acme Analytics</strong>
+            <small>Enterprise</small>
+        </div>
+        <button id="workspaceBtn">⌄</button>
+    </div>
+
+    <nav>
+
+        <p>ANALYTICS</p>
+
+        <a class="nav-link active" data-page="overview">
+            <span>◈</span> Overview
+        </a>
+
+        <a class="nav-link" data-page="analytics">
+            <span>◫</span> Analytics
+        </a>
+
+        <a class="nav-link" data-page="traffic">
+            <span>⌁</span> Traffic
+        </a>
+
+        <a class="nav-link" data-page="customers">
+            <span>◎</span> Customers
+        </a>
+
+        <a class="nav-link" data-page="conversion">
+            <span>↗</span> Conversion
+        </a>
+
+        <p>MANAGEMENT</p>
+
+        <a class="nav-link" data-page="reports">
+            <span>▤</span> Reports
+        </a>
+
+        <a class="nav-link" data-page="team">
+            <span>♙</span> Team
+        </a>
+
+        <a class="nav-link" data-page="settings">
+            <span>⚙</span> Settings
+        </a>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+        <div class="pro-card">
+            <strong>Analytics Pro</strong>
+            <p>Advanced reports and insights.</p>
+            <button id="upgradeBtn">Upgrade</button>
+        </div>
+
+        <div class="user">
+            <div class="avatar">HR</div>
+            <div>
+                <strong>Harsha Reddy</strong>
+                <small>Administrator</small>
+            </div>
+        </div>
+    </div>
+
+</aside>
+
+<main>
+
+<header>
+
+    <div>
+        <small class="crumb">Analytics / Workspace</small>
+        <h1 id="title">Analytics Overview</h1>
+        <p id="subtitle">Understand your business performance at a glance.</p>
+    </div>
+
+    <div class="actions">
+        <button id="notificationBtn">♢</button>
+        <button id="rangeBtn">Last 30 days ▾</button>
+        <button class="blue-btn" id="addBtn">＋ Create Report</button>
+    </div>
+
+</header>
+
+<section class="page active" id="overview">
+
+    <div class="metrics">
+
+        <div class="metric cyan">
+            <span>TOTAL VISITORS</span>
+            <strong>248,920</strong>
+            <b>↑ 18.4%</b>
+        </div>
+
+        <div class="metric blue">
+            <span>SESSIONS</span>
+            <strong>82,490</strong>
+            <b>↑ 12.8%</b>
+        </div>
+
+        <div class="metric purple">
+            <span>CONVERSION</span>
+            <strong>24.8%</strong>
+            <b>↑ 4.2%</b>
+        </div>
+
+        <div class="metric green">
+            <span>REVENUE</span>
+            <strong>$128K</strong>
+            <b>↑ 21.6%</b>
+        </div>
+
+    </div>
+
+    <div class="analytics-grid">
+
+        <article class="card chart-card">
+            <div class="card-head">
+                <div>
+                    <h2>Performance</h2>
+                    <p>Visitor performance over the last 30 days</p>
+                </div>
+                <span class="live">LIVE</span>
+            </div>
+
+            <div class="line-chart">
+                <div class="grid g1"></div>
+                <div class="grid g2"></div>
+                <div class="grid g3"></div>
+
+                <svg viewBox="0 0 800 250" preserveAspectRatio="none">
+                    <defs>
+                        <linearGradient id="fill">
+                            <stop offset="0%" stop-color="#19d3ff" stop-opacity=".35"/>
+                            <stop offset="100%" stop-color="#19d3ff" stop-opacity="0"/>
+                        </linearGradient>
+                    </defs>
+
+                    <path class="area"
+                    d="M0 210 C100 180 120 160 210 175 S330 110 420 140 S530 70 620 105 S720 45 800 70 L800 250 L0 250Z"/>
+
+                    <path class="line"
+                    d="M0 210 C100 180 120 160 210 175 S330 110 420 140 S530 70 620 105 S720 45 800 70"/>
+
+                    <circle cx="620" cy="105" r="6"/>
+                </svg>
+
+                <div class="chart-labels">
+                    <span>May 01</span>
+                    <span>May 07</span>
+                    <span>May 14</span>
+                    <span>May 21</span>
+                    <span>May 30</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="card sources">
+            <h2>Traffic Sources</h2>
+            <p>Where your visitors come from</p>
+
+            <div class="source">
+                <span>Organic Search</span>
+                <b>42%</b>
+                <i style="width:42%"></i>
+            </div>
+
+            <div class="source">
+                <span>Social Media</span>
+                <b>28%</b>
+                <i style="width:28%"></i>
+            </div>
+
+            <div class="source">
+                <span>Direct</span>
+                <b>18%</b>
+                <i style="width:18%"></i>
+            </div>
+
+            <div class="source">
+                <span>Referral</span>
+                <b>12%</b>
+                <i style="width:12%"></i>
+            </div>
+        </article>
+
+    </div>
+
+</section>
+
+<section class="page" id="analytics">
+    <div class="section-heading">
+        <h2>Detailed Analytics</h2>
+        <p>Explore detailed performance metrics.</p>
+    </div>
+
+    <div class="metrics">
+        <div class="metric blue"><span>PAGE VIEWS</span><strong>1.84M</strong><b>↑ 24%</b></div>
+        <div class="metric cyan"><span>USERS</span><strong>482K</strong><b>↑ 16%</b></div>
+        <div class="metric purple"><span>AVG SESSION</span><strong>4m 28s</strong><b>↑ 8%</b></div>
+    </div>
+
+    <div class="card big-panel">
+        <h2>Engagement Analysis</h2>
+        <div class="bars">
+            <i style="height:40%"></i>
+            <i style="height:65%"></i>
+            <i style="height:52%"></i>
+            <i style="height:80%"></i>
+            <i style="height:70%"></i>
+            <i style="height:92%"></i>
+            <i style="height:76%"></i>
+            <i style="height:96%"></i>
+        </div>
+    </div>
+</section>
+
+<section class="page" id="traffic">
+    <div class="section-heading">
+        <h2>Traffic Sources</h2>
+        <p>Analyze acquisition channels.</p>
+    </div>
+
+    <div class="card table-card">
+        <table>
+            <thead>
+                <tr>
+                    <th>Source</th>
+                    <th>Visitors</th>
+                    <th>Conversion</th>
+                    <th>Revenue</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Google</td><td>104,280</td><td>28.4%</td><td>$48,920</td></tr>
+                <tr><td>Instagram</td><td>68,420</td><td>22.8%</td><td>$28,410</td></tr>
+                <tr><td>Direct</td><td>42,180</td><td>19.2%</td><td>$18,240</td></tr>
+                <tr><td>Referral</td><td>31,920</td><td>16.8%</td><td>$12,840</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="page" id="customers">
+    <div class="section-heading">
+        <h2>Customer Analytics</h2>
+        <p>Understand customer behavior.</p>
+    </div>
+
+    <div class="metrics">
+        <div class="metric cyan"><span>TOTAL</span><strong>8,249</strong><b>↑ 12%</b></div>
+        <div class="metric blue"><span>NEW</span><strong>1,842</strong><b>↑ 14%</b></div>
+        <div class="metric green"><span>RETURNING</span><strong>6,407</strong><b>↑ 9%</b></div>
+    </div>
+</section>
+
+<section class="page" id="conversion">
+    <div class="section-heading">
+        <h2>Conversion Analytics</h2>
+        <p>Track your conversion funnel.</p>
+    </div>
+
+    <div class="funnel card">
+        <div style="width:100%">Visitors <b>100%</b></div>
+        <div style="width:82%">Product View <b>82%</b></div>
+        <div style="width:58%">Add to Cart <b>58%</b></div>
+        <div style="width:38%">Checkout <b>38%</b></div>
+        <div style="width:25%">Purchase <b>25%</b></div>
+    </div>
+</section>
+
+<section class="page" id="reports">
+    <div class="section-heading">
+        <h2>Reports</h2>
+        <p>Generate analytics reports.</p>
+    </div>
+
+    <div class="report-grid">
+        <button class="report">📊 Revenue Report</button>
+        <button class="report">📈 Traffic Report</button>
+        <button class="report">👥 Customer Report</button>
+    </div>
+</section>
+
+<section class="page" id="team">
+    <div class="section-heading">
+        <h2>Analytics Team</h2>
+        <p>Manage analytics members.</p>
+    </div>
+
+    <div class="team-grid">
+        <div class="team-card">HR<br><strong>Harsha Reddy</strong><small>Administrator</small></div>
+        <div class="team-card">JD<br><strong>Jordan Davis</strong><small>Analyst</small></div>
+        <div class="team-card">MK<br><strong>Maria Kim</strong><small>Data Scientist</small></div>
+    </div>
+</section>
+
+<section class="page" id="settings">
+    <div class="section-heading">
+        <h2>Analytics Settings</h2>
+        <p>Configure your analytics workspace.</p>
+    </div>
+
+    <div class="card settings">
+        <label>Workspace Name<input value="Acme Analytics"></label>
+        <label>Timezone<select><option>Asia/Kolkata</option><option>UTC</option></select></label>
+        <label>Tracking<select><option>Enabled</option><option>Disabled</option></select></label>
+        <button class="blue-btn" id="saveBtn">Save Settings</button>
+    </div>
+</section>
+
+<footer>© 2026 Pulse Analytics <span>● All systems operational</span></footer>
+
+</main>
+
+<div class="toast" id="toast">
+    <strong>Pulse</strong>
+    <span></span>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

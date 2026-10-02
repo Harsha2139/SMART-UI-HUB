@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width,initial-scale=1.0"
+>
+
+<title>Voice AI Assistant</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="brand">
+
+        <span>◉</span>
+
+        <div>
+            <b>VoxAI</b>
+            <small>Voice-first assistant</small>
+        </div>
+
+    </div>
+
+
+    <div class="header-actions">
+
+        <span id="support">
+            ● Voice ready
+        </span>
+
+        <button id="clear" class="ghost">
+            Clear
+        </button>
+
+    </div>
+
+</header>
+
+
+<main>
+
+<section class="hero">
+
+    <span class="pill">
+        VOICE INTELLIGENCE
+    </span>
+
+    <h1>
+        Talk to your <i>AI.</i>
+    </h1>
+
+    <p>
+        Speak naturally, get instant browser-based
+        responses, and listen to the answer.
+    </p>
+
+</section>
+
+
+<section class="voice-card">
+
+    <div class="orb" id="orb">
+
+        <div class="mic">
+            🎙️
+        </div>
+
+    </div>
+
+
+    <div id="state">
+        Press the microphone to start
+    </div>
+
+
+    <p id="heard">
+        Your speech will appear here.
+    </p>
+
+
+    <button id="micBtn" class="mic-btn">
+        🎙 Start Listening
+    </button>
+
+
+    <div class="wave" id="wave"></div>
+
+</section>
+
+
+<section class="controls">
+
+    <div class="control">
+
+        <label>Voice</label>
+
+        <select id="voice"></select>
+
+    </div>
+
+
+    <div class="control">
+
+        <label>
+            Speed
+            <b id="speedVal">1.0×</b>
+        </label>
+
+        <input
+            id="speed"
+            type="range"
+            min=".6"
+            max="1.6"
+            step=".1"
+            value="1"
+        >
+
+    </div>
+
+
+    <div class="control">
+
+        <label>Language</label>
+
+        <select id="lang">
+
+            <option value="en-US">
+                English (US)
+            </option>
+
+            <option value="en-GB">
+                English (UK)
+            </option>
+
+            <option value="en-IN">
+                English (India)
+            </option>
+
+        </select>
+
+    </div>
+
+</section>
+
+
+<section class="layout">
+
+    <div class="panel">
+
+        <h2>Conversation</h2>
+
+        <div id="chat" class="chat">
+
+            <div class="msg ai">
+
+                <b>VoxAI</b>
+
+                <p>
+                    Hello! Ask me the time,
+                    a study question,
+                    or say "tell me a joke".
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="panel commands">
+
+        <h2>Try saying</h2>
+
+        <button data-cmd="What is the time?">
+            🕐 What is the time?
+        </button>
+
+        <button data-cmd="Give me a study tip">
+            📚 Give me a study tip
+        </button>
+
+        <button data-cmd="Tell me a joke">
+            😂 Tell me a joke
+        </button>
+
+        <button data-cmd="Explain artificial intelligence">
+            🧠 Explain AI
+        </button>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integration Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">⚡</div>
+            <div>
+                <strong>IntegrateX</strong>
+                <span>Integration Hub</span>
+            </div>
+        </div>
+
+        <nav>
+            <button class="nav-item active" data-view="overview">
+                <span>▦</span> Overview
+            </button>
+
+            <button class="nav-item" data-view="marketplace">
+                <span>◈</span> Marketplace
+            </button>
+
+            <button class="nav-item" data-view="connected">
+                <span>🔗</span> Connected
+            </button>
+
+            <button class="nav-item" data-view="favorites">
+                <span>★</span> Favorites
+            </button>
+
+            <button class="nav-item" data-view="activity">
+                <span>◷</span> Activity
+            </button>
+
+            <button class="nav-item" data-view="settings">
+                <span>⚙</span> Settings
+            </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="usage">
+                <div class="usage-title">
+                    <span>Integration usage</span>
+                    <b>72%</b>
+                </div>
+                <div class="progress">
+                    <div></div>
+                </div>
+                <small>72 of 100 connections</small>
+            </div>
+
+            <div class="profile">
+                <div class="avatar">J</div>
+                <div>
+                    <b>Jayanth</b>
+                    <small>Administrator</small>
+                </div>
+                <button id="profileMenu">⋮</button>
+            </div>
+        </div>
+
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <button class="mobile-menu" id="menuBtn">☰</button>
+
+            <div class="page-heading">
+                <span>Workspace</span>
+                <h1 id="pageTitle">Integration Overview</h1>
+            </div>
+
+            <div class="top-actions">
+
+                <div class="search-box">
+                    🔍
+                    <input id="globalSearch" type="text" placeholder="Search integrations...">
+                </div>
+
+                <button class="icon-btn" id="notificationBtn">🔔</button>
+
+                <button class="theme-btn" id="themeBtn">☀</button>
+
+            </div>
+
+        </header>
+
+        <!-- OVERVIEW -->
+
+        <section class="view active" id="overview">
+
+            <div class="hero">
+
+                <div>
+                    <span class="eyebrow">INTEGRATION PLATFORM</span>
+                    <h2>Connect your entire<br><strong>digital ecosystem.</strong></h2>
+                    <p>
+                        Discover, connect and manage all your business
+                        integrations from one beautiful workspace.
+                    </p>
+
+                    <button class="primary-btn" data-open-marketplace>
+                        Explore integrations →
+                    </button>
+                </div>
+
+                <div class="hero-orbit">
+                    <div class="orbit-center">⚡</div>
+                    <div class="orbit-item one">G</div>
+                    <div class="orbit-item two">S</div>
+                    <div class="orbit-item three">A</div>
+                    <div class="orbit-item four">D</div>
+                </div>
+
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card cyan">
+                    <span>Connected Apps</span>
+                    <strong id="connectedCount">12</strong>
+                    <small>↑ 18% this month</small>
+                </div>
+
+                <div class="stat-card purple">
+                    <span>Available Apps</span>
+                    <strong>86</strong>
+                    <small>Across 14 categories</small>
+                </div>
+
+                <div class="stat-card pink">
+                    <span>API Requests</span>
+                    <strong id="apiCount">248K</strong>
+                    <small>↑ 24% this week</small>
+                </div>
+
+                <div class="stat-card orange">
+                    <span>Health Score</span>
+                    <strong>98.6%</strong>
+                    <small>Excellent</small>
+                </div>
+
+            </div>
+
+            <div class="section-header">
+                <div>
+                    <span class="eyebrow">RECOMMENDED</span>
+                    <h2>Popular integrations</h2>
+                </div>
+
+                <button class="outline-btn" data-open-marketplace>
+                    View all
+                </button>
+            </div>
+
+            <div class="integration-grid" id="overviewApps"></div>
+
+        </section>
+
+        <!-- MARKETPLACE -->
+
+        <section class="view" id="marketplace">
+
+            <div class="section-top">
+
+                <div>
+                    <span class="eyebrow">APP DIRECTORY</span>
+                    <h2>Integration Marketplace</h2>
+                    <p>Choose applications and connect them to your workspace.</p>
+                </div>
+
+                <button class="primary-btn" id="refreshApps">↻ Refresh</button>
+
+            </div>
+
+            <div class="filter-bar">
+
+                <button class="filter active" data-category="all">All</button>
+                <button class="filter" data-category="communication">Communication</button>
+                <button class="filter" data-category="productivity">Productivity</button>
+                <button class="filter" data-category="analytics">Analytics</button>
+                <button class="filter" data-category="crm">CRM</button>
+                <button class="filter" data-category="storage">Storage</button>
+
+            </div>
+
+            <div class="integration-grid" id="marketplaceApps"></div>
+
+        </section>
+
+        <!-- CONNECTED -->
+
+        <section class="view" id="connected">
+
+            <div class="section-top">
+                <div>
+                    <span class="eyebrow">YOUR WORKSPACE</span>
+                    <h2>Connected applications</h2>
+                    <p>Manage applications currently connected to your account.</p>
+                </div>
+            </div>
+
+            <div class="connected-list" id="connectedList"></div>
+
+        </section>
+
+        <!-- FAVORITES -->
+
+        <section class="view" id="favorites">
+
+            <div class="section-top">
+                <div>
+                    <span class="eyebrow">SAVED APPS</span>
+                    <h2>Your favorites</h2>
+                    <p>Quick access to integrations you use frequently.</p>
+                </div>
+            </div>
+
+            <div class="integration-grid" id="favoriteApps"></div>
+
+        </section>
+
+        <!-- ACTIVITY -->
+
+        <section class="view" id="activity">
+
+            <div class="section-top">
+                <div>
+                    <span class="eyebrow">AUDIT TRAIL</span>
+                    <h2>Integration activity</h2>
+                    <p>Monitor recent integration events.</p>
+                </div>
+            </div>
+
+            <div class="activity-card" id="activityList"></div>
+
+        </section>
+
+        <!-- SETTINGS -->
+
+        <section class="view" id="settings">
+
+            <div class="section-top">
+                <div>
+                    <span class="eyebrow">WORKSPACE</span>
+                    <h2>Integration settings</h2>
+                </div>
+            </div>
+
+            <div class="settings-card">
+
+                <div class="setting">
+                    <div>
+                        <b>Automatic health monitoring</b>
+                        <p>Monitor connected integrations automatically.</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </label>
+                </div>
+
+                <div class="setting">
+                    <div>
+                        <b>Failure notifications</b>
+                        <p>Receive alerts when an integration fails.</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span></span>
+                    </label>
+                </div>
+
+                <div class="setting">
+                    <div>
+                        <b>Weekly integration report</b>
+                        <p>Send a weekly usage summary.</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span></span>
+                    </label>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+</div>
+
+<!-- MODAL -->
+
+<div class="modal-overlay" id="modal">
+
+    <div class="modal">
+
+        <button class="close-modal" id="closeModal">×</button>
+
+        <div class="modal-icon" id="modalIcon">G</div>
+
+        <h2 id="modalTitle">Integration</h2>
+
+        <p id="modalDescription"></p>
+
+        <div class="modal-info">
+            <span id="modalCategory"></span>
+            <span>✓ Secure OAuth</span>
+            <span>⚡ Real-time</span>
+        </div>
+
+        <button class="primary-btn full" id="modalAction">
+            Connect application
+        </button>
+
+    </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

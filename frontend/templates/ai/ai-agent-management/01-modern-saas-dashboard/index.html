@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syncora — Modern SaaS Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<aside class="sidebar">
+
+    <div class="brand">
+        <div class="brand-logo">S</div>
+        <div>
+            <strong>Syncora</strong>
+            <small>SaaS Platform</small>
+        </div>
+    </div>
+
+    <button class="workspace" id="workspaceBtn">
+        <span class="workspace-dot"></span>
+        <span>
+            <strong>Acme Workspace</strong>
+            <small>Pro Plan</small>
+        </span>
+        <b>⌄</b>
+    </button>
+
+    <nav>
+        <p class="nav-title">MAIN</p>
+
+        <button class="nav-link active" data-page="overview">
+            <span>▦</span> Overview
+        </button>
+
+        <button class="nav-link" data-page="analytics">
+            <span>◫</span> Analytics
+        </button>
+
+        <button class="nav-link" data-page="customers">
+            <span>◉</span> Customers
+        </button>
+
+        <button class="nav-link" data-page="projects">
+            <span>◈</span> Projects
+        </button>
+
+        <button class="nav-link" data-page="automations">
+            <span>◇</span> Automations
+        </button>
+
+        <p class="nav-title">MANAGEMENT</p>
+
+        <button class="nav-link" data-page="team">
+            <span>▤</span> Team <b>8</b>
+        </button>
+
+        <button class="nav-link" data-page="reports">
+            <span>◰</span> Reports
+        </button>
+
+        <button class="nav-link" data-page="settings">
+            <span>⚙</span> Settings
+        </button>
+    </nav>
+
+    <div class="sidebar-bottom">
+
+        <div class="upgrade-card">
+            <div class="upgrade-icon">✦</div>
+            <strong>Upgrade your plan</strong>
+            <p>Unlock advanced analytics and automation.</p>
+            <button id="upgradeBtn">Upgrade Now</button>
+        </div>
+
+        <button class="profile" id="profileBtn">
+            <div class="avatar">HR</div>
+            <span>
+                <strong>Harsha Reddy</strong>
+                <small>Administrator</small>
+            </span>
+            <b>•••</b>
+        </button>
+
+    </div>
+
+</aside>
+
+
+<main class="main">
+
+    <header class="topbar">
+
+        <div>
+            <p class="breadcrumb">Workspace / Overview</p>
+            <h1 id="pageTitle">Good morning, Harsha ✦</h1>
+            <p class="subtitle" id="pageSubtitle">
+                Here's what's happening with your business today.
+            </p>
+        </div>
+
+        <div class="top-actions">
+
+            <button class="icon-btn" id="notificationBtn">
+                ♢
+                <i></i>
+            </button>
+
+            <button class="date-btn" id="dateBtn">
+                Last 30 days ▾
+            </button>
+
+            <button class="primary-btn" id="addBtn">
+                ＋ Add New
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <div id="appContent">
+
+        <section class="stats-grid">
+
+            <article class="stat-card">
+                <span class="stat-label">TOTAL REVENUE</span>
+                <div class="stat-value">$128,420</div>
+                <div class="stat-footer">
+                    <span class="positive">↑ 18.6%</span>
+                    <span>vs. previous period</span>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <span class="stat-label">ACTIVE CUSTOMERS</span>
+                <div class="stat-value">8,249</div>
+                <div class="stat-footer">
+                    <span class="positive">↑ 12.4%</span>
+                    <span>vs. previous period</span>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <span class="stat-label">CONVERSION RATE</span>
+                <div class="stat-value">24.8%</div>
+                <div class="stat-footer">
+                    <span class="positive">↑ 4.2%</span>
+                    <span>vs. previous period</span>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <span class="stat-label">MONTHLY GROWTH</span>
+                <div class="stat-value">32.6%</div>
+                <div class="stat-footer">
+                    <span class="positive">↑ 8.1%</span>
+                    <span>vs. previous period</span>
+                </div>
+            </article>
+
+        </section>
+
+
+        <section class="content-grid">
+
+            <article class="panel large">
+
+                <div class="panel-header">
+                    <div>
+                        <h2>Revenue Overview</h2>
+                        <p>Revenue performance over the last 30 days</p>
+                    </div>
+                </div>
+
+                <div class="chart-value">
+                    $128,420
+                    <span class="positive">↑ 18.6%</span>
+                </div>
+
+                <div class="chart">
+
+                    <div class="horizontal h1"></div>
+                    <div class="horizontal h2"></div>
+                    <div class="horizontal h3"></div>
+                    <div class="horizontal h4"></div>
+
+                    <svg viewBox="0 0 800 300" preserveAspectRatio="none">
+
+                        <defs>
+                            <linearGradient id="fill1" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#315cff" stop-opacity=".35"/>
+                                <stop offset="100%" stop-color="#315cff" stop-opacity="0"/>
+                            </linearGradient>
+                        </defs>
+
+                        <path
+                            class="chart-fill"
+                            d="M0 230
+                            C80 215 100 170 170 190
+                            S260 120 330 150
+                            S420 90 490 125
+                            S590 55 650 95
+                            S730 35 800 65
+                            L800 300 L0 300 Z">
+                        </path>
+
+                        <path
+                            class="chart-line"
+                            d="M0 230
+                            C80 215 100 170 170 190
+                            S260 120 330 150
+                            S420 90 490 125
+                            S590 55 650 95
+                            S730 35 800 65">
+                        </path>
+
+                    </svg>
+
+                    <div class="chart-labels">
+                        <span>May 01</span>
+                        <span>May 07</span>
+                        <span>May 14</span>
+                        <span>May 21</span>
+                        <span>May 30</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="panel">
+
+                <div class="panel-header">
+                    <div>
+                        <h2>Recent Activity</h2>
+                        <p>Latest workspace events</p>
+                    </div>
+                </div>
+
+                <div class="activity-list">
+
+                    <div class="activity">
+                        <div class="activity-avatar blue">JD</div>
+                        <div>
+                            <strong>Jordan Davis</strong>
+                            <p>Created <b>Nova App</b></p>
+                            <small>8 minutes ago</small>
+                        </div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-avatar purple">MK</div>
+                        <div>
+                            <strong>Maria Kim</strong>
+                            <p>Invited <b>3 members</b></p>
+                            <small>32 minutes ago</small>
+                        </div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-avatar cyan">AR</div>
+                        <div>
+                            <strong>Alex Rivera</strong>
+                            <p>Completed <b>Website Redesign</b></p>
+                            <small>1 hour ago</small>
+                        </div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-avatar green">SL</div>
+                        <div>
+                            <strong>Sarah Lee</strong>
+                            <p>Uploaded <b>Q2 Report</b></p>
+                            <small>2 hours ago</small>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="text-btn" id="viewActivity">
+                    View all activity →
+                </button>
+
+            </article>
+
+        </section>
+
+
+        <section class="content-grid">
+
+            <article class="panel">
+
+                <div class="panel-header">
+                    <div>
+                        <h2>Customer Growth</h2>
+                        <p>New customers acquired</p>
+                    </div>
+                </div>
+
+                <div class="big-number">
+                    1,842
+                    <span class="positive">↑ 14.8%</span>
+                </div>
+
+                <div class="bars">
+                    <i style="height:42%"></i>
+                    <i style="height:58%"></i>
+                    <i style="height:48%"></i>
+                    <i style="height:68%"></i>
+                    <i style="height:62%"></i>
+                    <i style="height:82%"></i>
+                    <i style="height:94%"></i>
+                </div>
+
+            </article>
+
+
+            <article class="panel">
+
+                <div class="panel-header">
+                    <div>
+                        <h2>Plan Distribution</h2>
+                        <p>Current customer plans</p>
+                    </div>
+                </div>
+
+                <div class="plans">
+
+                    <div>
+                        <span class="dot blue-dot"></span>
+                        Professional
+                        <b>42%</b>
+                    </div>
+
+                    <div>
+                        <span class="dot purple-dot"></span>
+                        Business
+                        <b>31%</b>
+                    </div>
+
+                    <div>
+                        <span class="dot cyan-dot"></span>
+                        Starter
+                        <b>18%</b>
+                    </div>
+
+                    <div>
+                        <span class="dot green-dot"></span>
+                        Enterprise
+                        <b>9%</b>
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <section class="quick-section">
+
+            <div>
+                <h2>Quick Actions</h2>
+                <p>Common workspace tasks</p>
+            </div>
+
+            <div class="quick-actions">
+
+                <button class="quick-card" data-action="project">
+                    <span>＋</span>
+                    <div>
+                        <strong>Create Project</strong>
+                        <small>Start a new project</small>
+                    </div>
+                    →
+                </button>
+
+                <button class="quick-card" data-action="member">
+                    <span>♙</span>
+                    <div>
+                        <strong>Invite Member</strong>
+                        <small>Add someone to your team</small>
+                    </div>
+                    →
+                </button>
+
+                <button class="quick-card" data-action="report">
+                    <span>▤</span>
+                    <div>
+                        <strong>Generate Report</strong>
+                        <small>Export business insights</small>
+                    </div>
+                    →
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <footer>
+        <span>© 2026 Syncora</span>
+        <span>● All systems operational</span>
+    </footer>
+
+</main>
+
+
+<div class="toast" id="toast">
+    <strong>Success</strong>
+    <span>Action completed.</span>
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

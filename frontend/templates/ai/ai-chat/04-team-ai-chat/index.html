@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Team AI Chat</title>
+
+<link rel="stylesheet"
+      href="style.css">
+
+</head>
+
+<body>
+
+<div class="app">
+
+
+<!-- LEFT SIDEBAR -->
+
+<aside class="sidebar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            ⚡
+        </div>
+
+        <div>
+            <h2>TeamFlow AI</h2>
+            <small>Workspace</small>
+        </div>
+
+    </div>
+
+
+    <button id="newRoom"
+            class="new-room">
+        ＋ New Room
+    </button>
+
+
+    <h4>CHANNELS</h4>
+
+    <div class="rooms">
+
+        <button class="room active"
+                data-room="general">
+            # general
+        </button>
+
+        <button class="room"
+                data-room="development">
+            # development
+        </button>
+
+        <button class="room"
+                data-room="ai">
+            # ai-lab
+        </button>
+
+        <button class="room"
+                data-room="design">
+            # design
+        </button>
+
+    </div>
+
+
+    <div class="team-title">
+        TEAM ONLINE
+    </div>
+
+
+    <div class="members">
+
+        <div class="member">
+            <span class="status"></span>
+            <div class="member-avatar">A</div>
+            <div>
+                <strong>Alex AI</strong>
+                <small>Developer</small>
+            </div>
+        </div>
+
+        <div class="member">
+            <span class="status"></span>
+            <div class="member-avatar">M</div>
+            <div>
+                <strong>Maya AI</strong>
+                <small>Designer</small>
+            </div>
+        </div>
+
+        <div class="member">
+            <span class="status"></span>
+            <div class="member-avatar">R</div>
+            <div>
+                <strong>Ryan AI</strong>
+                <small>Data Analyst</small>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="sidebar-bottom">
+
+        <button id="themeBtn">
+            🌙 Theme
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- MAIN -->
+
+<main class="main">
+
+<header class="header">
+
+    <div>
+
+        <h1 id="roomTitle">
+            # general
+        </h1>
+
+        <p>
+            Team collaboration workspace
+        </p>
+
+    </div>
+
+
+    <div class="header-actions">
+
+        <input
+            id="searchInput"
+            placeholder="Search messages..."
+        >
+
+        <button id="clearBtn">
+            🗑
+        </button>
+
+    </div>
+
+</header>
+
+
+<section class="chat-container">
+
+
+    <div id="messages"
+         class="messages">
+    </div>
+
+
+    <div class="typing"
+         id="typing">
+        🤖 AI is typing...
+    </div>
+
+
+    <div class="composer">
+
+        <button id="attachBtn"
+                class="tool-btn">
+            📎
+        </button>
+
+        <textarea
+            id="messageInput"
+            placeholder="Message the team..."
+        ></textarea>
+
+        <button id="emojiBtn"
+                class="tool-btn">
+            😊
+        </button>
+
+        <button id="sendBtn"
+                class="send-btn">
+            ➤
+        </button>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- RIGHT INFO PANEL -->
+
+<aside class="info-panel">
+
+    <div class="info-header">
+
+        <h3>Team Members</h3>
+
+        <span>
+            3 online
+        </span>
+
+    </div>
+
+
+    <div class="profile-card">
+
+        <div class="large-avatar purple">
+            A
+        </div>
+
+        <h3>Alex AI</h3>
+
+        <p>Development Assistant</p>
+
+        <span class="online-label">
+            ● Online
+        </span>
+
+    </div>
+
+
+    <div class="agent-section">
+
+        <h3>AI Agents</h3>
+
+
+        <button
+            class="agent"
+            data-agent="developer">
+
+            <span>👨‍💻</span>
+
+            <div>
+                <strong>Developer AI</strong>
+                <small>Code & debugging</small>
+            </div>
+
+        </button>
+
+
+        <button
+            class="agent"
+            data-agent="designer">
+
+            <span>🎨</span>
+
+            <div>
+                <strong>Designer AI</strong>
+                <small>UI & UX</small>
+            </div>
+
+        </button>
+
+
+        <button
+            class="agent"
+            data-agent="analyst">
+
+            <span>📊</span>
+
+            <div>
+                <strong>Analyst AI</strong>
+                <small>Data & analysis</small>
+            </div>
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+<div id="emojiPanel"
+     class="emoji-panel">
+
+    😀 😂 ❤️ 👍 🚀 🔥 🎉 😎 🤖 💡
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

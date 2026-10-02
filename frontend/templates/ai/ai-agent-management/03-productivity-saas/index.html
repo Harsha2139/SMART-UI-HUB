@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Flow Productivity</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<aside class="sidebar">
+
+    <div class="brand">
+        <div class="brand-icon">F</div>
+        <div>
+            <strong>Flow</strong>
+            <small>Productivity</small>
+        </div>
+    </div>
+
+    <div class="user-workspace">
+        <div class="mini-avatar">HR</div>
+        <div>
+            <strong>Harsha's Team</strong>
+            <small>8 members</small>
+        </div>
+    </div>
+
+    <nav>
+
+        <p>WORKSPACE</p>
+
+        <a class="nav-link active" data-page="home">⌂ <span>My Day</span></a>
+        <a class="nav-link" data-page="tasks">✓ <span>Tasks</span><b>12</b></a>
+        <a class="nav-link" data-page="projects">▦ <span>Projects</span></a>
+        <a class="nav-link" data-page="calendar">▣ <span>Calendar</span></a>
+        <a class="nav-link" data-page="goals">◉ <span>Goals</span></a>
+
+        <p>TEAM</p>
+
+        <a class="nav-link" data-page="team">♙ <span>Team</span></a>
+        <a class="nav-link" data-page="activity">↻ <span>Activity</span></a>
+        <a class="nav-link" data-page="settings">⚙ <span>Settings</span></a>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+        <div class="focus-card">
+            <small>FOCUS TODAY</small>
+            <strong>4h 32m</strong>
+            <div><i></i></div>
+            <span>72% completed</span>
+        </div>
+
+        <div class="profile">
+            <div class="mini-avatar">HR</div>
+            <div>
+                <strong>Harsha Reddy</strong>
+                <small>Online</small>
+            </div>
+        </div>
+    </div>
+
+</aside>
+
+<main>
+
+<header>
+    <div>
+        <small>THURSDAY, OCTOBER 1</small>
+        <h1 id="title">Good morning, Harsha 👋</h1>
+        <p id="subtitle">Let's make today productive.</p>
+    </div>
+
+    <div class="header-actions">
+        <button id="searchBtn">⌕</button>
+        <button id="notifyBtn">♢</button>
+        <button class="orange-btn" id="addTask">＋ New Task</button>
+    </div>
+</header>
+
+<section class="page active" id="home">
+
+    <div class="welcome">
+        <div>
+            <span>YOUR PRODUCTIVITY</span>
+            <h2>You're on a great streak!</h2>
+            <p>You've completed 82% of your planned work this week.</p>
+        </div>
+
+        <div class="streak">🔥 12 DAYS</div>
+    </div>
+
+    <div class="stats">
+
+        <div>
+            <span>COMPLETED</span>
+            <strong>28</strong>
+            <small>tasks this week</small>
+        </div>
+
+        <div>
+            <span>IN PROGRESS</span>
+            <strong>12</strong>
+            <small>tasks remaining</small>
+        </div>
+
+        <div>
+            <span>FOCUS TIME</span>
+            <strong>24h</strong>
+            <small>this week</small>
+        </div>
+
+        <div>
+            <span>PRODUCTIVITY</span>
+            <strong>82%</strong>
+            <small>+12% this week</small>
+        </div>
+
+    </div>
+
+    <div class="content-grid">
+
+        <article class="panel">
+            <div class="panel-title">
+                <div>
+                    <h2>Today's Tasks</h2>
+                    <p>4 tasks remaining</p>
+                </div>
+                <button id="viewTasks">View all</button>
+            </div>
+
+            <div class="task-list">
+
+                <label class="task">
+                    <input type="checkbox">
+                    <span></span>
+                    <div>
+                        <strong>Complete dashboard design</strong>
+                        <small>UI / Design · Today</small>
+                    </div>
+                </label>
+
+                <label class="task">
+                    <input type="checkbox">
+                    <span></span>
+                    <div>
+                        <strong>Review team pull requests</strong>
+                        <small>Development · Today</small>
+                    </div>
+                </label>
+
+                <label class="task">
+                    <input type="checkbox" checked>
+                    <span></span>
+                    <div>
+                        <strong>Update project documentation</strong>
+                        <small>Documentation · Done</small>
+                    </div>
+                </label>
+
+                <label class="task">
+                    <input type="checkbox">
+                    <span></span>
+                    <div>
+                        <strong>Prepare weekly report</strong>
+                        <small>Management · 5:00 PM</small>
+                    </div>
+                </label>
+
+            </div>
+        </article>
+
+        <article class="panel">
+            <div class="panel-title">
+                <div>
+                    <h2>Weekly Progress</h2>
+                    <p>Tasks completed</p>
+                </div>
+            </div>
+
+            <div class="week-chart">
+                <i style="height:45%"></i>
+                <i style="height:60%"></i>
+                <i style="height:52%"></i>
+                <i style="height:75%"></i>
+                <i style="height:68%"></i>
+                <i style="height:88%"></i>
+                <i style="height:72%"></i>
+            </div>
+
+            <div class="days">
+                <span>M</span><span>T</span><span>W</span>
+                <span>T</span><span>F</span><span>S</span><span>S</span>
+            </div>
+        </article>
+
+    </div>
+
+</section>
+
+<section class="page" id="tasks">
+
+    <div class="page-head">
+        <h2>My Tasks</h2>
+        <p>Manage everything you need to complete.</p>
+    </div>
+
+    <div class="task-board">
+
+        <div class="task-column">
+            <h3>To Do <b>4</b></h3>
+            <div class="work-card">Design homepage <small>Today</small></div>
+            <div class="work-card">Write API documentation <small>Tomorrow</small></div>
+            <div class="work-card">Review content <small>Friday</small></div>
+        </div>
+
+        <div class="task-column doing">
+            <h3>In Progress <b>3</b></h3>
+            <div class="work-card">Dashboard development <small>Today</small></div>
+            <div class="work-card">Mobile optimization <small>Tomorrow</small></div>
+        </div>
+
+        <div class="task-column done">
+            <h3>Completed <b>8</b></h3>
+            <div class="work-card">Database schema <small>Completed</small></div>
+            <div class="work-card">UI research <small>Completed</small></div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="page" id="projects">
+
+    <div class="page-head">
+        <h2>Projects</h2>
+        <p>Everything your team is working on.</p>
+    </div>
+
+    <div class="project-grid">
+
+        <article class="project">
+            <span class="project-color green"></span>
+            <h3>SmartUI Hub</h3>
+            <p>Template marketplace</p>
+            <div><i style="width:82%"></i></div>
+            <small>82% complete</small>
+        </article>
+
+        <article class="project">
+            <span class="project-color orange"></span>
+            <h3>PhonePe Database</h3>
+            <p>Supabase project</p>
+            <div><i style="width:64%"></i></div>
+            <small>64% complete</small>
+        </article>
+
+        <article class="project">
+            <span class="project-color purple"></span>
+            <h3>Portfolio</h3>
+            <p>Personal website</p>
+            <div><i style="width:45%"></i></div>
+            <small>45% complete</small>
+        </article>
+
+    </div>
+
+</section>
+
+<section class="page" id="calendar">
+
+    <div class="page-head">
+        <h2>Calendar</h2>
+        <p>Your schedule for this week.</p>
+    </div>
+
+    <div class="calendar">
+
+        <div class="calendar-head">
+            <button>‹</button>
+            <strong>October 2026</strong>
+            <button>›</button>
+        </div>
+
+        <div class="calendar-grid">
+            <b>MON</b><b>TUE</b><b>WED</b><b>THU</b>
+            <b>FRI</b><b>SAT</b><b>SUN</b>
+
+            <span>28</span><span>29</span><span>30</span>
+            <span class="today">1</span><span>2</span><span>3</span><span>4</span>
+
+            <span>5</span><span>6</span><span>7</span><span>8</span>
+            <span>9</span><span>10</span><span>11</span>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="page" id="goals">
+
+    <div class="page-head">
+        <h2>Goals</h2>
+        <p>Track your team's objectives.</p>
+    </div>
+
+    <div class="goals">
+
+        <div>
+            <strong>Complete SmartUI Hub</strong>
+            <span>82%</span>
+            <i style="width:82%"></i>
+        </div>
+
+        <div>
+            <strong>Learn Advanced JavaScript</strong>
+            <span>64%</span>
+            <i style="width:64%"></i>
+        </div>
+
+        <div>
+            <strong>Build Portfolio</strong>
+            <span>45%</span>
+            <i style="width:45%"></i>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="page" id="team">
+
+    <div class="page-head">
+        <h2>Team</h2>
+        <p>Your productivity team.</p>
+    </div>
+
+    <div class="members">
+
+        <div><div class="member-avatar">HR</div><strong>Harsha Reddy</strong><small>Administrator</small></div>
+        <div><div class="member-avatar">JD</div><strong>Jordan Davis</strong><small>Developer</small></div>
+        <div><div class="member-avatar">MK</div><strong>Maria Kim</strong><small>Designer</small></div>
+        <div><div class="member-avatar">SL</div><strong>Sarah Lee</strong><small>Developer</small></div>
+
+    </div>
+
+</section>
+
+<section class="page" id="activity">
+
+    <div class="page-head">
+        <h2>Activity</h2>
+        <p>Recent team activity.</p>
+    </div>
+
+    <div class="activity">
+
+        <div><b>Jordan completed</b> Dashboard Design <small>10 min ago</small></div>
+        <div><b>Maria created</b> a new project <small>35 min ago</small></div>
+        <div><b>Sarah commented</b> on SmartUI Hub <small>1 hour ago</small></div>
+        <div><b>Harsha completed</b> Database Schema <small>2 hours ago</small></div>
+
+    </div>
+
+</section>
+
+<section class="page" id="settings">
+
+    <div class="page-head">
+        <h2>Settings</h2>
+        <p>Customize your productivity workspace.</p>
+    </div>
+
+    <div class="settings">
+
+        <label>Workspace Name
+            <input value="Harsha's Team">
+        </label>
+
+        <label>Daily Goal
+            <select>
+                <option>8 hours</option>
+                <option>6 hours</option>
+                <option>4 hours</option>
+            </select>
+        </label>
+
+        <label>Notifications
+            <select>
+                <option>Enabled</option>
+                <option>Disabled</option>
+            </select>
+        </label>
+
+        <button class="orange-btn" id="saveSettings">Save Settings</button>
+
+    </div>
+
+</section>
+
+<footer>Flow Productivity © 2026 <span>12 day productivity streak 🔥</span></footer>
+
+</main>
+
+<div class="toast" id="toast">
+<strong>Flow</strong>
+<span></span>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

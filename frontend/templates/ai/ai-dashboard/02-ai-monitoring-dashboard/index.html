@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Pulse - Monitoring Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+        <div class="logo-box">⚡</div>
+        <div>
+            <b>AI PULSE</b>
+            <small>Monitoring</small>
+        </div>
+    </div>
+
+    <div class="menu-title">MONITOR</div>
+
+    <button class="menu active" data-page="dashboard">
+        <span>▦</span> Dashboard
+    </button>
+
+    <button class="menu" data-page="systems">
+        <span>◉</span> Live Systems
+    </button>
+
+    <button class="menu" data-page="alerts">
+        <span>⚠</span> Alerts
+        <em>4</em>
+    </button>
+
+    <button class="menu" data-page="logs">
+        <span>▤</span> System Logs
+    </button>
+
+    <button class="menu" data-page="models">
+        <span>◆</span> AI Models
+    </button>
+
+    <div class="menu-title">MANAGE</div>
+
+    <button class="menu" data-page="settings">
+        <span>⚙</span> Settings
+    </button>
+
+    <div class="sidebar-bottom">
+        <div class="server">
+            <span class="green-dot"></span>
+            <div>
+                <b>All systems</b>
+                <small>Operational</small>
+            </div>
+        </div>
+    </div>
+
+</aside>
+
+
+<!-- ================= MAIN ================= -->
+
+<main>
+
+<header>
+
+    <div>
+        <div class="live-label">
+            <span></span> LIVE SYSTEM
+        </div>
+        <h1 id="pageTitle">Monitoring Dashboard</h1>
+        <p id="pageDescription">
+            Real-time AI infrastructure monitoring
+        </p>
+    </div>
+
+    <div class="header-right">
+
+        <div class="search">
+            🔍
+            <input id="globalSearch" placeholder="Search...">
+        </div>
+
+        <button class="header-btn" id="refreshBtn">↻</button>
+
+        <button class="header-btn" id="notificationBtn">
+            🔔
+        </button>
+
+        <div class="profile">J</div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= DASHBOARD PAGE ================= -->
+
+<section class="page active" id="dashboard">
+
+    <div class="status-banner">
+
+        <div class="status-main">
+            <div class="status-light"></div>
+
+            <div>
+                <small>SYSTEM STATUS</small>
+                <h2>All Systems Operational</h2>
+            </div>
+        </div>
+
+        <div class="status-stat">
+            <b id="uptime">99.98%</b>
+            <span>Uptime</span>
+        </div>
+
+        <div class="status-stat">
+            <b id="latency">42ms</b>
+            <span>Latency</span>
+        </div>
+
+    </div>
+
+
+    <div class="metric-grid">
+
+        <div class="metric">
+            <span>CPU USAGE</span>
+            <strong id="cpuValue">64%</strong>
+            <div class="bar"><i id="cpuBar" style="width:64%"></i></div>
+            <small>Normal</small>
+        </div>
+
+        <div class="metric orange">
+            <span>GPU USAGE</span>
+            <strong id="gpuValue">78%</strong>
+            <div class="bar"><i id="gpuBar" style="width:78%"></i></div>
+            <small>Healthy</small>
+        </div>
+
+        <div class="metric blue">
+            <span>MEMORY</span>
+            <strong id="memoryValue">52%</strong>
+            <div class="bar"><i id="memoryBar" style="width:52%"></i></div>
+            <small>Normal</small>
+        </div>
+
+        <div class="metric purple">
+            <span>REQUESTS / SEC</span>
+            <strong id="requestValue">1,842</strong>
+            <div class="spark">
+                <i></i><i></i><i></i><i></i>
+                <i></i><i></i><i></i>
+            </div>
+            <small>▲ 14.2%</small>
+        </div>
+
+    </div>
+
+
+    <div class="two-columns">
+
+        <div class="panel">
+
+            <div class="panel-header">
+                <div>
+                    <h2>Live Services</h2>
+                    <p>Current service health</p>
+                </div>
+
+                <button class="small-btn" id="serviceRefresh">
+                    Refresh
+                </button>
+            </div>
+
+            <div id="serviceList">
+
+                <div class="service">
+                    <span class="service-dot"></span>
+                    <div>
+                        <b>AI Gateway</b>
+                        <small>API Gateway</small>
+                    </div>
+                    <strong>24ms</strong>
+                </div>
+
+                <div class="service">
+                    <span class="service-dot"></span>
+                    <div>
+                        <b>Inference Engine</b>
+                        <small>GPU Cluster</small>
+                    </div>
+                    <strong>31ms</strong>
+                </div>
+
+                <div class="service warning">
+                    <span class="service-dot"></span>
+                    <div>
+                        <b>Data Pipeline</b>
+                        <small>Processing</small>
+                    </div>
+                    <strong>72ms</strong>
+                </div>
+
+                <div class="service">
+                    <span class="service-dot"></span>
+                    <div>
+                        <b>Vector Database</b>
+                        <small>12 nodes</small>
+                    </div>
+                    <strong>19ms</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="panel">
+
+            <div class="panel-header">
+                <div>
+                    <h2>System Activity</h2>
+                    <p>Last 24 hours</p>
+                </div>
+            </div>
+
+            <div class="activity-chart">
+
+                <div class="chart-bars">
+                    <i style="height:35%"></i>
+                    <i style="height:55%"></i>
+                    <i style="height:45%"></i>
+                    <i style="height:70%"></i>
+                    <i style="height:50%"></i>
+                    <i style="height:85%"></i>
+                    <i style="height:65%"></i>
+                    <i style="height:90%"></i>
+                    <i style="height:75%"></i>
+                    <i style="height:95%"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SYSTEMS PAGE ================= -->
+
+<section class="page" id="systems">
+
+    <div class="page-heading">
+        <h2>Live Systems</h2>
+        <p>Monitor every AI infrastructure service.</p>
+    </div>
+
+    <div class="system-grid">
+
+        <div class="system-card">
+            <div class="system-icon">⚡</div>
+            <h3>AI Gateway</h3>
+            <span class="online">● ONLINE</span>
+            <strong>24ms</strong>
+            <button class="test-btn">Run Health Check</button>
+        </div>
+
+        <div class="system-card">
+            <div class="system-icon">◆</div>
+            <h3>Inference Engine</h3>
+            <span class="online">● ONLINE</span>
+            <strong>31ms</strong>
+            <button class="test-btn">Run Health Check</button>
+        </div>
+
+        <div class="system-card">
+            <div class="system-icon">◈</div>
+            <h3>Vector Database</h3>
+            <span class="online">● ONLINE</span>
+            <strong>19ms</strong>
+            <button class="test-btn">Run Health Check</button>
+        </div>
+
+        <div class="system-card">
+            <div class="system-icon orange-icon">▤</div>
+            <h3>Data Pipeline</h3>
+            <span class="warning-text">● WARNING</span>
+            <strong>72ms</strong>
+            <button class="test-btn">Run Health Check</button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ALERTS PAGE ================= -->
+
+<section class="page" id="alerts">
+
+    <div class="page-heading">
+        <h2>System Alerts</h2>
+        <p>Review and manage infrastructure alerts.</p>
+    </div>
+
+    <div class="alert-toolbar">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="critical">Critical</button>
+        <button class="filter" data-filter="warning">Warning</button>
+        <button class="filter" data-filter="resolved">Resolved</button>
+    </div>
+
+    <div id="alertContainer">
+
+        <div class="alert-card critical" data-type="critical">
+            <div class="alert-symbol">!</div>
+            <div>
+                <h3>GPU utilization high</h3>
+                <p>GPU Cluster reached 82% utilization.</p>
+                <small>2 minutes ago</small>
+            </div>
+            <button class="resolve">Resolve</button>
+        </div>
+
+        <div class="alert-card warning" data-type="warning">
+            <div class="alert-symbol">!</div>
+            <div>
+                <h3>Data queue growing</h3>
+                <p>Processing queue is above normal.</p>
+                <small>8 minutes ago</small>
+            </div>
+            <button class="resolve">Resolve</button>
+        </div>
+
+        <div class="alert-card resolved" data-type="resolved">
+            <div class="alert-symbol">✓</div>
+            <div>
+                <h3>Backup completed</h3>
+                <p>Daily backup completed successfully.</p>
+                <small>1 hour ago</small>
+            </div>
+            <button class="resolved-btn">Resolved</button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LOGS PAGE ================= -->
+
+<section class="page" id="logs">
+
+    <div class="page-heading">
+        <h2>System Logs</h2>
+        <p>Real-time infrastructure events.</p>
+    </div>
+
+    <div class="log-toolbar">
+        <select id="logLevel">
+            <option value="all">All Levels</option>
+            <option value="INFO">INFO</option>
+            <option value="WARN">WARN</option>
+            <option value="ERROR">ERROR</option>
+        </select>
+
+        <button class="small-btn" id="addLog">
+            + Test Log
+        </button>
+
+        <button class="small-btn danger-btn" id="clearLogs">
+            Clear Logs
+        </button>
+    </div>
+
+    <div class="logs-box" id="logContainer">
+
+        <div class="log INFO">
+            <time>17:04:52</time>
+            <b>INFO</b>
+            Model inference completed.
+        </div>
+
+        <div class="log INFO">
+            <time>17:04:49</time>
+            <b>INFO</b>
+            Request received from API gateway.
+        </div>
+
+        <div class="log WARN">
+            <time>17:04:45</time>
+            <b>WARN</b>
+            GPU utilization above 80%.
+        </div>
+
+        <div class="log ERROR">
+            <time>17:03:21</time>
+            <b>ERROR</b>
+            Temporary model timeout detected.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MODELS PAGE ================= -->
+
+<section class="page" id="models">
+
+    <div class="page-heading">
+        <h2>AI Models</h2>
+        <p>Monitor deployed artificial intelligence models.</p>
+    </div>
+
+    <div class="model-grid">
+
+        <div class="model-card">
+            <span class="model-badge">PRODUCTION</span>
+            <h2>NeuraGPT</h2>
+            <p>Large language model</p>
+            <div class="model-stat">
+                <span>Accuracy</span><b>97.8%</b>
+            </div>
+            <div class="model-stat">
+                <span>Latency</span><b>48ms</b>
+            </div>
+            <button class="run-model">Run Test</button>
+        </div>
+
+        <div class="model-card">
+            <span class="model-badge">PRODUCTION</span>
+            <h2>VisionX</h2>
+            <p>Computer vision model</p>
+            <div class="model-stat">
+                <span>Accuracy</span><b>95.2%</b>
+            </div>
+            <div class="model-stat">
+                <span>Latency</span><b>63ms</b>
+            </div>
+            <button class="run-model">Run Test</button>
+        </div>
+
+        <div class="model-card">
+            <span class="model-badge development">DEVELOPMENT</span>
+            <h2>PredictAI</h2>
+            <p>Predictive analytics</p>
+            <div class="model-stat">
+                <span>Accuracy</span><b>93.7%</b>
+            </div>
+            <div class="model-stat">
+                <span>Latency</span><b>54ms</b>
+            </div>
+            <button class="run-model">Run Test</button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SETTINGS PAGE ================= -->
+
+<section class="page" id="settings">
+
+    <div class="page-heading">
+        <h2>Monitoring Settings</h2>
+        <p>Configure your monitoring environment.</p>
+    </div>
+
+    <div class="settings-box">
+
+        <label>
+            <span>Real-time monitoring</span>
+            <input type="checkbox" checked id="monitorToggle">
+        </label>
+
+        <label>
+            <span>Email alerts</span>
+            <input type="checkbox" checked id="emailToggle">
+        </label>
+
+        <label>
+            <span>High CPU warnings</span>
+            <input type="checkbox" checked>
+        </label>
+
+        <label>
+            <span>High GPU warnings</span>
+            <input type="checkbox" checked>
+        </label>
+
+        <button class="save-btn" id="saveSettings">
+            Save Settings
+        </button>
+
+    </div>
+
+</section>
+
+</main>
+
+</div>
+
+<div id="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

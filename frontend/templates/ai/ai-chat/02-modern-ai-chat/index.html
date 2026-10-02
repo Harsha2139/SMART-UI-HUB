@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Modern AI Chat</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">✦</div>
+
+            <div>
+                <h2>Nova AI</h2>
+                <small>Smart Assistant</small>
+            </div>
+        </div>
+
+        <button id="newChat" class="new-chat">
+            ＋ New Chat
+        </button>
+
+        <div class="sidebar-title">
+            Recent Chats
+        </div>
+
+        <div id="chatList" class="chat-list"></div>
+
+        <div class="sidebar-bottom">
+            <button id="themeBtn">🌙 Theme</button>
+            <button id="clearBtn">🗑 Clear All</button>
+        </div>
+
+    </aside>
+
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div>
+                <h1>AI Conversation</h1>
+                <p>Ask anything and get instant assistance.</p>
+            </div>
+
+            <div class="online">
+                <span></span>
+                Online
+            </div>
+
+        </header>
+
+
+        <section class="conversation">
+
+            <div id="messages" class="messages">
+
+                <div class="welcome">
+                    <div class="welcome-icon">✦</div>
+
+                    <h2>How can I help you?</h2>
+
+                    <p>
+                        Ask questions, learn concepts,
+                        generate ideas or solve problems.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="suggestions">
+
+                <button>💡 Explain machine learning</button>
+                <button>💻 Help me code</button>
+                <button>📚 Create study plan</button>
+                <button>🚀 Give project ideas</button>
+
+            </div>
+
+
+            <form id="chatForm" class="input-area">
+
+                <button
+                    type="button"
+                    id="attachBtn"
+                    class="icon-btn"
+                >
+                    📎
+                </button>
+
+                <input
+                    id="messageInput"
+                    placeholder="Message Nova AI..."
+                    autocomplete="off"
+                >
+
+                <button
+                    type="button"
+                    id="voiceBtn"
+                    class="icon-btn"
+                >
+                    🎤
+                </button>
+
+                <button
+                    type="submit"
+                    class="send"
+                >
+                    ➤
+                </button>
+
+            </form>
+
+            <small class="disclaimer">
+                Nova AI Demo • Responses are generated locally
+            </small>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

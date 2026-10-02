@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Personal AI Assistant</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        <span class="logo">✦</span>
+
+        <div>
+            <b>PersonalAI</b>
+            <small>Your day, organized.</small>
+        </div>
+    </div>
+
+    <button id="themeBtn" class="icon-btn">
+        ☀️
+    </button>
+
+</header>
+
+
+<main class="wrap">
+
+    <section class="hero">
+
+        <div>
+            <span class="pill">PERSONAL PRODUCTIVITY</span>
+
+            <h1>
+                Good day!
+                <span id="greeting">
+                    Let's get things done.
+                </span>
+            </h1>
+
+            <p>
+                Manage tasks, notes and your daily focus
+                from one workspace.
+            </p>
+        </div>
+
+        <div class="date-card">
+            <b id="clock">--:--</b>
+            <span id="date">Loading...</span>
+        </div>
+
+    </section>
+
+
+    <section class="stats">
+
+        <div class="stat">
+            <span>Tasks</span>
+            <b id="totalTasks">0</b>
+        </div>
+
+        <div class="stat">
+            <span>Completed</span>
+            <b id="doneTasks">0</b>
+        </div>
+
+        <div class="stat">
+            <span>Focus</span>
+            <b id="focusTime">25:00</b>
+        </div>
+
+    </section>
+
+
+    <div class="grid">
+
+        <!-- TASKS -->
+
+        <section class="card tasks">
+
+            <div class="card-head">
+                <h2>✓ Today's Tasks</h2>
+                <span id="progressText">0%</span>
+            </div>
+
+            <form id="taskForm" class="add-row">
+
+                <input
+                    id="taskInput"
+                    placeholder="Add a task..."
+                    required
+                >
+
+                <select id="priority">
+                    <option>High</option>
+                    <option selected>Medium</option>
+                    <option>Low</option>
+                </select>
+
+                <button class="primary">
+                    Add
+                </button>
+
+            </form>
+
+
+            <div class="filters">
+
+                <button class="filter active" data-filter="all">
+                    All
+                </button>
+
+                <button class="filter" data-filter="open">
+                    Open
+                </button>
+
+                <button class="filter" data-filter="done">
+                    Done
+                </button>
+
+            </div>
+
+
+            <ul id="taskList"></ul>
+
+        </section>
+
+
+        <!-- NOTES -->
+
+        <section class="card notes">
+
+            <div class="card-head">
+
+                <h2>📝 Quick Notes</h2>
+
+                <button id="clearNote" class="mini">
+                    Clear
+                </button>
+
+            </div>
+
+            <textarea
+                id="note"
+                placeholder="Write ideas, reminders, study points..."
+            ></textarea>
+
+            <button id="saveNote" class="primary full">
+                Save Note
+            </button>
+
+            <p id="noteStatus" class="status"></p>
+
+        </section>
+
+
+        <!-- FOCUS TIMER -->
+
+        <section class="card focus">
+
+            <div class="card-head">
+                <h2>⏱ Focus Timer</h2>
+                <span>25 min</span>
+            </div>
+
+            <div class="timer" id="timer">
+                25:00
+            </div>
+
+            <div class="timer-actions">
+
+                <button id="startTimer" class="primary">
+                    Start
+                </button>
+
+                <button id="pauseTimer" class="secondary">
+                    Pause
+                </button>
+
+                <button id="resetTimer" class="secondary">
+                    Reset
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- AI ASSISTANT -->
+
+        <section class="card assistant">
+
+            <div class="card-head">
+
+                <h2>🤖 Personal Assistant</h2>
+
+                <span class="online">
+                    ● Online
+                </span>
+
+            </div>
+
+            <div id="chat" class="chat">
+
+                <div class="msg bot">
+                    Hi! Try "plan my study day",
+                    "motivate me", or "give me a focus tip".
+                </div>
+
+            </div>
+
+
+            <form id="chatForm" class="chat-row">
+
+                <input
+                    id="chatInput"
+                    placeholder="Ask your assistant..."
+                    required
+                >
+
+                <button class="primary">
+                    Send
+                </button>
+
+            </form>
+
+        </section>
+
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
