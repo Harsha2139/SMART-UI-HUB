@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMyShow - Event Discovery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        book<span>my</span>show
+    </div>
+
+    <div class="location" onclick="changeCity()">
+        📍 Chennai
+    </div>
+
+    <div class="search-box">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search events, concerts, comedy..."
+        >
+        <button onclick="searchEvents()">Search</button>
+    </div>
+
+    <button class="login-btn" onclick="login()">
+        Sign In
+    </button>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-text">
+
+            <p class="small-title">
+                DISCOVER EVENTS
+            </p>
+
+            <h1>
+                Find Something Amazing Near You
+            </h1>
+
+            <p class="description">
+                Discover concerts, comedy shows, sports, workshops,
+                theatre performances and exciting experiences happening
+                around your city.
+            </p>
+
+            <div class="hero-info">
+                <span>🎵 Live Music</span>
+                <span>🎤 Comedy</span>
+                <span>🏆 Sports</span>
+            </div>
+
+            <div class="hero-buttons">
+
+                <button onclick="exploreEvents()">
+                    Explore Events
+                </button>
+
+                <button
+                    class="outline-btn"
+                    onclick="showFeatured()"
+                >
+                    Featured Events
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-poster">
+
+            <img
+                src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=85"
+                alt="Live Event"
+            >
+
+            <div class="poster-info">
+                <span>FEATURED</span>
+                <strong>Summer Music Festival</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- QUICK SEARCH -->
+
+<section class="quick-search">
+
+    <div class="section-title">
+
+        <p>FIND YOUR EXPERIENCE</p>
+
+        <h2>What Are You Looking For?</h2>
+
+    </div>
+
+
+    <div class="search-panel">
+
+        <div class="search-field">
+
+            <label>What</label>
+
+            <input
+                type="text"
+                id="eventType"
+                placeholder="Concert, comedy, sports..."
+            >
+
+        </div>
+
+
+        <div class="search-field">
+
+            <label>Where</label>
+
+            <select id="citySelect">
+
+                <option>Chennai</option>
+                <option>Bangalore</option>
+                <option>Hyderabad</option>
+                <option>Mumbai</option>
+                <option>Delhi</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="search-field">
+
+            <label>When</label>
+
+            <select id="dateFilter">
+
+                <option value="all">Any Date</option>
+                <option value="today">Today</option>
+                <option value="weekend">This Weekend</option>
+                <option value="month">This Month</option>
+
+            </select>
+
+        </div>
+
+
+        <button onclick="discoverEvents()">
+            Discover
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
+<section class="categories">
+
+    <div class="section-title">
+
+        <p>EXPLORE BY CATEGORY</p>
+
+        <h2>Choose Your Interest</h2>
+
+    </div>
+
+
+    <div class="category-grid">
+
+        <div
+            class="category-card"
+            onclick="filterCategory('Music')"
+        >
+            <div class="icon">🎵</div>
+            <h3>Music</h3>
+            <p>Concerts & Festivals</p>
+        </div>
+
+
+        <div
+            class="category-card"
+            onclick="filterCategory('Comedy')"
+        >
+            <div class="icon">🎤</div>
+            <h3>Comedy</h3>
+            <p>Stand-up Shows</p>
+        </div>
+
+
+        <div
+            class="category-card"
+            onclick="filterCategory('Sports')"
+        >
+            <div class="icon">🏆</div>
+            <h3>Sports</h3>
+            <p>Matches & Games</p>
+        </div>
+
+
+        <div
+            class="category-card"
+            onclick="filterCategory('Theatre')"
+        >
+            <div class="icon">🎭</div>
+            <h3>Theatre</h3>
+            <p>Plays & Shows</p>
+        </div>
+
+
+        <div
+            class="category-card"
+            onclick="filterCategory('Workshop')"
+        >
+            <div class="icon">💡</div>
+            <h3>Workshops</h3>
+            <p>Learn & Create</p>
+        </div>
+
+
+        <div
+            class="category-card"
+            onclick="filterCategory('Activities')"
+        >
+            <div class="icon">🎯</div>
+            <h3>Activities</h3>
+            <p>Fun Experiences</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EVENTS -->
+
+<section
+    class="events"
+    id="eventsSection"
+>
+
+    <div class="section-heading">
+
+        <div>
+
+            <p>POPULAR NEAR YOU</p>
+
+            <h2>Events You Might Like</h2>
+
+        </div>
+
+        <button
+            class="view-all"
+            onclick="viewAllEvents()"
+        >
+            View All
+        </button>
+
+    </div>
+
+
+    <div class="event-grid">
+
+
+        <!-- EVENT 1 -->
+
+        <div class="event-card">
+
+            <div class="image-wrapper">
+
+                <img
+                    src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=700&q=85"
+                    alt="Music Festival"
+                >
+
+                <span class="date-badge">
+                    OCT<br><strong>18</strong>
+                </span>
+
+            </div>
+
+            <div class="event-content">
+
+                <span class="category">
+                    MUSIC
+                </span>
+
+                <h3>
+                    Chennai Music Festival
+                </h3>
+
+                <p>
+                    📍 Marina Convention Centre
+                </p>
+
+                <p>
+                    🕐 7:30 PM
+                </p>
+
+                <div class="event-bottom">
+
+                    <strong>
+                        ₹799 onwards
+                    </strong>
+
+                    <button
+                        onclick="bookEvent('Chennai Music Festival')"
+                    >
+                        Book
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVENT 2 -->
+
+        <div class="event-card">
+
+            <div class="image-wrapper">
+
+                <img
+                    src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=700&q=85"
+                    alt="Concert"
+                >
+
+                <span class="date-badge">
+                    OCT<br><strong>22</strong>
+                </span>
+
+            </div>
+
+            <div class="event-content">
+
+                <span class="category">
+                    CONCERT
+                </span>
+
+                <h3>
+                    Live Beats Concert
+                </h3>
+
+                <p>
+                    📍 Phoenix Arena
+                </p>
+
+                <p>
+                    🕐 8:00 PM
+                </p>
+
+                <div class="event-bottom">
+
+                    <strong>
+                        ₹999 onwards
+                    </strong>
+
+                    <button
+                        onclick="bookEvent('Live Beats Concert')"
+                    >
+                        Book
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVENT 3 -->
+
+        <div class="event-card">
+
+            <div class="image-wrapper">
+
+                <img
+                    src="https://images.unsplash.com/photo-1585699324551-f6c309eedeca?auto=format&fit=crop&w=700&q=85"
+                    alt="Comedy Show"
+                >
+
+                <span class="date-badge">
+                    OCT<br><strong>25</strong>
+                </span>
+
+            </div>
+
+            <div class="event-content">
+
+                <span class="category">
+                    COMEDY
+                </span>
+
+                <h3>
+                    Laugh Out Loud
+                </h3>
+
+                <p>
+                    📍 City Convention Hall
+                </p>
+
+                <p>
+                    🕐 6:30 PM
+                </p>
+
+                <div class="event-bottom">
+
+                    <strong>
+                        ₹499 onwards
+                    </strong>
+
+                    <button
+                        onclick="bookEvent('Laugh Out Loud')"
+                    >
+                        Book
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVENT 4 -->
+
+        <div class="event-card">
+
+            <div class="image-wrapper">
+
+                <img
+                    src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=700&q=85"
+                    alt="Sports Event"
+                >
+
+                <span class="date-badge">
+                    OCT<br><strong>28</strong>
+                </span>
+
+            </div>
+
+            <div class="event-content">
+
+                <span class="category">
+                    SPORTS
+                </span>
+
+                <h3>
+                    Champions Cup
+                </h3>
+
+                <p>
+                    📍 Jawaharlal Stadium
+                </p>
+
+                <p>
+                    🕐 5:00 PM
+                </p>
+
+                <div class="event-bottom">
+
+                    <strong>
+                        ₹599 onwards
+                    </strong>
+
+                    <button
+                        onclick="bookEvent('Champions Cup')"
+                    >
+                        Book
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVENT 5 -->
+
+        <div class="event-card">
+
+            <div class="image-wrapper">
+
+                <img
+                    src="https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=700&q=85"
+                    alt="Theatre"
+                >
+
+                <span class="date-badge">
+                    NOV<br><strong>02</strong>
+                </span>
+
+            </div>
+
+            <div class="event-content">
+
+                <span class="category">
+                    THEATRE
+                </span>
+
+                <h3>
+                    The Grand Play
+                </h3>
+
+                <p>
+                    📍 National Theatre
+                </p>
+
+                <p>
+                    🕐 7:00 PM
+                </p>
+
+                <div class="event-bottom">
+
+                    <strong>
+                        ₹699 onwards
+                    </strong>
+
+                    <button
+                        onclick="bookEvent('The Grand Play')"
+                    >
+                        Book
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVENT 6 -->
+
+        <div class="event-card">
+
+            <div class="image-wrapper">
+
+                <img
+                    src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=700&q=85"
+                    alt="Technology Event"
+                >
+
+                <span class="date-badge">
+                    NOV<br><strong>05</strong>
+                </span>
+
+            </div>
+
+            <div class="event-content">
+
+                <span class="category">
+                    WORKSHOP
+                </span>
+
+                <h3>
+                    Future Tech Summit
+                </h3>
+
+                <p>
+                    📍 Tech Convention Centre
+                </p>
+
+                <p>
+                    🕐 10:00 AM
+                </p>
+
+                <div class="event-bottom">
+
+                    <strong>
+                        ₹899 onwards
+                    </strong>
+
+                    <button
+                        onclick="bookEvent('Future Tech Summit')"
+                    >
+                        Book
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURED EXPERIENCES -->
+
+<section class="featured">
+
+    <div class="section-title">
+
+        <p>DON'T MISS OUT</p>
+
+        <h2>Featured Experiences</h2>
+
+    </div>
+
+
+    <div class="featured-grid">
+
+        <div class="featured-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=800&q=85"
+                alt="Concert"
+            >
+
+            <div>
+
+                <span>MUSIC</span>
+
+                <h3>
+                    Live Music Nights
+                </h3>
+
+                <p>
+                    Experience incredible live performances.
+                </p>
+
+                <button onclick="bookEvent('Live Music Nights')">
+                    Explore
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="featured-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1527224857830-43a7acc85260?auto=format&fit=crop&w=800&q=85"
+                alt="Comedy"
+            >
+
+            <div>
+
+                <span>COMEDY</span>
+
+                <h3>
+                    Comedy Specials
+                </h3>
+
+                <p>
+                    Spend your evening laughing with friends.
+                </p>
+
+                <button onclick="bookEvent('Comedy Specials')">
+                    Explore
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- NEWSLETTER -->
+
+<section class="newsletter">
+
+    <div>
+
+        <p>STAY UPDATED</p>
+
+        <h2>
+            Never Miss an Event
+        </h2>
+
+        <span>
+            Get updates about upcoming events in your city.
+        </span>
+
+    </div>
+
+
+    <div class="subscribe">
+
+        <input
+            type="email"
+            id="emailInput"
+            placeholder="Enter your email"
+        >
+
+        <button onclick="subscribe()">
+            Subscribe
+        </button>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="footer-logo">
+        book<span>my</span>show
+    </div>
+
+    <p>
+        Discover movies, events and entertainment experiences.
+    </p>
+
+    <div class="footer-links">
+
+        <span>About Us</span>
+        <span>Contact</span>
+        <span>Privacy</span>
+        <span>Terms</span>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 BookMyShow Template
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

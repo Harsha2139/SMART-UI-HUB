@@ -1,0 +1,252 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiggy Food Dashboard</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Swiggy Dashboard</div>
+
+    <nav>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#orders">Orders</a>
+        <a href="#restaurants">Restaurants</a>
+        <a href="#customers">Customers</a>
+    </nav>
+
+    <button onclick="logout()">Logout</button>
+</header>
+
+<section class="dashboard" id="dashboard">
+
+    <div class="welcome">
+        <div>
+            <h1>Food Delivery Dashboard</h1>
+            <p>Manage your food delivery business from one place.</p>
+        </div>
+
+        <button onclick="refreshDashboard()">Refresh Data</button>
+    </div>
+
+    <div class="stats">
+
+        <div class="stat-card">
+            <div class="icon">🛒</div>
+            <div>
+                <p>Total Orders</p>
+                <h2 id="ordersCount">1,248</h2>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="icon">₹</div>
+            <div>
+                <p>Total Revenue</p>
+                <h2 id="revenue">₹2,48,500</h2>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="icon">👥</div>
+            <div>
+                <p>Customers</p>
+                <h2 id="customersCount">5,420</h2>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="icon">🏪</div>
+            <div>
+                <p>Restaurants</p>
+                <h2 id="restaurantsCount">186</h2>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="content">
+
+    <div class="panel" id="orders">
+
+        <div class="panel-header">
+            <h2>Recent Orders</h2>
+            <button onclick="viewAllOrders()">View All</button>
+        </div>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Restaurant</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody id="orderTable">
+
+                <tr>
+                    <td>#SW1001</td>
+                    <td>Rahul</td>
+                    <td>Food Palace</td>
+                    <td>₹450</td>
+                    <td><span class="status delivered">Delivered</span></td>
+                </tr>
+
+                <tr>
+                    <td>#SW1002</td>
+                    <td>Anjali</td>
+                    <td>Spice Hub</td>
+                    <td>₹320</td>
+                    <td><span class="status preparing">Preparing</span></td>
+                </tr>
+
+                <tr>
+                    <td>#SW1003</td>
+                    <td>Arjun</td>
+                    <td>Pizza Corner</td>
+                    <td>₹580</td>
+                    <td><span class="status delivered">Delivered</span></td>
+                </tr>
+
+                <tr>
+                    <td>#SW1004</td>
+                    <td>Priya</td>
+                    <td>Biryani House</td>
+                    <td>₹390</td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+
+                <tr>
+                    <td>#SW1005</td>
+                    <td>Vikram</td>
+                    <td>Fresh Kitchen</td>
+                    <td>₹275</td>
+                    <td><span class="status cancelled">Cancelled</span></td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <div class="panel" id="restaurants">
+
+        <div class="panel-header">
+            <h2>Top Restaurants</h2>
+            <button onclick="viewRestaurants()">View All</button>
+        </div>
+
+        <div class="restaurant-list">
+
+            <div class="restaurant">
+                <div class="restaurant-icon">🍕</div>
+                <div>
+                    <h3>Pizza Corner</h3>
+                    <p>4.7 ★ · 320 orders</p>
+                </div>
+                <strong>₹85K</strong>
+            </div>
+
+            <div class="restaurant">
+                <div class="restaurant-icon">🍛</div>
+                <div>
+                    <h3>Biryani House</h3>
+                    <p>4.6 ★ · 280 orders</p>
+                </div>
+                <strong>₹72K</strong>
+            </div>
+
+            <div class="restaurant">
+                <div class="restaurant-icon">🍔</div>
+                <div>
+                    <h3>Food Palace</h3>
+                    <p>4.5 ★ · 250 orders</p>
+                </div>
+                <strong>₹64K</strong>
+            </div>
+
+            <div class="restaurant">
+                <div class="restaurant-icon">🥗</div>
+                <div>
+                    <h3>Fresh Kitchen</h3>
+                    <p>4.4 ★ · 190 orders</p>
+                </div>
+                <strong>₹51K</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="panel" id="customers">
+
+        <div class="panel-header">
+            <h2>Customer Activity</h2>
+            <button onclick="viewCustomers()">View Customers</button>
+        </div>
+
+        <div class="activity">
+
+            <div class="activity-item">
+                <span class="activity-dot"></span>
+                <div>
+                    <strong>Rahul placed an order</strong>
+                    <p>Food Palace · ₹450</p>
+                </div>
+                <small>2 min ago</small>
+            </div>
+
+            <div class="activity-item">
+                <span class="activity-dot"></span>
+                <div>
+                    <strong>Anjali placed an order</strong>
+                    <p>Spice Hub · ₹320</p>
+                </div>
+                <small>8 min ago</small>
+            </div>
+
+            <div class="activity-item">
+                <span class="activity-dot"></span>
+                <div>
+                    <strong>Arjun registered</strong>
+                    <p>New customer</p>
+                </div>
+                <small>15 min ago</small>
+            </div>
+
+            <div class="activity-item">
+                <span class="activity-dot"></span>
+                <div>
+                    <strong>Priya placed an order</strong>
+                    <p>Biryani House · ₹390</p>
+                </div>
+                <small>22 min ago</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <h3>Swiggy Food Dashboard</h3>
+    <p>Food delivery management system</p>
+    <p>© 2026 Swiggy Dashboard</p>
+</footer>
+
+<script src="./script.js"></script>
+
+</body>
+</html>

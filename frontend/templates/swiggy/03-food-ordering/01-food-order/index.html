@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Food Order</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">swiggy</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#cart">Cart</a>
+            <a href="#offers">Offers</a>
+        </nav>
+
+        <button id="loginBtn" type="button">
+            Login
+        </button>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p>FAST FOOD DELIVERY</p>
+
+            <h1>
+                Delicious food,
+                <span>delivered fast.</span>
+            </h1>
+
+            <p class="description">
+                Choose your favourite dishes and add them
+                to your cart with one click.
+            </p>
+
+            <button id="menuBtn" type="button">
+                Explore Menu
+            </button>
+
+        </div>
+
+        <div class="hero-food">
+            🍱
+        </div>
+
+    </section>
+
+
+    <!-- MENU -->
+
+    <section class="menu" id="menu">
+
+        <div class="section-title">
+
+            <p>OUR MENU</p>
+
+            <h2>Choose your favourite food</h2>
+
+        </div>
+
+
+        <div class="food-grid">
+
+
+            <!-- FOOD 1 -->
+
+            <div class="food-card">
+
+                <div class="food-image pizza">
+                    🍕
+                </div>
+
+                <div class="food-info">
+
+                    <h3>Cheese Pizza</h3>
+
+                    <p>
+                        Fresh cheese pizza with delicious toppings.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹299</strong>
+
+                        <button
+                            class="addBtn"
+                            data-name="Cheese Pizza"
+                            data-price="299"
+                            type="button">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD 2 -->
+
+            <div class="food-card">
+
+                <div class="food-image biryani">
+                    🍛
+                </div>
+
+                <div class="food-info">
+
+                    <h3>Chicken Biryani</h3>
+
+                    <p>
+                        Spicy and aromatic chicken biryani.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹349</strong>
+
+                        <button
+                            class="addBtn"
+                            data-name="Chicken Biryani"
+                            data-price="349"
+                            type="button">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD 3 -->
+
+            <div class="food-card">
+
+                <div class="food-image burger">
+                    🍔
+                </div>
+
+                <div class="food-info">
+
+                    <h3>Classic Burger</h3>
+
+                    <p>
+                        Crispy burger with fresh vegetables.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹199</strong>
+
+                        <button
+                            class="addBtn"
+                            data-name="Classic Burger"
+                            data-price="199"
+                            type="button">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD 4 -->
+
+            <div class="food-card">
+
+                <div class="food-image noodles">
+                    🍜
+                </div>
+
+                <div class="food-info">
+
+                    <h3>Veg Noodles</h3>
+
+                    <p>
+                        Delicious noodles with fresh vegetables.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹179</strong>
+
+                        <button
+                            class="addBtn"
+                            data-name="Veg Noodles"
+                            data-price="179"
+                            type="button">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD 5 -->
+
+            <div class="food-card">
+
+                <div class="food-image dosa">
+                    🥞
+                </div>
+
+                <div class="food-info">
+
+                    <h3>Masala Dosa</h3>
+
+                    <p>
+                        Crispy dosa served with chutney and sambar.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹149</strong>
+
+                        <button
+                            class="addBtn"
+                            data-name="Masala Dosa"
+                            data-price="149"
+                            type="button">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOD 6 -->
+
+            <div class="food-card">
+
+                <div class="food-image dessert">
+                    🍰
+                </div>
+
+                <div class="food-info">
+
+                    <h3>Chocolate Cake</h3>
+
+                    <p>
+                        Soft chocolate cake with creamy frosting.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <strong>₹229</strong>
+
+                        <button
+                            class="addBtn"
+                            data-name="Chocolate Cake"
+                            data-price="229"
+                            type="button">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CART -->
+
+    <section class="cart-section" id="cart">
+
+        <div class="cart">
+
+            <div class="cart-header">
+
+                <div>
+                    <p>YOUR ORDER</p>
+                    <h2>Shopping Cart</h2>
+                </div>
+
+                <span id="cartCount">
+                    0 items
+                </span>
+
+            </div>
+
+
+            <div id="cartItems">
+
+                <p class="empty-cart">
+                    Your cart is empty.
+                </p>
+
+            </div>
+
+
+            <div class="cart-total">
+
+                <span>Total</span>
+
+                <strong id="cartTotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+            <button id="checkoutBtn" type="button">
+                Proceed to Checkout
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- OFFER -->
+
+    <section class="offer" id="offers">
+
+        <div>
+
+            <p>FIRST ORDER OFFER</p>
+
+            <h2>
+                Get 50% OFF on your first order
+            </h2>
+
+            <p>
+                Use coupon code:
+            </p>
+
+            <div class="coupon">
+
+                <strong>WELCOME50</strong>
+
+                <button id="couponBtn" type="button">
+                    Copy Code
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="offer-icon">
+            🛵
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            swiggy
+        </div>
+
+        <p>
+            Fast and delicious food delivery
+        </p>
+
+        <p>
+            © 2026 All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Railway Dashboard</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="logo">
+            RailDesk
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#trains">Trains</a>
+            <a href="#alerts">Alerts</a>
+        </nav>
+
+        <button class="login-btn" onclick="login()">
+            Login
+        </button>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <span class="badge">
+                    RAILWAY MANAGEMENT
+                </span>
+
+                <h1>
+                    Railway
+                    <span>Dashboard</span>
+                </h1>
+
+                <p>
+                    Monitor trains, passengers, platforms and
+                    railway operations from one simple dashboard.
+                </p>
+
+                <button
+                    class="hero-btn"
+                    onclick="goToDashboard()">
+
+                    Open Dashboard
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section class="dashboard-section" id="dashboard">
+
+            <div class="section-title">
+
+                <span>
+                    OVERVIEW
+                </span>
+
+                <h2>
+                    Railway Statistics
+                </h2>
+
+                <p>
+                    Current railway activity and operational information.
+                </p>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🚆
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            126
+                        </h3>
+
+                        <p>
+                            Active Trains
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        👥
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            8,540
+                        </h3>
+
+                        <p>
+                            Passengers
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🛤️
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            48
+                        </h3>
+
+                        <p>
+                            Platforms
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            94%
+                        </h3>
+
+                        <p>
+                            On Time
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-grid">
+
+                <div class="activity-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span class="small-label">
+                                TODAY
+                            </span>
+
+                            <h3>
+                                Train Activity
+                            </h3>
+
+                        </div>
+
+                        <button
+                            class="refresh-btn"
+                            onclick="refreshDashboard()">
+
+                            Refresh
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="activity-list">
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon">
+                                🚆
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Chennai Express
+                                </strong>
+
+                                <p>
+                                    Departed from Chennai Central
+                                </p>
+
+                            </div>
+
+                            <span class="time">
+                                06:00 AM
+                            </span>
+
+                        </div>
+
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon">
+                                🚆
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Bengaluru Express
+                                </strong>
+
+                                <p>
+                                    Arrived at Platform 2
+                                </p>
+
+                            </div>
+
+                            <span class="time">
+                                07:15 AM
+                            </span>
+
+                        </div>
+
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon">
+                                🚆
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Hyderabad Express
+                                </strong>
+
+                                <p>
+                                    Delayed by 10 minutes
+                                </p>
+
+                            </div>
+
+                            <span class="time">
+                                09:00 AM
+                            </span>
+
+                        </div>
+
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon">
+                                🚆
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Kovai Express
+                                </strong>
+
+                                <p>
+                                    Scheduled for departure
+                                </p>
+
+                            </div>
+
+                            <span class="time">
+                                01:20 PM
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="quick-card">
+
+                    <h3>
+                        Quick Actions
+                    </h3>
+
+
+                    <button
+                        onclick="viewTrains()">
+
+                        View All Trains
+
+                    </button>
+
+
+                    <button
+                        onclick="viewPlatforms()">
+
+                        Platform Status
+
+                    </button>
+
+
+                    <button
+                        onclick="viewPassengers()">
+
+                        Passenger Report
+
+                    </button>
+
+
+                    <button
+                        onclick="showAlerts()">
+
+                        Railway Alerts
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="train-section" id="trains">
+
+            <div class="section-title">
+
+                <span>
+                    LIVE OPERATIONS
+                </span>
+
+                <h2>
+                    Train Operations
+                </h2>
+
+            </div>
+
+
+            <div class="train-grid">
+
+                <div class="train-card">
+
+                    <div class="train-top">
+
+                        <div class="train-icon">
+                            🚆
+                        </div>
+
+                        <span class="status on-time">
+                            ON TIME
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Chennai Express
+                    </h3>
+
+                    <p>
+                        12627
+                    </p>
+
+                    <div class="train-route">
+                        Chennai → Bengaluru
+                    </div>
+
+                    <div class="train-info">
+
+                        <span>
+                            Platform 4
+                        </span>
+
+                        <strong>
+                            06:00 AM
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="train-card">
+
+                    <div class="train-top">
+
+                        <div class="train-icon">
+                            🚆
+                        </div>
+
+                        <span class="status delayed">
+                            DELAYED
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Hyderabad Express
+                    </h3>
+
+                    <p>
+                        12760
+                    </p>
+
+                    <div class="train-route">
+                        Chennai → Hyderabad
+                    </div>
+
+                    <div class="train-info">
+
+                        <span>
+                            Platform 6
+                        </span>
+
+                        <strong>
+                            09:15 AM
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="train-card">
+
+                    <div class="train-top">
+
+                        <div class="train-icon">
+                            🚆
+                        </div>
+
+                        <span class="status arriving">
+                            ARRIVING
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Shatabdi Express
+                    </h3>
+
+                    <p>
+                        12028
+                    </p>
+
+                    <div class="train-route">
+                        Bengaluru → Chennai
+                    </div>
+
+                    <div class="train-info">
+
+                        <span>
+                            Platform 1
+                        </span>
+
+                        <strong>
+                            11:45 AM
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="alerts-section" id="alerts">
+
+            <div class="section-title">
+
+                <span>
+                    IMPORTANT INFORMATION
+                </span>
+
+                <h2>
+                    Railway Alerts
+                </h2>
+
+            </div>
+
+
+            <div class="alerts-grid">
+
+                <div class="alert-card warning">
+
+                    <div class="alert-icon">
+                        ⚠️
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Train Delay
+                        </h3>
+
+                        <p>
+                            Hyderabad Express is delayed by
+                            approximately 10 minutes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="alert-card info">
+
+                    <div class="alert-icon">
+                        ℹ️
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Platform Change
+                        </h3>
+
+                        <p>
+                            Check platform information before
+                            boarding your train.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="alert-card success">
+
+                    <div class="alert-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Services Running
+                        </h3>
+
+                        <p>
+                            Railway services are currently
+                            operating normally.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="help">
+
+            <h2>
+                Railway Operations Made Simple
+            </h2>
+
+            <p>
+                Monitor important railway information
+                from one convenient dashboard.
+            </p>
+
+            <button onclick="showHelp()">
+                Contact Support
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-logo">
+            RailDesk
+        </div>
+
+        <p>
+            © 2026 RailDesk. Railway management dashboard.
+        </p>
+
+    </footer>
+
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>

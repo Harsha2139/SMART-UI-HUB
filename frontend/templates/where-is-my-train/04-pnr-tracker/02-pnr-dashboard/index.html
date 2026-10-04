@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PNR Dashboard</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="logo">
+            RailPNR
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#bookings">Bookings</a>
+            <a href="#help">Help</a>
+        </nav>
+
+        <button class="login-btn" onclick="login()">
+            Login
+        </button>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <span class="badge">
+                    PNR MANAGEMENT
+                </span>
+
+                <h1>
+                    Your Railway
+                    <span>Dashboard</span>
+                </h1>
+
+                <p>
+                    Manage your PNR details, check booking status,
+                    view passenger information and track your journey.
+                </p>
+
+                <button
+                    class="hero-btn"
+                    onclick="goToDashboard()">
+
+                    Open Dashboard
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section class="dashboard-section" id="dashboard">
+
+            <div class="section-title">
+
+                <span>
+                    PERSONAL DASHBOARD
+                </span>
+
+                <h2>
+                    Booking Overview
+                </h2>
+
+                <p>
+                    Your current railway booking information.
+                </p>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🎫
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            3
+                        </h3>
+
+                        <p>
+                            Total Bookings
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            2
+                        </h3>
+
+                        <p>
+                            Confirmed
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ⏳
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            1
+                        </h3>
+
+                        <p>
+                            Upcoming
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ₹
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            2,450
+                        </h3>
+
+                        <p>
+                            Total Fare
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-grid">
+
+                <div class="main-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span class="small-label">
+                                ACTIVE BOOKING
+                            </span>
+
+                            <h3>
+                                Chennai Express
+                            </h3>
+
+                        </div>
+
+                        <span class="confirmed">
+                            CONFIRMED
+                        </span>
+
+                    </div>
+
+
+                    <div class="route">
+
+                        <div class="location">
+
+                            <strong>
+                                Chennai
+                            </strong>
+
+                            <span>
+                                06:00 AM
+                            </span>
+
+                        </div>
+
+
+                        <div class="route-line">
+
+                            <span>
+                                5h 30m
+                            </span>
+
+                        </div>
+
+
+                        <div class="location right">
+
+                            <strong>
+                                Bengaluru
+                            </strong>
+
+                            <span>
+                                11:30 AM
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="booking-details">
+
+                        <div>
+
+                            <span>
+                                PNR
+                            </span>
+
+                            <strong>
+                                4215689347
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Train
+                            </span>
+
+                            <strong>
+                                12627
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Coach
+                            </span>
+
+                            <strong>
+                                S4
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Seat
+                            </span>
+
+                            <strong>
+                                42
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="details-btn"
+                        onclick="viewBooking()">
+
+                        View Booking Details
+
+                    </button>
+
+                </div>
+
+
+                <div class="side-card">
+
+                    <h3>
+                        Quick Actions
+                    </h3>
+
+
+                    <button
+                        class="action-btn"
+                        onclick="checkPNR()">
+
+                        Check PNR Status
+
+                    </button>
+
+
+                    <button
+                        class="action-btn"
+                        onclick="trackTrain()">
+
+                        Track Train
+
+                    </button>
+
+
+                    <button
+                        class="action-btn"
+                        onclick="downloadTicket()">
+
+                        Download Ticket
+
+                    </button>
+
+
+                    <button
+                        class="action-btn"
+                        onclick="showHelp()">
+
+                        Get Help
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="bookings-section" id="bookings">
+
+            <div class="section-title">
+
+                <span>
+                    RECENT BOOKINGS
+                </span>
+
+                <h2>
+                    Your Tickets
+                </h2>
+
+            </div>
+
+
+            <div class="booking-list">
+
+                <div class="booking-item">
+
+                    <div class="train-info">
+
+                        <div class="train-icon">
+                            🚆
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Chennai Express
+                            </h3>
+
+                            <p>
+                                Chennai → Bengaluru
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="booking-date">
+
+                        <span>
+                            Journey
+                        </span>
+
+                        <strong>
+                            15 Oct 2026
+                        </strong>
+
+                    </div>
+
+
+                    <div class="booking-pnr">
+
+                        <span>
+                            PNR
+                        </span>
+
+                        <strong>
+                            4215689347
+                        </strong>
+
+                    </div>
+
+
+                    <span class="status confirmed-status">
+                        Confirmed
+                    </span>
+
+
+                    <button
+                        onclick="viewBooking()">
+
+                        View
+
+                    </button>
+
+                </div>
+
+
+                <div class="booking-item">
+
+                    <div class="train-info">
+
+                        <div class="train-icon">
+                            🚆
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Hyderabad Express
+                            </h3>
+
+                            <p>
+                                Chennai → Hyderabad
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="booking-date">
+
+                        <span>
+                            Journey
+                        </span>
+
+                        <strong>
+                            22 Oct 2026
+                        </strong>
+
+                    </div>
+
+
+                    <div class="booking-pnr">
+
+                        <span>
+                            PNR
+                        </span>
+
+                        <strong>
+                            5382916470
+                        </strong>
+
+                    </div>
+
+
+                    <span class="status confirmed-status">
+                        Confirmed
+                    </span>
+
+
+                    <button
+                        onclick="viewBooking()">
+
+                        View
+
+                    </button>
+
+                </div>
+
+
+                <div class="booking-item">
+
+                    <div class="train-info">
+
+                        <div class="train-icon">
+                            🚆
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Bengaluru Express
+                            </h3>
+
+                            <p>
+                                Bengaluru → Chennai
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="booking-date">
+
+                        <span>
+                            Journey
+                        </span>
+
+                        <strong>
+                            30 Oct 2026
+                        </strong>
+
+                    </div>
+
+
+                    <div class="booking-pnr">
+
+                        <span>
+                            PNR
+                        </span>
+
+                        <strong>
+                            6728451930
+                        </strong>
+
+                    </div>
+
+
+                    <span class="status waiting-status">
+                        Waiting List
+                    </span>
+
+
+                    <button
+                        onclick="viewBooking()">
+
+                        View
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="features">
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🎫
+                </div>
+
+                <h3>
+                    Manage Tickets
+                </h3>
+
+                <p>
+                    Keep all your railway bookings
+                    organized in one place.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    📍
+                </div>
+
+                <h3>
+                    Track Journey
+                </h3>
+
+                <p>
+                    Track your train and view
+                    current journey information.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🔔
+                </div>
+
+                <h3>
+                    Travel Updates
+                </h3>
+
+                <p>
+                    Stay informed about your
+                    booking and train status.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="help" id="help">
+
+            <h2>
+                Need Help?
+            </h2>
+
+            <p>
+                Need assistance with your railway booking?
+                Our support team is ready to help.
+            </p>
+
+            <button onclick="showHelp()">
+                Contact Support
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-logo">
+            RailPNR
+        </div>
+
+        <p>
+            © 2026 RailPNR. Railway booking dashboard.
+        </p>
+
+    </footer>
+
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>

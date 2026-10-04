@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BookMyShow Stream - Streaming Home</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        Book<span>My</span>Show
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#movies">Movies</a>
+        <a href="#series">Series</a>
+        <a href="#genres">Genres</a>
+    </nav>
+
+    <div class="header-actions">
+
+        <button onclick="searchContent()">
+            Search
+        </button>
+
+        <button onclick="login()">
+            Sign In
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- STARTING HERO WITH POSTER -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <span class="featured">
+            FEATURED MOVIE
+        </span>
+
+        <h1>
+            Shadow<br>
+            Warriors
+        </h1>
+
+        <div class="meta">
+            <span>2026</span>
+            <span>•</span>
+            <span>2h 25m</span>
+            <span>•</span>
+            <span>Action</span>
+        </div>
+
+        <p>
+            When an ancient enemy returns, a group of
+            warriors must unite to protect their world
+            before darkness takes over everything.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button
+                class="watch"
+                onclick="startWatching()">
+
+                ▶ Start Watching
+
+            </button>
+
+            <button
+                class="details"
+                onclick="showDetails()">
+
+                More Details
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-poster">
+
+        <img
+            src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=85"
+            alt="Shadow Warriors poster">
+
+        <div class="poster-badge">
+            NEW
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MOVIES -->
+
+<section class="section" id="movies">
+
+    <div class="section-header">
+
+        <div>
+            <h2>Popular Movies</h2>
+            <p>Top movies available to watch</p>
+        </div>
+
+        <button onclick="viewAllMovies()">
+            View All
+        </button>
+
+    </div>
+
+
+    <div class="movie-grid">
+
+        <div class="movie-card">
+
+            <div class="poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=85"
+                    alt="Lost World poster">
+
+                <span>★ 8.7</span>
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>Lost World</h3>
+
+                <p>
+                    Adventure • Fantasy
+                </p>
+
+                <button onclick="playMovie('Lost World')">
+                    ▶ Watch
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="movie-card">
+
+            <div class="poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=85"
+                    alt="Final Mission poster">
+
+                <span>★ 8.5</span>
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>Final Mission</h3>
+
+                <p>
+                    Action • Thriller
+                </p>
+
+                <button onclick="playMovie('Final Mission')">
+                    ▶ Watch
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="movie-card">
+
+            <div class="poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=600&q=85"
+                    alt="Hidden Truth poster">
+
+                <span>★ 8.3</span>
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>Hidden Truth</h3>
+
+                <p>
+                    Mystery • Thriller
+                </p>
+
+                <button onclick="playMovie('Hidden Truth')">
+                    ▶ Watch
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="movie-card">
+
+            <div class="poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=85"
+                    alt="Midnight Story poster">
+
+                <span>★ 8.9</span>
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>Midnight Story</h3>
+
+                <p>
+                    Romance • Drama
+                </p>
+
+                <button onclick="playMovie('Midnight Story')">
+                    ▶ Watch
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTINUE WATCHING -->
+
+<section class="section">
+
+    <div class="section-header">
+
+        <div>
+            <h2>Continue Watching</h2>
+            <p>Continue your unfinished movies</p>
+        </div>
+
+        <button onclick="continueMovie()">
+            View All
+        </button>
+
+    </div>
+
+
+    <div class="continue-grid">
+
+        <div class="continue-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=85"
+                alt="Mountain Journey">
+
+            <div class="continue-info">
+
+                <h3>Mountain Journey</h3>
+
+                <div class="progress">
+                    <div></div>
+                </div>
+
+                <p>42 minutes remaining</p>
+
+                <button onclick="playMovie('Mountain Journey')">
+                    Continue
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="continue-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1446776877081-d282a0f896e2?auto=format&fit=crop&w=800&q=85"
+                alt="Beyond The Stars">
+
+            <div class="continue-info">
+
+                <h3>Beyond The Stars</h3>
+
+                <div class="progress">
+                    <div></div>
+                </div>
+
+                <p>28 minutes remaining</p>
+
+                <button onclick="playMovie('Beyond The Stars')">
+                    Continue
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERIES -->
+
+<section class="section" id="series">
+
+    <div class="section-header">
+
+        <div>
+            <h2>Popular Series</h2>
+            <p>Watch the latest series</p>
+        </div>
+
+        <button onclick="viewAllSeries()">
+            View All
+        </button>
+
+    </div>
+
+
+    <div class="series-grid">
+
+        <div class="series-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?auto=format&fit=crop&w=700&q=85"
+                alt="Dark Kingdom">
+
+            <div class="series-info">
+
+                <h3>Dark Kingdom</h3>
+
+                <p>
+                    3 Seasons • Fantasy
+                </p>
+
+                <button onclick="playSeries('Dark Kingdom')">
+                    Watch Series
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="series-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?auto=format&fit=crop&w=700&q=85"
+                alt="City Secrets">
+
+            <div class="series-info">
+
+                <h3>City Secrets</h3>
+
+                <p>
+                    2 Seasons • Mystery
+                </p>
+
+                <button onclick="playSeries('City Secrets')">
+                    Watch Series
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="series-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=700&q=85"
+                alt="Final Realm">
+
+            <div class="series-info">
+
+                <h3>Final Realm</h3>
+
+                <p>
+                    4 Seasons • Fantasy
+                </p>
+
+                <button onclick="playSeries('Final Realm')">
+                    Watch Series
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GENRES -->
+
+<section class="section" id="genres">
+
+    <div class="section-header">
+
+        <div>
+            <h2>Browse By Genre</h2>
+            <p>Find something you want to watch</p>
+        </div>
+
+    </div>
+
+
+    <div class="genre-grid">
+
+        <button onclick="openGenre('Action')">
+            Action
+        </button>
+
+        <button onclick="openGenre('Adventure')">
+            Adventure
+        </button>
+
+        <button onclick="openGenre('Comedy')">
+            Comedy
+        </button>
+
+        <button onclick="openGenre('Drama')">
+            Drama
+        </button>
+
+        <button onclick="openGenre('Romance')">
+            Romance
+        </button>
+
+        <button onclick="openGenre('Thriller')">
+            Thriller
+        </button>
+
+        <button onclick="openGenre('Fantasy')">
+            Fantasy
+        </button>
+
+        <button onclick="openGenre('Mystery')">
+            Mystery
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- PLANS -->
+
+<section class="plans">
+
+    <div>
+
+        <p>
+            BOOKMYSHOW STREAM
+        </p>
+
+        <h2>
+            Unlimited Entertainment
+        </h2>
+
+        <span>
+            Watch movies and series anytime,
+            anywhere.
+        </span>
+
+        <button onclick="explorePlans()">
+            Explore Plans
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="brand">
+
+            <h2>
+                Book<span>My</span>Show
+            </h2>
+
+            <p>
+                Your entertainment destination for
+                movies, series and more.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Explore</h3>
+
+            <a href="#home">Home</a>
+            <a href="#movies">Movies</a>
+            <a href="#series">Series</a>
+
+        </div>
+
+
+        <div>
+
+            <h3>Support</h3>
+
+            <a href="#">Help Center</a>
+            <a href="#">Contact</a>
+            <a href="#">Terms</a>
+
+        </div>
+
+
+        <div>
+
+            <h3>Social</h3>
+
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">YouTube</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+        © 2026 BookMyShow Streaming Template
+    </div>
+
+</footer>
+
+
+<script src="./script.js"></script>
+
+</body>
+</html>

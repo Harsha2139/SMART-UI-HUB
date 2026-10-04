@@ -1,0 +1,669 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+}
+
+
+/* HEADER */
+
+header {
+    min-height: 70px;
+    background: #333545;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 12px 6%;
+    color: white;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.logo span,
+.footer-logo span {
+    color: #f84464;
+}
+
+.location {
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.search-box {
+    flex: 1;
+    max-width: 600px;
+    display: flex;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 13px 16px;
+    border: none;
+    outline: none;
+    border-radius: 5px 0 0 5px;
+    font-size: 14px;
+}
+
+.search-box button {
+    border: none;
+    background: #f84464;
+    color: white;
+    padding: 0 22px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.login-btn {
+    background: #f84464;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* HERO */
+
+.hero {
+    background:
+        linear-gradient(
+            90deg,
+            #171722 0%,
+            #29293d 55%,
+            #191925 100%
+        );
+    color: white;
+    padding: 55px 7%;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.small-title {
+    color: #f84464;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    line-height: 1.1;
+    margin-bottom: 18px;
+    max-width: 650px;
+}
+
+.event-info {
+    color: #ddd;
+    margin-bottom: 18px;
+}
+
+.description {
+    color: #bbb;
+    max-width: 600px;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+.event-details {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    color: #ddd;
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+}
+
+.hero-buttons button {
+    background: #f84464;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hero-buttons .outline-btn {
+    background: transparent;
+    border: 1px solid white;
+}
+
+.hero-poster {
+    width: 360px;
+    height: 450px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.hero-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 20px 55px rgba(0,0,0,0.55);
+}
+
+.poster-label {
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+    background: #f84464;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+
+/* SEARCH SECTION */
+
+.search-section {
+    max-width: 1150px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.section-title p,
+.section-heading p {
+    color: #f84464;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.section-title h2,
+.section-heading h2 {
+    font-size: 30px;
+}
+
+.event-search {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr auto;
+    gap: 15px;
+    align-items: end;
+}
+
+.input-group label {
+    display: block;
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    background: white;
+}
+
+.event-search > button {
+    height: 43px;
+    padding: 0 25px;
+    background: #f84464;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+/* CATEGORIES */
+
+.categories {
+    max-width: 1200px;
+    margin: 65px auto;
+    padding: 0 20px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 15px;
+}
+
+.category-card {
+    background: white;
+    padding: 25px 12px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.category-icon {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.category-card h3 {
+    margin-bottom: 7px;
+}
+
+.category-card p {
+    color: #777;
+    font-size: 12px;
+}
+
+
+/* EVENTS */
+
+.events {
+    max-width: 1200px;
+    margin: 70px auto;
+    padding: 0 20px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 30px;
+}
+
+.section-heading p {
+    color: #f84464;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.view-all {
+    background: none;
+    border: none;
+    color: #f84464;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.event-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.event-card:hover {
+    transform: translateY(-6px);
+}
+
+.event-card > img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.event-card-content {
+    padding: 18px;
+}
+
+.event-category {
+    color: #f84464;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.event-card h3 {
+    font-size: 19px;
+    margin: 9px 0 14px;
+}
+
+.event-card p {
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.event-card strong {
+    display: block;
+    font-size: 15px;
+    margin: 15px 0;
+}
+
+.event-card button {
+    width: 100%;
+    background: #f84464;
+    color: white;
+    border: none;
+    padding: 11px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* BOOKING */
+
+.booking-section {
+    background: #fff;
+    padding: 70px 7%;
+}
+
+.booking-container {
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #f7f7f8;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.booking-image {
+    min-height: 550px;
+}
+
+.booking-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.booking-form {
+    padding: 45px;
+}
+
+.booking-form h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.booking-form label {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    margin: 18px 0 7px;
+}
+
+.booking-form input,
+.booking-form select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: white;
+    outline: none;
+}
+
+.price-box {
+    margin-top: 25px;
+    padding: 18px;
+    background: white;
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-box span {
+    color: #777;
+}
+
+.price-box strong {
+    font-size: 22px;
+    color: #f84464;
+}
+
+.confirm-btn {
+    width: 100%;
+    margin-top: 18px;
+    padding: 14px;
+    background: #f84464;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+/* OFFERS */
+
+.offers {
+    max-width: 1150px;
+    margin: 70px auto;
+    padding: 0 20px;
+}
+
+.offer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.offer-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    gap: 18px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+}
+
+.offer-icon {
+    font-size: 35px;
+}
+
+.offer-card h3 {
+    margin-bottom: 8px;
+}
+
+.offer-card p {
+    color: #777;
+    line-height: 1.5;
+    font-size: 13px;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #333545;
+    color: #bbb;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+.footer-logo {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 25px 0;
+    color: #ddd;
+}
+
+.copyright {
+    color: #888;
+    font-size: 13px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+
+    header {
+        flex-wrap: wrap;
+    }
+
+    .search-box {
+        order: 5;
+        max-width: none;
+        width: 100%;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .event-details,
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .event-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .event-search {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .event-search > button {
+        grid-column: span 2;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-poster {
+        width: 280px;
+        height: 360px;
+    }
+
+    .event-search {
+        grid-template-columns: 1fr;
+    }
+
+    .event-search > button {
+        grid-column: auto;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .event-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-container {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-image {
+        min-height: 300px;
+    }
+
+    .booking-form {
+        padding: 30px 22px;
+    }
+
+    .offer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading {
+        align-items: start;
+        gap: 15px;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    header {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .location {
+        font-size: 12px;
+    }
+
+    .login-btn {
+        padding: 8px 13px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero {
+        padding: 40px 20px;
+    }
+
+    .hero-poster {
+        width: 230px;
+        height: 310px;
+    }
+}

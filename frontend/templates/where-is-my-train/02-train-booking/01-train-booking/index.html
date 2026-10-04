@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Booking</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">RailBook</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#booking">Book Ticket</a>
+        <a href="#trains">Trains</a>
+        <a href="#help">Help</a>
+    </nav>
+
+    <button onclick="login()">Login</button>
+</header>
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <span>TRAIN TICKET BOOKING</span>
+
+        <h1>Book your train journey easily</h1>
+
+        <p>
+            Search trains, choose your journey and
+            reserve your ticket from one simple interface.
+        </p>
+
+        <button onclick="startBooking()">
+            Book a Train
+        </button>
+
+    </div>
+
+</section>
+
+<section class="booking" id="booking">
+
+    <div class="section-title">
+        <h2>Search Trains</h2>
+        <p>Enter your journey details to find available trains.</p>
+    </div>
+
+    <div class="booking-card">
+
+        <div class="input-group">
+            <label>From</label>
+
+            <input
+                type="text"
+                id="fromStation"
+                placeholder="Departure station"
+            >
+        </div>
+
+        <div class="swap">
+            ⇄
+        </div>
+
+        <div class="input-group">
+            <label>To</label>
+
+            <input
+                type="text"
+                id="toStation"
+                placeholder="Destination station"
+            >
+        </div>
+
+        <div class="input-group">
+            <label>Date</label>
+
+            <input
+                type="date"
+                id="journeyDate"
+            >
+        </div>
+
+        <button onclick="searchTrains()">
+            Search Trains
+        </button>
+
+    </div>
+
+    <div id="searchResult"></div>
+
+</section>
+
+<section class="trains" id="trains">
+
+    <div class="section-title">
+        <h2>Popular Trains</h2>
+        <p>Explore some popular train journeys.</p>
+    </div>
+
+    <div class="train-grid">
+
+        <div class="train-card">
+
+            <div class="train-top">
+                <div class="train-icon">🚆</div>
+
+                <span class="fast">Popular</span>
+            </div>
+
+            <h3>Chennai Express</h3>
+
+            <p class="train-number">
+                12627
+            </p>
+
+            <div class="journey">
+
+                <div>
+                    <strong>Chennai</strong>
+                    <span>06:00 AM</span>
+                </div>
+
+                <div class="journey-line"></div>
+
+                <div>
+                    <strong>Bengaluru</strong>
+                    <span>01:30 PM</span>
+                </div>
+
+            </div>
+
+            <button onclick="selectTrain('Chennai Express')">
+                Select Train
+            </button>
+
+        </div>
+
+        <div class="train-card">
+
+            <div class="train-top">
+                <div class="train-icon">🚆</div>
+
+                <span class="fast">Express</span>
+            </div>
+
+            <h3>Bengaluru Express</h3>
+
+            <p class="train-number">
+                12608
+            </p>
+
+            <div class="journey">
+
+                <div>
+                    <strong>Bengaluru</strong>
+                    <span>07:30 AM</span>
+                </div>
+
+                <div class="journey-line"></div>
+
+                <div>
+                    <strong>Chennai</strong>
+                    <span>03:00 PM</span>
+                </div>
+
+            </div>
+
+            <button onclick="selectTrain('Bengaluru Express')">
+                Select Train
+            </button>
+
+        </div>
+
+        <div class="train-card">
+
+            <div class="train-top">
+                <div class="train-icon">🚆</div>
+
+                <span class="fast">Superfast</span>
+            </div>
+
+            <h3>Hyderabad Express</h3>
+
+            <p class="train-number">
+                12760
+            </p>
+
+            <div class="journey">
+
+                <div>
+                    <strong>Hyderabad</strong>
+                    <span>08:00 AM</span>
+                </div>
+
+                <div class="journey-line"></div>
+
+                <div>
+                    <strong>Chennai</strong>
+                    <span>08:30 PM</span>
+                </div>
+
+            </div>
+
+            <button onclick="selectTrain('Hyderabad Express')">
+                Select Train
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="features">
+
+    <div class="section-title">
+        <h2>Why Book With RailBook?</h2>
+    </div>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <div>🔎</div>
+            <h3>Easy Search</h3>
+            <p>
+                Find trains using your source,
+                destination and journey date.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div>🎫</div>
+            <h3>Easy Booking</h3>
+            <p>
+                Select your preferred train and
+                continue with your booking.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div>📱</div>
+            <h3>Digital Tickets</h3>
+            <p>
+                Keep your booking details available
+                whenever you need them.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div>🔔</div>
+            <h3>Travel Updates</h3>
+            <p>
+                Stay informed about your train
+                journey and schedule.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="help" id="help">
+
+    <h2>Need Help?</h2>
+
+    <p>
+        Search your journey, select a train and
+        continue to passenger details.
+    </p>
+
+    <button onclick="showHelp()">
+        How Booking Works
+    </button>
+
+</section>
+
+<footer>
+
+    <h3>RailBook</h3>
+
+    <p>
+        Modern train ticket booking interface
+    </p>
+
+    <p>
+        © 2026 RailBook
+    </p>
+
+</footer>
+
+<script src="./script.js"></script>
+
+</body>
+</html>

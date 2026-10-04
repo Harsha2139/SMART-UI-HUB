@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BookMyShow - Booking Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        book<span>my</span>show
+    </div>
+
+    <div class="location" onclick="changeCity()">
+        📍 Chennai
+    </div>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search movies, events, theatres..."
+        >
+
+        <button onclick="searchContent()">
+            Search
+        </button>
+
+    </div>
+
+    <button
+        class="login-btn"
+        onclick="login()"
+    >
+        Sign In
+    </button>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-text">
+
+            <p class="small-title">
+                MY BOOKING DASHBOARD
+            </p>
+
+            <h1>
+                Manage All Your Bookings
+            </h1>
+
+            <p class="description">
+                View your movie tickets, event bookings,
+                upcoming experiences, payment details and
+                booking history from one simple dashboard.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button onclick="viewUpcoming()">
+                    Upcoming Bookings
+                </button>
+
+                <button
+                    class="outline-btn"
+                    onclick="viewHistory()"
+                >
+                    Booking History
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-poster">
+
+            <img
+                src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=85"
+                alt="Cinema Booking"
+            >
+
+            <div class="poster-overlay">
+
+                <span>NEXT BOOKING</span>
+
+                <h3>
+                    Shadow Warriors
+                </h3>
+
+                <p>
+                    Today • 07:30 PM
+                </p>
+
+                <button onclick="openBooking('Shadow Warriors')">
+                    View Ticket
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DASHBOARD STATS -->
+
+<section class="stats">
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            🎟️
+        </div>
+
+        <div>
+            <span>Upcoming</span>
+            <strong>3</strong>
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            🎬
+        </div>
+
+        <div>
+            <span>Movies Watched</span>
+            <strong>18</strong>
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            🎤
+        </div>
+
+        <div>
+            <span>Events Attended</span>
+            <strong>7</strong>
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon">
+            💰
+        </div>
+
+        <div>
+            <span>Total Spent</span>
+            <strong>₹12.4K</strong>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- UPCOMING BOOKING -->
+
+<section
+    class="dashboard-section"
+    id="upcomingSection"
+>
+
+    <div class="section-heading">
+
+        <div>
+
+            <p>UPCOMING</p>
+
+            <h2>
+                Your Next Bookings
+            </h2>
+
+        </div>
+
+        <button onclick="viewAllBookings()">
+            View All
+        </button>
+
+    </div>
+
+
+    <div class="upcoming-grid">
+
+
+        <!-- BOOKING 1 -->
+
+        <div class="booking-card featured-booking">
+
+            <div class="booking-poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=85"
+                    alt="Shadow Warriors"
+                >
+
+                <span>
+                    TODAY
+                </span>
+
+            </div>
+
+
+            <div class="booking-info">
+
+                <div class="booking-type">
+                    MOVIE
+                </div>
+
+                <h3>
+                    Shadow Warriors
+                </h3>
+
+                <p>
+                    📅 01 Oct 2026
+                </p>
+
+                <p>
+                    🕐 07:30 PM
+                </p>
+
+                <p>
+                    📍 INOX Marina Mall
+                </p>
+
+                <div class="ticket-info">
+
+                    <span>
+                        Seats
+                    </span>
+
+                    <strong>
+                        C5, C6
+                    </strong>
+
+                </div>
+
+                <div class="booking-actions">
+
+                    <button onclick="openBooking('Shadow Warriors')">
+                        View Ticket
+                    </button>
+
+                    <button
+                        class="cancel-btn"
+                        onclick="cancelBooking('Shadow Warriors')"
+                    >
+                        Cancel
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOOKING 2 -->
+
+        <div class="booking-card">
+
+            <div class="booking-poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=600&q=85"
+                    alt="Music Festival"
+                >
+
+                <span>
+                    18 OCT
+                </span>
+
+            </div>
+
+
+            <div class="booking-info">
+
+                <div class="booking-type event-type">
+                    EVENT
+                </div>
+
+                <h3>
+                    Chennai Music Festival
+                </h3>
+
+                <p>
+                    📅 18 Oct 2026
+                </p>
+
+                <p>
+                    🕐 07:00 PM
+                </p>
+
+                <p>
+                    📍 Marina Convention Centre
+                </p>
+
+                <div class="ticket-info">
+
+                    <span>
+                        Tickets
+                    </span>
+
+                    <strong>
+                        2 Tickets
+                    </strong>
+
+                </div>
+
+                <div class="booking-actions">
+
+                    <button onclick="openBooking('Chennai Music Festival')">
+                        View Ticket
+                    </button>
+
+                    <button
+                        class="cancel-btn"
+                        onclick="cancelBooking('Chennai Music Festival')"
+                    >
+                        Cancel
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOOKING 3 -->
+
+        <div class="booking-card">
+
+            <div class="booking-poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1585699324551-f6c309eedeca?auto=format&fit=crop&w=600&q=85"
+                    alt="Comedy Show"
+                >
+
+                <span>
+                    25 OCT
+                </span>
+
+            </div>
+
+
+            <div class="booking-info">
+
+                <div class="booking-type comedy-type">
+                    COMEDY
+                </div>
+
+                <h3>
+                    Laugh Out Loud
+                </h3>
+
+                <p>
+                    📅 25 Oct 2026
+                </p>
+
+                <p>
+                    🕐 06:30 PM
+                </p>
+
+                <p>
+                    📍 City Convention Hall
+                </p>
+
+                <div class="ticket-info">
+
+                    <span>
+                        Tickets
+                    </span>
+
+                    <strong>
+                        3 Tickets
+                    </strong>
+
+                </div>
+
+                <div class="booking-actions">
+
+                    <button onclick="openBooking('Laugh Out Loud')">
+                        View Ticket
+                    </button>
+
+                    <button
+                        class="cancel-btn"
+                        onclick="cancelBooking('Laugh Out Loud')"
+                    >
+                        Cancel
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- BOOKING HISTORY -->
+
+<section
+    class="dashboard-section"
+    id="historySection"
+>
+
+    <div class="section-heading">
+
+        <div>
+
+            <p>HISTORY</p>
+
+            <h2>
+                Recent Bookings
+            </h2>
+
+        </div>
+
+        <button onclick="viewHistory()">
+            Full History
+        </button>
+
+    </div>
+
+
+    <div class="history-table">
+
+        <div class="table-head">
+
+            <span>
+                Booking
+            </span>
+
+            <span>
+                Date
+            </span>
+
+            <span>
+                Tickets
+            </span>
+
+            <span>
+                Amount
+            </span>
+
+            <span>
+                Status
+            </span>
+
+        </div>
+
+
+        <div class="table-row">
+
+            <span>
+                The Grand Play
+            </span>
+
+            <span>
+                20 Sep 2026
+            </span>
+
+            <span>
+                2
+            </span>
+
+            <span>
+                ₹1,398
+            </span>
+
+            <strong class="completed">
+                Completed
+            </strong>
+
+        </div>
+
+
+        <div class="table-row">
+
+            <span>
+                Live Beats Concert
+            </span>
+
+            <span>
+                25 Sep 2026
+            </span>
+
+            <span>
+                3
+            </span>
+
+            <span>
+                ₹2,997
+            </span>
+
+            <strong class="completed">
+                Completed
+            </strong>
+
+        </div>
+
+
+        <div class="table-row">
+
+            <span>
+                Lost World
+            </span>
+
+            <span>
+                12 Sep 2026
+            </span>
+
+            <span>
+                2
+            </span>
+
+            <span>
+                ₹440
+            </span>
+
+            <strong class="completed">
+                Completed
+            </strong>
+
+        </div>
+
+
+        <div class="table-row">
+
+            <span>
+                Summer Music Festival
+            </span>
+
+            <span>
+                05 Sep 2026
+            </span>
+
+            <span>
+                2
+            </span>
+
+            <span>
+                ₹1,598
+            </span>
+
+            <strong class="cancelled">
+                Cancelled
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PAYMENT SUMMARY -->
+
+<section class="payment-section">
+
+    <div class="payment-container">
+
+        <div class="payment-content">
+
+            <p class="small-title">
+                PAYMENT SUMMARY
+            </p>
+
+            <h2>
+                Your Spending Overview
+            </h2>
+
+            <p>
+                Keep track of your entertainment spending
+                and recent payment activity.
+            </p>
+
+            <button onclick="viewPayments()">
+                View Payment History
+            </button>
+
+        </div>
+
+
+        <div class="payment-chart">
+
+            <div class="chart-item">
+
+                <div class="chart-label">
+                    <span>Movies</span>
+                    <strong>₹5,240</strong>
+                </div>
+
+                <div class="progress">
+                    <div
+                        class="progress-fill movie-progress"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <div class="chart-item">
+
+                <div class="chart-label">
+                    <span>Events</span>
+                    <strong>₹6,120</strong>
+                </div>
+
+                <div class="progress">
+                    <div
+                        class="progress-fill event-progress"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <div class="chart-item">
+
+                <div class="chart-label">
+                    <span>Other</span>
+                    <strong>₹1,040</strong>
+                </div>
+
+                <div class="progress">
+                    <div
+                        class="progress-fill other-progress"
+                    ></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- QUICK ACTIONS -->
+
+<section class="quick-actions">
+
+    <div class="section-title">
+
+        <p>QUICK ACTIONS</p>
+
+        <h2>
+            Manage Your Entertainment
+        </h2>
+
+    </div>
+
+
+    <div class="action-grid">
+
+        <button onclick="findMovies()">
+
+            <span class="action-icon">
+                🎬
+            </span>
+
+            <strong>
+                Book Movie
+            </strong>
+
+            <small>
+                Find movies near you
+            </small>
+
+        </button>
+
+
+        <button onclick="findEvents()">
+
+            <span class="action-icon">
+                🎤
+            </span>
+
+            <strong>
+                Find Events
+            </strong>
+
+            <small>
+                Discover live experiences
+            </small>
+
+        </button>
+
+
+        <button onclick="findTheatres()">
+
+            <span class="action-icon">
+                🏢
+            </span>
+
+            <strong>
+                Find Theatres
+            </strong>
+
+            <small>
+                Explore nearby theatres
+            </small>
+
+        </button>
+
+
+        <button onclick="openOffers()">
+
+            <span class="action-icon">
+                🎁
+            </span>
+
+            <strong>
+                Offers
+            </strong>
+
+            <small>
+                Save on bookings
+            </small>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">
+        book<span>my</span>show
+    </div>
+
+    <p>
+        Manage movies, events and entertainment bookings
+        from one dashboard.
+    </p>
+
+    <div class="footer-links">
+
+        <span>About Us</span>
+        <span>Contact</span>
+        <span>Privacy</span>
+        <span>Terms</span>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 BookMyShow Template
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
