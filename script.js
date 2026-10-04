@@ -855,10 +855,6 @@ const sheetCategory =
 
 /* ============================================================
    ACTUAL TEMPLATE PATH
-
-   Example:
-
-   frontend/templates/saas/saas-admin/01-basic-admin/index.html
 ============================================================ */
 
 function getTemplatePath(template){
@@ -1030,15 +1026,6 @@ function closeCategory(){
 
 /* ============================================================
    REAL TEMPLATE PREVIEW
-
-   THIS IS THE MAIN CHANGE.
-
-   Instead of creating a fake dashboard using CSS,
-   we load:
-
-   frontend/templates/.../index.html
-
-   directly into the card.
 ============================================================ */
 
 function createTemplateCard(template){
@@ -1125,10 +1112,6 @@ function createTemplateCard(template){
   `;
 
 
-  /* ==========================================
-     OPEN REAL TEMPLATE WHEN PREVIEW IS CLICKED
-  ========================================== */
-
   const preview =
     card.querySelector(
       ".template-preview"
@@ -1147,10 +1130,6 @@ function createTemplateCard(template){
     }
   );
 
-
-  /* ==========================================
-     FAVORITE BUTTON
-  ========================================== */
 
   const favorite =
     card.querySelector(
@@ -1177,13 +1156,6 @@ function createTemplateCard(template){
     }
   );
 
-
-  /* ==========================================
-     IF TEMPLATE DOES NOT EXIST
-
-     Show a small message rather than
-     leaving a confusing blank iframe.
-  ========================================== */
 
   const iframe =
     card.querySelector(
