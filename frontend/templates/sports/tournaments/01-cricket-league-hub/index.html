@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cricket League Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="#" class="logo">League<span>Hub</span></a>
+
+      <nav>
+        <a href="#overview">Overview</a>
+        <a href="#matches">Matches</a>
+        <a href="#teams">Teams</a>
+      </nav>
+
+      <button class="follow-btn" id="followBtn">☆ Follow League</button>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="overview">
+      <div class="container">
+
+        <div class="hero-top">
+          <div>
+            <p class="eyebrow">CRICKET LEAGUE 2026</p>
+            <h1>The season.<br>All in one place.</h1>
+            <p class="hero-text">
+              Follow fixtures, standings, teams and the biggest
+              moments from the league season.
+            </p>
+          </div>
+
+          <div class="season-card">
+            <span>SEASON</span>
+            <strong>2026</strong>
+            <small>24 Teams · 48 Matches</small>
+          </div>
+        </div>
+
+
+        <div class="hero-stats">
+
+          <div>
+            <span>MATCHES PLAYED</span>
+            <strong>32</strong>
+          </div>
+
+          <div>
+            <span>TEAMS</span>
+            <strong>8</strong>
+          </div>
+
+          <div>
+            <span>TOP RUN SCORER</span>
+            <strong>1,284</strong>
+          </div>
+
+          <div>
+            <span>LEADING WICKET TAKER</span>
+            <strong>24</strong>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Matches -->
+    <section class="matches-section" id="matches">
+      <div class="container">
+
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">UPCOMING FIXTURES</p>
+            <h2>Next matches</h2>
+          </div>
+
+          <button class="filter-btn" id="filterBtn">All Matches</button>
+        </div>
+
+
+        <div class="match-grid">
+
+          <article class="match-card">
+            <div class="match-top">
+              <span>SEMI FINAL</span>
+              <strong>18:30</strong>
+            </div>
+
+            <div class="teams">
+              <div>
+                <span class="team-badge">MI</span>
+                <strong>Mumbai</strong>
+              </div>
+
+              <b>VS</b>
+
+              <div>
+                <span class="team-badge red">RCB</span>
+                <strong>Bengaluru</strong>
+              </div>
+            </div>
+
+            <div class="match-footer">
+              <span>Wankhede Stadium</span>
+              <button class="match-btn">Match Centre</button>
+            </div>
+          </article>
+
+
+          <article class="match-card">
+            <div class="match-top">
+              <span>LEAGUE MATCH</span>
+              <strong>19:30</strong>
+            </div>
+
+            <div class="teams">
+              <div>
+                <span class="team-badge blue">CSK</span>
+                <strong>Chennai</strong>
+              </div>
+
+              <b>VS</b>
+
+              <div>
+                <span class="team-badge green">GT</span>
+                <strong>Gujarat</strong>
+              </div>
+            </div>
+
+            <div class="match-footer">
+              <span>Chepauk Stadium</span>
+              <button class="match-btn">Match Centre</button>
+            </div>
+          </article>
+
+
+          <article class="match-card">
+            <div class="match-top">
+              <span>LEAGUE MATCH</span>
+              <strong>20:00</strong>
+            </div>
+
+            <div class="teams">
+              <div>
+                <span class="team-badge orange">SRH</span>
+                <strong>Hyderabad</strong>
+              </div>
+
+              <b>VS</b>
+
+              <div>
+                <span class="team-badge purple">KKR</span>
+                <strong>Kolkata</strong>
+              </div>
+            </div>
+
+            <div class="match-footer">
+              <span>Rajiv Gandhi Stadium</span>
+              <button class="match-btn">Match Centre</button>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Standings -->
+    <section class="standings-section" id="teams">
+      <div class="container standings-layout">
+
+        <div>
+          <p class="eyebrow">LEAGUE TABLE</p>
+          <h2>Current<br>standings.</h2>
+          <p class="standings-text">
+            Track points, wins and net run rate as the season
+            moves toward the playoffs.
+          </p>
+        </div>
+
+
+        <div class="standings-table">
+
+          <div class="table-head">
+            <span>TEAM</span>
+            <span>PLD</span>
+            <span>PTS</span>
+            <span>NRR</span>
+          </div>
+
+          <div class="table-row">
+            <strong><b>01</b> Mumbai</strong>
+            <span>8</span>
+            <strong>14</strong>
+            <span>+1.42</span>
+          </div>
+
+          <div class="table-row">
+            <strong><b>02</b> Bengaluru</strong>
+            <span>8</span>
+            <strong>12</strong>
+            <span>+0.94</span>
+          </div>
+
+          <div class="table-row">
+            <strong><b>03</b> Chennai</strong>
+            <span>8</span>
+            <strong>10</strong>
+            <span>+0.61</span>
+          </div>
+
+          <div class="table-row">
+            <strong><b>04</b> Gujarat</strong>
+            <span>8</span>
+            <strong>10</strong>
+            <span>+0.32</span>
+          </div>
+
+          <div class="table-row">
+            <strong><b>05</b> Hyderabad</strong>
+            <span>8</span>
+            <strong>8</strong>
+            <span>-0.12</span>
+          </div>
+
+          <div class="table-row">
+            <strong><b>06</b> Kolkata</strong>
+            <span>8</span>
+            <strong>6</strong>
+            <span>-0.48</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Tournament Highlights -->
+    <section class="highlights-section">
+      <div class="container">
+
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">SEASON HIGHLIGHTS</p>
+            <h2>Numbers that matter</h2>
+          </div>
+        </div>
+
+        <div class="highlight-grid">
+
+          <div class="highlight-card">
+            <span>HIGHEST SCORE</span>
+            <strong>224/3</strong>
+            <p>Mumbai vs Gujarat</p>
+          </div>
+
+          <div class="highlight-card">
+            <span>BEST BOWLING</span>
+            <strong>5/18</strong>
+            <p>Arjun Mehta · Bengaluru</p>
+          </div>
+
+          <div class="highlight-card">
+            <span>LONGEST SIX</span>
+            <strong>102m</strong>
+            <p>Rahul Sharma · Chennai</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div class="container footer-content">
+      <strong>LeagueHub</strong>
+      <span>Your cricket season, simplified.</span>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

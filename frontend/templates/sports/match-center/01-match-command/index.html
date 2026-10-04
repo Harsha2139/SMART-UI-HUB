@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Match Command</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="#" class="logo">Match<span>Command</span></a>
+
+      <nav>
+        <a href="#live">Live</a>
+        <a href="#matches">Matches</a>
+        <a href="#teams">Teams</a>
+      </nav>
+
+      <button class="notify-btn" id="notifyBtn">☆ Follow Matches</button>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="live">
+      <div class="container">
+
+        <div class="hero-top">
+          <div>
+            <p class="eyebrow">MATCH CENTER</p>
+            <h1>Every ball.<br>Every moment.</h1>
+            <p class="hero-text">
+              Follow live cricket matches with scores, key moments,
+              and match information in one place.
+            </p>
+          </div>
+
+          <div class="live-card">
+            <span class="live-dot"></span>
+            LIVE NOW
+          </div>
+        </div>
+
+        <div class="featured-match">
+
+          <div class="match-meta">
+            <span>FINAL</span>
+            <span>EDEN GARDENS</span>
+          </div>
+
+          <div class="teams">
+
+            <div class="team">
+              <div class="team-icon">IND</div>
+              <h2>India</h2>
+              <p>174/5</p>
+            </div>
+
+            <div class="versus">
+              <strong>19.2</strong>
+              <span>OVERS</span>
+              <small>Target 189</small>
+            </div>
+
+            <div class="team">
+              <div class="team-icon england">ENG</div>
+              <h2>England</h2>
+              <p>188/6</p>
+            </div>
+
+          </div>
+
+          <div class="required">
+            <span>INDIA NEED</span>
+            <strong>15 RUNS</strong>
+            <span>FROM 4 BALLS</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Match List -->
+    <section class="matches-section" id="matches">
+      <div class="container">
+
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">TODAY'S FIXTURES</p>
+            <h2>Match Schedule</h2>
+          </div>
+
+          <button class="filter-btn" id="filterBtn">All Matches</button>
+        </div>
+
+
+        <div class="match-grid">
+
+          <article class="match-card">
+            <div class="card-top">
+              <span class="status live">LIVE</span>
+              <span>T20</span>
+            </div>
+
+            <div class="card-teams">
+              <div>
+                <strong>Australia</strong>
+                <span>142/4</span>
+              </div>
+
+              <b>16.3</b>
+
+              <div>
+                <strong>New Zealand</strong>
+                <span>Target 181</span>
+              </div>
+            </div>
+
+            <div class="card-footer">
+              <span>Wellington</span>
+              <button class="view-btn">View Match</button>
+            </div>
+          </article>
+
+
+          <article class="match-card">
+            <div class="card-top">
+              <span class="status upcoming">UPCOMING</span>
+              <span>ODI</span>
+            </div>
+
+            <div class="card-teams">
+              <div>
+                <strong>South Africa</strong>
+                <span>—</span>
+              </div>
+
+              <b>14:30</b>
+
+              <div>
+                <strong>Pakistan</strong>
+                <span>Tomorrow</span>
+              </div>
+            </div>
+
+            <div class="card-footer">
+              <span>Cape Town</span>
+              <button class="view-btn">Match Info</button>
+            </div>
+          </article>
+
+
+          <article class="match-card">
+            <div class="card-top">
+              <span class="status upcoming">UPCOMING</span>
+              <span>TEST</span>
+            </div>
+
+            <div class="card-teams">
+              <div>
+                <strong>India</strong>
+                <span>—</span>
+              </div>
+
+              <b>09:30</b>
+
+              <div>
+                <strong>Australia</strong>
+                <span>Day 1</span>
+              </div>
+            </div>
+
+            <div class="card-footer">
+              <span>Melbourne</span>
+              <button class="view-btn">Match Info</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Teams -->
+    <section class="teams-section" id="teams">
+      <div class="container teams-layout">
+
+        <div>
+          <p class="eyebrow">TEAM CENTER</p>
+          <h2>Track the teams<br>you follow.</h2>
+          <p>
+            Keep important teams close and quickly access their
+            latest match information.
+          </p>
+        </div>
+
+        <div class="team-list">
+
+          <div class="team-row">
+            <span class="mini-icon">IND</span>
+            <div>
+              <strong>India</strong>
+              <small>3 matches today</small>
+            </div>
+            <span>→</span>
+          </div>
+
+          <div class="team-row">
+            <span class="mini-icon england">ENG</span>
+            <div>
+              <strong>England</strong>
+              <small>2 matches today</small>
+            </div>
+            <span>→</span>
+          </div>
+
+          <div class="team-row">
+            <span class="mini-icon aus">AUS</span>
+            <div>
+              <strong>Australia</strong>
+              <small>4 matches today</small>
+            </div>
+            <span>→</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div class="container footer-content">
+      <strong>MatchCommand</strong>
+      <span>Live cricket, simplified.</span>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Connectivity | Airtel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="topbar">
+
+    <div class="brand">
+      <span class="logo">airtel</span>
+
+      <div>
+        <strong>My Connectivity</strong>
+        <small>Everything connected in one place</small>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#overview">Overview</a>
+      <a href="#services">Services</a>
+      <a href="#usage">Usage</a>
+      <a href="#help">Help</a>
+    </nav>
+
+    <button class="account-btn" id="accountBtn">
+      My Account
+    </button>
+
+  </header>
+
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="overview">
+
+      <div class="hero-copy">
+
+        <span class="eyebrow">MY CONNECTIVITY / OCTOBER</span>
+
+        <h1>
+          Stay connected.
+          <span>Stay in control.</span>
+        </h1>
+
+        <p>
+          A simple view of your Airtel services, network performance,
+          data usage and connected devices.
+        </p>
+
+        <div class="hero-actions">
+          <button class="primary-btn" id="checkBtn">
+            Check Connection
+          </button>
+
+          <button class="secondary-btn" id="usageBtn">
+            View Usage
+          </button>
+        </div>
+
+      </div>
+
+
+      <!-- Connection card -->
+      <div class="connection-card">
+
+        <div class="connection-top">
+          <span>CONNECTION STATUS</span>
+          <strong>● ACTIVE</strong>
+        </div>
+
+        <div class="connection-main">
+          <div class="connection-icon">
+            ↯
+          </div>
+
+          <div>
+            <strong>Excellent</strong>
+            <span>Your connection is stable</span>
+          </div>
+        </div>
+
+        <div class="connection-stats">
+
+          <div>
+            <span>DOWNLOAD</span>
+            <strong>98 Mbps</strong>
+          </div>
+
+          <div>
+            <span>UPLOAD</span>
+            <strong>48 Mbps</strong>
+          </div>
+
+          <div>
+            <span>LATENCY</span>
+            <strong>12 ms</strong>
+          </div>
+
+        </div>
+
+        <div class="connection-footer">
+          <span>Last checked 2 minutes ago</span>
+          <span class="green-text">● Stable</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Services -->
+    <section class="services" id="services">
+
+      <div class="section-heading">
+
+        <div>
+          <span class="section-label">MY SERVICES</span>
+          <h2>Everything connected.</h2>
+        </div>
+
+        <button class="outline-btn" id="manageBtn">
+          Manage Services
+        </button>
+
+      </div>
+
+
+      <div class="service-grid">
+
+        <article class="service-card fiber">
+
+          <div class="service-icon">⌁</div>
+
+          <span class="service-label">AIRTEL XSTREAM FIBER</span>
+
+          <h3>Home Wi-Fi</h3>
+
+          <p>
+            High-speed broadband for your home.
+          </p>
+
+          <div class="service-status">
+            <span>● Active</span>
+            <strong>100 Mbps Plan</strong>
+          </div>
+
+          <button class="service-btn" data-service="Home Wi-Fi">
+            Manage →
+          </button>
+
+        </article>
+
+
+        <article class="service-card mobile">
+
+          <div class="service-icon">◫</div>
+
+          <span class="service-label">MOBILE</span>
+
+          <h3>V60 Phone</h3>
+
+          <p>
+            Your mobile connection and data plan.
+          </p>
+
+          <div class="service-status">
+            <span>● Active</span>
+            <strong>5G Ready</strong>
+          </div>
+
+          <button class="service-btn" data-service="Mobile">
+            Manage →
+          </button>
+
+        </article>
+
+
+        <article class="service-card entertainment">
+
+          <div class="service-icon">▷</div>
+
+          <span class="service-label">ENTERTAINMENT</span>
+
+          <h3>Xstream Play</h3>
+
+          <p>
+            Movies, shows and entertainment at home.
+          </p>
+
+          <div class="service-status">
+            <span>● Active</span>
+            <strong>Premium</strong>
+          </div>
+
+          <button class="service-btn" data-service="Entertainment">
+            Manage →
+          </button>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- Usage -->
+    <section class="usage" id="usage">
+
+      <div class="usage-copy">
+
+        <span class="section-label">NETWORK USAGE</span>
+
+        <h2>
+          Your usage,
+          <span>at a glance.</span>
+        </h2>
+
+        <p>
+          Keep an eye on how your connection is being used
+          throughout the month.
+        </p>
+
+        <button class="dark-btn" id="detailsBtn">
+          View Usage Details →
+        </button>
+
+      </div>
+
+
+      <div class="usage-card">
+
+        <div class="usage-header">
+          <div>
+            <span>THIS MONTH</span>
+            <strong>August 2026</strong>
+          </div>
+
+          <strong class="usage-percent">64%</strong>
+        </div>
+
+        <div class="usage-bar">
+          <span></span>
+        </div>
+
+        <div class="usage-numbers">
+          <div>
+            <strong>640 GB</strong>
+            <span>Used</span>
+          </div>
+
+          <div>
+            <strong>1 TB</strong>
+            <span>Plan limit</span>
+          </div>
+        </div>
+
+        <div class="usage-message">
+          <span>✓</span>
+          <p>You are using your plan normally.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Devices -->
+    <section class="devices">
+
+      <div class="section-heading">
+
+        <div>
+          <span class="section-label">CONNECTED DEVICES</span>
+          <h2>Your devices</h2>
+        </div>
+
+        <button class="outline-btn" id="refreshDevicesBtn">
+          Refresh
+        </button>
+
+      </div>
+
+
+      <div class="device-list">
+
+        <div class="device-row">
+
+          <div class="device-icon">💻</div>
+
+          <div class="device-info">
+            <strong>Venkatesh Laptop</strong>
+            <span>Work Room · Wi-Fi</span>
+          </div>
+
+          <span class="device-data">128 GB</span>
+
+          <span class="online-status">Online</span>
+
+        </div>
+
+
+        <div class="device-row">
+
+          <div class="device-icon">📱</div>
+
+          <div class="device-info">
+            <strong>V60 Phone</strong>
+            <span>Bedroom · 5G / Wi-Fi</span>
+          </div>
+
+          <span class="device-data">86 GB</span>
+
+          <span class="online-status">Online</span>
+
+        </div>
+
+
+        <div class="device-row">
+
+          <div class="device-icon">📺</div>
+
+          <div class="device-info">
+            <strong>Smart TV</strong>
+            <span>Living Room · Wi-Fi</span>
+          </div>
+
+          <span class="device-data">72 GB</span>
+
+          <span class="online-status">Online</span>
+
+        </div>
+
+
+        <div class="device-row">
+
+          <div class="device-icon">🔊</div>
+
+          <div class="device-info">
+            <strong>Home Speaker</strong>
+            <span>Living Room · Wi-Fi</span>
+          </div>
+
+          <span class="device-data">18 GB</span>
+
+          <span class="offline-status">Idle</span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Help -->
+    <section class="help" id="help">
+
+      <div>
+        <span class="section-label">NEED HELP?</span>
+
+        <h2>
+          Something not working?
+        </h2>
+
+        <p>
+          Run a quick network check or get help with your services.
+        </p>
+      </div>
+
+      <button class="help-btn" id="supportBtn">
+        Run Network Check →
+      </button>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+
+    <div>
+      <strong>airtel</strong>
+      <span>My Connectivity</span>
+    </div>
+
+    <p>One place for your connected life.</p>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

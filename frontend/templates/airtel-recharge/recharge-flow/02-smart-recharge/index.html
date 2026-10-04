@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Recharge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">airtel</div>
+      <span>Smart Recharge</span>
+    </div>
+
+    <nav>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#recommendation">Recommendations</a>
+      <a href="#usage">Usage</a>
+      <a href="#activity">Activity</a>
+    </nav>
+
+    <button id="notifyBtn" class="notify-btn">Notifications</button>
+  </header>
+
+
+  <main>
+
+    <section class="dashboard" id="dashboard">
+
+      <div class="dashboard-copy">
+        <div class="smart-badge">
+          <span>✦</span>
+          SMART MODE
+        </div>
+
+        <h1>Recharge that<br>thinks ahead.</h1>
+
+        <p>
+          Smart Recharge watches your usage and helps you
+          choose a plan before you run out of data.
+        </p>
+
+        <div class="dashboard-actions">
+          <button id="smartBtn" class="smart-btn">
+            Enable Smart Recharge
+          </button>
+
+          <button id="usageBtn" class="usage-btn">
+            View My Usage
+          </button>
+        </div>
+      </div>
+
+
+      <div class="usage-card">
+
+        <div class="usage-header">
+          <span>THIS MONTH</span>
+          <strong>72%</strong>
+        </div>
+
+        <div class="progress-track">
+          <div class="progress-fill"></div>
+        </div>
+
+        <div class="usage-main">
+          <strong>14.4 GB</strong>
+          <span>of 20 GB used</span>
+        </div>
+
+        <div class="usage-details">
+          <div>
+            <span>Daily average</span>
+            <strong>0.68 GB</strong>
+          </div>
+
+          <div>
+            <span>Days remaining</span>
+            <strong>12 days</strong>
+          </div>
+        </div>
+
+        <div class="usage-message">
+          <span>●</span>
+          You're on track for this month.
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="section" id="recommendation">
+
+      <div class="section-heading">
+        <div>
+          <span class="section-label">SMART RECOMMENDATION</span>
+          <h2>A plan picked for you.</h2>
+        </div>
+
+        <span class="match-score">96% MATCH</span>
+      </div>
+
+
+      <div class="recommendation-card">
+
+        <div class="recommendation-info">
+          <div class="plan-icon">⚡</div>
+
+          <div>
+            <span>SMART DATA PLAN</span>
+            <h3>₹349</h3>
+            <p>2.5 GB/day · Unlimited calls · 28 days</p>
+          </div>
+        </div>
+
+        <div class="recommendation-reasons">
+          <span>WHY THIS PLAN</span>
+
+          <div>
+            <b>01</b>
+            <p>Matches your average daily usage.</p>
+          </div>
+
+          <div>
+            <b>02</b>
+            <p>Gives you extra data on high-use days.</p>
+          </div>
+
+          <div>
+            <b>03</b>
+            <p>Fits your recent recharge pattern.</p>
+          </div>
+        </div>
+
+        <button id="chooseBtn" class="choose-btn">
+          Choose This Plan
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <section class="usage-section" id="usage">
+
+      <div class="usage-heading">
+        <span class="section-label">YOUR USAGE</span>
+        <h2>Know where<br>your data goes.</h2>
+      </div>
+
+      <div class="usage-bars">
+
+        <div class="usage-row">
+          <div class="usage-label">
+            <span>Video streaming</span>
+            <strong>6.8 GB</strong>
+          </div>
+
+          <div class="bar">
+            <div class="bar-fill video"></div>
+          </div>
+        </div>
+
+        <div class="usage-row">
+          <div class="usage-label">
+            <span>Social media</span>
+            <strong>3.4 GB</strong>
+          </div>
+
+          <div class="bar">
+            <div class="bar-fill social"></div>
+          </div>
+        </div>
+
+        <div class="usage-row">
+          <div class="usage-label">
+            <span>Browsing</span>
+            <strong>2.7 GB</strong>
+          </div>
+
+          <div class="bar">
+            <div class="bar-fill browsing"></div>
+          </div>
+        </div>
+
+        <div class="usage-row">
+          <div class="usage-label">
+            <span>Other apps</span>
+            <strong>1.5 GB</strong>
+          </div>
+
+          <div class="bar">
+            <div class="bar-fill apps"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="section activity-section" id="activity">
+
+      <div class="section-heading">
+        <div>
+          <span class="section-label">SMART ACTIVITY</span>
+          <h2>Your recharge timeline.</h2>
+        </div>
+
+        <button id="filterBtn" class="filter-btn">All Activity</button>
+      </div>
+
+
+      <div class="activity-list">
+
+        <div class="activity-item">
+          <span class="activity-date">TODAY</span>
+
+          <div>
+            <strong>Usage alert checked</strong>
+            <p>Your current usage is within your normal range.</p>
+          </div>
+
+          <span class="activity-status">Normal</span>
+        </div>
+
+
+        <div class="activity-item">
+          <span class="activity-date">18 SEP</span>
+
+          <div>
+            <strong>Recharge completed</strong>
+            <p>₹299 Smart Plan activated successfully.</p>
+          </div>
+
+          <span class="activity-status success">Completed</span>
+        </div>
+
+
+        <div class="activity-item">
+          <span class="activity-date">05 SEP</span>
+
+          <div>
+            <strong>Plan recommendation</strong>
+            <p>Smart Mode suggested a higher data plan.</p>
+          </div>
+
+          <span class="activity-status">Viewed</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="smart-footer">
+
+      <div>
+        <span class="section-label">SMART RECHARGE</span>
+        <h2>Less guessing.<br>More connecting.</h2>
+      </div>
+
+      <button id="activateBtn">Activate Smart Mode</button>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div class="brand">
+      <div class="brand-mark">airtel</div>
+      <span>Smart Recharge</span>
+    </div>
+
+    <p>Recharge smarter, stay connected.</p>
+
+    <span>© 2026 Airtel Recharge</span>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

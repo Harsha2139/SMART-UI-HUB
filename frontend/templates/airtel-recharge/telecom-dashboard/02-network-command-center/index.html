@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Network Command Center | Airtel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="topbar">
+
+    <div class="brand">
+      <span class="logo">airtel</span>
+
+      <div>
+        <strong>Network Command</strong>
+        <small>Home connectivity control</small>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#performance">Performance</a>
+      <a href="#devices">Devices</a>
+      <a href="#alerts">Alerts</a>
+    </nav>
+
+    <button class="system-btn" id="systemBtn">
+      System Online
+    </button>
+
+  </header>
+
+
+  <main>
+
+    <!-- Dashboard -->
+    <section class="dashboard" id="dashboard">
+
+      <div class="dashboard-copy">
+
+        <span class="eyebrow">NETWORK COMMAND CENTER / LIVE</span>
+
+        <h1>
+          See your network.
+          <span>Run the show.</span>
+        </h1>
+
+        <p>
+          Monitor your home network performance, connected devices,
+          traffic and system health from one command center.
+        </p>
+
+        <div class="hero-actions">
+
+          <button class="primary-btn" id="scanBtn">
+            Scan Network
+          </button>
+
+          <button class="secondary-btn" id="optimizeBtn">
+            Optimize Network
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- Live Status -->
+      <div class="live-panel">
+
+        <div class="panel-heading">
+          <span>LIVE NETWORK</span>
+          <strong>● LIVE</strong>
+        </div>
+
+        <div class="network-orb">
+          <div class="orb-ring ring-one"></div>
+          <div class="orb-ring ring-two"></div>
+          <div class="orb-core">
+            <span>98</span>
+            <small>Mbps</small>
+          </div>
+        </div>
+
+        <div class="live-status">
+          <strong>Network Excellent</strong>
+          <span>All systems operating normally</span>
+        </div>
+
+        <div class="mini-stats">
+
+          <div>
+            <span>LATENCY</span>
+            <strong>12 ms</strong>
+          </div>
+
+          <div>
+            <span>UPTIME</span>
+            <strong>99.9%</strong>
+          </div>
+
+          <div>
+            <span>DEVICES</span>
+            <strong>08</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Performance -->
+    <section class="performance" id="performance">
+
+      <div class="section-heading">
+
+        <div>
+          <span class="section-label">PERFORMANCE</span>
+          <h2>Network at a glance.</h2>
+        </div>
+
+        <button class="outline-btn" id="refreshBtn">
+          Refresh Data
+        </button>
+
+      </div>
+
+
+      <div class="metric-grid">
+
+        <article class="metric-card speed-card">
+
+          <div class="metric-top">
+            <span>DOWNLOAD SPEED</span>
+            <span class="metric-icon">↓</span>
+          </div>
+
+          <strong class="metric-value" id="downloadValue">
+            98
+          </strong>
+
+          <span class="metric-unit">Mbps</span>
+
+          <div class="chart">
+            <span style="height: 38%"></span>
+            <span style="height: 52%"></span>
+            <span style="height: 46%"></span>
+            <span style="height: 68%"></span>
+            <span style="height: 57%"></span>
+            <span style="height: 82%"></span>
+            <span style="height: 73%"></span>
+            <span style="height: 92%"></span>
+          </div>
+
+          <p>+8.4% from yesterday</p>
+
+        </article>
+
+
+        <article class="metric-card upload-card">
+
+          <div class="metric-top">
+            <span>UPLOAD SPEED</span>
+            <span class="metric-icon">↑</span>
+          </div>
+
+          <strong class="metric-value">
+            48
+          </strong>
+
+          <span class="metric-unit">Mbps</span>
+
+          <div class="progress-track">
+            <span></span>
+          </div>
+
+          <p>48% of available capacity</p>
+
+        </article>
+
+
+        <article class="metric-card latency-card">
+
+          <div class="metric-top">
+            <span>LATENCY</span>
+            <span class="metric-icon">◌</span>
+          </div>
+
+          <strong class="metric-value">
+            12
+          </strong>
+
+          <span class="metric-unit">ms</span>
+
+          <div class="latency-line">
+            <span></span>
+          </div>
+
+          <p>Excellent response time</p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- Devices -->
+    <section class="devices" id="devices">
+
+      <div class="section-heading">
+
+        <div>
+          <span class="section-label">CONNECTED DEVICES</span>
+          <h2>Network traffic.</h2>
+        </div>
+
+        <button class="outline-btn" id="deviceBtn">
+          Manage Devices
+        </button>
+
+      </div>
+
+
+      <div class="device-table">
+
+        <div class="table-header">
+          <span>DEVICE</span>
+          <span>LOCATION</span>
+          <span>USAGE</span>
+          <span>STATUS</span>
+        </div>
+
+
+        <div class="device-row">
+
+          <div class="device-name">
+            <span class="device-icon">💻</span>
+            <strong>Venkatesh Laptop</strong>
+          </div>
+
+          <span>Work Room</span>
+
+          <span>128 GB</span>
+
+          <strong class="online">Online</strong>
+
+        </div>
+
+
+        <div class="device-row">
+
+          <div class="device-name">
+            <span class="device-icon">📱</span>
+            <strong>V60 Phone</strong>
+          </div>
+
+          <span>Bedroom</span>
+
+          <span>86 GB</span>
+
+          <strong class="online">Online</strong>
+
+        </div>
+
+
+        <div class="device-row">
+
+          <div class="device-name">
+            <span class="device-icon">📺</span>
+            <strong>Smart TV</strong>
+          </div>
+
+          <span>Living Room</span>
+
+          <span>72 GB</span>
+
+          <strong class="online">Online</strong>
+
+        </div>
+
+
+        <div class="device-row">
+
+          <div class="device-name">
+            <span class="device-icon">🔊</span>
+            <strong>Home Speaker</strong>
+          </div>
+
+          <span>Living Room</span>
+
+          <span>18 GB</span>
+
+          <strong class="idle">Idle</strong>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Alerts -->
+    <section class="alerts" id="alerts">
+
+      <div class="alert-copy">
+
+        <span class="section-label">SYSTEM ALERTS</span>
+
+        <h2>
+          Stay ahead of
+          <span>network issues.</span>
+        </h2>
+
+        <p>
+          Important events and network health information
+          appear here automatically.
+        </p>
+
+        <button class="dark-btn" id="diagnosticsBtn">
+          Run Diagnostics →
+        </button>
+
+      </div>
+
+
+      <div class="alert-list">
+
+        <div class="alert-card success">
+
+          <div class="alert-icon">✓</div>
+
+          <div>
+            <strong>Network is healthy</strong>
+            <span>All major services are responding normally.</span>
+          </div>
+
+          <small>2 min ago</small>
+
+        </div>
+
+
+        <div class="alert-card info">
+
+          <div class="alert-icon">i</div>
+
+          <div>
+            <strong>New device connected</strong>
+            <span>Smart TV joined your home network.</span>
+          </div>
+
+          <small>14 min ago</small>
+
+        </div>
+
+
+        <div class="alert-card warning">
+
+          <div class="alert-icon">!</div>
+
+          <div>
+            <strong>Traffic increased</strong>
+            <span>Evening network usage is above average.</span>
+          </div>
+
+          <small>28 min ago</small>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Command -->
+    <section class="command">
+
+      <div>
+        <span class="section-label">COMMAND CENTER</span>
+
+        <h2>
+          Your network,
+          your command.
+        </h2>
+
+        <p>
+          Quick actions for keeping your home connection
+          fast, stable and secure.
+        </p>
+      </div>
+
+      <button class="command-btn" id="commandBtn">
+        Open Network Controls →
+      </button>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+
+    <div>
+      <strong>airtel</strong>
+      <span>Network Command Center</span>
+    </div>
+
+    <p>Monitor. Optimize. Stay connected.</p>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

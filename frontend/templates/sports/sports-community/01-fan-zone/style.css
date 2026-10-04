@@ -1,0 +1,445 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f2ec;
+  color: #181818;
+  line-height: 1.5;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.topbar {
+  padding: 20px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd9ce;
+  background: #f4f2ec;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  font-weight: 400;
+  color: #777;
+}
+
+nav {
+  display: flex;
+  gap: 28px;
+}
+
+nav a {
+  color: #555;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #111;
+}
+
+.join-btn,
+.filter-btn {
+  border: 1px solid #222;
+  background: transparent;
+  padding: 10px 17px;
+  border-radius: 25px;
+}
+
+.join-btn.active {
+  background: #171717;
+  color: white;
+}
+
+.hero {
+  min-height: 650px;
+  padding: 90px 6%;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: center;
+  background: #deddd3;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  font-size: clamp(52px, 7vw, 88px);
+  line-height: 0.95;
+  letter-spacing: -5px;
+}
+
+.hero-text {
+  max-width: 540px;
+  margin-top: 30px;
+  color: #5d5d5d;
+  font-size: 17px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 35px;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 14px 22px;
+  border-radius: 30px;
+  border: 1px solid #171717;
+}
+
+.primary-btn {
+  background: #171717;
+  color: white;
+}
+
+.secondary-btn {
+  background: transparent;
+}
+
+.fan-card {
+  min-height: 410px;
+  padding: 35px;
+  background: #171717;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 15px 15px 0 #aaa89e;
+}
+
+.fan-card-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #999;
+  letter-spacing: 1px;
+}
+
+.avatar {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background: #2d2d2d;
+  display: grid;
+  place-items: center;
+  font-size: 40px;
+}
+
+.fan-card h2 {
+  max-width: 390px;
+  font-size: 34px;
+  line-height: 1;
+}
+
+.fan-card p {
+  color: #aaa;
+  max-width: 390px;
+}
+
+.fan-stats {
+  display: flex;
+  gap: 45px;
+  border-top: 1px solid #444;
+  padding-top: 20px;
+}
+
+.fan-stats div {
+  display: flex;
+  flex-direction: column;
+}
+
+.fan-stats strong {
+  font-size: 24px;
+}
+
+.fan-stats span {
+  color: #888;
+  font-size: 11px;
+}
+
+.section {
+  padding: 100px 6%;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 45px;
+}
+
+.section-heading h2 {
+  font-size: 48px;
+  letter-spacing: -2px;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.post-card {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 28px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card.featured {
+  background: #171717;
+  color: white;
+}
+
+.post-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 35px;
+}
+
+.user-avatar {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  background: #deddd3;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.featured .user-avatar {
+  background: #333;
+}
+
+.post-user div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-user span {
+  font-size: 11px;
+  color: #999;
+}
+
+.post-card > p {
+  font-size: 18px;
+  line-height: 1.35;
+  max-width: 400px;
+  margin-bottom: auto;
+}
+
+.post-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.like-btn,
+.comment-btn {
+  border: 1px solid #bbb;
+  background: transparent;
+  padding: 9px 13px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.featured .like-btn,
+.featured .comment-btn {
+  color: white;
+  border-color: #555;
+}
+
+.like-btn.liked {
+  background: #171717;
+  color: white;
+  border-color: #171717;
+}
+
+.poll-section {
+  padding: 100px 6%;
+  background: #171717;
+  color: white;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.poll-section h2 {
+  font-size: 52px;
+  line-height: 1;
+  letter-spacing: -3px;
+  max-width: 600px;
+}
+
+.poll-options {
+  border-top: 1px solid #444;
+}
+
+.poll-option {
+  width: 100%;
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: 50px 1fr 60px;
+  text-align: left;
+  align-items: center;
+  border: 0;
+  border-bottom: 1px solid #444;
+  background: transparent;
+  color: white;
+}
+
+.poll-option span {
+  color: #777;
+  font-size: 11px;
+}
+
+.poll-option strong {
+  font-size: 18px;
+}
+
+.poll-option em {
+  color: #999;
+  font-style: normal;
+  text-align: right;
+}
+
+.poll-option.selected {
+  color: #b7d46a;
+}
+
+.highlights {
+  background: #e2e0d7;
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.highlight-grid article {
+  min-height: 240px;
+  padding: 28px;
+  border-top: 2px solid #171717;
+}
+
+.highlight-grid article > span {
+  color: #888;
+  font-size: 11px;
+}
+
+.highlight-grid h3 {
+  font-size: 28px;
+  margin: 45px 0 15px;
+}
+
+.highlight-grid p {
+  color: #666;
+  font-size: 14px;
+}
+
+footer {
+  padding: 35px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background: #111;
+  color: white;
+}
+
+footer p,
+footer > span {
+  color: #888;
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  nav {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .post-grid,
+  .highlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .poll-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    padding: 18px 5%;
+  }
+
+  .join-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .hero,
+  .section,
+  .poll-section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .hero h1 {
+    font-size: 52px;
+    letter-spacing: -3px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .section-heading h2,
+  .poll-section h2 {
+    font-size: 38px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
