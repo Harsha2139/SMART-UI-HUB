@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Restaurant Discovery</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">swiggy</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#restaurants">Restaurants</a>
+            <a href="#offers">Offers</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <button id="loginBtn" type="button">
+            Login
+        </button>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                DISCOVER GREAT FOOD
+            </p>
+
+            <h1>
+                Find the best
+                <span>restaurants</span>
+                near you
+            </h1>
+
+            <p>
+                Explore restaurants, discover new dishes and
+                order your favourite food.
+            </p>
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search restaurants or food"
+                >
+
+                <button id="searchBtn" type="button">
+                    Search
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+
+    <section class="categories">
+
+        <div class="section-title">
+
+            <p>EXPLORE</p>
+
+            <h2>What are you craving?</h2>
+
+        </div>
+
+
+        <div class="category-grid">
+
+            <div class="category" data-food="Pizza">
+                <div class="food-icon">🍕</div>
+                <h3>Pizza</h3>
+                <p>120+ places</p>
+            </div>
+
+            <div class="category" data-food="Biryani">
+                <div class="food-icon">🍛</div>
+                <h3>Biryani</h3>
+                <p>180+ places</p>
+            </div>
+
+            <div class="category" data-food="Burger">
+                <div class="food-icon">🍔</div>
+                <h3>Burger</h3>
+                <p>150+ places</p>
+            </div>
+
+            <div class="category" data-food="Chinese">
+                <div class="food-icon">🍜</div>
+                <h3>Chinese</h3>
+                <p>100+ places</p>
+            </div>
+
+            <div class="category" data-food="Desserts">
+                <div class="food-icon">🍰</div>
+                <h3>Desserts</h3>
+                <p>90+ places</p>
+            </div>
+
+            <div class="category" data-food="South Indian">
+                <div class="food-icon">🥘</div>
+                <h3>South Indian</h3>
+                <p>200+ places</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESTAURANTS -->
+
+    <section class="restaurants" id="restaurants">
+
+        <div class="section-heading">
+
+            <div>
+                <p>TOP PICKS</p>
+                <h2>Popular Restaurants</h2>
+            </div>
+
+            <button id="viewAllBtn" type="button">
+                View All
+            </button>
+
+        </div>
+
+
+        <div class="restaurant-grid">
+
+            <!-- RESTAURANT 1 -->
+
+            <div class="restaurant-card">
+
+                <div class="restaurant-image pizza">
+
+                    🍕
+
+                    <span>20% OFF</span>
+
+                </div>
+
+                <div class="restaurant-info">
+
+                    <h3>Pizza Paradise</h3>
+
+                    <div class="rating">
+                        ★ 4.8
+                        <span>• 30 mins</span>
+                    </div>
+
+                    <p>Pizza, Italian, Fast Food</p>
+
+                    <small>₹300 for two</small>
+
+                    <button class="orderBtn" type="button">
+                        Order Now
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- RESTAURANT 2 -->
+
+            <div class="restaurant-card">
+
+                <div class="restaurant-image biryani">
+
+                    🍛
+
+                    <span>30% OFF</span>
+
+                </div>
+
+                <div class="restaurant-info">
+
+                    <h3>Biryani House</h3>
+
+                    <div class="rating">
+                        ★ 4.7
+                        <span>• 35 mins</span>
+                    </div>
+
+                    <p>Biryani, North Indian</p>
+
+                    <small>₹400 for two</small>
+
+                    <button class="orderBtn" type="button">
+                        Order Now
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- RESTAURANT 3 -->
+
+            <div class="restaurant-card">
+
+                <div class="restaurant-image burger">
+
+                    🍔
+
+                    <span>15% OFF</span>
+
+                </div>
+
+                <div class="restaurant-info">
+
+                    <h3>Burger Street</h3>
+
+                    <div class="rating">
+                        ★ 4.6
+                        <span>• 25 mins</span>
+                    </div>
+
+                    <p>Burgers, Fast Food</p>
+
+                    <small>₹250 for two</small>
+
+                    <button class="orderBtn" type="button">
+                        Order Now
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- RESTAURANT 4 -->
+
+            <div class="restaurant-card">
+
+                <div class="restaurant-image chinese">
+
+                    🍜
+
+                    <span>25% OFF</span>
+
+                </div>
+
+                <div class="restaurant-info">
+
+                    <h3>Wok Express</h3>
+
+                    <div class="rating">
+                        ★ 4.5
+                        <span>• 30 mins</span>
+                    </div>
+
+                    <p>Chinese, Asian</p>
+
+                    <small>₹350 for two</small>
+
+                    <button class="orderBtn" type="button">
+                        Order Now
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OFFER -->
+
+    <section class="offer" id="offers">
+
+        <div>
+
+            <p>LIMITED TIME OFFER</p>
+
+            <h2>
+                Get 50% OFF on your first order
+            </h2>
+
+            <p>
+                Use the code below and enjoy delicious food
+                at a great price.
+            </p>
+
+            <div class="coupon">
+
+                <strong>WELCOME50</strong>
+
+                <button id="couponBtn" type="button">
+                    Copy Code
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="offer-icon">
+            🛵
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <p>ABOUT US</p>
+
+        <h2>
+            Discover food you will love
+        </h2>
+
+        <p>
+            Find restaurants around you, explore different
+            cuisines and enjoy fast food delivery.
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            swiggy
+        </div>
+
+        <p>
+            © 2026 Restaurant Discovery. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>

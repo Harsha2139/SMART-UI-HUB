@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Restaurant Search</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">swiggy</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#search">Search</a>
+            <a href="#restaurants">Restaurants</a>
+            <a href="#offers">Offers</a>
+        </nav>
+
+        <button id="loginBtn" type="button">
+            Login
+        </button>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="tag">SMART RESTAURANT SEARCH</p>
+
+            <h1>
+                What are you
+                <span>craving today?</span>
+            </h1>
+
+            <p class="description">
+                Search restaurants, cuisines and dishes
+                from one simple place.
+            </p>
+
+            <div class="search-box" id="search">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search pizza, biryani, burgers..."
+                >
+
+                <button id="searchBtn" type="button">
+                    Search
+                </button>
+
+            </div>
+
+            <div class="quick-search">
+
+                <span>Popular:</span>
+
+                <button class="quickBtn" type="button">
+                    Pizza
+                </button>
+
+                <button class="quickBtn" type="button">
+                    Biryani
+                </button>
+
+                <button class="quickBtn" type="button">
+                    Burger
+                </button>
+
+                <button class="quickBtn" type="button">
+                    Chinese
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SEARCH RESULT -->
+
+    <section class="results">
+
+        <div class="section-title">
+
+            <p>SEARCH RESULTS</p>
+
+            <h2 id="resultTitle">
+                Popular near you
+            </h2>
+
+        </div>
+
+
+        <div class="restaurant-grid" id="restaurants">
+
+
+            <!-- RESTAURANT 1 -->
+
+            <div class="restaurant-card">
+
+                <div class="restaurant-image pizza">
+
+                    🍕
+
+                    <span>30% OFF</span>
+
+                </div>
+
+                <div class="restaurant-info">
+
+                    <h3>Pizza Paradise</h3>
+
+                    <div class="rating">
+                        ★ 4.8
+                        <span> • 25 mins</span>
+                    </div>
+
+                    <p>Pizza • Italian • Fast Food</p>
+
+                    <strong>₹300 for two</strong>
+
+                    <button class="orderBtn" type="button">
+                        View Restaurant
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- RESTAURANT 2 -->
+
+            <div class="restaurant-card">
+
+                <div class="restaurant-image biryani">
+
+                    🍛
+
+                    <span>25% OFF</span>
+
+                </div>
+
+                <div class="restaurant-info">
+
+                    <h3>Biryani House</h3>
+
+                    <div class="rating">
+                        ★ 4.7
+                        <span> • 30 mins</span>
+                    </div>
+
+                    <p>Biryani • North Indian</p>
+
+                    <strong>₹400 for two</strong>
+
+                    <button class="orderBtn" type="button">
+                        View Restaurant
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- RESTAURANT 3 -->
+
+            <div class="restaurant-card">
+
+                <div class="restaurant-image burger">
+
+                    🍔
+
+                    <span>20% OFF</span>
+
+                </div>
+
+                <div class="restaurant-info">
+
+                    <h3>Burger Street</h3>
+
+                    <div class="rating">
+                        ★ 4.6
+                        <span> • 20 mins</span>
+                    </div>
+
+                    <p>Burgers • American • Fast Food</p>
+
+                    <strong>₹250 for two</strong>
+
+                    <button class="orderBtn" type="button">
+                        View Restaurant
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- RESTAURANT 4 -->
+
+            <div class="restaurant-card">
+
+                <div class="restaurant-image chinese">
+
+                    🍜
+
+                    <span>15% OFF</span>
+
+                </div>
+
+                <div class="restaurant-info">
+
+                    <h3>Wok Express</h3>
+
+                    <div class="rating">
+                        ★ 4.5
+                        <span> • 35 mins</span>
+                    </div>
+
+                    <p>Chinese • Asian • Noodles</p>
+
+                    <strong>₹350 for two</strong>
+
+                    <button class="orderBtn" type="button">
+                        View Restaurant
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section class="features">
+
+        <div class="feature">
+
+            <div class="feature-icon">🔎</div>
+
+            <h3>Smart Search</h3>
+
+            <p>
+                Quickly find your favourite food.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">📍</div>
+
+            <h3>Nearby Restaurants</h3>
+
+            <p>
+                Discover restaurants around you.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">⚡</div>
+
+            <h3>Fast Delivery</h3>
+
+            <p>
+                Get your food delivered quickly.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">⭐</div>
+
+            <h3>Top Rated</h3>
+
+            <p>
+                Find highly rated restaurants.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- OFFER -->
+
+    <section class="offer" id="offers">
+
+        <div>
+
+            <p>EXCLUSIVE OFFER</p>
+
+            <h2>
+                Get 50% OFF on your first order
+            </h2>
+
+            <p>
+                Use coupon code:
+            </p>
+
+            <div class="coupon">
+
+                <strong>FIRST50</strong>
+
+                <button id="couponBtn" type="button">
+                    Copy Code
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="offer-image">
+            🛵
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            swiggy
+        </div>
+
+        <p>
+            Smart Restaurant Search
+        </p>
+
+        <p>
+            © 2026 All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>

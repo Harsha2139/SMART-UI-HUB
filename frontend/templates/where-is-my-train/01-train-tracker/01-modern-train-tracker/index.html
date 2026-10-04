@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Train Tracker</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">TrainTrack</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#tracker">Track Train</a>
+        <a href="#stations">Stations</a>
+        <a href="#help">Help</a>
+    </nav>
+
+    <button onclick="login()">Login</button>
+</header>
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+        <p class="tag">INDIAN RAILWAYS</p>
+
+        <h1>Track your train in real time</h1>
+
+        <p>
+            Check train location, current station,
+            arrival time and journey details.
+        </p>
+
+        <button onclick="startTracking()">
+            Track a Train
+        </button>
+    </div>
+
+</section>
+
+<section class="tracker" id="tracker">
+
+    <div class="section-title">
+        <h2>Train Tracker</h2>
+        <p>Enter your train number to check its current status.</p>
+    </div>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="trainNumber"
+            placeholder="Enter train number e.g. 12627"
+        >
+
+        <button onclick="trackTrain()">
+            Search Train
+        </button>
+
+    </div>
+
+    <div id="trainResult" class="train-result">
+
+        <div class="result-placeholder">
+            <div class="train-icon">🚆</div>
+
+            <h3>Search for a train</h3>
+
+            <p>
+                Enter a train number above to see
+                live journey information.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="stations" id="stations">
+
+    <div class="section-title">
+        <h2>Popular Stations</h2>
+        <p>Quickly check important railway stations.</p>
+    </div>
+
+    <div class="station-grid">
+
+        <div class="station-card">
+            <div class="station-icon">🚉</div>
+            <h3>Chennai Central</h3>
+            <p>MAS</p>
+            <button onclick="showStation('Chennai Central')">
+                View Station
+            </button>
+        </div>
+
+        <div class="station-card">
+            <div class="station-icon">🚉</div>
+            <h3>Bengaluru</h3>
+            <p>SBC</p>
+            <button onclick="showStation('Bengaluru')">
+                View Station
+            </button>
+        </div>
+
+        <div class="station-card">
+            <div class="station-icon">🚉</div>
+            <h3>Hyderabad</h3>
+            <p>HYB</p>
+            <button onclick="showStation('Hyderabad')">
+                View Station
+            </button>
+        </div>
+
+        <div class="station-card">
+            <div class="station-icon">🚉</div>
+            <h3>New Delhi</h3>
+            <p>NDLS</p>
+            <button onclick="showStation('New Delhi')">
+                View Station
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="features">
+
+    <div class="section-title">
+        <h2>Everything you need</h2>
+    </div>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <div>📍</div>
+            <h3>Live Location</h3>
+            <p>
+                Find the current location of your train.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div>⏱️</div>
+            <h3>Train Timings</h3>
+            <p>
+                Check arrival and departure timings.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div>🛤️</div>
+            <h3>Route Information</h3>
+            <p>
+                View stations along your train route.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div>🔔</div>
+            <h3>Status Updates</h3>
+            <p>
+                Stay updated about your train journey.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="help" id="help">
+
+    <h2>Need Help?</h2>
+
+    <p>
+        Enter your train number and search to get
+        the latest journey information.
+    </p>
+
+    <button onclick="showHelp()">
+        How It Works
+    </button>
+
+</section>
+
+<footer>
+
+    <h3>TrainTrack</h3>
+
+    <p>
+        Modern train tracking interface
+    </p>
+
+    <p>
+        © 2026 TrainTrack
+    </p>
+
+</footer>
+
+<script src="./script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMyShow - Seat Selection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">book<span>my</span>show</div>
+
+    <div class="location" onclick="changeCity()">
+        📍 Chennai
+    </div>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search for Movies, Events or Shows">
+        <button onclick="searchMovie()">Search</button>
+    </div>
+
+    <button class="login-btn" onclick="login()">Sign In</button>
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-text">
+            <p class="small-title">NOW SHOWING</p>
+
+            <h1>Shadow Warriors</h1>
+
+            <p class="movie-info">
+                Action • Thriller • 2h 25m
+            </p>
+
+            <p class="description">
+                Choose your favourite seats and enjoy an unforgettable
+                cinematic experience on the big screen.
+            </p>
+
+            <div class="hero-buttons">
+                <button onclick="selectShow()">Choose Show</button>
+                <button class="outline-btn" onclick="viewMovie()">View Movie</button>
+            </div>
+        </div>
+
+        <div class="hero-poster">
+            <img
+                src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=700&q=85"
+                alt="Movie Theatre Poster">
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="show-details">
+
+    <div>
+        <span>Movie</span>
+        <strong>Shadow Warriors</strong>
+    </div>
+
+    <div>
+        <span>Theatre</span>
+        <strong>INOX Marina Mall</strong>
+    </div>
+
+    <div>
+        <span>Date</span>
+        <strong>Today, 01 Oct</strong>
+    </div>
+
+    <div>
+        <span>Show Time</span>
+        <strong>07:30 PM</strong>
+    </div>
+
+</section>
+
+
+<section class="seat-section">
+
+    <div class="section-heading">
+        <p>SELECT YOUR SEATS</p>
+        <h2>Choose Your Seats</h2>
+        <span>Select seats from the layout below</span>
+    </div>
+
+
+    <div class="seat-container">
+
+        <div class="screen">
+            SCREEN THIS WAY
+        </div>
+
+
+        <div class="seat-layout">
+
+            <div class="seat-row">
+                <span class="row-name">A</span>
+
+                <button class="seat" onclick="selectSeat(this)">A1</button>
+                <button class="seat" onclick="selectSeat(this)">A2</button>
+                <button class="seat" onclick="selectSeat(this)">A3</button>
+                <button class="seat" onclick="selectSeat(this)">A4</button>
+                <button class="seat" onclick="selectSeat(this)">A5</button>
+
+                <div class="gap"></div>
+
+                <button class="seat" onclick="selectSeat(this)">A6</button>
+                <button class="seat" onclick="selectSeat(this)">A7</button>
+                <button class="seat" onclick="selectSeat(this)">A8</button>
+                <button class="seat" onclick="selectSeat(this)">A9</button>
+                <button class="seat" onclick="selectSeat(this)">A10</button>
+            </div>
+
+
+            <div class="seat-row">
+                <span class="row-name">B</span>
+
+                <button class="seat" onclick="selectSeat(this)">B1</button>
+                <button class="seat" onclick="selectSeat(this)">B2</button>
+                <button class="seat" onclick="selectSeat(this)">B3</button>
+                <button class="seat" onclick="selectSeat(this)">B4</button>
+                <button class="seat sold">B5</button>
+
+                <div class="gap"></div>
+
+                <button class="seat" onclick="selectSeat(this)">B6</button>
+                <button class="seat" onclick="selectSeat(this)">B7</button>
+                <button class="seat" onclick="selectSeat(this)">B8</button>
+                <button class="seat" onclick="selectSeat(this)">B9</button>
+                <button class="seat" onclick="selectSeat(this)">B10</button>
+            </div>
+
+
+            <div class="seat-row">
+                <span class="row-name">C</span>
+
+                <button class="seat" onclick="selectSeat(this)">C1</button>
+                <button class="seat" onclick="selectSeat(this)">C2</button>
+                <button class="seat sold">C3</button>
+                <button class="seat" onclick="selectSeat(this)">C4</button>
+                <button class="seat" onclick="selectSeat(this)">C5</button>
+
+                <div class="gap"></div>
+
+                <button class="seat" onclick="selectSeat(this)">C6</button>
+                <button class="seat" onclick="selectSeat(this)">C7</button>
+                <button class="seat" onclick="selectSeat(this)">C8</button>
+                <button class="seat" onclick="selectSeat(this)">C9</button>
+                <button class="seat" onclick="selectSeat(this)">C10</button>
+            </div>
+
+
+            <div class="seat-row">
+                <span class="row-name">D</span>
+
+                <button class="seat" onclick="selectSeat(this)">D1</button>
+                <button class="seat" onclick="selectSeat(this)">D2</button>
+                <button class="seat" onclick="selectSeat(this)">D3</button>
+                <button class="seat" onclick="selectSeat(this)">D4</button>
+                <button class="seat" onclick="selectSeat(this)">D5</button>
+
+                <div class="gap"></div>
+
+                <button class="seat" onclick="selectSeat(this)">D6</button>
+                <button class="seat" onclick="selectSeat(this)">D7</button>
+                <button class="seat" onclick="selectSeat(this)">D8</button>
+                <button class="seat" onclick="selectSeat(this)">D9</button>
+                <button class="seat" onclick="selectSeat(this)">D10</button>
+            </div>
+
+
+            <div class="seat-row">
+                <span class="row-name">E</span>
+
+                <button class="seat" onclick="selectSeat(this)">E1</button>
+                <button class="seat" onclick="selectSeat(this)">E2</button>
+                <button class="seat" onclick="selectSeat(this)">E3</button>
+                <button class="seat" onclick="selectSeat(this)">E4</button>
+                <button class="seat" onclick="selectSeat(this)">E5</button>
+
+                <div class="gap"></div>
+
+                <button class="seat" onclick="selectSeat(this)">E6</button>
+                <button class="seat" onclick="selectSeat(this)">E7</button>
+                <button class="seat" onclick="selectSeat(this)">E8</button>
+                <button class="seat" onclick="selectSeat(this)">E9</button>
+                <button class="seat" onclick="selectSeat(this)">E10</button>
+            </div>
+
+
+            <div class="seat-row">
+                <span class="row-name">F</span>
+
+                <button class="seat" onclick="selectSeat(this)">F1</button>
+                <button class="seat" onclick="selectSeat(this)">F2</button>
+                <button class="seat" onclick="selectSeat(this)">F3</button>
+                <button class="seat" onclick="selectSeat(this)">F4</button>
+                <button class="seat" onclick="selectSeat(this)">F5</button>
+
+                <div class="gap"></div>
+
+                <button class="seat" onclick="selectSeat(this)">F6</button>
+                <button class="seat" onclick="selectSeat(this)">F7</button>
+                <button class="seat" onclick="selectSeat(this)">F8</button>
+                <button class="seat" onclick="selectSeat(this)">F9</button>
+                <button class="seat" onclick="selectSeat(this)">F10</button>
+            </div>
+
+        </div>
+
+
+        <div class="legend">
+
+            <div>
+                <span class="legend-seat available"></span>
+                Available
+            </div>
+
+            <div>
+                <span class="legend-seat selected"></span>
+                Selected
+            </div>
+
+            <div>
+                <span class="legend-seat unavailable"></span>
+                Sold
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="booking-summary">
+
+    <div class="summary-info">
+
+        <div>
+            <span>Selected Seats</span>
+            <strong id="selectedSeats">None</strong>
+        </div>
+
+        <div>
+            <span>Tickets</span>
+            <strong id="ticketCount">0</strong>
+        </div>
+
+        <div>
+            <span>Total Amount</span>
+            <strong id="totalPrice">₹0</strong>
+        </div>
+
+    </div>
+
+    <button class="continue-btn" onclick="continueBooking()">
+        Continue
+    </button>
+
+</section>
+
+
+<section class="movies">
+
+    <div class="section-heading">
+        <p>YOU MAY ALSO LIKE</p>
+        <h2>Popular Movies</h2>
+    </div>
+
+    <div class="movie-grid">
+
+        <div class="movie-card">
+            <img
+                src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=85"
+                alt="Movie poster">
+            <h3>Lost World</h3>
+            <p>Adventure • 2h 10m</p>
+            <button onclick="bookMovie('Lost World')">Book Now</button>
+        </div>
+
+
+        <div class="movie-card">
+            <img
+                src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=600&q=85"
+                alt="Movie poster">
+            <h3>Hidden Truth</h3>
+            <p>Thriller • 2h 18m</p>
+            <button onclick="bookMovie('Hidden Truth')">Book Now</button>
+        </div>
+
+
+        <div class="movie-card">
+            <img
+                src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=85"
+                alt="Movie poster">
+            <h3>Midnight Story</h3>
+            <p>Drama • 2h 05m</p>
+            <button onclick="bookMovie('Midnight Story')">Book Now</button>
+        </div>
+
+
+        <div class="movie-card">
+            <img
+                src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=600&q=85"
+                alt="Movie poster">
+            <h3>Final Mission</h3>
+            <p>Action • 2h 20m</p>
+            <button onclick="bookMovie('Final Mission')">Book Now</button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="footer-logo">book<span>my</span>show</div>
+
+    <p>
+        Book movies, events and entertainment experiences
+        from one place.
+    </p>
+
+    <div class="footer-links">
+        <span>About Us</span>
+        <span>Contact</span>
+        <span>Privacy</span>
+        <span>Terms</span>
+    </div>
+
+    <p class="copyright">
+        © 2026 BookMyShow Template
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

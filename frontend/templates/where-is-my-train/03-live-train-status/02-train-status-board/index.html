@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Train Status Board</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="logo">
+            RailBoard
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#board">Status Board</a>
+            <a href="#routes">Routes</a>
+            <a href="#help">Help</a>
+        </nav>
+
+        <button class="login-btn" onclick="login()">
+            Login
+        </button>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <span class="badge">
+                    LIVE RAILWAY INFORMATION
+                </span>
+
+                <h1>
+                    Train Status
+                    <span>Board</span>
+                </h1>
+
+                <p>
+                    View live train arrivals, departures,
+                    platforms and running status in one place.
+                </p>
+
+                <button
+                    class="hero-btn"
+                    onclick="goToBoard()">
+                    View Live Board
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section class="board-section" id="board">
+
+            <div class="section-title">
+
+                <span>
+                    LIVE UPDATES
+                </span>
+
+                <h2>
+                    Today's Train Board
+                </h2>
+
+                <p>
+                    Current train information for the station.
+                </p>
+
+            </div>
+
+
+            <div class="board-controls">
+
+                <div class="search-box">
+
+                    <label for="trainSearch">
+                        Search Train
+                    </label>
+
+                    <input
+                        type="text"
+                        id="trainSearch"
+                        placeholder="Search train number or name"
+                        onkeyup="searchTrains()">
+
+                </div>
+
+
+                <button
+                    class="refresh-btn"
+                    onclick="refreshBoard()">
+
+                    Refresh Board
+
+                </button>
+
+            </div>
+
+
+            <div class="board-card">
+
+                <div class="board-header">
+
+                    <span>Train</span>
+                    <span>Route</span>
+                    <span>Arrival</span>
+                    <span>Departure</span>
+                    <span>Platform</span>
+                    <span>Status</span>
+
+                </div>
+
+
+                <div
+                    class="train-row"
+                    data-search="12627 chennai express">
+
+                    <div>
+                        <strong>12627</strong>
+                        <small>Chennai Express</small>
+                    </div>
+
+                    <div>
+                        Chennai → Bengaluru
+                    </div>
+
+                    <div>
+                        05:45 AM
+                    </div>
+
+                    <div>
+                        06:00 AM
+                    </div>
+
+                    <div>
+                        <strong>4</strong>
+                    </div>
+
+                    <div>
+                        <span class="status on-time">
+                            On Time
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="train-row"
+                    data-search="12608 bengaluru express">
+
+                    <div>
+                        <strong>12608</strong>
+                        <small>Bengaluru Express</small>
+                    </div>
+
+                    <div>
+                        Bengaluru → Chennai
+                    </div>
+
+                    <div>
+                        07:15 AM
+                    </div>
+
+                    <div>
+                        07:30 AM
+                    </div>
+
+                    <div>
+                        <strong>2</strong>
+                    </div>
+
+                    <div>
+                        <span class="status delayed">
+                            Delayed 10 min
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="train-row"
+                    data-search="12760 hyderabad express">
+
+                    <div>
+                        <strong>12760</strong>
+                        <small>Hyderabad Express</small>
+                    </div>
+
+                    <div>
+                        Hyderabad → Chennai
+                    </div>
+
+                    <div>
+                        09:00 AM
+                    </div>
+
+                    <div>
+                        09:15 AM
+                    </div>
+
+                    <div>
+                        <strong>6</strong>
+                    </div>
+
+                    <div>
+                        <span class="status on-time">
+                            On Time
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="train-row"
+                    data-search="12028 shatabdi express">
+
+                    <div>
+                        <strong>12028</strong>
+                        <small>Shatabdi Express</small>
+                    </div>
+
+                    <div>
+                        Bengaluru → Chennai
+                    </div>
+
+                    <div>
+                        11:30 AM
+                    </div>
+
+                    <div>
+                        11:45 AM
+                    </div>
+
+                    <div>
+                        <strong>1</strong>
+                    </div>
+
+                    <div>
+                        <span class="status arriving">
+                            Arriving
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="train-row"
+                    data-search="12640 kovai express">
+
+                    <div>
+                        <strong>12640</strong>
+                        <small>Kovai Express</small>
+                    </div>
+
+                    <div>
+                        Chennai → Coimbatore
+                    </div>
+
+                    <div>
+                        01:00 PM
+                    </div>
+
+                    <div>
+                        01:20 PM
+                    </div>
+
+                    <div>
+                        <strong>5</strong>
+                    </div>
+
+                    <div>
+                        <span class="status on-time">
+                            On Time
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="summary-section">
+
+            <div class="summary-grid">
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        🚆
+                    </div>
+
+                    <h3>
+                        24
+                    </h3>
+
+                    <p>
+                        Trains Today
+                    </p>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        ✓
+                    </div>
+
+                    <h3>
+                        18
+                    </h3>
+
+                    <p>
+                        Running On Time
+                    </p>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        ⏱
+                    </div>
+
+                    <h3>
+                        4
+                    </h3>
+
+                    <p>
+                        Delayed Trains
+                    </p>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        📍
+                    </div>
+
+                    <h3>
+                        2
+                    </h3>
+
+                    <p>
+                        Arriving Now
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="routes-section" id="routes">
+
+            <div class="section-title">
+
+                <span>
+                    POPULAR ROUTES
+                </span>
+
+                <h2>
+                    Major Train Routes
+                </h2>
+
+            </div>
+
+
+            <div class="route-grid">
+
+                <div class="route-card">
+
+                    <div class="route-icon">
+                        🚆
+                    </div>
+
+                    <h3>
+                        Chennai → Bengaluru
+                    </h3>
+
+                    <p>
+                        12 trains available today
+                    </p>
+
+                    <button onclick="showRoute('Chennai to Bengaluru')">
+                        View Route
+                    </button>
+
+                </div>
+
+
+                <div class="route-card">
+
+                    <div class="route-icon">
+                        🚆
+                    </div>
+
+                    <h3>
+                        Chennai → Hyderabad
+                    </h3>
+
+                    <p>
+                        8 trains available today
+                    </p>
+
+                    <button onclick="showRoute('Chennai to Hyderabad')">
+                        View Route
+                    </button>
+
+                </div>
+
+
+                <div class="route-card">
+
+                    <div class="route-icon">
+                        🚆
+                    </div>
+
+                    <h3>
+                        Chennai → Coimbatore
+                    </h3>
+
+                    <p>
+                        10 trains available today
+                    </p>
+
+                    <button onclick="showRoute('Chennai to Coimbatore')">
+                        View Route
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="help" id="help">
+
+            <h2>
+                Need Help?
+            </h2>
+
+            <p>
+                Check train status, platform information
+                and live railway updates easily.
+            </p>
+
+            <button onclick="showHelp()">
+                Contact Support
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-logo">
+            RailBoard
+        </div>
+
+        <p>
+            © 2026 RailBoard. Live train information made simple.
+        </p>
+
+    </footer>
+
+
+    <script src="./script.js"></script>
+
+</body>
+</html>

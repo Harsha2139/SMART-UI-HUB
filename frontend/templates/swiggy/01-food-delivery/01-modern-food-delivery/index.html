@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Swiggy - Modern Food Delivery</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo">
+            <span>swiggy</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#restaurants">Restaurants</a>
+            <a href="#offers">Offers</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <button class="login-btn" id="loginBtn">
+            Login
+        </button>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <span class="small-title">
+                FOOD DELIVERY
+            </span>
+
+            <h1>
+                Good food.
+                <br>
+                Good mood.
+            </h1>
+
+            <p>
+                Discover delicious food from your favourite
+                restaurants and get it delivered to your doorstep.
+            </p>
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search for restaurants or dishes..."
+                >
+
+                <button id="searchBtn">
+                    Search
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="food-circle">
+                🍔
+            </div>
+
+            <div class="floating-card card-one">
+                ⭐ 4.8 Rating
+            </div>
+
+            <div class="floating-card card-two">
+                🚴 Fast Delivery
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+    <section class="categories">
+
+        <div class="section-heading">
+
+            <span>EXPLORE</span>
+
+            <h2>
+                What's on your mind?
+            </h2>
+
+        </div>
+
+
+        <div class="category-grid">
+
+            <div class="category" data-food="Pizza">
+                <div class="category-icon">🍕</div>
+                <h3>Pizza</h3>
+                <p>Hot & cheesy</p>
+            </div>
+
+            <div class="category" data-food="Burger">
+                <div class="category-icon">🍔</div>
+                <h3>Burgers</h3>
+                <p>Juicy & tasty</p>
+            </div>
+
+            <div class="category" data-food="Biryani">
+                <div class="category-icon">🍛</div>
+                <h3>Biryani</h3>
+                <p>Rich & flavourful</p>
+            </div>
+
+            <div class="category" data-food="Chinese">
+                <div class="category-icon">🍜</div>
+                <h3>Chinese</h3>
+                <p>Fresh & spicy</p>
+            </div>
+
+            <div class="category" data-food="Dessert">
+                <div class="category-icon">🍰</div>
+                <h3>Desserts</h3>
+                <p>Sweet treats</p>
+            </div>
+
+            <div class="category" data-food="South Indian">
+                <div class="category-icon">🥞</div>
+                <h3>South Indian</h3>
+                <p>Traditional taste</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESTAURANTS -->
+    <section class="restaurants" id="restaurants">
+
+        <div class="section-heading restaurant-heading">
+
+            <div>
+                <span>TOP PICKS</span>
+
+                <h2>
+                    Popular restaurants
+                </h2>
+            </div>
+
+            <button id="viewAllBtn">
+                View All →
+            </button>
+
+        </div>
+
+
+        <div class="restaurant-grid" id="restaurantGrid">
+
+            <article class="restaurant-card">
+
+                <div class="restaurant-image pizza">
+                    🍕
+                </div>
+
+                <div class="restaurant-info">
+
+                    <div class="restaurant-title">
+                        <h3>Pizza Paradise</h3>
+                        <span>★ 4.7</span>
+                    </div>
+
+                    <p>Pizza, Italian, Fast Food</p>
+
+                    <div class="restaurant-bottom">
+                        <span>₹250 for one</span>
+                        <span>30 min</span>
+                    </div>
+
+                    <button
+                        class="order-btn"
+                        data-name="Pizza Paradise"
+                    >
+                        Order Now
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <article class="restaurant-card">
+
+                <div class="restaurant-image biryani">
+                    🍛
+                </div>
+
+                <div class="restaurant-info">
+
+                    <div class="restaurant-title">
+                        <h3>Biryani House</h3>
+                        <span>★ 4.8</span>
+                    </div>
+
+                    <p>Biryani, Indian, Mughlai</p>
+
+                    <div class="restaurant-bottom">
+                        <span>₹220 for one</span>
+                        <span>25 min</span>
+                    </div>
+
+                    <button
+                        class="order-btn"
+                        data-name="Biryani House"
+                    >
+                        Order Now
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <article class="restaurant-card">
+
+                <div class="restaurant-image burger">
+                    🍔
+                </div>
+
+                <div class="restaurant-info">
+
+                    <div class="restaurant-title">
+                        <h3>Burger Street</h3>
+                        <span>★ 4.6</span>
+                    </div>
+
+                    <p>Burgers, American, Fast Food</p>
+
+                    <div class="restaurant-bottom">
+                        <span>₹180 for one</span>
+                        <span>28 min</span>
+                    </div>
+
+                    <button
+                        class="order-btn"
+                        data-name="Burger Street"
+                    >
+                        Order Now
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <article class="restaurant-card">
+
+                <div class="restaurant-image chinese">
+                    🍜
+                </div>
+
+                <div class="restaurant-info">
+
+                    <div class="restaurant-title">
+                        <h3>Wok Express</h3>
+                        <span>★ 4.5</span>
+                    </div>
+
+                    <p>Chinese, Noodles, Asian</p>
+
+                    <div class="restaurant-bottom">
+                        <span>₹200 for one</span>
+                        <span>32 min</span>
+                    </div>
+
+                    <button
+                        class="order-btn"
+                        data-name="Wok Express"
+                    >
+                        Order Now
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- OFFER -->
+    <section class="offer" id="offers">
+
+        <div class="offer-content">
+
+            <span>LIMITED TIME OFFER</span>
+
+            <h2>
+                Get ₹100 OFF
+                <br>
+                on your first order.
+            </h2>
+
+            <p>
+                Use the code below while placing your first order.
+            </p>
+
+            <div class="coupon">
+
+                <strong id="couponCode">
+                    FIRST100
+                </strong>
+
+                <button id="copyBtn">
+                    Copy
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="offer-symbol">
+            ₹
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <div>
+
+            <span>WHY SWIGGY?</span>
+
+            <h2>
+                Everything you love,
+                <br>
+                delivered faster.
+            </h2>
+
+        </div>
+
+
+        <div class="about-features">
+
+            <div>
+                <strong>10K+</strong>
+                <span>Restaurants</span>
+            </div>
+
+            <div>
+                <strong>30 min</strong>
+                <span>Average delivery</span>
+            </div>
+
+            <div>
+                <strong>4.7★</strong>
+                <span>Customer rating</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            swiggy
+        </div>
+
+        <p>
+            © 2026 Swiggy Food Delivery Template
+        </p>
+
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#restaurants">Restaurants</a>
+            <a href="#offers">Offers</a>
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>

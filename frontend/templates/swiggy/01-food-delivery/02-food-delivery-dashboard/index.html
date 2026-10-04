@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiggy Delivery Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="logo">swiggy</div>
+
+        <p class="menu-title">MENU</p>
+
+        <nav>
+            <a href="#dashboard" class="active">▦ Dashboard</a>
+            <a href="#orders">🛍 Orders</a>
+            <a href="#customers">👥 Customers</a>
+            <a href="#restaurants">🍴 Restaurants</a>
+            <a href="#analytics">📊 Analytics</a>
+            <a href="#settings">⚙ Settings</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="user">
+                <div class="avatar">N</div>
+                <div>
+                    <strong>Navadeep</strong>
+                    <small>Administrator</small>
+                </div>
+            </div>
+
+            <button id="logoutBtn">Logout</button>
+        </div>
+
+    </aside>
+
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <div>
+                <p>Welcome back, Navadeep</p>
+                <h1>Delivery Dashboard</h1>
+            </div>
+
+            <div class="top-buttons">
+                <button id="notificationBtn">🔔</button>
+                <button class="profile">N</button>
+            </div>
+
+        </header>
+
+
+        <!-- DASHBOARD -->
+
+        <section id="dashboard" class="stats">
+
+            <div class="stat-card">
+                <div class="icon orange">🛍</div>
+                <div>
+                    <p>Total Orders</p>
+                    <h2>12,480</h2>
+                    <span>+12.5%</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="icon green">₹</div>
+                <div>
+                    <p>Total Revenue</p>
+                    <h2>₹18.6L</h2>
+                    <span>+8.2%</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="icon blue">🚴</div>
+                <div>
+                    <p>Deliveries</p>
+                    <h2>10,920</h2>
+                    <span>+15.4%</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="icon purple">👥</div>
+                <div>
+                    <p>Customers</p>
+                    <h2>8,640</h2>
+                    <span>+6.8%</span>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ANALYTICS -->
+
+        <section id="analytics" class="panel">
+
+            <div class="panel-title">
+                <div>
+                    <small>PERFORMANCE</small>
+                    <h2>Orders Analytics</h2>
+                </div>
+
+                <select id="period">
+                    <option>Last 7 Days</option>
+                    <option>Last 30 Days</option>
+                    <option>Last 90 Days</option>
+                </select>
+            </div>
+
+            <div class="chart">
+
+                <div class="bar-item">
+                    <div class="bar" style="height:55%"></div>
+                    <small>Mon</small>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar" style="height:72%"></div>
+                    <small>Tue</small>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar" style="height:60%"></div>
+                    <small>Wed</small>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar" style="height:85%"></div>
+                    <small>Thu</small>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar" style="height:70%"></div>
+                    <small>Fri</small>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar" style="height:95%"></div>
+                    <small>Sat</small>
+                </div>
+
+                <div class="bar-item">
+                    <div class="bar" style="height:78%"></div>
+                    <small>Sun</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ORDERS -->
+
+        <section id="orders" class="panel">
+
+            <div class="panel-title">
+                <div>
+                    <small>ORDERS</small>
+                    <h2>Recent Orders</h2>
+                </div>
+
+                <button id="allOrders">View All</button>
+            </div>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Order</th>
+                            <th>Customer</th>
+                            <th>Restaurant</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>#SW98241</td>
+                            <td>Rahul Sharma</td>
+                            <td>Pizza Paradise</td>
+                            <td>₹620</td>
+                            <td><span class="delivered">Delivered</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#SW98240</td>
+                            <td>Ananya Rao</td>
+                            <td>Biryani House</td>
+                            <td>₹480</td>
+                            <td><span class="preparing">Preparing</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#SW98239</td>
+                            <td>Kiran Kumar</td>
+                            <td>Burger Street</td>
+                            <td>₹350</td>
+                            <td><span class="delivered">Delivered</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#SW98238</td>
+                            <td>Sneha Reddy</td>
+                            <td>Wok Express</td>
+                            <td>₹710</td>
+                            <td><span class="cancelled">Cancelled</span></td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- CUSTOMERS -->
+
+        <section id="customers" class="panel">
+
+            <div class="panel-title">
+                <div>
+                    <small>CUSTOMERS</small>
+                    <h2>Customer Overview</h2>
+                </div>
+
+                <button id="customerBtn">View Customers</button>
+            </div>
+
+            <div class="customer-box">
+
+                <div>
+                    <strong>8,640</strong>
+                    <p>Total Customers</p>
+                </div>
+
+                <div>
+                    <strong>1,240</strong>
+                    <p>New This Month</p>
+                </div>
+
+                <div>
+                    <strong>92%</strong>
+                    <p>Active Customers</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESTAURANTS -->
+
+        <section id="restaurants" class="panel">
+
+            <div class="panel-title">
+                <div>
+                    <small>RESTAURANTS</small>
+                    <h2>Top Restaurants</h2>
+                </div>
+
+                <button id="restaurantBtn">View Restaurants</button>
+            </div>
+
+            <div class="restaurant-grid">
+
+                <div class="restaurant">
+                    <span>🍕</span>
+                    <div>
+                        <strong>Pizza Paradise</strong>
+                        <p>Rating: 4.8 ★</p>
+                    </div>
+                </div>
+
+                <div class="restaurant">
+                    <span>🍛</span>
+                    <div>
+                        <strong>Biryani House</strong>
+                        <p>Rating: 4.7 ★</p>
+                    </div>
+                </div>
+
+                <div class="restaurant">
+                    <span>🍔</span>
+                    <div>
+                        <strong>Burger Street</strong>
+                        <p>Rating: 4.6 ★</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SETTINGS -->
+
+        <section id="settings" class="panel">
+
+            <div class="panel-title">
+                <div>
+                    <small>ACCOUNT</small>
+                    <h2>Settings</h2>
+                </div>
+            </div>
+
+            <button id="settingsBtn">
+                Open Settings
+            </button>
+
+        </section>
+
+
+        <footer>
+            Swiggy Delivery Dashboard
+            <span id="time"></span>
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

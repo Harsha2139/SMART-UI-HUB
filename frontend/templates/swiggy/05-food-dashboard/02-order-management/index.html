@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Management</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Swiggy Orders</div>
+
+    <nav>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#orders">Orders</a>
+        <a href="#tracking">Tracking</a>
+        <a href="#reports">Reports</a>
+    </nav>
+
+    <button onclick="adminLogin()">Admin</button>
+</header>
+
+<section class="dashboard" id="dashboard">
+
+    <div class="welcome">
+        <div>
+            <h1>Order Management</h1>
+            <p>Track and manage food delivery orders.</p>
+        </div>
+
+        <button class="refresh-btn" onclick="refreshOrders()">
+            Refresh Orders
+        </button>
+    </div>
+
+    <div class="stats">
+
+        <div class="stat-card">
+            <div class="icon">📦</div>
+            <div>
+                <p>Total Orders</p>
+                <h2 id="totalOrders">1,248</h2>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="icon">⏳</div>
+            <div>
+                <p>Pending</p>
+                <h2 id="pendingOrders">24</h2>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="icon">🚴</div>
+            <div>
+                <p>On Delivery</p>
+                <h2 id="deliveryOrders">38</h2>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="icon">✓</div>
+            <div>
+                <p>Delivered</p>
+                <h2 id="deliveredOrders">1,186</h2>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="orders-section" id="orders">
+
+    <div class="section-header">
+
+        <div>
+            <h2>Order Management</h2>
+            <p>Search and manage customer orders.</p>
+        </div>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search order..."
+            onkeyup="searchOrders()"
+        >
+
+    </div>
+
+    <div class="filters">
+
+        <button onclick="filterOrders('All')">All</button>
+        <button onclick="filterOrders('Pending')">Pending</button>
+        <button onclick="filterOrders('Preparing')">Preparing</button>
+        <button onclick="filterOrders('On Delivery')">On Delivery</button>
+        <button onclick="filterOrders('Delivered')">Delivered</button>
+
+    </div>
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Restaurant</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="orderTable">
+
+                <tr data-status="Pending">
+                    <td>#SW2001</td>
+                    <td>Rahul</td>
+                    <td>Food Palace</td>
+                    <td>₹450</td>
+                    <td>
+                        <span class="status pending">
+                            Pending
+                        </span>
+                    </td>
+                    <td>
+                        <button
+                            class="action-btn"
+                            onclick="updateOrder(this)">
+                            Update
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="Preparing">
+                    <td>#SW2002</td>
+                    <td>Anjali</td>
+                    <td>Spice Hub</td>
+                    <td>₹320</td>
+                    <td>
+                        <span class="status preparing">
+                            Preparing
+                        </span>
+                    </td>
+                    <td>
+                        <button
+                            class="action-btn"
+                            onclick="updateOrder(this)">
+                            Update
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="On Delivery">
+                    <td>#SW2003</td>
+                    <td>Arjun</td>
+                    <td>Pizza Corner</td>
+                    <td>₹580</td>
+                    <td>
+                        <span class="status delivery">
+                            On Delivery
+                        </span>
+                    </td>
+                    <td>
+                        <button
+                            class="action-btn"
+                            onclick="updateOrder(this)">
+                            Update
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="Delivered">
+                    <td>#SW2004</td>
+                    <td>Priya</td>
+                    <td>Biryani House</td>
+                    <td>₹390</td>
+                    <td>
+                        <span class="status delivered">
+                            Delivered
+                        </span>
+                    </td>
+                    <td>
+                        <button
+                            class="action-btn"
+                            onclick="viewOrder(this)">
+                            View
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="Preparing">
+                    <td>#SW2005</td>
+                    <td>Vikram</td>
+                    <td>Fresh Kitchen</td>
+                    <td>₹275</td>
+                    <td>
+                        <span class="status preparing">
+                            Preparing
+                        </span>
+                    </td>
+                    <td>
+                        <button
+                            class="action-btn"
+                            onclick="updateOrder(this)">
+                            Update
+                        </button>
+                    </td>
+                </tr>
+
+                <tr data-status="Delivered">
+                    <td>#SW2006</td>
+                    <td>Neha</td>
+                    <td>Urban Cafe</td>
+                    <td>₹510</td>
+                    <td>
+                        <span class="status delivered">
+                            Delivered
+                        </span>
+                    </td>
+                    <td>
+                        <button
+                            class="action-btn"
+                            onclick="viewOrder(this)">
+                            View
+                        </button>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+<section class="tracking" id="tracking">
+
+    <h2>Live Order Tracking</h2>
+
+    <div class="tracking-grid">
+
+        <div class="tracking-card">
+            <div class="tracking-icon">🍳</div>
+            <h3>#SW2002</h3>
+            <p>Spice Hub</p>
+            <strong>Preparing Food</strong>
+
+            <div class="progress">
+                <span style="width: 45%;"></span>
+            </div>
+
+            <button onclick="trackOrder('SW2002')">
+                Track Order
+            </button>
+        </div>
+
+        <div class="tracking-card">
+            <div class="tracking-icon">🚴</div>
+            <h3>#SW2003</h3>
+            <p>Pizza Corner</p>
+            <strong>Delivery Partner On The Way</strong>
+
+            <div class="progress">
+                <span style="width: 75%;"></span>
+            </div>
+
+            <button onclick="trackOrder('SW2003')">
+                Track Order
+            </button>
+        </div>
+
+        <div class="tracking-card">
+            <div class="tracking-icon">✓</div>
+            <h3>#SW2004</h3>
+            <p>Biryani House</p>
+            <strong>Order Delivered</strong>
+
+            <div class="progress">
+                <span style="width: 100%;"></span>
+            </div>
+
+            <button onclick="trackOrder('SW2004')">
+                View Order
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="reports" id="reports">
+
+    <h2>Order Reports</h2>
+
+    <div class="report-grid">
+
+        <div class="report-card">
+            <h3>Today's Orders</h3>
+            <strong>428</strong>
+            <p>Orders received today</p>
+        </div>
+
+        <div class="report-card">
+            <h3>Today's Revenue</h3>
+            <strong>₹84,650</strong>
+            <p>Total revenue generated</p>
+        </div>
+
+        <div class="report-card">
+            <h3>Average Order</h3>
+            <strong>₹198</strong>
+            <p>Average order value</p>
+        </div>
+
+        <div class="report-card">
+            <h3>Success Rate</h3>
+            <strong>96%</strong>
+            <p>Successfully delivered orders</p>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+    <h3>Swiggy Order Management</h3>
+    <p>Food delivery order management system</p>
+    <p>© 2026 Swiggy Dashboard</p>
+</footer>
+
+<script src="./script.js"></script>
+
+</body>
+</html>

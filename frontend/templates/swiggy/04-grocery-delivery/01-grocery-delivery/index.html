@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Grocery Delivery</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="logo">swiggy</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#products">Products</a>
+            <a href="#cart">Cart</a>
+        </nav>
+
+        <button id="loginBtn" type="button">
+            Login
+        </button>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="tag">FRESH GROCERIES AT YOUR DOOR</p>
+
+            <h1>
+                Fresh groceries,
+                <span>delivered fast.</span>
+            </h1>
+
+            <p class="description">
+                Buy fresh vegetables, fruits, dairy products and
+                everyday essentials from the comfort of your home.
+            </p>
+
+            <button id="shopBtn" type="button">
+                Start Shopping
+            </button>
+
+        </div>
+
+        <div class="hero-image">
+            🛒
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+
+    <section class="categories" id="categories">
+
+        <div class="section-title">
+
+            <p>SHOP BY CATEGORY</p>
+
+            <h2>What do you need today?</h2>
+
+        </div>
+
+
+        <div class="category-grid">
+
+            <button class="categoryBtn" data-category="Fruits" type="button">
+                <span>🍎</span>
+                <strong>Fruits</strong>
+            </button>
+
+            <button class="categoryBtn" data-category="Vegetables" type="button">
+                <span>🥦</span>
+                <strong>Vegetables</strong>
+            </button>
+
+            <button class="categoryBtn" data-category="Dairy" type="button">
+                <span>🥛</span>
+                <strong>Dairy</strong>
+            </button>
+
+            <button class="categoryBtn" data-category="Bakery" type="button">
+                <span>🍞</span>
+                <strong>Bakery</strong>
+            </button>
+
+            <button class="categoryBtn" data-category="Beverages" type="button">
+                <span>🥤</span>
+                <strong>Beverages</strong>
+            </button>
+
+            <button class="categoryBtn" data-category="Snacks" type="button">
+                <span>🍪</span>
+                <strong>Snacks</strong>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+
+    <section class="products" id="products">
+
+        <div class="section-heading">
+
+            <div>
+                <p>POPULAR PRODUCTS</p>
+                <h2>Fresh picks for you</h2>
+            </div>
+
+            <span id="productMessage">
+                6 products
+            </span>
+
+        </div>
+
+
+        <div class="product-grid">
+
+
+            <!-- PRODUCT 1 -->
+
+            <div class="product-card">
+
+                <div class="product-image apple">
+                    🍎
+                </div>
+
+                <div class="product-info">
+
+                    <small>Fruits</small>
+
+                    <h3>Fresh Apples</h3>
+
+                    <p>1 kg</p>
+
+                    <div class="product-bottom">
+
+                        <strong>₹149</strong>
+
+                        <button
+                            class="addBtn"
+                            data-name="Fresh Apples"
+                            data-price="149"
+                            type="button">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="product-card">
+
+                <div class="product-image tomato">
+                    🍅
+                </div>
+
+                <div class="product-info">
+
+                    <small>Vegetables</small>
+
+                    <h3>Fresh Tomatoes</h3>
+
+                    <p>1 kg</p>
+
+                    <div class="product-bottom">
+
+                        <strong>₹59</strong>
+
+                        <button
+                            class="addBtn"
+                            data-name="Fresh Tomatoes"
+                            data-price="59"
+                            type="button">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="product-card">
+
+                <div class="product-image milk">
+                    🥛
+                </div>
+
+                <div class="product-info">
+
+                    <small>Dairy</small>
+
+                    <h3>Fresh Milk</h3>
+
+                    <p>1 litre</p>
+
+                    <div class="product-bottom">
+
+                        <strong>₹65</strong>
+
+                        <button
+                            class="addBtn"
+                            data-name="Fresh Milk"
+                            data-price="65"
+                            type="button">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+
+            <div class="product-card">
+
+                <div class="product-image bread">
+                    🍞
+                </div>
+
+                <div class="product-info">
+
+                    <small>Bakery</small>
+
+                    <h3>Brown Bread</h3>
+
+                    <p>400 g</p>
+
+                    <div class="product-bottom">
+
+                        <strong>₹45</strong>
+
+                        <button
+                            class="addBtn"
+                            data-name="Brown Bread"
+                            data-price="45"
+                            type="button">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 5 -->
+
+            <div class="product-card">
+
+                <div class="product-image juice">
+                    🧃
+                </div>
+
+                <div class="product-info">
+
+                    <small>Beverages</small>
+
+                    <h3>Orange Juice</h3>
+
+                    <p>1 litre</p>
+
+                    <div class="product-bottom">
+
+                        <strong>₹110</strong>
+
+                        <button
+                            class="addBtn"
+                            data-name="Orange Juice"
+                            data-price="110"
+                            type="button">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 6 -->
+
+            <div class="product-card">
+
+                <div class="product-image biscuits">
+                    🍪
+                </div>
+
+                <div class="product-info">
+
+                    <small>Snacks</small>
+
+                    <h3>Chocolate Biscuits</h3>
+
+                    <p>300 g</p>
+
+                    <div class="product-bottom">
+
+                        <strong>₹80</strong>
+
+                        <button
+                            class="addBtn"
+                            data-name="Chocolate Biscuits"
+                            data-price="80"
+                            type="button">
+                            Add
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CART -->
+
+    <section class="cart-section" id="cart">
+
+        <div class="cart-container">
+
+            <div class="cart-header">
+
+                <div>
+                    <p>YOUR SHOPPING CART</p>
+                    <h2>My Cart</h2>
+                </div>
+
+                <span id="cartCount">
+                    0 items
+                </span>
+
+            </div>
+
+
+            <div id="cartItems">
+
+                <div class="empty-cart">
+
+                    <div>🛒</div>
+
+                    <h3>Your cart is empty</h3>
+
+                    <p>
+                        Add groceries to start shopping.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="cart-total">
+
+                <span>Total</span>
+
+                <strong id="cartTotal">
+                    ₹0
+                </strong>
+
+            </div>
+
+
+            <button id="checkoutBtn" type="button">
+                Proceed to Checkout
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- OFFER -->
+
+    <section class="offer">
+
+        <div>
+
+            <p>GROCERY OFFER</p>
+
+            <h2>
+                Get ₹100 OFF on your first grocery order
+            </h2>
+
+            <p>
+                Use coupon code:
+                <strong>GROCERY100</strong>
+            </p>
+
+            <button id="offerBtn" type="button">
+                Apply Offer
+            </button>
+
+        </div>
+
+        <div class="offer-icon">
+            🛍️
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            swiggy
+        </div>
+
+        <p>
+            Fresh groceries delivered to your door
+        </p>
+
+        <p>
+            © 2026 All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>

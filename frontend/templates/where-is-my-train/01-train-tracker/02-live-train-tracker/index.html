@@ -1,0 +1,216 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Train Tracker</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">RailLive</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#live">Live Status</a>
+        <a href="#route">Route</a>
+        <a href="#alerts">Alerts</a>
+    </nav>
+
+    <button onclick="login()">Login</button>
+</header>
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <span>LIVE TRAIN TRACKING</span>
+
+        <h1>Know where your train is right now</h1>
+
+        <p>
+            Track train location, speed, station updates
+            and expected arrival time.
+        </p>
+
+        <button onclick="startTracking()">
+            Start Live Tracking
+        </button>
+
+    </div>
+
+</section>
+
+<section class="live-section" id="live">
+
+    <div class="section-title">
+        <h2>Live Train Status</h2>
+        <p>Enter your train number to see its current journey.</p>
+    </div>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="trainNumber"
+            placeholder="Enter train number"
+        >
+
+        <button onclick="trackTrain()">
+            Track Train
+        </button>
+
+    </div>
+
+    <div id="trainResult">
+
+        <div class="empty-result">
+            <div class="big-icon">🚆</div>
+            <h3>No train selected</h3>
+            <p>Enter a train number above to begin tracking.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="route-section" id="route">
+
+    <div class="section-title">
+        <h2>Journey Route</h2>
+        <p>Example route for the selected train.</p>
+    </div>
+
+    <div class="route-card">
+
+        <div class="route-station completed">
+            <div class="station-circle">✓</div>
+            <div>
+                <h3>Chennai Central</h3>
+                <p>08:00 AM</p>
+            </div>
+        </div>
+
+        <div class="route-line">
+            <span></span>
+        </div>
+
+        <div class="route-station active">
+            <div class="station-circle">●</div>
+            <div>
+                <h3>Katpadi Junction</h3>
+                <p>Current Station</p>
+            </div>
+        </div>
+
+        <div class="route-line">
+            <span class="future"></span>
+        </div>
+
+        <div class="route-station">
+            <div class="station-circle">○</div>
+            <div>
+                <h3>Bengaluru</h3>
+                <p>06:45 PM</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="info-section">
+
+    <div class="info-grid">
+
+        <div class="info-card">
+            <div class="info-icon">📍</div>
+            <h3>Current Location</h3>
+            <strong id="location">Katpadi Junction</strong>
+            <p>Train is currently here</p>
+        </div>
+
+        <div class="info-card">
+            <div class="info-icon">⚡</div>
+            <h3>Train Speed</h3>
+            <strong id="speed">82 km/h</strong>
+            <p>Current estimated speed</p>
+        </div>
+
+        <div class="info-card">
+            <div class="info-icon">⏱️</div>
+            <h3>Expected Arrival</h3>
+            <strong id="arrival">06:45 PM</strong>
+            <p>Estimated destination arrival</p>
+        </div>
+
+        <div class="info-card">
+            <div class="info-icon">📶</div>
+            <h3>Live Status</h3>
+            <strong class="online">Running</strong>
+            <p>Last updated just now</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="alerts" id="alerts">
+
+    <div class="section-title">
+        <h2>Travel Alerts</h2>
+        <p>Important information about your journey.</p>
+    </div>
+
+    <div class="alert-list">
+
+        <div class="alert-card normal">
+            <span>✓</span>
+            <div>
+                <h3>Train Running Normally</h3>
+                <p>
+                    The train is currently running according
+                    to the expected schedule.
+                </p>
+            </div>
+        </div>
+
+        <div class="alert-card warning">
+            <span>!</span>
+            <div>
+                <h3>Minor Delay</h3>
+                <p>
+                    The train may reach the destination
+                    approximately 10 minutes late.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <button class="refresh-btn" onclick="refreshStatus()">
+        Refresh Live Status
+    </button>
+
+</section>
+
+<footer>
+
+    <h3>RailLive</h3>
+
+    <p>
+        Modern live train tracking interface
+    </p>
+
+    <p>
+        © 2026 RailLive
+    </p>
+
+</footer>
+
+<script src="./script.js"></script>
+
+</body>
+</html>

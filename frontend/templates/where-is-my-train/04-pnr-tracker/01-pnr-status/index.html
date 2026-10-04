@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PNR Status Tracker</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="logo">
+            RailPNR
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#pnr">PNR Status</a>
+            <a href="#features">Features</a>
+            <a href="#help">Help</a>
+        </nav>
+
+        <button class="login-btn" onclick="login()">
+            Login
+        </button>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <span class="badge">
+                    INDIAN RAILWAY PNR
+                </span>
+
+                <h1>
+                    Check Your
+                    <span>PNR Status</span>
+                </h1>
+
+                <p>
+                    Enter your 10-digit PNR number to check
+                    your booking status, coach and seat details.
+                </p>
+
+                <button
+                    class="hero-btn"
+                    onclick="goToPNR()">
+
+                    Check PNR Status
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section class="pnr-section" id="pnr">
+
+            <div class="section-title">
+
+                <span>
+                    PNR TRACKER
+                </span>
+
+                <h2>
+                    Check PNR Status
+                </h2>
+
+                <p>
+                    Enter your 10-digit PNR number below.
+                </p>
+
+            </div>
+
+
+            <div class="pnr-card">
+
+                <div class="input-group">
+
+                    <label for="pnrNumber">
+                        PNR Number
+                    </label>
+
+                    <input
+                        type="text"
+                        id="pnrNumber"
+                        maxlength="10"
+                        placeholder="Enter 10-digit PNR">
+
+                </div>
+
+
+                <button
+                    class="check-btn"
+                    onclick="checkPNR()">
+
+                    Check Status
+
+                </button>
+
+            </div>
+
+
+            <div id="pnrResult"></div>
+
+        </section>
+
+
+        <section class="features" id="features">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🎫
+                </div>
+
+                <h3>
+                    Booking Details
+                </h3>
+
+                <p>
+                    View your train, journey and
+                    booking information.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    💺
+                </div>
+
+                <h3>
+                    Seat Information
+                </h3>
+
+                <p>
+                    Check coach, berth and passenger
+                    seat details.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📍
+                </div>
+
+                <h3>
+                    Journey Details
+                </h3>
+
+                <p>
+                    View boarding and destination
+                    station information.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="status-info">
+
+            <div class="section-title">
+
+                <span>
+                    STATUS TYPES
+                </span>
+
+                <h2>
+                    Understand Your PNR
+                </h2>
+
+            </div>
+
+
+            <div class="status-grid">
+
+                <div class="status-card confirmed">
+
+                    <div class="status-icon">
+                        ✓
+                    </div>
+
+                    <h3>
+                        Confirmed
+                    </h3>
+
+                    <p>
+                        Your seat has been confirmed.
+                    </p>
+
+                </div>
+
+
+                <div class="status-card waiting">
+
+                    <div class="status-icon">
+                        ⏳
+                    </div>
+
+                    <h3>
+                        Waiting List
+                    </h3>
+
+                    <p>
+                        Your ticket is currently
+                        on the waiting list.
+                    </p>
+
+                </div>
+
+
+                <div class="status-card rac">
+
+                    <div class="status-icon">
+                        🚆
+                    </div>
+
+                    <h3>
+                        RAC
+                    </h3>
+
+                    <p>
+                        Reservation Against Cancellation
+                        status.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="help" id="help">
+
+            <h2>
+                Need Help?
+            </h2>
+
+            <p>
+                Having trouble checking your PNR?
+                Our support team can help.
+            </p>
+
+            <button onclick="showHelp()">
+                Contact Support
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-logo">
+            RailPNR
+        </div>
+
+        <p>
+            © 2026 RailPNR. PNR information made simple.
+        </p>
+
+    </footer>
+
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>

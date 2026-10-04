@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMyShow - Movie Ticket Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">book<span>my</span>show</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#movies">Movies</a>
+        <a href="#booking">Booking</a>
+        <a href="#offers">Offers</a>
+    </nav>
+
+    <div class="header-actions">
+        <button class="city-btn" onclick="changeCity()">📍 Chennai</button>
+        <button onclick="login()">Sign In</button>
+    </div>
+</header>
+
+
+<!-- STARTING SECTION WITH FIRST POSTER -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-text">
+
+            <p class="tag">MOVIE TICKETS</p>
+
+            <h1>
+                Your movie.
+                <span>Your seat.</span>
+                Your experience.
+            </h1>
+
+            <p class="description">
+                Search movies, select your favourite theatre,
+                choose your seats and book your tickets in minutes.
+            </p>
+
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="movieSearch"
+                    placeholder="Search movie or theatre"
+                >
+
+                <button onclick="searchMovie()">Search</button>
+            </div>
+
+            <div class="hero-buttons">
+                <button onclick="startBooking()">Book Tickets</button>
+                <button class="outline-btn" onclick="showAllMovies()">
+                    Explore Movies
+                </button>
+            </div>
+
+        </div>
+
+
+        <!-- FIRST / MAIN POSTER -->
+        <div class="hero-poster">
+
+            <img
+                src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=85"
+                alt="Cinema movie poster">
+
+            <div class="poster-overlay">
+
+                <span>★ 4.8</span>
+
+                <h3>Movie Night</h3>
+
+                <p>Book your cinema experience today</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MOVIES -->
+<section class="movies" id="movies">
+
+    <div class="section-title">
+
+        <div>
+            <p class="tag">NOW SHOWING</p>
+            <h2>Popular movies</h2>
+        </div>
+
+        <button class="light-btn" onclick="showAllMovies()">
+            View All
+        </button>
+
+    </div>
+
+
+    <div class="movie-grid">
+
+        <div class="movie-card">
+
+            <div class="poster">
+                <img
+                    src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=85"
+                    alt="Action movie">
+
+                <span>★ 4.7</span>
+            </div>
+
+            <div class="movie-details">
+
+                <h3>Shadow Warriors</h3>
+
+                <p>Action • Thriller</p>
+
+                <small>2D • English</small>
+
+                <button onclick="selectMovie('Shadow Warriors')">
+                    Book Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="movie-card">
+
+            <div class="poster">
+                <img
+                    src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=600&q=85"
+                    alt="Drama movie">
+
+                <span>★ 4.5</span>
+            </div>
+
+            <div class="movie-details">
+
+                <h3>Last Journey</h3>
+
+                <p>Drama • Adventure</p>
+
+                <small>2D • English</small>
+
+                <button onclick="selectMovie('Last Journey')">
+                    Book Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="movie-card">
+
+            <div class="poster">
+                <img
+                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=85"
+                    alt="Adventure movie">
+
+                <span>★ 4.6</span>
+            </div>
+
+            <div class="movie-details">
+
+                <h3>Beyond The World</h3>
+
+                <p>Adventure • Fantasy</p>
+
+                <small>3D • English</small>
+
+                <button onclick="selectMovie('Beyond The World')">
+                    Book Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="movie-card">
+
+            <div class="poster">
+                <img
+                    src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=85"
+                    alt="Musical movie">
+
+                <span>★ 4.4</span>
+            </div>
+
+            <div class="movie-details">
+
+                <h3>Rhythm</h3>
+
+                <p>Musical • Romance</p>
+
+                <small>2D • Hindi</small>
+
+                <button onclick="selectMovie('Rhythm')">
+                    Book Now
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- BOOKING SECTION -->
+<section class="booking" id="booking">
+
+    <div class="booking-wrapper">
+
+        <div class="booking-heading">
+
+            <p class="tag">QUICK BOOKING</p>
+
+            <h2>Book your movie ticket</h2>
+
+            <p>
+                Choose your city, movie, date and theatre
+                to find available shows.
+            </p>
+
+        </div>
+
+
+        <div class="booking-form">
+
+            <label>City</label>
+
+            <select id="city">
+                <option value="">Select City</option>
+                <option>Chennai</option>
+                <option>Hyderabad</option>
+                <option>Bangalore</option>
+                <option>Mumbai</option>
+                <option>Delhi</option>
+            </select>
+
+
+            <label>Movie</label>
+
+            <select id="selectedMovie">
+                <option value="">Select Movie</option>
+                <option>Shadow Warriors</option>
+                <option>Last Journey</option>
+                <option>Beyond The World</option>
+                <option>Rhythm</option>
+            </select>
+
+
+            <label>Date</label>
+
+            <input type="date" id="date">
+
+
+            <label>Theatre</label>
+
+            <select id="theatre">
+                <option value="">Select Theatre</option>
+                <option>PVR Cinemas</option>
+                <option>INOX</option>
+                <option>AGS Cinemas</option>
+                <option>Cinepolis</option>
+            </select>
+
+
+            <button onclick="findShows()">
+                Find Available Shows
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- THEATRES -->
+<section class="theatres">
+
+    <div class="section-title">
+
+        <div>
+            <p class="tag">POPULAR CINEMAS</p>
+            <h2>Top theatres near you</h2>
+        </div>
+
+    </div>
+
+
+    <div class="theatre-grid">
+
+        <div class="theatre-card">
+
+            <div class="theatre-icon">🎬</div>
+
+            <div class="theatre-info">
+                <h3>PVR Cinemas</h3>
+                <p>VR Chennai • Anna Nagar</p>
+                <strong>★ 4.6</strong>
+            </div>
+
+            <button onclick="selectTheatre('PVR Cinemas')">
+                Shows
+            </button>
+
+        </div>
+
+
+        <div class="theatre-card">
+
+            <div class="theatre-icon">🎥</div>
+
+            <div class="theatre-info">
+                <h3>INOX</h3>
+                <p>Express Avenue • Royapettah</p>
+                <strong>★ 4.5</strong>
+            </div>
+
+            <button onclick="selectTheatre('INOX')">
+                Shows
+            </button>
+
+        </div>
+
+
+        <div class="theatre-card">
+
+            <div class="theatre-icon">🍿</div>
+
+            <div class="theatre-info">
+                <h3>AGS Cinemas</h3>
+                <p>T Nagar • Chennai</p>
+                <strong>★ 4.4</strong>
+            </div>
+
+            <button onclick="selectTheatre('AGS Cinemas')">
+                Shows
+            </button>
+
+        </div>
+
+
+        <div class="theatre-card">
+
+            <div class="theatre-icon">🎞️</div>
+
+            <div class="theatre-info">
+                <h3>Cinepolis</h3>
+                <p>OMR • Chennai</p>
+                <strong>★ 4.3</strong>
+            </div>
+
+            <button onclick="selectTheatre('Cinepolis')">
+                Shows
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- OFFERS -->
+<section class="offers" id="offers">
+
+    <p class="tag">SPECIAL OFFERS</p>
+
+    <h2>Save more on movie tickets</h2>
+
+    <div class="offer-grid">
+
+        <div class="offer-card">
+            <div class="offer-number">50%</div>
+            <h3>Weekend Offer</h3>
+            <p>Get discounts on selected weekend shows.</p>
+            <button onclick="showOffers()">View Offer</button>
+        </div>
+
+
+        <div class="offer-card">
+            <div class="offer-number">₹150</div>
+            <h3>Card Discount</h3>
+            <p>Get instant discount on selected cards.</p>
+            <button onclick="showOffers()">View Offer</button>
+        </div>
+
+
+        <div class="offer-card">
+            <div class="offer-number">B1G1</div>
+            <h3>Special Deal</h3>
+            <p>Buy one ticket and get another offer.</p>
+            <button onclick="showOffers()">View Offer</button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+            <div class="logo">book<span>my</span>show</div>
+            <p>Movies, events and entertainment.</p>
+        </div>
+
+        <div>
+            <h3>Movies</h3>
+            <a href="#movies">Now Showing</a>
+            <a href="#movies">Upcoming Movies</a>
+            <a href="#movies">Top Movies</a>
+        </div>
+
+        <div>
+            <h3>Booking</h3>
+            <a href="#booking">Movie Tickets</a>
+            <a href="#booking">Theatres</a>
+            <a href="#booking">Shows</a>
+        </div>
+
+        <div>
+            <h3>Support</h3>
+            <a href="#">Help Center</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+        </div>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 Movie Ticket Booking Template
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

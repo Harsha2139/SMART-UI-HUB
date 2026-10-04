@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BookMyShow - Theatre Booking</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="logo">
+        Book<span>My</span>Show
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#theatres">Theatres</a>
+        <a href="#movies">Movies</a>
+        <a href="#offers">Offers</a>
+    </nav>
+
+    <div class="header-actions">
+
+        <button onclick="changeCity()">
+            Chennai ▼
+        </button>
+
+        <button class="login" onclick="login()">
+            Sign In
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- STARTING SECTION -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <span class="small-title">
+            THEATRE BOOKING
+        </span>
+
+        <h1>
+            Find The Perfect
+            Theatre Near You
+        </h1>
+
+        <p>
+            Discover nearby theatres, check movie showtimes
+            and book your favourite seats.
+        </p>
+
+        <button onclick="findTheatres()">
+            Find Theatres
+        </button>
+
+    </div>
+
+
+    <!-- STARTING MOVIE POSTER -->
+
+    <div class="hero-poster">
+
+        <img
+            src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=700&q=85"
+            alt="Movie theatre poster">
+
+        <div class="poster-badge">
+            NOW SHOWING
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SEARCH -->
+
+<section class="search-section">
+
+    <div class="search-box">
+
+        <div class="search-title">
+
+            <h2>Find Shows Near You</h2>
+
+            <p>
+                Select your city, movie and date.
+            </p>
+
+        </div>
+
+
+        <div class="search-form">
+
+            <div class="form-group">
+
+                <label>City</label>
+
+                <select id="city">
+
+                    <option>Chennai</option>
+                    <option>Bengaluru</option>
+                    <option>Hyderabad</option>
+                    <option>Mumbai</option>
+                    <option>Delhi</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Movie</label>
+
+                <select id="movie">
+
+                    <option value="">
+                        Select Movie
+                    </option>
+
+                    <option>
+                        Shadow Warriors
+                    </option>
+
+                    <option>
+                        Lost World
+                    </option>
+
+                    <option>
+                        Midnight Story
+                    </option>
+
+                    <option>
+                        Hidden Truth
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Date</label>
+
+                <input
+                    type="date"
+                    id="date"
+                >
+
+            </div>
+
+
+            <button onclick="searchTheatres()">
+                Search Shows
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- THEATRES -->
+
+<section class="section" id="theatres">
+
+    <div class="section-header">
+
+        <div>
+            <h2>Popular Theatres</h2>
+
+            <p>
+                Find the best cinema experience near you
+            </p>
+        </div>
+
+        <button onclick="showAllTheatres()">
+            View All
+        </button>
+
+    </div>
+
+
+    <div class="theatre-grid">
+
+
+        <div class="theatre-card">
+
+            <div class="theatre-logo">
+                PVR
+            </div>
+
+            <div class="theatre-info">
+
+                <h3>PVR Cinemas</h3>
+
+                <p>
+                    Premium screens • Multiple locations
+                </p>
+
+                <span>
+                    Dolby Atmos
+                </span>
+
+                <button onclick="bookTheatre('PVR Cinemas')">
+                    View Shows
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="theatre-card">
+
+            <div class="theatre-logo">
+                INOX
+            </div>
+
+            <div class="theatre-info">
+
+                <h3>INOX</h3>
+
+                <p>
+                    Modern screens • Multiple locations
+                </p>
+
+                <span>
+                    IMAX Experience
+                </span>
+
+                <button onclick="bookTheatre('INOX')">
+                    View Shows
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="theatre-card">
+
+            <div class="theatre-logo">
+                CINE
+            </div>
+
+            <div class="theatre-info">
+
+                <h3>Cinepolis</h3>
+
+                <p>
+                    Luxury screens • Multiple locations
+                </p>
+
+                <span>
+                    Luxury Seating
+                </span>
+
+                <button onclick="bookTheatre('Cinepolis')">
+                    View Shows
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MOVIES -->
+
+<section class="section" id="movies">
+
+    <div class="section-header">
+
+        <div>
+
+            <h2>Movies Near You</h2>
+
+            <p>
+                Check available movies and showtimes
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="movie-grid">
+
+
+        <!-- MOVIE 1 -->
+
+        <div class="movie-card">
+
+            <div class="movie-poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=85"
+                    alt="Shadow Warriors">
+
+                <span>
+                    ★ 8.8
+                </span>
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>
+                    Shadow Warriors
+                </h3>
+
+                <p>
+                    Action • Adventure
+                </p>
+
+                <div class="showtimes">
+
+                    <button onclick="selectShow('10:30 AM')">
+                        10:30 AM
+                    </button>
+
+                    <button onclick="selectShow('2:00 PM')">
+                        2:00 PM
+                    </button>
+
+                    <button onclick="selectShow('7:30 PM')">
+                        7:30 PM
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MOVIE 2 -->
+
+        <div class="movie-card">
+
+            <div class="movie-poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=85"
+                    alt="Lost World">
+
+                <span>
+                    ★ 8.6
+                </span>
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>
+                    Lost World
+                </h3>
+
+                <p>
+                    Fantasy • Adventure
+                </p>
+
+                <div class="showtimes">
+
+                    <button onclick="selectShow('11:00 AM')">
+                        11:00 AM
+                    </button>
+
+                    <button onclick="selectShow('3:30 PM')">
+                        3:30 PM
+                    </button>
+
+                    <button onclick="selectShow('8:00 PM')">
+                        8:00 PM
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MOVIE 3 -->
+
+        <div class="movie-card">
+
+            <div class="movie-poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=600&q=85"
+                    alt="Hidden Truth">
+
+                <span>
+                    ★ 8.3
+                </span>
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>
+                    Hidden Truth
+                </h3>
+
+                <p>
+                    Mystery • Thriller
+                </p>
+
+                <div class="showtimes">
+
+                    <button onclick="selectShow('12:00 PM')">
+                        12:00 PM
+                    </button>
+
+                    <button onclick="selectShow('4:30 PM')">
+                        4:30 PM
+                    </button>
+
+                    <button onclick="selectShow('9:00 PM')">
+                        9:00 PM
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MOVIE 4 -->
+
+        <div class="movie-card">
+
+            <div class="movie-poster">
+
+                <img
+                    src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=85"
+                    alt="Midnight Story">
+
+                <span>
+                    ★ 8.9
+                </span>
+
+            </div>
+
+            <div class="movie-info">
+
+                <h3>
+                    Midnight Story
+                </h3>
+
+                <p>
+                    Romance • Drama
+                </p>
+
+                <div class="showtimes">
+
+                    <button onclick="selectShow('11:30 AM')">
+                        11:30 AM
+                    </button>
+
+                    <button onclick="selectShow('5:00 PM')">
+                        5:00 PM
+                    </button>
+
+                    <button onclick="selectShow('9:30 PM')">
+                        9:30 PM
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- OFFERS -->
+
+<section class="offers" id="offers">
+
+    <div>
+
+        <span>
+            SPECIAL OFFER
+        </span>
+
+        <h2>
+            Save More On Movie Tickets
+        </h2>
+
+        <p>
+            Get up to 20% OFF on selected theatre bookings.
+        </p>
+
+        <button onclick="showOffers()">
+            View Offers
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="section">
+
+    <div class="section-header">
+
+        <div>
+
+            <h2>
+                Theatre Experience
+            </h2>
+
+            <p>
+                Everything you need for a great movie experience
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="features">
+
+        <div class="feature">
+
+            <div>
+                🎬
+            </div>
+
+            <h3>
+                Premium Screens
+            </h3>
+
+            <p>
+                Enjoy movies on modern cinema screens.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div>
+                💺
+            </div>
+
+            <h3>
+                Comfortable Seats
+            </h3>
+
+            <p>
+                Choose your preferred seats before booking.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div>
+                🔊
+            </div>
+
+            <h3>
+                Great Sound
+            </h3>
+
+            <p>
+                Experience powerful cinema audio systems.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div>
+                🍿
+            </div>
+
+            <h3>
+                Food & Snacks
+            </h3>
+
+            <p>
+                Enjoy snacks while watching your movie.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+
+            <h2>
+                Book<span>My</span>Show
+            </h2>
+
+            <p>
+                Discover theatres, movies and showtimes
+                near you.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Explore
+            </h3>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#theatres">
+                Theatres
+            </a>
+
+            <a href="#movies">
+                Movies
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Support
+            </h3>
+
+            <a href="#">
+                Help Center
+            </a>
+
+            <a href="#">
+                Contact Us
+            </a>
+
+            <a href="#">
+                Terms
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Follow Us
+            </h3>
+
+            <a href="#">
+                Instagram
+            </a>
+
+            <a href="#">
+                Facebook
+            </a>
+
+            <a href="#">
+                YouTube
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 BookMyShow Theatre Booking Template
+
+    </div>
+
+</footer>
+
+
+<script src="./script.js"></script>
+
+</body>
+</html>

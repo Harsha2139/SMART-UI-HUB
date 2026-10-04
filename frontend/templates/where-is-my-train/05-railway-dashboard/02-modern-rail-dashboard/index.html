@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Modern Rail Dashboard</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="logo">
+            RailHub
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#trains">Trains</a>
+            <a href="#schedule">Schedule</a>
+        </nav>
+
+        <button class="login-btn" onclick="login()">
+            Login
+        </button>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="hero-content">
+
+                <span class="badge">
+                    SMART RAILWAY SYSTEM
+                </span>
+
+                <h1>
+                    Modern
+                    <span>Rail Dashboard</span>
+                </h1>
+
+                <p>
+                    Monitor railway operations, train schedules,
+                    passenger activity and live train information
+                    from one modern dashboard.
+                </p>
+
+                <button
+                    class="hero-btn"
+                    onclick="goToDashboard()">
+
+                    Explore Dashboard
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section class="dashboard-section" id="dashboard">
+
+            <div class="section-title">
+
+                <span>
+                    LIVE OVERVIEW
+                </span>
+
+                <h2>
+                    Railway Control Center
+                </h2>
+
+                <p>
+                    A quick overview of today's railway operations.
+                </p>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🚆
+                    </div>
+
+                    <div>
+
+                        <span>
+                            ACTIVE TRAINS
+                        </span>
+
+                        <h3>
+                            126
+                        </h3>
+
+                        <small>
+                            +8 today
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        👥
+                    </div>
+
+                    <div>
+
+                        <span>
+                            PASSENGERS
+                        </span>
+
+                        <h3>
+                            8,540
+                        </h3>
+
+                        <small>
+                            +12% today
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🛤️
+                    </div>
+
+                    <div>
+
+                        <span>
+                            PLATFORMS
+                        </span>
+
+                        <h3>
+                            48
+                        </h3>
+
+                        <small>
+                            42 active
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ⏱️
+                    </div>
+
+                    <div>
+
+                        <span>
+                            ON-TIME RATE
+                        </span>
+
+                        <h3>
+                            94%
+                        </h3>
+
+                        <small>
+                            +3% today
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-layout">
+
+                <div class="main-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-label">
+                                LIVE TRAINS
+                            </span>
+
+                            <h3>
+                                Train Operations
+                            </h3>
+
+                        </div>
+
+                        <button
+                            class="refresh-btn"
+                            onclick="refreshData()">
+
+                            Refresh
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="train-table">
+
+                        <div class="table-header">
+
+                            <span>
+                                TRAIN
+                            </span>
+
+                            <span>
+                                ROUTE
+                            </span>
+
+                            <span>
+                                TIME
+                            </span>
+
+                            <span>
+                                STATUS
+                            </span>
+
+                        </div>
+
+
+                        <div class="table-row">
+
+                            <div class="train-name">
+
+                                <strong>
+                                    12627
+                                </strong>
+
+                                <small>
+                                    Chennai Express
+                                </small>
+
+                            </div>
+
+                            <span>
+                                Chennai → Bengaluru
+                            </span>
+
+                            <strong>
+                                06:00 AM
+                            </strong>
+
+                            <span class="status on-time">
+                                On Time
+                            </span>
+
+                        </div>
+
+
+                        <div class="table-row">
+
+                            <div class="train-name">
+
+                                <strong>
+                                    12760
+                                </strong>
+
+                                <small>
+                                    Hyderabad Express
+                                </small>
+
+                            </div>
+
+                            <span>
+                                Chennai → Hyderabad
+                            </span>
+
+                            <strong>
+                                09:15 AM
+                            </strong>
+
+                            <span class="status delayed">
+                                Delayed
+                            </span>
+
+                        </div>
+
+
+                        <div class="table-row">
+
+                            <div class="train-name">
+
+                                <strong>
+                                    12028
+                                </strong>
+
+                                <small>
+                                    Shatabdi Express
+                                </small>
+
+                            </div>
+
+                            <span>
+                                Bengaluru → Chennai
+                            </span>
+
+                            <strong>
+                                11:45 AM
+                            </strong>
+
+                            <span class="status arriving">
+                                Arriving
+                            </span>
+
+                        </div>
+
+
+                        <div class="table-row">
+
+                            <div class="train-name">
+
+                                <strong>
+                                    12640
+                                </strong>
+
+                                <small>
+                                    Kovai Express
+                                </small>
+
+                            </div>
+
+                            <span>
+                                Chennai → Coimbatore
+                            </span>
+
+                            <strong>
+                                01:20 PM
+                            </strong>
+
+                            <span class="status on-time">
+                                On Time
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="side-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-label">
+                                QUICK ACCESS
+                            </span>
+
+                            <h3>
+                                Actions
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="action-btn"
+                        onclick="viewTrains()">
+
+                        <span>
+                            🚆
+                        </span>
+
+                        View All Trains
+
+                    </button>
+
+
+                    <button
+                        class="action-btn"
+                        onclick="viewSchedule()">
+
+                        <span>
+                            📅
+                        </span>
+
+                        View Schedule
+
+                    </button>
+
+
+                    <button
+                        class="action-btn"
+                        onclick="viewPlatforms()">
+
+                        <span>
+                            🛤️
+                        </span>
+
+                        Platform Status
+
+                    </button>
+
+
+                    <button
+                        class="action-btn"
+                        onclick="showAlerts()">
+
+                        <span>
+                            🔔
+                        </span>
+
+                        Railway Alerts
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="schedule-section" id="schedule">
+
+            <div class="section-title">
+
+                <span>
+                    TODAY'S SCHEDULE
+                </span>
+
+                <h2>
+                    Train Schedule
+                </h2>
+
+            </div>
+
+
+            <div class="schedule-grid">
+
+                <div class="schedule-card">
+
+                    <div class="schedule-time">
+                        06:00
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Chennai Express
+                        </h3>
+
+                        <p>
+                            Chennai Central → Bengaluru
+                        </p>
+
+                    </div>
+
+                    <span class="status on-time">
+                        On Time
+                    </span>
+
+                </div>
+
+
+                <div class="schedule-card">
+
+                    <div class="schedule-time">
+                        09:15
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Hyderabad Express
+                        </h3>
+
+                        <p>
+                            Chennai → Hyderabad
+                        </p>
+
+                    </div>
+
+                    <span class="status delayed">
+                        Delayed
+                    </span>
+
+                </div>
+
+
+                <div class="schedule-card">
+
+                    <div class="schedule-time">
+                        11:45
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Shatabdi Express
+                        </h3>
+
+                        <p>
+                            Bengaluru → Chennai
+                        </p>
+
+                    </div>
+
+                    <span class="status arriving">
+                        Arriving
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="alerts-section">
+
+            <div class="section-title">
+
+                <span>
+                    LIVE NOTIFICATIONS
+                </span>
+
+                <h2>
+                    Railway Alerts
+                </h2>
+
+            </div>
+
+
+            <div class="alerts-grid">
+
+                <div class="alert-card warning">
+
+                    <div class="alert-icon">
+                        ⚠️
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Train Delay
+                        </h3>
+
+                        <p>
+                            Hyderabad Express is running
+                            10 minutes late.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="alert-card info">
+
+                    <div class="alert-icon">
+                        ℹ️
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Platform Update
+                        </h3>
+
+                        <p>
+                            Check platform information before
+                            boarding your train.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="alert-card success">
+
+                    <div class="alert-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Normal Operations
+                        </h3>
+
+                        <p>
+                            Railway services are operating normally.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="help">
+
+            <h2>
+                Everything in One Place
+            </h2>
+
+            <p>
+                Track trains, check schedules and monitor
+                railway operations from one dashboard.
+            </p>
+
+            <button onclick="showHelp()">
+                Contact Support
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-logo">
+            RailHub
+        </div>
+
+        <p>
+            © 2026 RailHub. Modern railway dashboard.
+        </p>
+
+    </footer>
+
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
