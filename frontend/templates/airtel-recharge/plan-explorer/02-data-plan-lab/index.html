@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airtel Data Plan Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">airtel</span>
+      <span class="brand-title">Data Plan Lab</span>
+    </div>
+
+    <nav>
+      <a href="#calculator">Calculator</a>
+      <a href="#plans">Plans</a>
+      <a href="#usage">Usage</a>
+    </nav>
+
+    <button class="header-button" id="resetBtn">Reset</button>
+  </header>
+
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="tag">DATA LAB / 2026</span>
+
+        <h1>Build your ideal data plan.</h1>
+
+        <p>
+          Estimate your monthly data needs and explore Airtel plans
+          that match the way you actually use your phone.
+        </p>
+
+        <button class="start-button" id="startBtn">
+          Start Calculator →
+        </button>
+      </div>
+
+      <div class="data-orbit">
+        <div class="orbit-circle outer"></div>
+        <div class="orbit-circle middle"></div>
+        <div class="orbit-circle inner"></div>
+
+        <div class="orbit-center">
+          <strong id="heroData">20</strong>
+          <span>GB</span>
+          <small>estimated</small>
+        </div>
+
+        <div class="orbit-dot dot-one"></div>
+        <div class="orbit-dot dot-two"></div>
+        <div class="orbit-dot dot-three"></div>
+      </div>
+    </section>
+
+
+    <!-- Calculator -->
+    <section class="calculator" id="calculator">
+
+      <div class="section-title">
+        <span class="tag">01 / CALCULATOR</span>
+        <h2>Tell us about your usage.</h2>
+        <p>Adjust the sliders to create your monthly estimate.</p>
+      </div>
+
+      <div class="calculator-grid">
+
+        <div class="usage-control">
+          <div class="control-heading">
+            <div>
+              <span class="control-number">01</span>
+              <h3>Video Streaming</h3>
+            </div>
+
+            <strong>
+              <span id="videoValue">6</span> GB
+            </strong>
+          </div>
+
+          <p>Netflix, YouTube and other video services.</p>
+
+          <input
+            type="range"
+            id="videoRange"
+            min="1"
+            max="20"
+            value="6"
+          >
+        </div>
+
+
+        <div class="usage-control">
+          <div class="control-heading">
+            <div>
+              <span class="control-number">02</span>
+              <h3>Social Media</h3>
+            </div>
+
+            <strong>
+              <span id="socialValue">4</span> GB
+            </strong>
+          </div>
+
+          <p>Instagram, Facebook, Snapchat and similar apps.</p>
+
+          <input
+            type="range"
+            id="socialRange"
+            min="1"
+            max="15"
+            value="4"
+          >
+        </div>
+
+
+        <div class="usage-control">
+          <div class="control-heading">
+            <div>
+              <span class="control-number">03</span>
+              <h3>Gaming</h3>
+            </div>
+
+            <strong>
+              <span id="gamingValue">3</span> GB
+            </strong>
+          </div>
+
+          <p>Online gaming, downloads and game updates.</p>
+
+          <input
+            type="range"
+            id="gamingRange"
+            min="0"
+            max="15"
+            value="3"
+          >
+        </div>
+
+
+        <div class="usage-control">
+          <div class="control-heading">
+            <div>
+              <span class="control-number">04</span>
+              <h3>Other Usage</h3>
+            </div>
+
+            <strong>
+              <span id="otherValue">7</span> GB
+            </strong>
+          </div>
+
+          <p>Browsing, messaging, maps and everything else.</p>
+
+          <input
+            type="range"
+            id="otherRange"
+            min="1"
+            max="15"
+            value="7"
+          >
+        </div>
+
+      </div>
+
+
+      <div class="total-panel">
+        <div>
+          <span>ESTIMATED MONTHLY DATA</span>
+          <strong id="totalData">20 GB</strong>
+        </div>
+
+        <div class="data-status" id="dataStatus">
+          Balanced usage
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- Plans -->
+    <section class="plans" id="plans">
+
+      <div class="section-title">
+        <span class="tag">02 / MATCHED PLANS</span>
+        <h2>Plans around your usage.</h2>
+        <p id="planMessage">
+          These plans can be compared with your estimated requirement.
+        </p>
+      </div>
+
+      <div class="plan-grid">
+
+        <article class="plan-card">
+          <div class="plan-top">
+            <span>LIGHT</span>
+            <span>₹299</span>
+          </div>
+
+          <h3>Everyday Data</h3>
+
+          <div class="plan-data">
+            <strong>1 GB</strong>
+            <span>/ day</span>
+          </div>
+
+          <div class="plan-info">
+            <span>28 days</span>
+            <span>100 SMS/day</span>
+          </div>
+
+          <button class="plan-button" data-plan="299">
+            Select Plan
+          </button>
+        </article>
+
+
+        <article class="plan-card recommended">
+          <div class="recommended-label">MATCHED FOR YOU</div>
+
+          <div class="plan-top">
+            <span>POPULAR</span>
+            <span>₹349</span>
+          </div>
+
+          <h3>Data Plus</h3>
+
+          <div class="plan-data">
+            <strong>1.5 GB</strong>
+            <span>/ day</span>
+          </div>
+
+          <div class="plan-info">
+            <span>28 days</span>
+            <span>100 SMS/day</span>
+          </div>
+
+          <button class="plan-button" data-plan="349">
+            Select Plan
+          </button>
+        </article>
+
+
+        <article class="plan-card">
+          <div class="plan-top">
+            <span>HEAVY</span>
+            <span>₹499</span>
+          </div>
+
+          <h3>Data Max</h3>
+
+          <div class="plan-data">
+            <strong>2 GB</strong>
+            <span>/ day</span>
+          </div>
+
+          <div class="plan-info">
+            <span>28 days</span>
+            <span>100 SMS/day</span>
+          </div>
+
+          <button class="plan-button" data-plan="499">
+            Select Plan
+          </button>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- Usage Guide -->
+    <section class="usage-guide" id="usage">
+
+      <div class="usage-heading">
+        <span class="tag">03 / DATA GUIDE</span>
+        <h2>Where does your data go?</h2>
+      </div>
+
+      <div class="usage-bars">
+
+        <div class="usage-row">
+          <div>
+            <span>Video Streaming</span>
+            <strong id="videoPercent">30%</strong>
+          </div>
+          <div class="bar">
+            <span id="videoBar"></span>
+          </div>
+        </div>
+
+        <div class="usage-row">
+          <div>
+            <span>Social Media</span>
+            <strong id="socialPercent">20%</strong>
+          </div>
+          <div class="bar">
+            <span id="socialBar"></span>
+          </div>
+        </div>
+
+        <div class="usage-row">
+          <div>
+            <span>Gaming</span>
+            <strong id="gamingPercent">15%</strong>
+          </div>
+          <div class="bar">
+            <span id="gamingBar"></span>
+          </div>
+        </div>
+
+        <div class="usage-row">
+          <div>
+            <span>Other Usage</span>
+            <strong id="otherPercent">35%</strong>
+          </div>
+          <div class="bar">
+            <span id="otherBar"></span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+
+      <div>
+        <span class="tag">READY?</span>
+        <h2>Your data. Your way.</h2>
+        <p>Adjust your usage anytime and find a plan that fits.</p>
+      </div>
+
+      <button id="exploreBtn">Explore Plans →</button>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div class="footer-brand">
+      <strong>airtel</strong>
+      <span>Data Plan Lab</span>
+    </div>
+
+    <p>Estimate smarter. Connect better.</p>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

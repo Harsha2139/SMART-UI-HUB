@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Command Center</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="#" class="logo">Project<span>HQ</span></a>
+
+      <nav>
+        <a href="#overview">Overview</a>
+        <a href="#projects">Projects</a>
+        <a href="#activity">Activity</a>
+      </nav>
+
+      <button class="profile-button">BV</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Dashboard Header -->
+    <section class="dashboard-header" id="overview">
+      <div class="container">
+        <div class="welcome-row">
+          <div>
+            <p class="eyebrow">PROJECT COMMAND CENTER</p>
+            <h1>Good morning, Venkateswara.</h1>
+            <p class="subtitle">
+              Keep track of your projects, progress and upcoming work.
+            </p>
+          </div>
+
+          <button class="primary-button" id="newProjectBtn">
+            + New Project
+          </button>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+
+          <div class="stat-card">
+            <div class="stat-icon">01</div>
+            <p>Total Projects</p>
+            <h2>12</h2>
+            <span class="positive">+2 this month</span>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon">02</div>
+            <p>In Progress</p>
+            <h2>05</h2>
+            <span class="neutral">2 due this week</span>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon">03</div>
+            <p>Completed</p>
+            <h2>07</h2>
+            <span class="positive">+18% this month</span>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon">04</div>
+            <p>Completion Rate</p>
+            <h2>78%</h2>
+            <span class="positive">Above target</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="projects-section" id="projects">
+      <div class="container">
+
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">WORKSPACE</p>
+            <h2>Your projects</h2>
+          </div>
+
+          <div class="filter-buttons">
+            <button class="filter active" data-filter="all">All</button>
+            <button class="filter" data-filter="progress">In Progress</button>
+            <button class="filter" data-filter="completed">Completed</button>
+          </div>
+        </div>
+
+        <div class="projects-grid">
+
+          <article class="project-card" data-status="progress">
+            <div class="project-top">
+              <span class="project-category">Web Development</span>
+              <span class="status progress">In Progress</span>
+            </div>
+
+            <h3>Portfolio Website</h3>
+
+            <p>
+              A modern responsive portfolio showcasing projects,
+              skills and professional experience.
+            </p>
+
+            <div class="progress-info">
+              <span>Progress</span>
+              <strong>78%</strong>
+            </div>
+
+            <div class="progress-bar">
+              <div style="width: 78%"></div>
+            </div>
+
+            <div class="project-footer">
+              <span>Due Oct 12</span>
+              <button class="view-button">View →</button>
+            </div>
+          </article>
+
+          <article class="project-card" data-status="progress">
+            <div class="project-top">
+              <span class="project-category">UI Design</span>
+              <span class="status progress">In Progress</span>
+            </div>
+
+            <h3>SaaS Dashboard</h3>
+
+            <p>
+              Designing a clean dashboard interface for managing
+              business data and applications.
+            </p>
+
+            <div class="progress-info">
+              <span>Progress</span>
+              <strong>54%</strong>
+            </div>
+
+            <div class="progress-bar">
+              <div style="width: 54%"></div>
+            </div>
+
+            <div class="project-footer">
+              <span>Due Oct 18</span>
+              <button class="view-button">View →</button>
+            </div>
+          </article>
+
+          <article class="project-card" data-status="completed">
+            <div class="project-top">
+              <span class="project-category">Development</span>
+              <span class="status completed">Completed</span>
+            </div>
+
+            <h3>Weather Application</h3>
+
+            <p>
+              A simple weather application displaying current
+              conditions and forecast information.
+            </p>
+
+            <div class="progress-info">
+              <span>Progress</span>
+              <strong>100%</strong>
+            </div>
+
+            <div class="progress-bar">
+              <div style="width: 100%"></div>
+            </div>
+
+            <div class="project-footer">
+              <span>Completed Sep 28</span>
+              <button class="view-button">View →</button>
+            </div>
+          </article>
+
+          <article class="project-card" data-status="completed">
+            <div class="project-top">
+              <span class="project-category">Python</span>
+              <span class="status completed">Completed</span>
+            </div>
+
+            <h3>Task Manager</h3>
+
+            <p>
+              A lightweight task management application built
+              to organize daily activities.
+            </p>
+
+            <div class="progress-info">
+              <span>Progress</span>
+              <strong>100%</strong>
+            </div>
+
+            <div class="progress-bar">
+              <div style="width: 100%"></div>
+            </div>
+
+            <div class="project-footer">
+              <span>Completed Sep 20</span>
+              <button class="view-button">View →</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Activity -->
+    <section class="activity-section" id="activity">
+      <div class="container activity-grid">
+
+        <div>
+          <p class="eyebrow">RECENT ACTIVITY</p>
+          <h2>What's happening</h2>
+        </div>
+
+        <div class="activity-list">
+
+          <div class="activity-item">
+            <div class="activity-dot"></div>
+            <div>
+              <h3>Portfolio Website updated</h3>
+              <p>Progress changed from 65% to 78%</p>
+              <span>2 hours ago</span>
+            </div>
+          </div>
+
+          <div class="activity-item">
+            <div class="activity-dot"></div>
+            <div>
+              <h3>Weather Application completed</h3>
+              <p>Project marked as completed</p>
+              <span>Yesterday</span>
+            </div>
+          </div>
+
+          <div class="activity-item">
+            <div class="activity-dot"></div>
+            <div>
+              <h3>New project created</h3>
+              <p>SaaS Dashboard was added to workspace</p>
+              <span>3 days ago</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <p>© 2026 ProjectHQ</p>
+      <p>Project Command Center</p>
+    </div>
+  </footer>
+
+  <!-- New Project Modal -->
+  <div class="modal" id="projectModal">
+    <div class="modal-box">
+      <button class="close-button" id="closeModal">&times;</button>
+      <p class="eyebrow">NEW PROJECT</p>
+      <h2>Create a project</h2>
+
+      <form id="projectForm">
+        <input
+          type="text"
+          id="projectName"
+          placeholder="Project name"
+          required
+        >
+
+        <input
+          type="text"
+          id="projectCategory"
+          placeholder="Category"
+          required
+        >
+
+        <button type="submit" class="primary-button">
+          Create Project
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

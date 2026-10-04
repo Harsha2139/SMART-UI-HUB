@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airtel Fiber Control</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">airtel</span>
+      <div>
+        <strong>Fiber Control</strong>
+        <small>Home connectivity</small>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#network">Network</a>
+      <a href="#devices">Devices</a>
+      <a href="#settings">Settings</a>
+    </nav>
+
+    <button class="account-btn" id="accountBtn">My Account</button>
+  </header>
+
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="network">
+
+      <div class="hero-copy">
+        <span class="eyebrow">AIRTEL XSTREAM FIBER</span>
+
+        <h1>Your home network, under control.</h1>
+
+        <p>
+          Check your connection, monitor connected devices and manage
+          your home Wi-Fi from one simple dashboard.
+        </p>
+
+        <div class="hero-actions">
+          <button class="primary-btn" id="speedBtn">Run Speed Test</button>
+          <button class="secondary-btn" id="restartBtn">Restart Router</button>
+        </div>
+      </div>
+
+
+      <div class="network-card">
+
+        <div class="network-top">
+          <span>NETWORK STATUS</span>
+          <span class="online">● ONLINE</span>
+        </div>
+
+        <div class="signal">
+          <div class="signal-ring ring-one"></div>
+          <div class="signal-ring ring-two"></div>
+          <div class="signal-ring ring-three"></div>
+          <div class="signal-core">⌁</div>
+        </div>
+
+        <div class="network-speed">
+          <strong id="downloadSpeed">98</strong>
+          <span>Mbps download</span>
+        </div>
+
+        <div class="network-info">
+          <div>
+            <span>Upload</span>
+            <strong>48 Mbps</strong>
+          </div>
+
+          <div>
+            <span>Latency</span>
+            <strong>12 ms</strong>
+          </div>
+
+          <div>
+            <span>Uptime</span>
+            <strong>14d 08h</strong>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Network Overview -->
+    <section class="overview">
+
+      <div class="section-title">
+        <span class="section-label">01 / NETWORK</span>
+        <h2>Everything looks connected.</h2>
+        <p>
+          A quick look at your home connection and router health.
+        </p>
+      </div>
+
+      <div class="overview-grid">
+
+        <div class="status-card">
+          <div class="card-icon">◉</div>
+          <span>CONNECTION</span>
+          <h3>Excellent</h3>
+          <p>Your fiber connection is stable.</p>
+          <div class="status-line">
+            <span></span>
+          </div>
+        </div>
+
+
+        <div class="status-card">
+          <div class="card-icon">↯</div>
+          <span>DOWNLOAD</span>
+          <h3>98 Mbps</h3>
+          <p>Current measured download speed.</p>
+          <button class="small-btn" id="downloadBtn">Test Again</button>
+        </div>
+
+
+        <div class="status-card">
+          <div class="card-icon">⌂</div>
+          <span>ROUTER</span>
+          <h3>Online</h3>
+          <p>Router is connected and responding.</p>
+          <button class="small-btn" id="routerBtn">Router Details</button>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Devices -->
+    <section class="devices" id="devices">
+
+      <div class="section-title">
+        <span class="section-label">02 / CONNECTED DEVICES</span>
+        <h2>Who's using your Wi-Fi?</h2>
+        <p>Manage the devices currently connected to your network.</p>
+      </div>
+
+
+      <div class="device-list">
+
+        <div class="device-row">
+          <div class="device-icon">▣</div>
+          <div class="device-info">
+            <strong>Venkatesh Laptop</strong>
+            <span>Windows • 192.168.1.12</span>
+          </div>
+          <span class="device-usage">32.4 GB</span>
+          <button class="device-btn" data-device="Venkatesh Laptop">Manage</button>
+        </div>
+
+
+        <div class="device-row">
+          <div class="device-icon">▯</div>
+          <div class="device-info">
+            <strong>V60 Phone</strong>
+            <span>Android • 192.168.1.18</span>
+          </div>
+          <span class="device-usage">18.7 GB</span>
+          <button class="device-btn" data-device="V60 Phone">Manage</button>
+        </div>
+
+
+        <div class="device-row">
+          <div class="device-icon">▣</div>
+          <div class="device-info">
+            <strong>Smart TV</strong>
+            <span>Living Room • 192.168.1.25</span>
+          </div>
+          <span class="device-usage">11.2 GB</span>
+          <button class="device-btn" data-device="Smart TV">Manage</button>
+        </div>
+
+
+        <div class="device-row">
+          <div class="device-icon">⌂</div>
+          <div class="device-info">
+            <strong>Home Speaker</strong>
+            <span>Wi-Fi • 192.168.1.31</span>
+          </div>
+          <span class="device-usage">2.8 GB</span>
+          <button class="device-btn" data-device="Home Speaker">Manage</button>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Settings -->
+    <section class="settings" id="settings">
+
+      <div class="settings-card">
+
+        <div class="settings-heading">
+          <span class="section-label">03 / QUICK SETTINGS</span>
+          <h2>Make your network work your way.</h2>
+        </div>
+
+
+        <div class="setting-row">
+          <div>
+            <strong>Guest Wi-Fi</strong>
+            <span>Create a separate network for visitors.</span>
+          </div>
+
+          <button class="toggle-btn active" id="guestBtn">
+            ON
+          </button>
+        </div>
+
+
+        <div class="setting-row">
+          <div>
+            <strong>Safe Browsing</strong>
+            <span>Help block potentially unsafe websites.</span>
+          </div>
+
+          <button class="toggle-btn active" id="safeBtn">
+            ON
+          </button>
+        </div>
+
+
+        <div class="setting-row">
+          <div>
+            <strong>Smart Connect</strong>
+            <span>Automatically optimize connected devices.</span>
+          </div>
+
+          <button class="toggle-btn" id="smartBtn">
+            OFF
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Support -->
+    <section class="support">
+
+      <div>
+        <span class="section-label">NEED HELP?</span>
+        <h2>Having connection trouble?</h2>
+        <p>Run a quick diagnostic or contact Airtel support.</p>
+      </div>
+
+      <button class="support-btn" id="supportBtn">
+        Run Diagnostics →
+      </button>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div>
+      <strong>airtel</strong>
+      <span>Fiber Control</span>
+    </div>
+
+    <p>Connected home. Simplified.</p>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

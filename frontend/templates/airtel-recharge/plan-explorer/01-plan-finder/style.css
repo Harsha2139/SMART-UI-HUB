@@ -1,0 +1,589 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f1ea;
+  color: #191919;
+  line-height: 1.6;
+}
+
+
+/* Header */
+
+.topbar {
+  height: 76px;
+  padding: 0 7%;
+  background: #fffaf2;
+  border-bottom: 1px solid #ddd5c8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  background: #e4002b;
+  color: white;
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.brand-text {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+nav {
+  display: flex;
+  gap: 32px;
+}
+
+nav a {
+  color: #444;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: #e4002b;
+}
+
+.header-btn {
+  background: transparent;
+  border: 1px solid #bdb5a8;
+  border-radius: 8px;
+  padding: 10px 17px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+
+/* Hero */
+
+.hero {
+  min-height: 590px;
+  padding: 90px 8%;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 70px;
+  background: #dfe9e2;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.eyebrow,
+.section-label {
+  display: inline-block;
+  color: #e4002b;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: clamp(48px, 6vw, 82px);
+  line-height: 0.98;
+  letter-spacing: -4px;
+  max-width: 700px;
+  margin-bottom: 28px;
+}
+
+.hero p {
+  color: #4d574f;
+  max-width: 560px;
+  font-size: 18px;
+  margin-bottom: 34px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn,
+.help-btn,
+.plan-btn,
+.select-btn {
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.primary-btn {
+  background: #e4002b;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 9px;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+}
+
+.secondary-btn {
+  background: white;
+  color: #222;
+  padding: 15px 25px;
+  border-radius: 9px;
+}
+
+
+/* Finder Card */
+
+.finder-card {
+  background: #fffdf8;
+  border: 1px solid #d1d8d1;
+  border-radius: 24px;
+  padding: 35px;
+  box-shadow: 18px 18px 0 #c7d3ca;
+}
+
+.finder-top {
+  display: flex;
+  justify-content: space-between;
+  color: #718075;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.signal-icon {
+  margin-top: 50px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #191919;
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 34px;
+}
+
+.finder-card h3 {
+  margin-top: 25px;
+  font-size: 28px;
+}
+
+.finder-card p {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.mini-stats {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.mini-stats div {
+  display: flex;
+  flex-direction: column;
+}
+
+.mini-stats strong {
+  font-size: 17px;
+}
+
+.mini-stats span {
+  font-size: 11px;
+  color: #777;
+}
+
+
+/* Finder Section */
+
+.finder-section {
+  padding: 100px 8%;
+  background: #fffaf2;
+}
+
+.section-heading {
+  max-width: 650px;
+  margin-bottom: 45px;
+}
+
+.section-heading h2,
+.recommendation-intro h2,
+.help-section h2 {
+  font-size: clamp(35px, 4vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+}
+
+.section-heading p,
+.recommendation-intro p {
+  margin-top: 12px;
+  color: #777;
+}
+
+.preference-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.preference-card {
+  background: #f1eee7;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  padding: 27px;
+  min-height: 270px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s ease;
+}
+
+.preference-card:hover {
+  transform: translateY(-5px);
+}
+
+.preference-card.active {
+  border-color: #e4002b;
+  background: #fff;
+}
+
+.choice-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: #191919;
+  color: white;
+  display: grid;
+  place-items: center;
+  margin-bottom: 22px;
+}
+
+.preference-card h3 {
+  font-size: 22px;
+}
+
+.preference-card p {
+  color: #777;
+  font-size: 14px;
+  margin-top: 7px;
+}
+
+.select-btn {
+  margin-top: auto;
+  background: transparent;
+  border: 1px solid #aaa;
+  padding: 10px;
+  border-radius: 7px;
+}
+
+.preference-card.active .select-btn {
+  background: #e4002b;
+  color: white;
+  border-color: #e4002b;
+}
+
+
+/* Recommendation */
+
+.recommendation {
+  padding: 100px 8%;
+  background: #191919;
+  color: white;
+}
+
+.recommendation-intro {
+  max-width: 700px;
+  margin-bottom: 50px;
+}
+
+.recommendation-intro p {
+  color: #aaa;
+}
+
+.plan-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.plan-card {
+  background: #252525;
+  border: 1px solid #3b3b3b;
+  border-radius: 18px;
+  padding: 30px;
+  position: relative;
+}
+
+.plan-card.featured {
+  border-color: #e4002b;
+  transform: translateY(-8px);
+}
+
+.plan-badge {
+  display: inline-block;
+  background: #e4002b;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.plan-badge.light {
+  background: #3b3b3b;
+}
+
+.plan-price {
+  margin-top: 30px;
+}
+
+.plan-price span {
+  font-size: 20px;
+}
+
+.plan-price strong {
+  font-size: 55px;
+  line-height: 1;
+}
+
+.plan-card h3 {
+  margin-top: 12px;
+  font-size: 22px;
+}
+
+.plan-description {
+  color: #aaa;
+  font-size: 14px;
+  margin-top: 7px;
+}
+
+.plan-details {
+  margin: 25px 0;
+  padding-top: 20px;
+  border-top: 1px solid #3c3c3c;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #ddd;
+  font-size: 13px;
+}
+
+.plan-btn {
+  width: 100%;
+  padding: 13px;
+  border-radius: 8px;
+  background: white;
+  color: #191919;
+}
+
+.plan-btn:hover {
+  background: #e4002b;
+  color: white;
+}
+
+.plan-btn.chosen {
+  background: #e4002b;
+  color: white;
+}
+
+
+/* Comparison */
+
+.comparison {
+  padding: 100px 8%;
+  background: #e9dfd1;
+}
+
+.comparison-table {
+  max-width: 950px;
+  border: 1px solid #c9bdad;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #fffaf2;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  border-bottom: 1px solid #d8d0c4;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-row span {
+  padding: 17px 20px;
+  font-size: 14px;
+}
+
+.table-head {
+  background: #191919;
+  color: white;
+  font-weight: 700;
+}
+
+
+/* Help */
+
+.help-section {
+  padding: 80px 8%;
+  background: #fffaf2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.help-section p {
+  color: #777;
+  margin-top: 10px;
+}
+
+.help-btn {
+  background: #e4002b;
+  color: white;
+  padding: 15px 28px;
+  border-radius: 8px;
+}
+
+
+/* Footer */
+
+footer {
+  padding: 40px 8%;
+  background: #e4002b;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+footer strong {
+  font-size: 24px;
+}
+
+footer span {
+  opacity: 0.8;
+}
+
+footer p {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+  nav {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 65px;
+  }
+
+  .preference-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .plan-list {
+    grid-template-columns: 1fr;
+  }
+
+  .plan-card.featured {
+    transform: none;
+  }
+
+  .help-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .topbar {
+    padding: 0 5%;
+  }
+
+  .brand-text {
+    display: none;
+  }
+
+  .header-btn {
+    padding: 8px 12px;
+  }
+
+  .hero,
+  .finder-section,
+  .recommendation,
+  .comparison,
+  .help-section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+    letter-spacing: -2px;
+  }
+
+  .finder-card {
+    padding: 25px;
+    box-shadow: 10px 10px 0 #c7d3ca;
+  }
+
+  .preference-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .table-row {
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+  }
+
+  .table-row span {
+    padding: 13px 8px;
+    font-size: 11px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}

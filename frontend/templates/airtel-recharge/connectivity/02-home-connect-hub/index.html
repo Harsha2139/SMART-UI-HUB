@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Connect Hub | Airtel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="topbar">
+
+    <div class="brand">
+      <span class="logo">airtel</span>
+
+      <div>
+        <strong>Home Connect</strong>
+        <small>Smart home control</small>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#rooms">Rooms</a>
+      <a href="#automation">Automation</a>
+      <a href="#activity">Activity</a>
+    </nav>
+
+    <button class="profile-btn" id="profileBtn">
+      Venkatesh
+    </button>
+
+  </header>
+
+
+  <!-- Hero -->
+  <main id="home">
+
+    <section class="hero">
+
+      <div class="hero-copy">
+
+        <span class="eyebrow">SMART HOME / 08:42 PM</span>
+
+        <h1>
+          Everything at home,
+          <em>connected.</em>
+        </h1>
+
+        <p>
+          Control your Wi-Fi, entertainment, lighting and connected
+          devices from one simple home hub.
+        </p>
+
+        <div class="hero-actions">
+          <button class="primary-btn" id="awayBtn">
+            Activate Away Mode
+          </button>
+
+          <button class="secondary-btn" id="refreshBtn">
+            Refresh Home
+          </button>
+        </div>
+
+      </div>
+
+
+      <!-- Home summary -->
+      <div class="home-summary">
+
+        <div class="summary-heading">
+          <span>HOME STATUS</span>
+          <strong class="status-dot">● Online</strong>
+        </div>
+
+        <div class="temperature">
+          <strong>24°</strong>
+          <span>Comfortable</span>
+        </div>
+
+        <div class="summary-grid">
+
+          <div>
+            <span>Wi-Fi</span>
+            <strong>Excellent</strong>
+          </div>
+
+          <div>
+            <span>Devices</span>
+            <strong>08 Online</strong>
+          </div>
+
+          <div>
+            <span>Security</span>
+            <strong>Protected</strong>
+          </div>
+
+          <div>
+            <span>Energy</span>
+            <strong>Normal</strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Rooms -->
+    <section class="rooms" id="rooms">
+
+      <div class="section-heading">
+        <div>
+          <span class="section-label">YOUR HOME</span>
+          <h2>Rooms & devices</h2>
+        </div>
+
+        <button class="outline-btn" id="allDevicesBtn">
+          View all devices
+        </button>
+      </div>
+
+
+      <div class="room-grid">
+
+        <article class="room-card living-room">
+
+          <div class="room-top">
+            <span class="room-icon">◉</span>
+
+            <button class="room-menu">
+              •••
+            </button>
+          </div>
+
+          <span class="room-name">Living Room</span>
+
+          <strong class="room-count">4 devices</strong>
+
+          <div class="device-preview">
+            <span>💡 Lights</span>
+            <span>📺 TV</span>
+            <span>🔊 Speaker</span>
+          </div>
+
+          <button class="room-btn" data-room="Living Room">
+            Open Room →
+          </button>
+
+        </article>
+
+
+        <article class="room-card bedroom">
+
+          <div class="room-top">
+            <span class="room-icon">◌</span>
+
+            <button class="room-menu">
+              •••
+            </button>
+          </div>
+
+          <span class="room-name">Bedroom</span>
+
+          <strong class="room-count">2 devices</strong>
+
+          <div class="device-preview">
+            <span>💡 Lights</span>
+            <span>❄️ AC</span>
+          </div>
+
+          <button class="room-btn" data-room="Bedroom">
+            Open Room →
+          </button>
+
+        </article>
+
+
+        <article class="room-card kitchen">
+
+          <div class="room-top">
+            <span class="room-icon">◇</span>
+
+            <button class="room-menu">
+              •••
+            </button>
+          </div>
+
+          <span class="room-name">Kitchen</span>
+
+          <strong class="room-count">2 devices</strong>
+
+          <div class="device-preview">
+            <span>💡 Lights</span>
+            <span>📡 Speaker</span>
+          </div>
+
+          <button class="room-btn" data-room="Kitchen">
+            Open Room →
+          </button>
+
+        </article>
+
+
+        <article class="room-card workroom">
+
+          <div class="room-top">
+            <span class="room-icon">□</span>
+
+            <button class="room-menu">
+              •••
+            </button>
+          </div>
+
+          <span class="room-name">Work Room</span>
+
+          <strong class="room-count">3 devices</strong>
+
+          <div class="device-preview">
+            <span>💻 Laptop</span>
+            <span>💡 Lights</span>
+          </div>
+
+          <button class="room-btn" data-room="Work Room">
+            Open Room →
+          </button>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- Automation -->
+    <section class="automation" id="automation">
+
+      <div class="automation-copy">
+
+        <span class="section-label">AUTOMATION</span>
+
+        <h2>
+          Let your home
+          <span>do the routine.</span>
+        </h2>
+
+        <p>
+          Create simple routines that connect your devices
+          and make everyday moments easier.
+        </p>
+
+      </div>
+
+
+      <div class="routine-list">
+
+        <div class="routine-card">
+
+          <div class="routine-icon">☀</div>
+
+          <div class="routine-info">
+            <strong>Good Morning</strong>
+            <span>Lights on · Wi-Fi active · Speaker ready</span>
+          </div>
+
+          <button class="routine-btn" data-routine="Good Morning">
+            Run
+          </button>
+
+        </div>
+
+
+        <div class="routine-card">
+
+          <div class="routine-icon">◐</div>
+
+          <div class="routine-info">
+            <strong>Movie Time</strong>
+            <span>TV on · Lights dim · Speaker connected</span>
+          </div>
+
+          <button class="routine-btn" data-routine="Movie Time">
+            Run
+          </button>
+
+        </div>
+
+
+        <div class="routine-card">
+
+          <div class="routine-icon">☾</div>
+
+          <div class="routine-info">
+            <strong>Good Night</strong>
+            <span>Lights off · Devices secured · Wi-Fi sleep</span>
+          </div>
+
+          <button class="routine-btn" data-routine="Good Night">
+            Run
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Activity -->
+    <section class="activity" id="activity">
+
+      <div class="section-heading">
+        <div>
+          <span class="section-label">RECENT ACTIVITY</span>
+          <h2>What's happening</h2>
+        </div>
+      </div>
+
+
+      <div class="activity-list">
+
+        <div class="activity-row">
+          <span class="activity-time">08:35 PM</span>
+          <div>
+            <strong>Smart TV connected</strong>
+            <p>Living Room · Wi-Fi network</p>
+          </div>
+          <span class="activity-status">Connected</span>
+        </div>
+
+
+        <div class="activity-row">
+          <span class="activity-time">08:21 PM</span>
+          <div>
+            <strong>Movie Time routine completed</strong>
+            <p>3 devices updated</p>
+          </div>
+          <span class="activity-status">Complete</span>
+        </div>
+
+
+        <div class="activity-row">
+          <span class="activity-time">07:48 PM</span>
+          <div>
+            <strong>V60 Phone connected</strong>
+            <p>Bedroom · Private network</p>
+          </div>
+          <span class="activity-status">Connected</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+
+      <div>
+        <span class="section-label">HOME CONNECT</span>
+
+        <h2>
+          Your home.
+          Your rules.
+        </h2>
+
+        <p>
+          One place to manage everything connected to your home.
+        </p>
+      </div>
+
+      <button class="cta-btn" id="setupBtn">
+        Manage Home →
+      </button>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+
+    <div>
+      <strong>airtel</strong>
+      <span>Home Connect Hub</span>
+    </div>
+
+    <p>Smart connectivity for everyday living.</p>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

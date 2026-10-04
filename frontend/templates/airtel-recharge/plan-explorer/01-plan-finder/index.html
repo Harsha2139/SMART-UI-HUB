@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airtel Plan Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">airtel</span>
+      <span class="brand-text">Plan Finder</span>
+    </div>
+
+    <nav>
+      <a href="#plans">Plans</a>
+      <a href="#compare">Compare</a>
+      <a href="#help">Help</a>
+    </nav>
+
+    <button class="header-btn" id="accountBtn">My Account</button>
+  </header>
+
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">PERSONALIZED PLANS</span>
+
+        <h1>Find a plan that fits your life.</h1>
+
+        <p>
+          Tell us how you use your phone and we'll help you explore
+          plans that match your data, calling and entertainment needs.
+        </p>
+
+        <div class="hero-actions">
+          <button class="primary-btn" id="findBtn">Find My Plan</button>
+          <button class="secondary-btn" id="viewBtn">View All Plans</button>
+        </div>
+      </div>
+
+      <div class="finder-card">
+        <div class="finder-top">
+          <span>PLAN MATCH</span>
+          <strong>01</strong>
+        </div>
+
+        <div class="signal-icon">⌁</div>
+
+        <h3>Smart recommendations</h3>
+
+        <p>
+          Compare plans based on your actual usage instead of
+          searching through dozens of options.
+        </p>
+
+        <div class="mini-stats">
+          <div>
+            <strong>5G</strong>
+            <span>Ready</span>
+          </div>
+
+          <div>
+            <strong>24/7</strong>
+            <span>Support</span>
+          </div>
+
+          <div>
+            <strong>OTT</strong>
+            <span>Options</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Finder -->
+    <section class="finder-section" id="plans">
+
+      <div class="section-heading">
+        <span class="section-label">QUICK FINDER</span>
+        <h2>What do you need?</h2>
+        <p>Select your preference and explore matching plans.</p>
+      </div>
+
+      <div class="preference-grid">
+
+        <div class="preference-card active" data-choice="data">
+          <div class="choice-icon">▰</div>
+          <h3>More Data</h3>
+          <p>For streaming, gaming and social media.</p>
+          <button class="select-btn">Select</button>
+        </div>
+
+        <div class="preference-card" data-choice="calls">
+          <div class="choice-icon">☎</div>
+          <h3>More Calls</h3>
+          <p>For frequent calls and everyday communication.</p>
+          <button class="select-btn">Select</button>
+        </div>
+
+        <div class="preference-card" data-choice="ott">
+          <div class="choice-icon">▶</div>
+          <h3>Entertainment</h3>
+          <p>For OTT subscriptions and digital content.</p>
+          <button class="select-btn">Select</button>
+        </div>
+
+        <div class="preference-card" data-choice="balanced">
+          <div class="choice-icon">✦</div>
+          <h3>Balanced</h3>
+          <p>A practical combination for everyday usage.</p>
+          <button class="select-btn">Select</button>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Recommended -->
+    <section class="recommendation" id="compare">
+
+      <div class="recommendation-intro">
+        <span class="section-label">RECOMMENDED</span>
+        <h2>Plans worth exploring</h2>
+        <p id="recommendationText">
+          Based on your preference, here are some options to consider.
+        </p>
+      </div>
+
+      <div class="plan-list">
+
+        <article class="plan-card featured">
+          <div class="plan-badge">POPULAR</div>
+
+          <div class="plan-price">
+            <span>₹</span>
+            <strong>349</strong>
+          </div>
+
+          <h3>Daily Data Plus</h3>
+          <p class="plan-description">
+            A strong everyday option for data-heavy users.
+          </p>
+
+          <div class="plan-details">
+            <span>1.5 GB/day</span>
+            <span>100 SMS/day</span>
+            <span>28 days</span>
+          </div>
+
+          <button class="plan-btn" data-plan="349">Choose Plan</button>
+        </article>
+
+
+        <article class="plan-card">
+          <div class="plan-badge light">VALUE</div>
+
+          <div class="plan-price">
+            <span>₹</span>
+            <strong>299</strong>
+          </div>
+
+          <h3>Everyday Saver</h3>
+          <p class="plan-description">
+            Simple connectivity for regular daily use.
+          </p>
+
+          <div class="plan-details">
+            <span>1 GB/day</span>
+            <span>100 SMS/day</span>
+            <span>28 days</span>
+          </div>
+
+          <button class="plan-btn" data-plan="299">Choose Plan</button>
+        </article>
+
+
+        <article class="plan-card">
+          <div class="plan-badge light">ENTERTAINMENT</div>
+
+          <div class="plan-price">
+            <span>₹</span>
+            <strong>499</strong>
+          </div>
+
+          <h3>Entertainment Max</h3>
+          <p class="plan-description">
+            Extra data and entertainment benefits in one plan.
+          </p>
+
+          <div class="plan-details">
+            <span>2 GB/day</span>
+            <span>100 SMS/day</span>
+            <span>28 days</span>
+          </div>
+
+          <button class="plan-btn" data-plan="499">Choose Plan</button>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- Comparison -->
+    <section class="comparison">
+
+      <div class="section-heading">
+        <span class="section-label">COMPARE</span>
+        <h2>Make the choice easier.</h2>
+      </div>
+
+      <div class="comparison-table">
+
+        <div class="table-row table-head">
+          <span>Feature</span>
+          <span>₹299</span>
+          <span>₹349</span>
+          <span>₹499</span>
+        </div>
+
+        <div class="table-row">
+          <span>Daily Data</span>
+          <span>1 GB</span>
+          <span>1.5 GB</span>
+          <span>2 GB</span>
+        </div>
+
+        <div class="table-row">
+          <span>Validity</span>
+          <span>28 Days</span>
+          <span>28 Days</span>
+          <span>28 Days</span>
+        </div>
+
+        <div class="table-row">
+          <span>SMS</span>
+          <span>100/day</span>
+          <span>100/day</span>
+          <span>100/day</span>
+        </div>
+
+        <div class="table-row">
+          <span>Entertainment</span>
+          <span>—</span>
+          <span>Selected</span>
+          <span>Included</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Help -->
+    <section class="help-section" id="help">
+
+      <div>
+        <span class="section-label">NEED HELP?</span>
+        <h2>Not sure which plan to choose?</h2>
+        <p>
+          Start with your usage preference and adjust your choice anytime.
+        </p>
+      </div>
+
+      <button class="help-btn" id="helpBtn">Get Help</button>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div>
+      <strong>airtel</strong>
+      <span>Plan Finder</span>
+    </div>
+
+    <p>Choose smarter. Stay connected.</p>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

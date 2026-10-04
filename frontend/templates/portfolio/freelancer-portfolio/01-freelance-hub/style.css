@@ -1,0 +1,568 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f2f0ea;
+    color: #171717;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    height: 78px;
+    padding: 0 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d8d4cb;
+    background: #f2f0ea;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span,
+footer strong span {
+    color: #246bfe;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar nav a {
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #246bfe;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 650px;
+    padding: 90px 7%;
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.eyebrow,
+.section-header p,
+.about-label p,
+.contact > p {
+    color: #246bfe;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    max-width: 850px;
+    margin: 20px 0 25px;
+    font-size: clamp(52px, 7vw, 92px);
+    line-height: 0.96;
+    letter-spacing: -5px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #246bfe;
+}
+
+.hero-text {
+    max-width: 570px;
+    color: #66635e;
+    font-size: 17px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    margin-top: 35px;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 14px 23px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: #171717;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #246bfe;
+    transform: translateY(-3px);
+}
+
+.secondary-btn {
+    border: 1px solid #171717;
+}
+
+.secondary-btn:hover {
+    background: #171717;
+    color: white;
+}
+
+
+/* AVAILABILITY CARD */
+
+.availability-card {
+    min-height: 430px;
+    padding: 35px;
+    background: #171717;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.availability-card::before {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: #246bfe;
+    right: -100px;
+    top: -100px;
+}
+
+.status {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #ddd;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.status span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4ade80;
+}
+
+.card-line {
+    width: 100%;
+    height: 1px;
+    background: #444;
+    margin: 35px 0;
+}
+
+.availability-card h2 {
+    position: relative;
+    z-index: 2;
+    font-size: 42px;
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+.availability-card > p {
+    position: absolute;
+    bottom: 35px;
+    left: 35px;
+    color: #999;
+    font-size: 13px;
+}
+
+.card-number {
+    position: absolute;
+    bottom: 30px;
+    right: 35px;
+    font-size: 13px;
+    color: #246bfe;
+}
+
+
+/* COMMON SECTION */
+
+.services,
+.projects {
+    padding: 110px 7%;
+}
+
+.section-header {
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    margin-top: 12px;
+    font-size: clamp(40px, 5vw, 65px);
+    letter-spacing: -3px;
+}
+
+
+/* SERVICES */
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.service-card {
+    min-height: 310px;
+    padding: 30px;
+    background: white;
+    border: 1px solid #ddd9d0;
+    position: relative;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    border-color: #246bfe;
+}
+
+.service-number {
+    color: #246bfe;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.service-card h3 {
+    margin-top: 75px;
+    font-size: 27px;
+    line-height: 1.1;
+}
+
+.service-card p {
+    margin-top: 15px;
+    color: #77736c;
+    font-size: 14px;
+}
+
+.service-arrow {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    font-size: 24px;
+    color: #246bfe;
+}
+
+
+/* PROJECTS */
+
+.projects {
+    background: #171717;
+    color: white;
+}
+
+.projects .section-header p {
+    color: #246bfe;
+}
+
+.project-list {
+    border-top: 1px solid #444;
+}
+
+.project-item {
+    min-height: 190px;
+    padding: 30px 0;
+    border-bottom: 1px solid #444;
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 30px;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.project-item:hover {
+    padding-left: 15px;
+}
+
+.project-number {
+    color: #246bfe;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.project-info > span {
+    color: #999;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.project-info h3 {
+    margin: 7px 0;
+    font-size: 31px;
+}
+
+.project-info p {
+    max-width: 600px;
+    color: #999;
+    font-size: 14px;
+}
+
+.project-tag {
+    border: 1px solid #555;
+    padding: 8px 14px;
+    font-size: 12px;
+    color: #bbb;
+}
+
+
+/* ABOUT */
+
+.about {
+    padding: 120px 7%;
+    display: grid;
+    grid-template-columns: 0.35fr 1fr;
+    gap: 80px;
+}
+
+.about-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.about-label span {
+    color: #246bfe;
+    font-size: 13px;
+}
+
+.about-content h2 {
+    max-width: 800px;
+    font-size: clamp(42px, 6vw, 78px);
+    line-height: 0.98;
+    letter-spacing: -4px;
+}
+
+.about-content h2 span {
+    color: #246bfe;
+}
+
+.about-content > p {
+    max-width: 720px;
+    margin-top: 30px;
+    color: #66635e;
+    font-size: 17px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 35px;
+}
+
+.skills span {
+    padding: 9px 15px;
+    border: 1px solid #cfcac0;
+    font-size: 13px;
+}
+
+
+/* CONTACT */
+
+.contact {
+    padding: 120px 7%;
+    background: #246bfe;
+    color: white;
+}
+
+.contact > p {
+    color: white;
+}
+
+.contact h2 {
+    margin: 25px 0 40px;
+    font-size: clamp(50px, 7vw, 95px);
+    line-height: 0.95;
+    letter-spacing: -5px;
+}
+
+.contact > a {
+    display: inline-block;
+    padding: 15px 25px;
+    background: white;
+    color: #171717;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.contact > a:hover {
+    background: #171717;
+    color: white;
+    transform: translateY(-3px);
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 40px 7%;
+    background: #111;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+footer strong {
+    font-size: 19px;
+    letter-spacing: 2px;
+}
+
+footer p {
+    color: #777;
+    font-size: 12px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    font-size: 13px;
+    color: #bbb;
+}
+
+.footer-links a:hover {
+    color: #246bfe;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 950px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .availability-card {
+        max-width: 550px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .navbar {
+        height: auto;
+        padding: 20px;
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    .navbar nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar nav a {
+        font-size: 12px;
+    }
+
+    .hero,
+    .services,
+    .projects,
+    .about,
+    .contact {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .hero h1,
+    .contact h2,
+    .about-content h2 {
+        letter-spacing: -3px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .availability-card {
+        min-height: 350px;
+    }
+
+    .availability-card h2 {
+        font-size: 34px;
+    }
+
+    .project-item {
+        grid-template-columns: 40px 1fr;
+    }
+
+    .project-tag {
+        display: none;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+/* REVEAL ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

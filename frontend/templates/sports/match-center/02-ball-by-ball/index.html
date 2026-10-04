@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ball by Ball</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="#" class="logo">Ball<span>ByBall</span></a>
+
+      <nav>
+        <a href="#score">Score</a>
+        <a href="#commentary">Commentary</a>
+        <a href="#stats">Stats</a>
+      </nav>
+
+      <button class="follow-btn" id="followBtn">☆ Follow</button>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- Match Header -->
+    <section class="match-header" id="score">
+      <div class="container">
+
+        <div class="match-top">
+          <div>
+            <p class="eyebrow">LIVE • FINAL</p>
+            <h1>India vs England</h1>
+            <p class="venue">Eden Gardens · Kolkata</p>
+          </div>
+
+          <div class="live-badge">
+            <span></span>
+            LIVE
+          </div>
+        </div>
+
+
+        <div class="score-panel">
+
+          <div class="team">
+            <div class="team-logo">IND</div>
+            <h2>India</h2>
+            <strong id="score">174/5</strong>
+            <p id="overs">19.2 overs</p>
+          </div>
+
+          <div class="score-middle">
+            <span>NEED</span>
+            <strong id="needRuns">15</strong>
+            <small>runs from 4 balls</small>
+          </div>
+
+          <div class="team">
+            <div class="team-logo england">ENG</div>
+            <h2>England</h2>
+            <strong>188/6</strong>
+            <p>20 overs</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Commentary -->
+    <section class="commentary-section" id="commentary">
+      <div class="container commentary-layout">
+
+        <div class="commentary-intro">
+          <p class="eyebrow">BALL TRACKER</p>
+          <h2>Every delivery,<br>captured.</h2>
+          <p>
+            Follow the innings ball by ball with runs,
+            wickets and key moments updated as they happen.
+          </p>
+
+          <button class="update-btn" id="updateBtn">
+            ↻ Update Score
+          </button>
+        </div>
+
+
+        <div class="commentary-list">
+
+          <div class="over-label">
+            <span>OVER 19.2</span>
+            <strong>174/5</strong>
+          </div>
+
+          <article class="ball highlight">
+            <div class="ball-number">19.2</div>
+            <div class="ball-content">
+              <div class="ball-result four">4</div>
+              <div>
+                <strong>FOUR!</strong>
+                <p>Yadav drives through the covers. Beautiful timing.</p>
+              </div>
+            </div>
+          </article>
+
+
+          <article class="ball">
+            <div class="ball-number">19.1</div>
+            <div class="ball-content">
+              <div class="ball-result">1</div>
+              <div>
+                <strong>Single</strong>
+                <p>Worked gently into the leg side for one.</p>
+              </div>
+            </div>
+          </article>
+
+
+          <article class="ball">
+            <div class="ball-number">18.6</div>
+            <div class="ball-content">
+              <div class="ball-result">0</div>
+              <div>
+                <strong>Dot ball</strong>
+                <p>Good yorker. Squeezed back to the bowler.</p>
+              </div>
+            </div>
+          </article>
+
+
+          <article class="ball">
+            <div class="ball-number">18.5</div>
+            <div class="ball-content">
+              <div class="ball-result six">6</div>
+              <div>
+                <strong>SIX!</strong>
+                <p>High and handsome over long-on.</p>
+              </div>
+            </div>
+          </article>
+
+
+          <article class="ball">
+            <div class="ball-number">18.4</div>
+            <div class="ball-content">
+              <div class="ball-result">1</div>
+              <div>
+                <strong>Single</strong>
+                <p>Pushed into the gap at mid-wicket.</p>
+              </div>
+            </div>
+          </article>
+
+
+          <article class="ball">
+            <div class="ball-number">18.3</div>
+            <div class="ball-content">
+              <div class="ball-result wicket">W</div>
+              <div>
+                <strong>WICKET!</strong>
+                <p>Bowled! Pandya misses the straight delivery.</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Stats -->
+    <section class="stats-section" id="stats">
+      <div class="container">
+
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">MATCH NUMBERS</p>
+            <h2>Innings Stats</h2>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+
+          <div class="stat-card">
+            <span>Current Run Rate</span>
+            <strong>9.00</strong>
+          </div>
+
+          <div class="stat-card">
+            <span>Required Run Rate</span>
+            <strong>22.50</strong>
+          </div>
+
+          <div class="stat-card">
+            <span>Boundaries</span>
+            <strong>14</strong>
+          </div>
+
+          <div class="stat-card">
+            <span>Wickets</span>
+            <strong>5</strong>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div class="container footer-content">
+      <strong>BallByBall</strong>
+      <span>Cricket commentary, one delivery at a time.</span>
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

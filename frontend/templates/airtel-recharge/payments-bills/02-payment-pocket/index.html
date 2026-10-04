@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airtel Payment Pocket</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">airtel</span>
+      <span>Payment Pocket</span>
+    </div>
+
+    <nav>
+      <a href="#wallet">Wallet</a>
+      <a href="#payments">Payments</a>
+      <a href="#activity">Activity</a>
+    </nav>
+
+    <button class="menu-btn" id="menuBtn">Menu</button>
+  </header>
+
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="wallet">
+
+      <div class="hero-copy">
+        <span class="label">PAYMENT POCKET</span>
+
+        <h1>Your payments, neatly packed.</h1>
+
+        <p>
+          Keep your Airtel payments, saved methods and recent activity
+          together in one simple payment space.
+        </p>
+
+        <button class="main-btn" id="addMoneyBtn">
+          Add Payment Method
+        </button>
+      </div>
+
+      <div class="pocket-card">
+
+        <div class="pocket-top">
+          <span>AVAILABLE BALANCE</span>
+          <span>•••</span>
+        </div>
+
+        <div class="balance">
+          <small>₹</small>
+          <strong id="balance">1,250</strong>
+        </div>
+
+        <div class="pocket-bottom">
+          <span>Payment Pocket</span>
+          <span>•••• 2847</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Quick Payment -->
+    <section class="quick-pay" id="payments">
+
+      <div class="section-heading">
+        <span class="label">01 / QUICK PAYMENT</span>
+        <h2>What would you like to pay?</h2>
+      </div>
+
+      <div class="payment-grid">
+
+        <article class="payment-card">
+          <div class="payment-icon">↻</div>
+          <span class="small-label">MOBILE</span>
+          <h3>Recharge</h3>
+          <p>Recharge your Airtel mobile number quickly.</p>
+          <button class="card-btn" data-action="Recharge">Pay Now →</button>
+        </article>
+
+        <article class="payment-card featured">
+          <div class="payment-icon">▣</div>
+          <span class="small-label">POSTPAID</span>
+          <h3>Pay Bill</h3>
+          <p>Clear your current postpaid bill in a few clicks.</p>
+          <button class="card-btn" data-action="Bill">Pay Now →</button>
+        </article>
+
+        <article class="payment-card">
+          <div class="payment-icon">⌂</div>
+          <span class="small-label">BROADBAND</span>
+          <h3>Fiber Bill</h3>
+          <p>Manage your Airtel Xstream Fiber payment.</p>
+          <button class="card-btn" data-action="Fiber">Pay Now →</button>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- Saved Methods -->
+    <section class="methods">
+
+      <div class="section-heading">
+        <span class="label">02 / SAVED METHODS</span>
+        <h2>Ready when you are.</h2>
+      </div>
+
+      <div class="methods-grid">
+
+        <div class="method-card active-method">
+          <div class="method-top">
+            <span class="method-type">UPI</span>
+            <span class="default-tag">DEFAULT</span>
+          </div>
+
+          <h3>venkateshwarareddy@upi</h3>
+          <p>Primary payment method</p>
+
+          <button class="method-btn" data-method="UPI">
+            Use This
+          </button>
+        </div>
+
+
+        <div class="method-card">
+          <div class="method-top">
+            <span class="method-type">CARD</span>
+            <span>VISA</span>
+          </div>
+
+          <h3>•••• 2847</h3>
+          <p>Expires 08/29</p>
+
+          <button class="method-btn" data-method="Card">
+            Use This
+          </button>
+        </div>
+
+
+        <div class="method-card add-method">
+          <div class="plus">+</div>
+          <h3>Add another method</h3>
+          <p>Save a new card or UPI ID.</p>
+
+          <button class="method-btn" id="newMethodBtn">
+            Add Method
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Payment Activity -->
+    <section class="activity" id="activity">
+
+      <div class="section-heading">
+        <span class="label">03 / ACTIVITY</span>
+        <h2>Your recent payments.</h2>
+      </div>
+
+      <div class="activity-card">
+
+        <div class="activity-row heading-row">
+          <span>Payment</span>
+          <span>Date</span>
+          <span>Amount</span>
+          <span>Status</span>
+        </div>
+
+        <div class="activity-row">
+          <div>
+            <strong>Mobile Recharge</strong>
+            <small>Airtel Prepaid</small>
+          </div>
+          <span>28 Sep</span>
+          <strong>₹349</strong>
+          <span class="success">Successful</span>
+        </div>
+
+        <div class="activity-row">
+          <div>
+            <strong>Postpaid Bill</strong>
+            <small>Monthly payment</small>
+          </div>
+          <span>12 Sep</span>
+          <strong>₹749</strong>
+          <span class="success">Successful</span>
+        </div>
+
+        <div class="activity-row">
+          <div>
+            <strong>Fiber Bill</strong>
+            <small>Xstream Fiber</small>
+          </div>
+          <span>05 Sep</span>
+          <strong>₹799</strong>
+          <span class="success">Successful</span>
+        </div>
+
+      </div>
+
+      <button class="history-btn" id="historyBtn">
+        View All Activity
+      </button>
+
+    </section>
+
+
+    <!-- Security -->
+    <section class="security">
+
+      <div class="security-card">
+
+        <div class="shield">✓</div>
+
+        <div>
+          <span class="label">PAYMENT SECURITY</span>
+          <h2>Your payment details stay protected.</h2>
+          <p>
+            Your saved payment methods are secured and can be managed
+            whenever you need.
+          </p>
+        </div>
+
+        <button class="security-btn" id="securityBtn">
+          Security Details
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div>
+      <strong>airtel</strong>
+      <span>Payment Pocket</span>
+    </div>
+
+    <p>Simple. Secure. Ready.</p>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

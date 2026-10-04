@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airtel Bill Control Center</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">airtel</span>
+      <div>
+        <strong>Bill Control</strong>
+        <small>Payments & Bills</small>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#overview">Overview</a>
+      <a href="#bills">Bills</a>
+      <a href="#history">History</a>
+    </nav>
+
+    <button class="profile-btn" id="profileBtn">Account</button>
+  </header>
+
+
+  <main>
+
+    <!-- Hero / Overview -->
+    <section class="dashboard-hero" id="overview">
+
+      <div class="hero-heading">
+        <span class="eyebrow">MY BILL CONTROL CENTER</span>
+        <h1>Stay ahead of every payment.</h1>
+        <p>
+          View your current bill, manage reminders and keep your
+          Airtel payments organized from one place.
+        </p>
+
+        <div class="hero-actions">
+          <button class="primary-btn" id="payHeroBtn">Pay Current Bill</button>
+          <button class="outline-btn" id="reminderHeroBtn">Manage Reminder</button>
+        </div>
+      </div>
+
+      <div class="bill-summary">
+        <div class="summary-top">
+          <span>CURRENT BILL</span>
+          <span class="status-dot">● Due Soon</span>
+        </div>
+
+        <div class="bill-amount">
+          <small>₹</small>
+          <strong id="heroAmount">749</strong>
+        </div>
+
+        <div class="due-info">
+          <span>Due date</span>
+          <strong id="heroDueDate">12 Oct 2026</strong>
+        </div>
+
+        <div class="summary-progress">
+          <div>
+            <span>Payment window</span>
+            <strong>8 days left</strong>
+          </div>
+          <div class="progress-track">
+            <span></span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- Bill Overview -->
+    <section class="overview-section">
+
+      <div class="section-title">
+        <span class="eyebrow">01 / BILL OVERVIEW</span>
+        <h2>Your payment at a glance.</h2>
+      </div>
+
+      <div class="overview-grid">
+
+        <div class="overview-card">
+          <span class="card-label">CURRENT AMOUNT</span>
+          <strong>₹749</strong>
+          <p>Includes your monthly plan and selected services.</p>
+        </div>
+
+        <div class="overview-card">
+          <span class="card-label">DUE DATE</span>
+          <strong>12 OCT</strong>
+          <p>Your payment should be completed before the due date.</p>
+        </div>
+
+        <div class="overview-card">
+          <span class="card-label">AUTOPAY</span>
+          <strong id="autopayStatus">ON</strong>
+          <p>Automatic payment is currently enabled.</p>
+          <button class="small-btn" id="autopayBtn">Turn Off</button>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Bills -->
+    <section class="bills-section" id="bills">
+
+      <div class="section-title">
+        <span class="eyebrow">02 / BILL DETAILS</span>
+        <h2>Know what you're paying for.</h2>
+      </div>
+
+      <div class="bill-layout">
+
+        <div class="invoice-card">
+
+          <div class="invoice-header">
+            <div>
+              <span>OCTOBER 2026</span>
+              <h3>Monthly Bill</h3>
+            </div>
+
+            <strong>₹749</strong>
+          </div>
+
+          <div class="invoice-line">
+            <span>Mobile Plan</span>
+            <strong>₹599</strong>
+          </div>
+
+          <div class="invoice-line">
+            <span>Entertainment Pack</span>
+            <strong>₹99</strong>
+          </div>
+
+          <div class="invoice-line">
+            <span>Taxes & Charges</span>
+            <strong>₹51</strong>
+          </div>
+
+          <div class="invoice-total">
+            <span>Total</span>
+            <strong>₹749</strong>
+          </div>
+
+          <button class="pay-btn" id="payBillBtn">Pay ₹749</button>
+
+        </div>
+
+
+        <div class="side-panel">
+
+          <div class="side-card">
+            <span class="card-label">NEXT BILL</span>
+            <h3>12 NOV 2026</h3>
+            <p>Your next billing cycle begins automatically.</p>
+          </div>
+
+          <div class="side-card">
+            <span class="card-label">PAYMENT METHOD</span>
+            <h3 id="paymentMethod">UPI</h3>
+            <p>Your preferred payment method is ready for the next bill.</p>
+            <button class="text-btn" id="changePaymentBtn">Change Method →</button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- History -->
+    <section class="history-section" id="history">
+
+      <div class="section-title">
+        <span class="eyebrow">03 / PAYMENT HISTORY</span>
+        <h2>Recent payments.</h2>
+      </div>
+
+      <div class="history-card">
+
+        <div class="history-row history-head">
+          <span>Date</span>
+          <span>Description</span>
+          <span>Amount</span>
+          <span>Status</span>
+        </div>
+
+        <div class="history-row">
+          <span>12 Sep 2026</span>
+          <span>Monthly Bill</span>
+          <strong>₹749</strong>
+          <span class="paid">Paid</span>
+        </div>
+
+        <div class="history-row">
+          <span>12 Aug 2026</span>
+          <span>Monthly Bill</span>
+          <strong>₹699</strong>
+          <span class="paid">Paid</span>
+        </div>
+
+        <div class="history-row">
+          <span>12 Jul 2026</span>
+          <span>Monthly Bill</span>
+          <strong>₹699</strong>
+          <span class="paid">Paid</span>
+        </div>
+
+      </div>
+
+      <button class="history-btn" id="historyBtn">View Full History</button>
+
+    </section>
+
+
+    <!-- Reminder -->
+    <section class="reminder-section">
+
+      <div class="reminder-card">
+
+        <div>
+          <span class="eyebrow">PAYMENT REMINDER</span>
+          <h2>Never miss your due date.</h2>
+          <p>
+            Get a reminder before your monthly bill is due.
+          </p>
+        </div>
+
+        <button class="reminder-btn" id="reminderBtn">
+          Reminders On
+        </button>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div>
+      <strong>airtel</strong>
+      <span>Bill Control Center</span>
+    </div>
+
+    <p>Simple payments. Better control.</p>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
