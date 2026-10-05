@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        <div class="brand-icon">✦</div>
+        <span>Learnly</span>
+    </div>
+
+    <div class="exam-title">
+        <strong>JavaScript Fundamentals</strong>
+        <span>Module Assessment · 20 Questions</span>
+    </div>
+
+    <div class="top-right">
+
+        <div class="timer">
+            <span>TIME LEFT</span>
+            <strong id="timer">29:45</strong>
+        </div>
+
+        <div class="avatar">JS</div>
+
+    </div>
+
+</header>
+
+<div class="exam-layout">
+
+    <aside class="question-sidebar">
+
+        <div class="sidebar-heading">
+            <span>ASSESSMENT</span>
+            <h2>JavaScript Basics</h2>
+            <p>Answer all questions carefully.</p>
+        </div>
+
+        <div class="test-progress">
+
+            <div class="progress-top">
+                <span>Progress</span>
+                <strong id="progressText">0 / 20</strong>
+            </div>
+
+            <div class="progress-bar">
+                <span id="progressBar"></span>
+            </div>
+
+        </div>
+
+        <div class="legend">
+
+            <div>
+                <span class="legend-dot answered"></span>
+                Answered
+            </div>
+
+            <div>
+                <span class="legend-dot review"></span>
+                Review
+            </div>
+
+            <div>
+                <span class="legend-dot current"></span>
+                Current
+            </div>
+
+        </div>
+
+        <div class="question-grid" id="questionGrid">
+
+            <button class="question-number current">1</button>
+            <button class="question-number">2</button>
+            <button class="question-number">3</button>
+            <button class="question-number">4</button>
+            <button class="question-number">5</button>
+            <button class="question-number">6</button>
+            <button class="question-number">7</button>
+            <button class="question-number">8</button>
+            <button class="question-number">9</button>
+            <button class="question-number">10</button>
+            <button class="question-number">11</button>
+            <button class="question-number">12</button>
+            <button class="question-number">13</button>
+            <button class="question-number">14</button>
+            <button class="question-number">15</button>
+            <button class="question-number">16</button>
+            <button class="question-number">17</button>
+            <button class="question-number">18</button>
+            <button class="question-number">19</button>
+            <button class="question-number">20</button>
+
+        </div>
+
+        <div class="sidebar-bottom">
+
+            <button id="helpBtn" class="side-action">
+                ?
+                <span>Need Help?</span>
+            </button>
+
+            <button id="exitBtn" class="side-action">
+                ←
+                <span>Exit Test</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+    <main class="test-content">
+
+        <div class="top-info">
+
+            <div>
+                <span class="question-label">QUESTION <strong id="questionNumber">01</strong> OF 20</span>
+                <div class="difficulty">
+                    <span class="difficulty-dot"></span>
+                    Easy
+                </div>
+            </div>
+
+            <button id="reviewBtn" class="review-btn">
+                ☆ Mark for Review
+            </button>
+
+        </div>
+
+        <section class="question-card">
+
+            <div class="question-category">
+                JAVASCRIPT · FUNDAMENTALS
+            </div>
+
+            <h1 id="questionText">
+                Which keyword is used to declare a variable that cannot be reassigned?
+            </h1>
+
+            <p class="instruction">
+                Select the correct answer from the options below.
+            </p>
+
+            <div class="answers" id="answers">
+
+                <button class="answer" data-answer="A">
+                    <span class="option-letter">A</span>
+                    <span class="option-text">var</span>
+                </button>
+
+                <button class="answer" data-answer="B">
+                    <span class="option-letter">B</span>
+                    <span class="option-text">let</span>
+                </button>
+
+                <button class="answer" data-answer="C">
+                    <span class="option-letter">C</span>
+                    <span class="option-text">const</span>
+                </button>
+
+                <button class="answer" data-answer="D">
+                    <span class="option-letter">D</span>
+                    <span class="option-text">static</span>
+                </button>
+
+            </div>
+
+        </section>
+
+        <div class="question-actions">
+
+            <button id="clearBtn" class="secondary-btn">
+                Clear Answer
+            </button>
+
+            <div class="navigation-buttons">
+
+                <button id="previousBtn" class="secondary-btn">
+                    ← Previous
+                </button>
+
+                <button id="nextBtn" class="primary-btn">
+                    Save & Next →
+                </button>
+
+            </div>
+
+        </div>
+
+        <section class="tip-card">
+
+            <div class="tip-icon">💡</div>
+
+            <div>
+                <strong>Test Tip</strong>
+                <p>
+                    Read each question carefully. You can mark questions
+                    for review and return to them before submitting.
+                </p>
+            </div>
+
+        </section>
+
+        <section class="submit-section">
+
+            <div>
+                <span>Almost there!</span>
+                <strong>Review your answers before submitting.</strong>
+            </div>
+
+            <button id="submitBtn">
+                Submit Test
+            </button>
+
+        </section>
+
+    </main>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<div class="modal" id="modal">
+
+    <div class="modal-box">
+
+        <button class="close-modal" id="closeModal">×</button>
+
+        <div class="modal-icon" id="modalIcon">!</div>
+
+        <h2 id="modalTitle">Submit Test?</h2>
+
+        <p id="modalText">
+            Are you sure you want to submit your assessment?
+        </p>
+
+        <div class="modal-actions">
+
+            <button id="cancelModal" class="modal-cancel">
+                Continue Test
+            </button>
+
+            <button id="confirmModal" class="modal-confirm">
+                Submit Test
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

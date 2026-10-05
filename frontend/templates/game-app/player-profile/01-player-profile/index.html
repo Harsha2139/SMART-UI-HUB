@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Profile | ArenaX</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app">
+
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">A</div>
+                <span>ArenaX</span>
+            </div>
+
+            <nav>
+                <a href="#" class="nav-item">
+                    <span>⌂</span>
+                    Home
+                </a>
+
+                <a href="#" class="nav-item">
+                    <span>🎮</span>
+                    Games
+                </a>
+
+                <a href="#" class="nav-item active">
+                    <span>👤</span>
+                    Profile
+                </a>
+
+                <a href="#" class="nav-item">
+                    <span>🏆</span>
+                    Rankings
+                </a>
+
+                <a href="#" class="nav-item">
+                    <span>👥</span>
+                    Community
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="#" class="nav-item">
+                    <span>⚙️</span>
+                    Settings
+                </a>
+
+                <button class="logout-btn" id="logoutBtn">
+                    <span>↪</span>
+                    Logout
+                </button>
+            </div>
+        </aside>
+
+        <main class="main">
+
+            <header class="topbar">
+                <button class="mobile-menu" id="mobileMenu">☰</button>
+
+                <div class="search">
+                    <span>⌕</span>
+                    <input type="text" id="searchInput" placeholder="Search games, players...">
+                </div>
+
+                <div class="top-actions">
+                    <button class="icon-btn" id="notificationBtn">🔔</button>
+                    <button class="avatar-small">JD</button>
+                </div>
+            </header>
+
+            <section class="profile-hero">
+
+                <div class="cover-pattern"></div>
+
+                <div class="profile-content">
+
+                    <div class="profile-avatar">
+                        JD
+                        <span class="online-dot"></span>
+                    </div>
+
+                    <div class="profile-main-info">
+                        <div class="name-row">
+                            <h1>Jordan Davis</h1>
+                            <span class="verified">✓</span>
+                        </div>
+
+                        <p class="username">@jordandavis</p>
+
+                        <p class="bio">
+                            Competitive gamer • Strategy enthusiast •
+                            Exploring new worlds one game at a time.
+                        </p>
+
+                        <div class="profile-meta">
+                            <span>📍 Chennai, India</span>
+                            <span>📅 Joined March 2024</span>
+                        </div>
+                    </div>
+
+                    <div class="profile-actions">
+                        <button class="edit-btn" id="editProfileBtn">
+                            ✎ Edit Profile
+                        </button>
+
+                        <button class="share-btn" id="shareBtn">
+                            ↗ Share
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="profile-tabs">
+                    <button class="tab active" data-tab="overview">Overview</button>
+                    <button class="tab" data-tab="games">Games</button>
+                    <button class="tab" data-tab="achievements">Achievements</button>
+                    <button class="tab" data-tab="activity">Activity</button>
+                </div>
+
+            </section>
+
+            <section class="content">
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-icon purple">🎮</div>
+                        <div>
+                            <strong>48</strong>
+                            <span>Games Played</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon blue">🏆</div>
+                        <div>
+                            <strong>126</strong>
+                            <span>Achievements</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon orange">⚡</div>
+                        <div>
+                            <strong>2,840</strong>
+                            <span>XP Earned</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon green">👥</div>
+                        <div>
+                            <strong>384</strong>
+                            <span>Friends</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="dashboard-grid">
+
+                    <div class="left-column">
+
+                        <div class="section-card">
+                            <div class="section-heading">
+                                <div>
+                                    <h2>Favorite Games</h2>
+                                    <p>Games Jordan plays the most</p>
+                                </div>
+
+                                <button class="text-btn" id="viewGamesBtn">
+                                    View all
+                                </button>
+                            </div>
+
+                            <div class="games-list">
+
+                                <div class="game-item">
+                                    <div class="game-cover game-one">⚔️</div>
+
+                                    <div class="game-info">
+                                        <h3>Shadow Legends</h3>
+                                        <p>Action RPG</p>
+
+                                        <div class="progress">
+                                            <div style="width: 86%"></div>
+                                        </div>
+
+                                        <small>86% completed</small>
+                                    </div>
+
+                                    <span class="game-level">Lv. 42</span>
+                                </div>
+
+                                <div class="game-item">
+                                    <div class="game-cover game-two">🚀</div>
+
+                                    <div class="game-info">
+                                        <h3>Galaxy Rush</h3>
+                                        <p>Space Adventure</p>
+
+                                        <div class="progress">
+                                            <div style="width: 72%"></div>
+                                        </div>
+
+                                        <small>72% completed</small>
+                                    </div>
+
+                                    <span class="game-level">Lv. 36</span>
+                                </div>
+
+                                <div class="game-item">
+                                    <div class="game-cover game-three">🏎️</div>
+
+                                    <div class="game-info">
+                                        <h3>Velocity X</h3>
+                                        <p>Racing</p>
+
+                                        <div class="progress">
+                                            <div style="width: 61%"></div>
+                                        </div>
+
+                                        <small>61% completed</small>
+                                    </div>
+
+                                    <span class="game-level">Lv. 29</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="section-card">
+                            <div class="section-heading">
+                                <div>
+                                    <h2>Recent Activity</h2>
+                                    <p>Your latest gaming activity</p>
+                                </div>
+                            </div>
+
+                            <div class="activity-list">
+
+                                <div class="activity">
+                                    <div class="activity-icon purple-bg">🏆</div>
+                                    <div>
+                                        <strong>Achievement unlocked</strong>
+                                        <p>Master Strategist in Shadow Legends</p>
+                                        <small>2 hours ago</small>
+                                    </div>
+                                </div>
+
+                                <div class="activity">
+                                    <div class="activity-icon blue-bg">🎮</div>
+                                    <div>
+                                        <strong>Played Galaxy Rush</strong>
+                                        <p>Completed 3 missions</p>
+                                        <small>Yesterday</small>
+                                    </div>
+                                </div>
+
+                                <div class="activity">
+                                    <div class="activity-icon orange-bg">👥</div>
+                                    <div>
+                                        <strong>New friend added</strong>
+                                        <p>You are now connected with Alex Morgan</p>
+                                        <small>2 days ago</small>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="right-column">
+
+                        <div class="section-card">
+                            <div class="section-heading">
+                                <div>
+                                    <h2>Achievements</h2>
+                                    <p>126 unlocked</p>
+                                </div>
+
+                                <button class="text-btn" id="achievementsBtn">
+                                    See all
+                                </button>
+                            </div>
+
+                            <div class="achievement-grid">
+
+                                <div class="achievement">
+                                    <div class="achievement-icon gold">🏆</div>
+                                    <strong>Champion</strong>
+                                    <span>Top 10 ranking</span>
+                                </div>
+
+                                <div class="achievement">
+                                    <div class="achievement-icon purple-achievement">⚡</div>
+                                    <strong>Speed Run</strong>
+                                    <span>Under 10 minutes</span>
+                                </div>
+
+                                <div class="achievement">
+                                    <div class="achievement-icon blue-achievement">🎯</div>
+                                    <strong>Sharpshooter</strong>
+                                    <span>100 perfect hits</span>
+                                </div>
+
+                                <div class="achievement">
+                                    <div class="achievement-icon green-achievement">💎</div>
+                                    <strong>Collector</strong>
+                                    <span>50 rare items</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="section-card">
+                            <div class="section-heading">
+                                <div>
+                                    <h2>Gaming Level</h2>
+                                    <p>Keep playing to level up</p>
+                                </div>
+                            </div>
+
+                            <div class="level-box">
+                                <div class="level-top">
+                                    <div>
+                                        <span>Current Level</span>
+                                        <strong>42</strong>
+                                    </div>
+
+                                    <div class="next-level">
+                                        <span>Next</span>
+                                        <strong>43</strong>
+                                    </div>
+                                </div>
+
+                                <div class="xp-bar">
+                                    <div></div>
+                                </div>
+
+                                <div class="xp-info">
+                                    <span>2,840 XP</span>
+                                    <span>3,000 XP</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-card friends-card">
+                            <div class="section-heading">
+                                <div>
+                                    <h2>Friends Online</h2>
+                                    <p>12 friends currently online</p>
+                                </div>
+                            </div>
+
+                            <div class="friends">
+
+                                <div class="friend">
+                                    <div class="friend-avatar pink">AM</div>
+                                    <div>
+                                        <strong>Alex Morgan</strong>
+                                        <span>Playing Galaxy Rush</span>
+                                    </div>
+                                    <i></i>
+                                </div>
+
+                                <div class="friend">
+                                    <div class="friend-avatar blue">RK</div>
+                                    <div>
+                                        <strong>Ryan Kumar</strong>
+                                        <span>Playing Velocity X</span>
+                                    </div>
+                                    <i></i>
+                                </div>
+
+                                <div class="friend">
+                                    <div class="friend-avatar green">SL</div>
+                                    <div>
+                                        <strong>Sarah Lee</strong>
+                                        <span>Online</span>
+                                    </div>
+                                    <i></i>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+
+        <div class="modal" id="profileModal">
+
+            <button class="modal-close" id="modalClose">×</button>
+
+            <div class="modal-icon">👤</div>
+
+            <h2>Edit Profile</h2>
+            <p>Update your player information.</p>
+
+            <label>Display Name</label>
+            <input type="text" id="displayName" value="Jordan Davis">
+
+            <label>Username</label>
+            <input type="text" id="username" value="@jordandavis">
+
+            <label>Bio</label>
+            <textarea id="bio">Competitive gamer • Strategy enthusiast • Exploring new worlds one game at a time.</textarea>
+
+            <button class="save-btn" id="saveProfileBtn">
+                Save Changes
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="toast" id="toast">
+        <span>✓</span>
+        <p>Action completed successfully.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

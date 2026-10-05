@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="topbar">
+        🎁 Free delivery on orders above ₹499
+    </div>
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span>O</span>
+            Orderly
+        </div>
+
+        <div class="search-box">
+            🔍
+            <input id="searchInput" type="text" placeholder="Search your orders...">
+        </div>
+
+        <div class="nav-actions">
+            <button>♡</button>
+            <button>🔔</button>
+            <div class="profile">JB</div>
+        </div>
+
+    </header>
+
+    <main>
+
+        <div class="breadcrumb">
+            Home / My Orders
+        </div>
+
+        <section class="page-heading">
+
+            <div>
+                <span>ACCOUNT</span>
+                <h1>My Orders</h1>
+                <p>Track and manage all your purchases in one place.</p>
+            </div>
+
+            <button class="shop-btn" id="shopBtn">
+                Continue Shopping →
+            </button>
+
+        </section>
+
+        <section class="order-stats">
+
+            <div class="stat-card purple">
+                <div class="stat-icon">📦</div>
+                <div>
+                    <span>Total Orders</span>
+                    <strong>24</strong>
+                </div>
+            </div>
+
+            <div class="stat-card orange">
+                <div class="stat-icon">🚚</div>
+                <div>
+                    <span>In Transit</span>
+                    <strong>2</strong>
+                </div>
+            </div>
+
+            <div class="stat-card green">
+                <div class="stat-icon">✓</div>
+                <div>
+                    <span>Delivered</span>
+                    <strong>19</strong>
+                </div>
+            </div>
+
+            <div class="stat-card pink">
+                <div class="stat-icon">↩</div>
+                <div>
+                    <span>Returns</span>
+                    <strong>3</strong>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="orders-container">
+
+            <div class="orders-toolbar">
+
+                <div class="tabs">
+
+                    <button class="tab active" data-filter="all">
+                        All Orders
+                    </button>
+
+                    <button class="tab" data-filter="processing">
+                        Processing
+                    </button>
+
+                    <button class="tab" data-filter="shipped">
+                        Shipped
+                    </button>
+
+                    <button class="tab" data-filter="delivered">
+                        Delivered
+                    </button>
+
+                    <button class="tab" data-filter="cancelled">
+                        Cancelled
+                    </button>
+
+                </div>
+
+                <select id="sortOrders">
+                    <option value="recent">Most Recent</option>
+                    <option value="oldest">Oldest First</option>
+                    <option value="high">Highest Amount</option>
+                    <option value="low">Lowest Amount</option>
+                </select>
+
+            </div>
+
+            <div id="ordersList">
+
+                <article class="order-card"
+                    data-status="shipped"
+                    data-date="2026-09-28"
+                    data-price="2499">
+
+                    <div class="order-header">
+
+                        <div>
+                            <span class="order-label">ORDER ID</span>
+                            <strong>#ORD-92841</strong>
+                        </div>
+
+                        <div class="order-date">
+                            Placed on Sep 28, 2026
+                        </div>
+
+                        <span class="status shipped">
+                            ● Shipped
+                        </span>
+
+                    </div>
+
+                    <div class="order-body">
+
+                        <div class="product-image purple">
+                            🎧
+                        </div>
+
+                        <div class="product-info">
+                            <span>AUDIO</span>
+                            <h3>Pulse X Wireless Headphones</h3>
+                            <p>Midnight Black • Bluetooth 5.3</p>
+
+                            <div class="product-meta">
+                                <strong>₹2,499</strong>
+                                <small>Qty: 1</small>
+                            </div>
+                        </div>
+
+                        <div class="delivery-info">
+                            <span>EXPECTED DELIVERY</span>
+                            <strong>Oct 2, 2026</strong>
+                            <small>On the way to you</small>
+                        </div>
+
+                    </div>
+
+                    <div class="order-footer">
+
+                        <div class="tracking">
+                            <span class="completed">✓</span>
+                            <i class="done"></i>
+                            <span class="completed">✓</span>
+                            <i class="done"></i>
+                            <span class="current">●</span>
+                            <i></i>
+                            <span></span>
+                        </div>
+
+                        <div class="order-actions">
+                            <button class="track-btn">Track Order</button>
+                            <button class="details-btn">View Details</button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="order-card"
+                    data-status="delivered"
+                    data-date="2026-09-21"
+                    data-price="1899">
+
+                    <div class="order-header">
+
+                        <div>
+                            <span class="order-label">ORDER ID</span>
+                            <strong>#ORD-92137</strong>
+                        </div>
+
+                        <div class="order-date">
+                            Placed on Sep 21, 2026
+                        </div>
+
+                        <span class="status delivered">
+                            ● Delivered
+                        </span>
+
+                    </div>
+
+                    <div class="order-body">
+
+                        <div class="product-image blue">
+                            ⌚
+                        </div>
+
+                        <div class="product-info">
+                            <span>WEARABLES</span>
+                            <h3>FitPro Smart Watch</h3>
+                            <p>Ocean Blue • AMOLED Display</p>
+
+                            <div class="product-meta">
+                                <strong>₹1,899</strong>
+                                <small>Qty: 1</small>
+                            </div>
+                        </div>
+
+                        <div class="delivery-info">
+                            <span>DELIVERED ON</span>
+                            <strong>Sep 24, 2026</strong>
+                            <small>Delivered successfully</small>
+                        </div>
+
+                    </div>
+
+                    <div class="order-footer">
+
+                        <div class="delivered-message">
+                            ✓ Delivered safely
+                        </div>
+
+                        <div class="order-actions">
+                            <button class="return-btn">Return Item</button>
+                            <button class="details-btn">View Details</button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="order-card"
+                    data-status="processing"
+                    data-date="2026-09-30"
+                    data-price="3299">
+
+                    <div class="order-header">
+
+                        <div>
+                            <span class="order-label">ORDER ID</span>
+                            <strong>#ORD-93052</strong>
+                        </div>
+
+                        <div class="order-date">
+                            Placed on Sep 30, 2026
+                        </div>
+
+                        <span class="status processing">
+                            ● Processing
+                        </span>
+
+                    </div>
+
+                    <div class="order-body">
+
+                        <div class="product-image orange">
+                            🎮
+                        </div>
+
+                        <div class="product-info">
+                            <span>GAMING</span>
+                            <h3>Pro Wireless Game Controller</h3>
+                            <p>Graphite Black • Wireless</p>
+
+                            <div class="product-meta">
+                                <strong>₹3,299</strong>
+                                <small>Qty: 1</small>
+                            </div>
+                        </div>
+
+                        <div class="delivery-info">
+                            <span>EXPECTED DELIVERY</span>
+                            <strong>Oct 4, 2026</strong>
+                            <small>Order is being prepared</small>
+                        </div>
+
+                    </div>
+
+                    <div class="order-footer">
+
+                        <div class="processing-message">
+                            ⏳ Preparing your order
+                        </div>
+
+                        <div class="order-actions">
+                            <button class="cancel-btn">Cancel Order</button>
+                            <button class="details-btn">View Details</button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="order-card"
+                    data-status="cancelled"
+                    data-date="2026-09-12"
+                    data-price="999">
+
+                    <div class="order-header">
+
+                        <div>
+                            <span class="order-label">ORDER ID</span>
+                            <strong>#ORD-91286</strong>
+                        </div>
+
+                        <div class="order-date">
+                            Placed on Sep 12, 2026
+                        </div>
+
+                        <span class="status cancelled">
+                            ● Cancelled
+                        </span>
+
+                    </div>
+
+                    <div class="order-body">
+
+                        <div class="product-image red">
+                            🔊
+                        </div>
+
+                        <div class="product-info">
+                            <span>AUDIO</span>
+                            <h3>Mini Boom Portable Speaker</h3>
+                            <p>Sunset Orange • 12W Output</p>
+
+                            <div class="product-meta">
+                                <strong>₹999</strong>
+                                <small>Qty: 1</small>
+                            </div>
+                        </div>
+
+                        <div class="delivery-info">
+                            <span>ORDER STATUS</span>
+                            <strong>Cancelled</strong>
+                            <small>Refund initiated</small>
+                        </div>
+
+                    </div>
+
+                    <div class="order-footer">
+
+                        <div class="cancelled-message">
+                            ↩ Refund will be processed shortly
+                        </div>
+
+                        <div class="order-actions">
+                            <button class="details-btn">View Details</button>
+                            <button class="reorder-btn">Buy Again</button>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="empty-state" id="emptyState">
+                <div>🔎</div>
+                <h3>No orders found</h3>
+                <p>Try another search or select a different order category.</p>
+            </div>
+
+        </section>
+
+        <section class="support-banner">
+
+            <div class="support-icon">💬</div>
+
+            <div>
+                <span>NEED HELP?</span>
+                <h2>We're here to help with your orders.</h2>
+                <p>Contact our support team anytime for assistance.</p>
+            </div>
+
+            <button id="supportBtn">
+                Contact Support →
+            </button>
+
+        </section>
+
+    </main>
+
+    <div class="modal" id="detailsModal">
+
+        <div class="modal-box">
+
+            <button class="close-modal" id="closeModal">×</button>
+
+            <span class="modal-label">ORDER DETAILS</span>
+
+            <h2 id="modalTitle">Pulse X Wireless Headphones</h2>
+
+            <div class="modal-order">
+                Order ID: <strong id="modalOrderId">#ORD-92841</strong>
+            </div>
+
+            <div class="modal-grid">
+
+                <div>
+                    <span>ORDER DATE</span>
+                    <strong id="modalDate">Sep 28, 2026</strong>
+                </div>
+
+                <div>
+                    <span>AMOUNT</span>
+                    <strong id="modalPrice">₹2,499</strong>
+                </div>
+
+                <div>
+                    <span>PAYMENT</span>
+                    <strong>UPI Payment</strong>
+                </div>
+
+                <div>
+                    <span>DELIVERY</span>
+                    <strong>Standard Delivery</strong>
+                </div>
+
+            </div>
+
+            <button class="modal-action" id="modalAction">
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

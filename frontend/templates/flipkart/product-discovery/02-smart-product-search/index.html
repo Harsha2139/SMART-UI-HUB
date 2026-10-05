@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Search | Discoverly</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="announcement">
+        <span>⚡ Smart search is here</span>
+        <span>Find exactly what you're looking for</span>
+    </div>
+
+    <header class="header">
+        <a href="#" class="logo">
+            <span class="logo-mark">✦</span>
+            Discoverly
+        </a>
+
+        <div class="header-search">
+            <span class="search-icon">⌕</span>
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Try “wireless headphones under ₹3000”"
+                autocomplete="off"
+            >
+            <button id="clearSearch" class="clear-search">×</button>
+            <button id="voiceBtn" class="voice-btn">🎙️</button>
+            <button id="searchBtn" class="search-button">Search</button>
+        </div>
+
+        <div class="header-actions">
+            <button class="header-btn">♡ <span>Wishlist</span></button>
+            <button class="header-btn" id="cartButton">
+                🛒 <span>Cart</span>
+                <b id="cartCount">0</b>
+            </button>
+            <button class="avatar">JD</button>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="search-hero">
+
+            <div class="hero-left">
+                <span class="eyebrow">AI-POWERED DISCOVERY</span>
+
+                <h1>
+                    Search smarter.<br>
+                    <span>Shop better.</span>
+                </h1>
+
+                <p>
+                    Describe what you need naturally and let SmartSearch
+                    find products that match your style, budget and needs.
+                </p>
+
+                <div class="smart-search-box">
+                    <div class="smart-icon">✦</div>
+
+                    <div class="smart-input-area">
+                        <input
+                            type="text"
+                            id="heroSearch"
+                            placeholder="What are you looking for?"
+                        >
+                        <small>Try: “comfortable running shoes under ₹2500”</small>
+                    </div>
+
+                    <button id="smartSearchBtn">Find Products →</button>
+                </div>
+
+                <div class="quick-searches">
+                    <span>Popular:</span>
+                    <button data-query="wireless headphones">Wireless headphones</button>
+                    <button data-query="running shoes">Running shoes</button>
+                    <button data-query="smart watches">Smart watches</button>
+                </div>
+            </div>
+
+            <div class="hero-right">
+
+                <div class="search-orb">
+                    <div class="orb-inner">
+                        <span>⌕</span>
+                    </div>
+
+                    <div class="floating-result result-one">
+                        <span>🎧</span>
+                        <div>
+                            <strong>Headphones</strong>
+                            <small>98% match</small>
+                        </div>
+                    </div>
+
+                    <div class="floating-result result-two">
+                        <span>👟</span>
+                        <div>
+                            <strong>Running Shoes</strong>
+                            <small>94% match</small>
+                        </div>
+                    </div>
+
+                    <div class="floating-result result-three">
+                        <span>⌚</span>
+                        <div>
+                            <strong>Smart Watch</strong>
+                            <small>91% match</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="suggestions-section">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">SMART SUGGESTIONS</span>
+                    <h2>What are you shopping for?</h2>
+                </div>
+            </div>
+
+            <div class="suggestion-grid">
+
+                <button class="suggestion-card purple" data-query="electronics">
+                    <div class="suggestion-icon">🎧</div>
+                    <div>
+                        <strong>Latest Electronics</strong>
+                        <span>Discover smart gadgets</span>
+                    </div>
+                    <b>→</b>
+                </button>
+
+                <button class="suggestion-card pink" data-query="fashion">
+                    <div class="suggestion-icon">👟</div>
+                    <div>
+                        <strong>Trending Fashion</strong>
+                        <span>Fresh styles for you</span>
+                    </div>
+                    <b>→</b>
+                </button>
+
+                <button class="suggestion-card orange" data-query="home">
+                    <div class="suggestion-icon">🏠</div>
+                    <div>
+                        <strong>Home Essentials</strong>
+                        <span>Make your space better</span>
+                    </div>
+                    <b>→</b>
+                </button>
+
+                <button class="suggestion-card green" data-query="beauty">
+                    <div class="suggestion-icon">✨</div>
+                    <div>
+                        <strong>Beauty & Care</strong>
+                        <span>Products you'll love</span>
+                    </div>
+                    <b>→</b>
+                </button>
+
+            </div>
+        </section>
+
+        <section class="results-section" id="resultsSection">
+
+            <div class="results-header">
+
+                <div>
+                    <span class="section-label">SMART RESULTS</span>
+                    <h2 id="resultsTitle">Recommended for you</h2>
+                    <p id="resultsDescription">
+                        Personalized products based on popular searches.
+                    </p>
+                </div>
+
+                <div class="view-controls">
+                    <select id="sortSelect">
+                        <option value="recommended">Recommended</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
+
+                    <button class="view-btn active" id="gridView">▦</button>
+                    <button class="view-btn" id="listView">☰</button>
+                </div>
+
+            </div>
+
+            <div class="filter-row">
+                <button class="filter active" data-filter="all">All</button>
+                <button class="filter" data-filter="electronics">Electronics</button>
+                <button class="filter" data-filter="fashion">Fashion</button>
+                <button class="filter" data-filter="home">Home</button>
+                <button class="filter" data-filter="beauty">Beauty</button>
+                <button class="filter" data-filter="sports">Sports</button>
+            </div>
+
+            <div class="product-grid" id="productGrid">
+
+                <article class="product-card"
+                    data-category="electronics"
+                    data-price="2899"
+                    data-rating="4.9"
+                    data-name="AirWave Wireless Headphones">
+
+                    <div class="product-visual purple-bg">
+                        <span class="match">98% MATCH</span>
+                        <button class="heart">♡</button>
+                        <span class="product-icon">🎧</span>
+                    </div>
+
+                    <div class="product-content">
+                        <span class="category-name">AUDIO</span>
+                        <h3>AirWave Wireless Headphones</h3>
+
+                        <div class="reason">
+                            <span>✦</span>
+                            Perfect match for your search
+                        </div>
+
+                        <div class="rating">
+                            ★★★★★ <span>4.9 · 384 reviews</span>
+                        </div>
+
+                        <div class="price">
+                            <strong>₹2,899</strong>
+                            <del>₹4,499</del>
+                            <em>35% OFF</em>
+                        </div>
+
+                        <button class="add-cart"
+                            data-name="AirWave Wireless Headphones"
+                            data-price="2899">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-card"
+                    data-category="fashion"
+                    data-price="2199"
+                    data-rating="4.8"
+                    data-name="FlexRun Running Shoes">
+
+                    <div class="product-visual pink-bg">
+                        <span class="match">96% MATCH</span>
+                        <button class="heart">♡</button>
+                        <span class="product-icon">👟</span>
+                    </div>
+
+                    <div class="product-content">
+                        <span class="category-name">FOOTWEAR</span>
+                        <h3>FlexRun Running Shoes</h3>
+
+                        <div class="reason">
+                            <span>✦</span>
+                            Lightweight and comfortable
+                        </div>
+
+                        <div class="rating">
+                            ★★★★★ <span>4.8 · 276 reviews</span>
+                        </div>
+
+                        <div class="price">
+                            <strong>₹2,199</strong>
+                            <del>₹3,499</del>
+                            <em>37% OFF</em>
+                        </div>
+
+                        <button class="add-cart"
+                            data-name="FlexRun Running Shoes"
+                            data-price="2199">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-card"
+                    data-category="electronics"
+                    data-price="3999"
+                    data-rating="4.7"
+                    data-name="Pulse Smart Watch">
+
+                    <div class="product-visual blue-bg">
+                        <span class="match">94% MATCH</span>
+                        <button class="heart">♡</button>
+                        <span class="product-icon">⌚</span>
+                    </div>
+
+                    <div class="product-content">
+                        <span class="category-name">WEARABLES</span>
+                        <h3>Pulse Smart Watch</h3>
+
+                        <div class="reason">
+                            <span>✦</span>
+                            Great features for the price
+                        </div>
+
+                        <div class="rating">
+                            ★★★★★ <span>4.7 · 198 reviews</span>
+                        </div>
+
+                        <div class="price">
+                            <strong>₹3,999</strong>
+                            <del>₹6,499</del>
+                            <em>38% OFF</em>
+                        </div>
+
+                        <button class="add-cart"
+                            data-name="Pulse Smart Watch"
+                            data-price="3999">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-card"
+                    data-category="home"
+                    data-price="1799"
+                    data-rating="4.6"
+                    data-name="Aura Smart Lamp">
+
+                    <div class="product-visual orange-bg">
+                        <span class="match">91% MATCH</span>
+                        <button class="heart">♡</button>
+                        <span class="product-icon">💡</span>
+                    </div>
+
+                    <div class="product-content">
+                        <span class="category-name">HOME</span>
+                        <h3>Aura Smart Lamp</h3>
+
+                        <div class="reason">
+                            <span>✦</span>
+                            Popular in smart home
+                        </div>
+
+                        <div class="rating">
+                            ★★★★★ <span>4.6 · 142 reviews</span>
+                        </div>
+
+                        <div class="price">
+                            <strong>₹1,799</strong>
+                            <del>₹2,799</del>
+                            <em>36% OFF</em>
+                        </div>
+
+                        <button class="add-cart"
+                            data-name="Aura Smart Lamp"
+                            data-price="1799">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-card"
+                    data-category="beauty"
+                    data-price="1499"
+                    data-rating="4.9"
+                    data-name="Glow Essentials Kit">
+
+                    <div class="product-visual green-bg">
+                        <span class="match">90% MATCH</span>
+                        <button class="heart">♡</button>
+                        <span class="product-icon">🧴</span>
+                    </div>
+
+                    <div class="product-content">
+                        <span class="category-name">BEAUTY</span>
+                        <h3>Glow Essentials Kit</h3>
+
+                        <div class="reason">
+                            <span>✦</span>
+                            Highly rated by shoppers
+                        </div>
+
+                        <div class="rating">
+                            ★★★★★ <span>4.9 · 521 reviews</span>
+                        </div>
+
+                        <div class="price">
+                            <strong>₹1,499</strong>
+                            <del>₹2,199</del>
+                            <em>32% OFF</em>
+                        </div>
+
+                        <button class="add-cart"
+                            data-name="Glow Essentials Kit"
+                            data-price="1499">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-card"
+                    data-category="sports"
+                    data-price="1299"
+                    data-rating="4.5"
+                    data-name="Pro Training Basketball">
+
+                    <div class="product-visual yellow-bg">
+                        <span class="match">88% MATCH</span>
+                        <button class="heart">♡</button>
+                        <span class="product-icon">🏀</span>
+                    </div>
+
+                    <div class="product-content">
+                        <span class="category-name">SPORTS</span>
+                        <h3>Pro Training Basketball</h3>
+
+                        <div class="reason">
+                            <span>✦</span>
+                            Great value for beginners
+                        </div>
+
+                        <div class="rating">
+                            ★★★★★ <span>4.5 · 109 reviews</span>
+                        </div>
+
+                        <div class="price">
+                            <strong>₹1,299</strong>
+                            <del>₹1,799</del>
+                            <em>28% OFF</em>
+                        </div>
+
+                        <button class="add-cart"
+                            data-name="Pro Training Basketball"
+                            data-price="1299">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="empty-state" id="emptyState">
+                <span>🔎</span>
+                <h3>No matching products</h3>
+                <p>Try another keyword or category.</p>
+            </div>
+
+        </section>
+
+        <section class="smart-feature">
+
+            <div class="feature-copy">
+                <span class="section-label">WHY SMART SEARCH?</span>
+                <h2>Shopping that understands you.</h2>
+                <p>
+                    Search naturally. Compare intelligently. Discover
+                    products that actually fit what you're looking for.
+                </p>
+
+                <div class="feature-list">
+                    <div>
+                        <span>01</span>
+                        <div>
+                            <strong>Natural language</strong>
+                            <p>Describe products in your own words.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <span>02</span>
+                        <div>
+                            <strong>Smart matching</strong>
+                            <p>Results are matched to your requirements.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <span>03</span>
+                        <div>
+                            <strong>Better discovery</strong>
+                            <p>Find products you may not have searched for.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-visual">
+                <div class="feature-circle">
+                    <span>✦</span>
+                </div>
+
+                <div class="feature-pill pill-a">💰 Budget</div>
+                <div class="feature-pill pill-b">🎯 Preferences</div>
+                <div class="feature-pill pill-c">⭐ Ratings</div>
+                <div class="feature-pill pill-d">🔥 Trends</div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <div class="cart-drawer" id="cartDrawer">
+
+        <div class="drawer-top">
+            <div>
+                <span class="section-label">YOUR BAG</span>
+                <h2>Shopping Cart</h2>
+            </div>
+
+            <button id="closeCart">×</button>
+        </div>
+
+        <div id="cartItems" class="cart-items">
+            <div class="empty-cart">
+                <span>🛒</span>
+                <h3>Your cart is empty</h3>
+                <p>Add products to continue.</p>
+            </div>
+        </div>
+
+        <div class="cart-bottom">
+            <div>
+                <span>Total</span>
+                <strong id="cartTotal">₹0</strong>
+            </div>
+
+            <button id="checkoutButton">
+                Continue to Checkout →
+            </button>
+        </div>
+
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="toast" id="toast">
+        <span>✓</span>
+        <p>Done</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Learning</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">
+        <span class="logo-icon">✦</span>
+        Learnova
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#courses">Courses</a>
+        <a href="#progress">Progress</a>
+        <a href="#community">Community</a>
+    </nav>
+
+    <div class="header-actions">
+        <button class="icon-btn" id="searchBtn">⌕</button>
+        <button class="icon-btn" id="bellBtn">♢</button>
+        <div class="avatar">JS</div>
+    </div>
+</header>
+
+<main>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="eyebrow">✨ LEARN DIFFERENTLY</span>
+
+            <h1>
+                Build skills.<br>
+                <span>Shape your future.</span>
+            </h1>
+
+            <p>
+                Explore interactive courses, practice with real projects,
+                and learn at your own pace with Learnova.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="primary-btn" id="exploreBtn">
+                    Explore Courses →
+                </button>
+
+                <button class="secondary-btn" id="continueBtn">
+                    ▶ Continue Learning
+                </button>
+            </div>
+
+            <div class="hero-stats">
+                <div>
+                    <strong>120+</strong>
+                    <span>Courses</span>
+                </div>
+
+                <div>
+                    <strong>45K+</strong>
+                    <span>Learners</span>
+                </div>
+
+                <div>
+                    <strong>4.9/5</strong>
+                    <span>Rating</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="learning-card">
+            <div class="card-top">
+                <span>🔥 Popular This Week</span>
+                <button id="saveBtn">♡</button>
+            </div>
+
+            <div class="course-art">
+                <div class="floating-code">&lt;/&gt;</div>
+                <div class="floating-shape">✦</div>
+                <div class="play-circle" id="playBtn">▶</div>
+            </div>
+
+            <div class="learning-info">
+                <span class="tag">DEVELOPMENT</span>
+                <h3>Modern Web Development</h3>
+
+                <div class="instructor">
+                    <div class="small-avatar">AR</div>
+                    <span>Alex Rivera</span>
+                    <span class="dot">•</span>
+                    <span>18 Lessons</span>
+                </div>
+
+                <div class="progress-row">
+                    <div class="progress-bar">
+                        <span></span>
+                    </div>
+                    <strong>64%</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="courses">
+        <div class="section-heading">
+            <div>
+                <span class="mini-label">DISCOVER</span>
+                <h2>Learn by category</h2>
+            </div>
+
+            <button class="view-btn" id="viewAllBtn">
+                View all →
+            </button>
+        </div>
+
+        <div class="category-grid">
+
+            <div class="category-card purple" data-category="Development">
+                <div class="category-icon">💻</div>
+                <div>
+                    <h3>Development</h3>
+                    <p>32 Courses</p>
+                </div>
+                <span>→</span>
+            </div>
+
+            <div class="category-card orange" data-category="Design">
+                <div class="category-icon">🎨</div>
+                <div>
+                    <h3>Design</h3>
+                    <p>24 Courses</p>
+                </div>
+                <span>→</span>
+            </div>
+
+            <div class="category-card blue" data-category="Business">
+                <div class="category-icon">📊</div>
+                <div>
+                    <h3>Business</h3>
+                    <p>18 Courses</p>
+                </div>
+                <span>→</span>
+            </div>
+
+            <div class="category-card green" data-category="Data Science">
+                <div class="category-icon">🧠</div>
+                <div>
+                    <h3>Data Science</h3>
+                    <p>27 Courses</p>
+                </div>
+                <span>→</span>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section recommended">
+        <div class="section-heading">
+            <div>
+                <span class="mini-label">FOR YOU</span>
+                <h2>Recommended courses</h2>
+            </div>
+        </div>
+
+        <div class="course-grid">
+
+            <article class="course-card">
+                <div class="course-cover cover-one">
+                    <span>NEW</span>
+                    <button class="heart">♡</button>
+                    <div class="cover-symbol">JS</div>
+                </div>
+
+                <div class="course-body">
+                    <span class="course-category">PROGRAMMING</span>
+                    <h3>JavaScript from Zero to Pro</h3>
+
+                    <div class="course-meta">
+                        <span>⭐ 4.9</span>
+                        <span>•</span>
+                        <span>12h 40m</span>
+                    </div>
+
+                    <div class="course-footer">
+                        <strong>₹799</strong>
+                        <button class="enroll-btn">Enroll</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="course-card">
+                <div class="course-cover cover-two">
+                    <span>POPULAR</span>
+                    <button class="heart">♡</button>
+                    <div class="cover-symbol">UI</div>
+                </div>
+
+                <div class="course-body">
+                    <span class="course-category">DESIGN</span>
+                    <h3>UI/UX Design Masterclass</h3>
+
+                    <div class="course-meta">
+                        <span>⭐ 4.8</span>
+                        <span>•</span>
+                        <span>9h 20m</span>
+                    </div>
+
+                    <div class="course-footer">
+                        <strong>₹699</strong>
+                        <button class="enroll-btn">Enroll</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="course-card">
+                <div class="course-cover cover-three">
+                    <span>TRENDING</span>
+                    <button class="heart">♡</button>
+                    <div class="cover-symbol">AI</div>
+                </div>
+
+                <div class="course-body">
+                    <span class="course-category">AI & DATA</span>
+                    <h3>Artificial Intelligence Basics</h3>
+
+                    <div class="course-meta">
+                        <span>⭐ 4.9</span>
+                        <span>•</span>
+                        <span>14h 15m</span>
+                    </div>
+
+                    <div class="course-footer">
+                        <strong>₹899</strong>
+                        <button class="enroll-btn">Enroll</button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="progress-section" id="progress">
+        <div class="progress-content">
+            <span class="mini-label">YOUR JOURNEY</span>
+            <h2>Keep your learning streak alive 🔥</h2>
+            <p>
+                You're doing great! Complete one lesson today to maintain
+                your 7-day learning streak.
+            </p>
+
+            <button class="primary-btn" id="lessonBtn">
+                Continue Lesson →
+            </button>
+        </div>
+
+        <div class="streak">
+            <div class="streak-number">7</div>
+            <strong>DAY STREAK</strong>
+
+            <div class="days">
+                <span>✓</span>
+                <span>✓</span>
+                <span>✓</span>
+                <span>✓</span>
+                <span>✓</span>
+                <span>✓</span>
+                <span class="today">•</span>
+            </div>
+
+            <small>Keep going!</small>
+        </div>
+    </section>
+
+    <section class="community" id="community">
+        <div>
+            <span class="mini-label">LEARN TOGETHER</span>
+            <h2>You're never learning alone.</h2>
+            <p>
+                Join thousands of learners sharing ideas, projects,
+                questions and achievements.
+            </p>
+        </div>
+
+        <button class="secondary-btn" id="communityBtn">
+            Join Community →
+        </button>
+    </section>
+
+</main>
+
+<div class="modal" id="modal">
+    <div class="modal-box">
+        <button class="close-btn" id="closeBtn">×</button>
+        <div class="modal-icon">✦</div>
+        <h2 id="modalTitle">Welcome!</h2>
+        <p id="modalText">Ready to continue your learning journey?</p>
+        <button class="primary-btn" id="modalAction">Continue</button>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

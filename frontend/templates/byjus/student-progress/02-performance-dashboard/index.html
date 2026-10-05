@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Dashboard | Eduvia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+    <div class="brand">
+        <div class="brand-logo">E</div>
+        <div>
+            <h2>Eduvia</h2>
+            <span>Performance Center</span>
+        </div>
+    </div>
+
+    <div class="top-actions">
+        <button class="icon-btn" id="notificationBtn">🔔</button>
+
+        <div class="profile">
+            <div class="avatar">JS</div>
+            <div>
+                <strong>Jayanth</strong>
+                <small>Student</small>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+
+        <div class="student-profile">
+            <div class="large-avatar">JS</div>
+            <h3>Jayanth</h3>
+            <p>Computer Science Student</p>
+        </div>
+
+        <nav>
+            <button class="nav-item active">📊 <span>Overview</span></button>
+            <button class="nav-item">📚 <span>Subjects</span></button>
+            <button class="nav-item">📝 <span>Assessments</span></button>
+            <button class="nav-item">🏆 <span>Achievements</span></button>
+            <button class="nav-item">📈 <span>Analytics</span></button>
+        </nav>
+
+        <div class="sidebar-card">
+            <div class="rocket">🚀</div>
+            <h4>Improve your score</h4>
+            <p>Practice regularly and track your progress.</p>
+            <button id="practiceBtn">Practice Now</button>
+        </div>
+
+    </aside>
+
+    <main class="main">
+
+        <section class="hero">
+
+            <div>
+                <span class="eyebrow">PERFORMANCE DASHBOARD</span>
+                <h1>Your performance at a glance</h1>
+                <p>Understand your strengths and discover areas to improve.</p>
+            </div>
+
+            <div class="hero-score">
+                <div class="score-ring">
+                    <strong>87</strong>
+                    <span>Overall</span>
+                </div>
+
+                <div>
+                    <span>Current score</span>
+                    <strong>+6.4%</strong>
+                    <small>vs last month</small>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <div class="stat-icon purple">🎯</div>
+                    <span class="up">+6%</span>
+                </div>
+                <p>Average Score</p>
+                <strong>87%</strong>
+                <small>Across all subjects</small>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <div class="stat-icon blue">📝</div>
+                    <span class="up">+8</span>
+                </div>
+                <p>Tests Completed</p>
+                <strong>42</strong>
+                <small>4 this week</small>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <div class="stat-icon orange">⏱️</div>
+                    <span class="up">+12%</span>
+                </div>
+                <p>Study Hours</p>
+                <strong>64h</strong>
+                <small>This month</small>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <div class="stat-icon green">🏆</div>
+                    <span class="up">+2</span>
+                </div>
+                <p>Achievements</p>
+                <strong>18</strong>
+                <small>5 earned recently</small>
+            </div>
+
+        </section>
+
+        <section class="dashboard-grid">
+
+            <div class="left-column">
+
+                <div class="panel performance-panel">
+
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Performance Trend</h2>
+                            <p>Your average score over the last 6 months</p>
+                        </div>
+
+                        <button class="period-btn" id="periodBtn">
+                            Last 6 Months ▾
+                        </button>
+                    </div>
+
+                    <div class="chart-wrapper">
+
+                        <div class="y-axis">
+                            <span>100</span>
+                            <span>80</span>
+                            <span>60</span>
+                            <span>40</span>
+                            <span>20</span>
+                            <span>0</span>
+                        </div>
+
+                        <div class="chart-area">
+
+                            <div class="grid-line line-1"></div>
+                            <div class="grid-line line-2"></div>
+                            <div class="grid-line line-3"></div>
+                            <div class="grid-line line-4"></div>
+                            <div class="grid-line line-5"></div>
+
+                            <svg class="trend-line"
+                                 viewBox="0 0 600 240"
+                                 preserveAspectRatio="none">
+
+                                <defs>
+                                    <linearGradient id="areaGradient"
+                                        x1="0"
+                                        y1="0"
+                                        x2="0"
+                                        y2="1">
+                                        <stop offset="0%" stop-opacity=".25"/>
+                                        <stop offset="100%" stop-opacity="0"/>
+                                    </linearGradient>
+                                </defs>
+
+                                <path
+                                    d="M0 150
+                                       C50 138, 70 155, 120 125
+                                       S190 115, 240 105
+                                       S300 130, 350 90
+                                       S420 98, 470 65
+                                       S540 78, 600 40
+                                       L600 240
+                                       L0 240 Z"
+                                    fill="url(#areaGradient)"
+                                />
+
+                                <path
+                                    d="M0 150
+                                       C50 138, 70 155, 120 125
+                                       S190 115, 240 105
+                                       S300 130, 350 90
+                                       S420 98, 470 65
+                                       S540 78, 600 40"
+                                    fill="none"
+                                    stroke="#6655e8"
+                                    stroke-width="4"
+                                    stroke-linecap="round"
+                                />
+
+                                <circle cx="0" cy="150" r="5"/>
+                                <circle cx="120" cy="125" r="5"/>
+                                <circle cx="240" cy="105" r="5"/>
+                                <circle cx="350" cy="90" r="5"/>
+                                <circle cx="470" cy="65" r="5"/>
+                                <circle cx="600" cy="40" r="6"/>
+                            </svg>
+
+                            <div class="x-axis">
+                                <span>May</span>
+                                <span>Jun</span>
+                                <span>Jul</span>
+                                <span>Aug</span>
+                                <span>Sep</span>
+                                <span>Oct</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="panel subject-panel">
+
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Subject Performance</h2>
+                            <p>Compare your scores by subject</p>
+                        </div>
+
+                        <button class="view-btn" id="subjectBtn">
+                            View Details
+                        </button>
+                    </div>
+
+                    <div class="subject-row">
+                        <div class="subject-name">
+                            <div class="subject-icon javascript">JS</div>
+                            <div>
+                                <strong>JavaScript</strong>
+                                <span>12 assessments</span>
+                            </div>
+                        </div>
+
+                        <div class="subject-progress">
+                            <div class="bar-bg">
+                                <div class="bar-fill purple-fill" style="width:94%"></div>
+                            </div>
+                        </div>
+
+                        <strong class="subject-score">94%</strong>
+                    </div>
+
+                    <div class="subject-row">
+                        <div class="subject-name">
+                            <div class="subject-icon python">Py</div>
+                            <div>
+                                <strong>Python</strong>
+                                <span>10 assessments</span>
+                            </div>
+                        </div>
+
+                        <div class="subject-progress">
+                            <div class="bar-bg">
+                                <div class="bar-fill blue-fill" style="width:89%"></div>
+                            </div>
+                        </div>
+
+                        <strong class="subject-score">89%</strong>
+                    </div>
+
+                    <div class="subject-row">
+                        <div class="subject-name">
+                            <div class="subject-icon database">DB</div>
+                            <div>
+                                <strong>Database</strong>
+                                <span>8 assessments</span>
+                            </div>
+                        </div>
+
+                        <div class="subject-progress">
+                            <div class="bar-bg">
+                                <div class="bar-fill green-fill" style="width:84%"></div>
+                            </div>
+                        </div>
+
+                        <strong class="subject-score">84%</strong>
+                    </div>
+
+                    <div class="subject-row">
+                        <div class="subject-name">
+                            <div class="subject-icon design">UI</div>
+                            <div>
+                                <strong>UI/UX Design</strong>
+                                <span>7 assessments</span>
+                            </div>
+                        </div>
+
+                        <div class="subject-progress">
+                            <div class="bar-bg">
+                                <div class="bar-fill orange-fill" style="width:78%"></div>
+                            </div>
+                        </div>
+
+                        <strong class="subject-score">78%</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <aside class="right-column">
+
+                <div class="panel strengths">
+
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Strengths</h2>
+                            <p>Your strongest areas</p>
+                        </div>
+                        <span class="emoji">💪</span>
+                    </div>
+
+                    <div class="strength">
+                        <div class="strength-icon">⚡</div>
+                        <div>
+                            <strong>Problem Solving</strong>
+                            <div class="mini-bar">
+                                <span style="width:92%"></span>
+                            </div>
+                        </div>
+                        <b>92%</b>
+                    </div>
+
+                    <div class="strength">
+                        <div class="strength-icon">💡</div>
+                        <div>
+                            <strong>Programming</strong>
+                            <div class="mini-bar">
+                                <span style="width:89%"></span>
+                            </div>
+                        </div>
+                        <b>89%</b>
+                    </div>
+
+                    <div class="strength">
+                        <div class="strength-icon">🧠</div>
+                        <div>
+                            <strong>Logical Thinking</strong>
+                            <div class="mini-bar">
+                                <span style="width:85%"></span>
+                            </div>
+                        </div>
+                        <b>85%</b>
+                    </div>
+
+                </div>
+
+                <div class="panel improvement">
+
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Focus Areas</h2>
+                            <p>Skills you can improve</p>
+                        </div>
+                        <span class="emoji">🎯</span>
+                    </div>
+
+                    <div class="focus-item">
+                        <div class="focus-icon">📐</div>
+                        <div>
+                            <strong>Algorithms</strong>
+                            <span>68% average</span>
+                        </div>
+                        <button class="practice">Practice</button>
+                    </div>
+
+                    <div class="focus-item">
+                        <div class="focus-icon">🔢</div>
+                        <div>
+                            <strong>Mathematics</strong>
+                            <span>72% average</span>
+                        </div>
+                        <button class="practice">Practice</button>
+                    </div>
+
+                    <div class="focus-item">
+                        <div class="focus-icon">📊</div>
+                        <div>
+                            <strong>Data Analysis</strong>
+                            <span>75% average</span>
+                        </div>
+                        <button class="practice">Practice</button>
+                    </div>
+
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-icon">✨</div>
+                    <div>
+                        <strong>Learning Tip</strong>
+                        <p>Spend 20 minutes each day practicing your weakest subject.</p>
+                    </div>
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+</div>
+
+<div class="modal-overlay" id="modal">
+
+    <div class="modal">
+
+        <button class="close-btn" id="closeModal">×</button>
+
+        <div class="modal-icon" id="modalIcon">🚀</div>
+
+        <h2 id="modalTitle">Practice Session</h2>
+
+        <p id="modalText">
+            Start a focused practice session and improve your performance.
+        </p>
+
+        <button class="modal-action" id="modalAction">
+            Start Practice
+        </button>
+
+    </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

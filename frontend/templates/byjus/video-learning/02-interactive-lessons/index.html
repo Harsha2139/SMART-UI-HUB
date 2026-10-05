@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Lessons</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        <div class="brand-icon">✦</div>
+        <span>Learnly</span>
+    </div>
+
+    <div class="course-name">
+        <span>COURSE</span>
+        <strong>JavaScript Essentials</strong>
+    </div>
+
+    <div class="header-actions">
+        <button class="header-btn" id="helpBtn">?</button>
+        <button class="header-btn" id="notificationBtn">♢</button>
+
+        <div class="avatar">JS</div>
+    </div>
+
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+
+        <div class="lesson-header">
+            <span>MODULE 2</span>
+            <h2>JavaScript Basics</h2>
+            <p>Interactive Learning Path</p>
+        </div>
+
+        <div class="progress-card">
+
+            <div class="progress-info">
+                <span>Your Progress</span>
+                <strong id="progressText">58%</strong>
+            </div>
+
+            <div class="progress-bar">
+                <span id="progressBar"></span>
+            </div>
+
+            <small>7 of 12 lessons completed</small>
+
+        </div>
+
+        <div class="lesson-list">
+
+            <div class="section-title">
+                FUNDAMENTALS
+            </div>
+
+            <button class="lesson completed">
+                <span class="lesson-icon">✓</span>
+                <div>
+                    <strong>Variables</strong>
+                    <small>Completed</small>
+                </div>
+            </button>
+
+            <button class="lesson completed">
+                <span class="lesson-icon">✓</span>
+                <div>
+                    <strong>Data Types</strong>
+                    <small>Completed</small>
+                </div>
+            </button>
+
+            <button class="lesson active">
+                <span class="lesson-icon">3</span>
+                <div>
+                    <strong>Functions</strong>
+                    <small>Interactive</small>
+                </div>
+            </button>
+
+            <button class="lesson">
+                <span class="lesson-icon">4</span>
+                <div>
+                    <strong>Arrays</strong>
+                    <small>15 min</small>
+                </div>
+            </button>
+
+            <button class="lesson">
+                <span class="lesson-icon">5</span>
+                <div>
+                    <strong>Objects</strong>
+                    <small>18 min</small>
+                </div>
+            </button>
+
+            <div class="section-title second">
+                PRACTICE
+            </div>
+
+            <button class="lesson locked">
+                <span class="lesson-icon">6</span>
+                <div>
+                    <strong>Mini Project</strong>
+                    <small>Locked</small>
+                </div>
+                <span class="lock">◆</span>
+            </button>
+
+            <button class="lesson locked">
+                <span class="lesson-icon">7</span>
+                <div>
+                    <strong>Final Challenge</strong>
+                    <small>Locked</small>
+                </div>
+                <span class="lock">◆</span>
+            </button>
+
+        </div>
+
+        <div class="sidebar-bottom">
+            <div class="streak">
+                <span>🔥</span>
+                <div>
+                    <strong>5 day streak</strong>
+                    <small>Keep learning!</small>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+
+    <main class="main">
+
+        <div class="breadcrumb">
+            <span>JavaScript Essentials</span>
+            <b>›</b>
+            <span>JavaScript Basics</span>
+            <b>›</b>
+            <strong>Functions</strong>
+        </div>
+
+        <section class="hero">
+
+            <div>
+                <span class="eyebrow">INTERACTIVE LESSON · 03</span>
+
+                <h1>Master JavaScript Functions</h1>
+
+                <p>
+                    Learn how functions work by experimenting with real code,
+                    completing challenges, and testing your knowledge.
+                </p>
+            </div>
+
+            <div class="hero-badge">
+                <span>⚡</span>
+                <strong>15 min</strong>
+                <small>estimated time</small>
+            </div>
+
+        </section>
+
+        <section class="concept-card">
+
+            <div class="concept-number">01</div>
+
+            <div class="concept-content">
+
+                <span class="small-label">CONCEPT</span>
+
+                <h2>What is a Function?</h2>
+
+                <p>
+                    A function is a reusable block of code designed to perform
+                    a specific task. You can define it once and call it whenever
+                    you need it.
+                </p>
+
+                <div class="code-example">
+                    <span class="code-purple">function</span>
+                    <span class="code-blue">greet</span>
+                    <span class="code-white">()</span>
+                    <span class="code-white">{</span>
+                    <br>
+                    <span class="indent"></span>
+                    <span class="code-purple">return</span>
+                    <span class="code-green">"Hello!"</span>
+                    <span class="code-white">;</span>
+                    <br>
+                    <span class="code-white">}</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="practice-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="small-label">TRY IT YOURSELF</span>
+                    <h2>Build a Greeting Function</h2>
+                </div>
+
+                <button class="reset-btn" id="resetCode">↻ Reset</button>
+
+            </div>
+
+            <div class="editor-grid">
+
+                <div class="editor-card">
+
+                    <div class="editor-header">
+
+                        <div class="editor-title">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <strong>script.js</strong>
+                        </div>
+
+                        <button id="runCode">▶ Run Code</button>
+
+                    </div>
+
+                    <div class="editor">
+
+                        <div class="line-numbers">
+                            1<br>
+                            2<br>
+                            3<br>
+                            4<br>
+                            5
+                        </div>
+
+                        <textarea id="codeEditor" spellcheck="false">function greet(name) {
+    return "Hello, " + name + "!";
+}
+
+console.log(greet("Student"));</textarea>
+
+                    </div>
+
+                    <div class="editor-footer">
+                        <span>JavaScript</span>
+                        <span id="codeStatus">Ready to run</span>
+                    </div>
+
+                </div>
+
+                <div class="preview-card">
+
+                    <div class="preview-header">
+                        <div>
+                            <span>LIVE PREVIEW</span>
+                            <strong>Console Output</strong>
+                        </div>
+
+                        <span class="online">● LIVE</span>
+                    </div>
+
+                    <div class="preview-content" id="preview">
+                        <div class="terminal-line">
+                            <span class="terminal-symbol">›</span>
+                            <span>Hello, Student!</span>
+                        </div>
+                    </div>
+
+                    <div class="preview-footer">
+                        <span>Output</span>
+                        <button id="clearOutput">Clear</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="challenge">
+
+            <div class="challenge-header">
+
+                <div class="challenge-icon">?</div>
+
+                <div>
+                    <span class="small-label">QUICK CHECK</span>
+                    <h2>Test your understanding</h2>
+                </div>
+
+                <span class="question-count">Question 1 of 1</span>
+
+            </div>
+
+            <p class="question">
+                Which keyword is used to create a function in JavaScript?
+            </p>
+
+            <div class="answers">
+
+                <button class="answer" data-answer="wrong">
+                    <span>A</span>
+                    <strong>create</strong>
+                </button>
+
+                <button class="answer" data-answer="correct">
+                    <span>B</span>
+                    <strong>function</strong>
+                </button>
+
+                <button class="answer" data-answer="wrong">
+                    <span>C</span>
+                    <strong>define</strong>
+                </button>
+
+                <button class="answer" data-answer="wrong">
+                    <span>D</span>
+                    <strong>method</strong>
+                </button>
+
+            </div>
+
+            <div class="quiz-result" id="quizResult"></div>
+
+        </section>
+
+        <section class="hint-card">
+
+            <div class="hint-icon">💡</div>
+
+            <div>
+                <strong>Need a hint?</strong>
+                <p>
+                    Think about the keyword that comes before a function name
+                    when declaring a traditional JavaScript function.
+                </p>
+            </div>
+
+            <button id="hintBtn">Show Hint</button>
+
+        </section>
+
+        <section class="lesson-navigation">
+
+            <button id="previousBtn">
+                ← Previous
+                <span>Data Types</span>
+            </button>
+
+            <div class="completion">
+                <div class="completion-circle">58%</div>
+
+                <div>
+                    <strong>Lesson progress</strong>
+                    <small>Complete the challenge to continue</small>
+                </div>
+            </div>
+
+            <button id="continueBtn">
+                Continue →
+                <span>Arrays</span>
+            </button>
+
+        </section>
+
+    </main>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<div class="modal" id="modal">
+
+    <div class="modal-box">
+
+        <button class="close-modal" id="closeModal">×</button>
+
+        <div class="modal-icon" id="modalIcon">✓</div>
+
+        <h2 id="modalTitle">Great Job!</h2>
+
+        <p id="modalText">
+            You completed the activity successfully.
+        </p>
+
+        <button class="modal-action" id="modalAction">
+            Continue Learning
+        </button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

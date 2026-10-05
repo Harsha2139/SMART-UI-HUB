@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Learning</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span>✦</span>
+            Learnly
+        </div>
+
+        <nav>
+            <a class="active" href="#">Home</a>
+            <a href="#courses">Courses</a>
+            <a href="#subjects">Subjects</a>
+            <a href="#progress">Progress</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button id="searchBtn">⌕</button>
+            <button id="notificationBtn">♢</button>
+            <div class="avatar">JB</div>
+        </div>
+
+    </header>
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="eyebrow">YOUR LEARNING JOURNEY</span>
+
+                <h1>
+                    Learn something new
+                    <strong>every day.</strong>
+                </h1>
+
+                <p>
+                    Explore engaging lessons, interactive courses and
+                    personalized learning designed around you.
+                </p>
+
+                <div class="hero-buttons">
+                    <button class="primary-btn" id="startLearning">
+                        Start Learning →
+                    </button>
+
+                    <button class="secondary-btn" id="exploreBtn">
+                        Explore Courses
+                    </button>
+                </div>
+
+                <div class="hero-stats">
+                    <div>
+                        <strong>120+</strong>
+                        <span>Courses</span>
+                    </div>
+
+                    <div>
+                        <strong>35K+</strong>
+                        <span>Learners</span>
+                    </div>
+
+                    <div>
+                        <strong>4.9</strong>
+                        <span>Average Rating</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="hero-visual">
+
+                <div class="floating-card progress-float">
+                    <span>🔥</span>
+                    <div>
+                        <strong>7 day streak</strong>
+                        <small>Keep it going!</small>
+                    </div>
+                </div>
+
+                <div class="learning-card">
+
+                    <div class="card-top">
+                        <span>CONTINUE LEARNING</span>
+                        <button id="moreBtn">•••</button>
+                    </div>
+
+                    <div class="lesson-icon">🧬</div>
+
+                    <span class="subject">BIOLOGY</span>
+
+                    <h3>Human Body & Cells</h3>
+
+                    <p>Chapter 04 • Cell Structure</p>
+
+                    <div class="progress-line">
+                        <span></span>
+                    </div>
+
+                    <div class="lesson-bottom">
+                        <small>68% completed</small>
+                        <button id="continueBtn">
+                            Continue
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="floating-card score-float">
+                    <span>🏆</span>
+                    <div>
+                        <strong>92% Score</strong>
+                        <small>Great progress!</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="section" id="subjects">
+
+            <div class="section-heading">
+
+                <div>
+                    <span>EXPLORE</span>
+                    <h2>Learn by Subject</h2>
+                    <p>Find the right subject and start learning.</p>
+                </div>
+
+                <button class="view-all" id="viewSubjects">
+                    View All →
+                </button>
+
+            </div>
+
+            <div class="subject-grid">
+
+                <button class="subject-card math" data-subject="Mathematics">
+                    <div class="subject-icon">∑</div>
+                    <div>
+                        <strong>Mathematics</strong>
+                        <span>24 Courses</span>
+                    </div>
+                    <b>→</b>
+                </button>
+
+                <button class="subject-card science" data-subject="Science">
+                    <div class="subject-icon">⚗</div>
+                    <div>
+                        <strong>Science</strong>
+                        <span>31 Courses</span>
+                    </div>
+                    <b>→</b>
+                </button>
+
+                <button class="subject-card coding" data-subject="Computer Science">
+                    <div class="subject-icon">&lt;/&gt;</div>
+                    <div>
+                        <strong>Computer Science</strong>
+                        <span>18 Courses</span>
+                    </div>
+                    <b>→</b>
+                </button>
+
+                <button class="subject-card english" data-subject="English">
+                    <div class="subject-icon">Aa</div>
+                    <div>
+                        <strong>English</strong>
+                        <span>16 Courses</span>
+                    </div>
+                    <b>→</b>
+                </button>
+
+            </div>
+
+        </section>
+
+        <section class="section" id="courses">
+
+            <div class="section-heading">
+
+                <div>
+                    <span>POPULAR COURSES</span>
+                    <h2>Recommended for You</h2>
+                    <p>Courses selected based on your interests.</p>
+                </div>
+
+                <button class="view-all" id="viewCourses">
+                    See All Courses →
+                </button>
+
+            </div>
+
+            <div class="course-grid">
+
+                <article class="course-card">
+
+                    <div class="course-image purple">
+                        <span>📐</span>
+                        <label>BESTSELLER</label>
+                    </div>
+
+                    <div class="course-content">
+
+                        <span class="course-category">MATHEMATICS</span>
+
+                        <h3>Mastering Algebra</h3>
+
+                        <p>
+                            Build strong algebra fundamentals through
+                            visual lessons and practice.
+                        </p>
+
+                        <div class="course-meta">
+                            <span>▶ 18 Lessons</span>
+                            <span>⏱ 6h 20m</span>
+                        </div>
+
+                        <div class="course-footer">
+                            <strong>₹499</strong>
+                            <span>★ 4.9</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="course-card">
+
+                    <div class="course-image blue">
+                        <span>🔬</span>
+                        <label>POPULAR</label>
+                    </div>
+
+                    <div class="course-content">
+
+                        <span class="course-category">SCIENCE</span>
+
+                        <h3>Physics Fundamentals</h3>
+
+                        <p>
+                            Understand motion, energy and forces with
+                            simple interactive examples.
+                        </p>
+
+                        <div class="course-meta">
+                            <span>▶ 22 Lessons</span>
+                            <span>⏱ 8h 10m</span>
+                        </div>
+
+                        <div class="course-footer">
+                            <strong>₹599</strong>
+                            <span>★ 4.8</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="course-card">
+
+                    <div class="course-image orange">
+                        <span>💻</span>
+                        <label>NEW</label>
+                    </div>
+
+                    <div class="course-content">
+
+                        <span class="course-category">CODING</span>
+
+                        <h3>Python for Beginners</h3>
+
+                        <p>
+                            Learn Python programming from the basics
+                            through practical projects.
+                        </p>
+
+                        <div class="course-meta">
+                            <span>▶ 26 Lessons</span>
+                            <span>⏱ 10h 30m</span>
+                        </div>
+
+                        <div class="course-footer">
+                            <strong>₹699</strong>
+                            <span>★ 4.9</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="learning-section" id="progress">
+
+            <div class="learning-progress">
+
+                <div>
+                    <span>YOUR PROGRESS</span>
+                    <h2>You're doing great!</h2>
+                    <p>
+                        Complete 2 more lessons this week to maintain
+                        your learning streak.
+                    </p>
+                </div>
+
+                <div class="progress-circle">
+                    <strong>76%</strong>
+                    <small>Weekly Goal</small>
+                </div>
+
+                <button id="progressBtn">
+                    View Progress
+                </button>
+
+            </div>
+
+        </section>
+
+        <section class="testimonial-section">
+
+            <div class="quote-mark">“</div>
+
+            <p>
+                Learning becomes easier when every concept feels
+                interesting, visual and connected to the real world.
+            </p>
+
+            <div class="student">
+                <div class="student-avatar">AS</div>
+                <div>
+                    <strong>Ananya Sharma</strong>
+                    <span>Computer Science Student</span>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <div class="modal" id="courseModal">
+
+        <div class="modal-box">
+
+            <button class="close-modal" id="closeModal">×</button>
+
+            <span>START LEARNING</span>
+
+            <h2 id="modalTitle">Welcome to Learnly</h2>
+
+            <p id="modalText">
+                Your learning session is ready.
+            </p>
+
+            <button class="modal-btn" id="modalStart">
+                Start Lesson →
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

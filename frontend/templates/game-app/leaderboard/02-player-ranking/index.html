@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Ranking | ArenaRank</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-mark">A</div>
+            <div>
+                <strong>ArenaRank</strong>
+                <span>Competitive Hub</span>
+            </div>
+        </div>
+
+        <div class="profile-mini">
+            <div class="avatar avatar-purple">JD</div>
+            <div>
+                <strong>Jordan Davis</strong>
+                <span>Level 42</span>
+            </div>
+            <button id="miniMenu">•••</button>
+        </div>
+
+        <nav>
+
+            <a href="#" class="nav-item">
+                <span>⌂</span>
+                Overview
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>🎮</span>
+                My Games
+            </a>
+
+            <a href="#" class="nav-item active">
+                <span>🏆</span>
+                Player Ranking
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>⚔</span>
+                Matches
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>👥</span>
+                Friends
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>🎖</span>
+                Achievements
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="#" class="nav-item">
+                <span>⚙</span>
+                Settings
+            </a>
+
+            <button class="logout" id="logoutBtn">
+                <span>↪</span>
+                Sign Out
+            </button>
+
+        </div>
+
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <button class="menu-button" id="menuButton">☰</button>
+
+            <div class="search">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search player, team or rank..."
+                >
+
+            </div>
+
+            <div class="top-right">
+
+                <button class="top-icon" id="bellButton">🔔</button>
+
+                <button class="user-avatar">JD</button>
+
+            </div>
+
+        </header>
+
+        <section class="hero">
+
+            <div>
+                <span class="tag">PLAYER RANKING</span>
+
+                <h1>Global Player Rankings</h1>
+
+                <p>
+                    Compare player performance, ratings and competitive progress.
+                </p>
+            </div>
+
+            <button class="compare-btn" id="compareBtn">
+                ⇄ Compare Players
+            </button>
+
+        </section>
+
+        <section class="content">
+
+            <div class="filter-bar">
+
+                <div class="filter-tabs">
+
+                    <button class="filter-tab active" data-filter="global">
+                        Global
+                    </button>
+
+                    <button class="filter-tab" data-filter="friends">
+                        Friends
+                    </button>
+
+                    <button class="filter-tab" data-filter="regional">
+                        Regional
+                    </button>
+
+                    <button class="filter-tab" data-filter="rising">
+                        Rising
+                    </button>
+
+                </div>
+
+                <div class="filter-actions">
+
+                    <select id="gameFilter">
+                        <option>All Games</option>
+                        <option>Shadow Strike</option>
+                        <option>Galaxy Rush</option>
+                        <option>Velocity X</option>
+                    </select>
+
+                    <select id="rankFilter">
+                        <option>Rating: High to Low</option>
+                        <option>Rating: Low to High</option>
+                        <option>Win Rate</option>
+                        <option>Games Played</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">♛</div>
+
+                    <div>
+                        <span>Total Players</span>
+                        <strong>2.4M</strong>
+                        <small>↑ 8.4% this month</small>
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">↗</div>
+
+                    <div>
+                        <span>Active Players</span>
+                        <strong>684K</strong>
+                        <small>↑ 12.1% this week</small>
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">★</div>
+
+                    <div>
+                        <span>Average Rating</span>
+                        <strong>1,842</strong>
+                        <small>↑ 2.6% this season</small>
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">⚡</div>
+
+                    <div>
+                        <span>Matches Today</span>
+                        <strong>48.2K</strong>
+                        <small>↑ 18.7% today</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="main-grid">
+
+                <section class="ranking-card">
+
+                    <div class="card-top">
+
+                        <div>
+                            <h2>Top Ranked Players</h2>
+                            <p>Season 8 • Updated 5 minutes ago</p>
+                        </div>
+
+                        <button class="refresh-btn" id="refreshBtn">
+                            ↻ Refresh
+                        </button>
+
+                    </div>
+
+                    <div class="ranking-head">
+
+                        <span>RANK</span>
+                        <span>PLAYER</span>
+                        <span>RATING</span>
+                        <span>WIN RATE</span>
+                        <span>GAMES</span>
+                        <span>CHANGE</span>
+
+                    </div>
+
+                    <div id="rankingList">
+
+                        <div
+                            class="ranking-row"
+                            data-name="Alex Morgan"
+                            data-rating="2488"
+                            data-win="94.8"
+                        >
+
+                            <div class="rank first">
+                                01
+                                <span>👑</span>
+                            </div>
+
+                            <div class="player">
+
+                                <div class="player-avatar avatar-gold">
+                                    AM
+                                </div>
+
+                                <div>
+                                    <strong>Alex Morgan</strong>
+                                    <span>@alexmorgan</span>
+                                </div>
+
+                                <b>PRO</b>
+
+                            </div>
+
+                            <div class="rating">
+                                <strong>2,488</strong>
+                                <span>Master</span>
+                            </div>
+
+                            <div class="win">
+                                <strong>94.8%</strong>
+                                <div class="bar">
+                                    <span style="width:94.8%"></span>
+                                </div>
+                            </div>
+
+                            <div class="games">
+                                248
+                            </div>
+
+                            <div class="change up">
+                                ↑ 12
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="ranking-row"
+                            data-name="Ryan Knight"
+                            data-rating="2396"
+                            data-win="92.1"
+                        >
+
+                            <div class="rank">
+                                02
+                            </div>
+
+                            <div class="player">
+
+                                <div class="player-avatar avatar-purple">
+                                    RK
+                                </div>
+
+                                <div>
+                                    <strong>Ryan Knight</strong>
+                                    <span>@ryanknight</span>
+                                </div>
+
+                                <b>PRO</b>
+
+                            </div>
+
+                            <div class="rating">
+                                <strong>2,396</strong>
+                                <span>Master</span>
+                            </div>
+
+                            <div class="win">
+                                <strong>92.1%</strong>
+                                <div class="bar">
+                                    <span style="width:92.1%"></span>
+                                </div>
+                            </div>
+
+                            <div class="games">
+                                231
+                            </div>
+
+                            <div class="change up">
+                                ↑ 8
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="ranking-row"
+                            data-name="Sarah Lee"
+                            data-rating="2317"
+                            data-win="89.7"
+                        >
+
+                            <div class="rank">
+                                03
+                            </div>
+
+                            <div class="player">
+
+                                <div class="player-avatar avatar-orange">
+                                    SL
+                                </div>
+
+                                <div>
+                                    <strong>Sarah Lee</strong>
+                                    <span>@sarahlee</span>
+                                </div>
+
+                            </div>
+
+                            <div class="rating">
+                                <strong>2,317</strong>
+                                <span>Diamond</span>
+                            </div>
+
+                            <div class="win">
+                                <strong>89.7%</strong>
+                                <div class="bar">
+                                    <span style="width:89.7%"></span>
+                                </div>
+                            </div>
+
+                            <div class="games">
+                                226
+                            </div>
+
+                            <div class="change up">
+                                ↑ 5
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="ranking-row"
+                            data-name="Michael Kim"
+                            data-rating="2245"
+                            data-win="86.9"
+                        >
+
+                            <div class="rank">
+                                04
+                            </div>
+
+                            <div class="player">
+
+                                <div class="player-avatar avatar-blue">
+                                    MK
+                                </div>
+
+                                <div>
+                                    <strong>Michael Kim</strong>
+                                    <span>@michaelk</span>
+                                </div>
+
+                            </div>
+
+                            <div class="rating">
+                                <strong>2,245</strong>
+                                <span>Diamond</span>
+                            </div>
+
+                            <div class="win">
+                                <strong>86.9%</strong>
+                                <div class="bar">
+                                    <span style="width:86.9%"></span>
+                                </div>
+                            </div>
+
+                            <div class="games">
+                                215
+                            </div>
+
+                            <div class="change down">
+                                ↓ 2
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="ranking-row"
+                            data-name="Daniel Moore"
+                            data-rating="2178"
+                            data-win="84.5"
+                        >
+
+                            <div class="rank">
+                                05
+                            </div>
+
+                            <div class="player">
+
+                                <div class="player-avatar avatar-green">
+                                    DM
+                                </div>
+
+                                <div>
+                                    <strong>Daniel Moore</strong>
+                                    <span>@danmoore</span>
+                                </div>
+
+                            </div>
+
+                            <div class="rating">
+                                <strong>2,178</strong>
+                                <span>Diamond</span>
+                            </div>
+
+                            <div class="win">
+                                <strong>84.5%</strong>
+                                <div class="bar">
+                                    <span style="width:84.5%"></span>
+                                </div>
+                            </div>
+
+                            <div class="games">
+                                204
+                            </div>
+
+                            <div class="change up">
+                                ↑ 9
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="ranking-row"
+                            data-name="Jessica Wong"
+                            data-rating="2116"
+                            data-win="82.8"
+                        >
+
+                            <div class="rank">
+                                06
+                            </div>
+
+                            <div class="player">
+
+                                <div class="player-avatar avatar-pink">
+                                    JW
+                                </div>
+
+                                <div>
+                                    <strong>Jessica Wong</strong>
+                                    <span>@jesswong</span>
+                                </div>
+
+                            </div>
+
+                            <div class="rating">
+                                <strong>2,116</strong>
+                                <span>Platinum</span>
+                            </div>
+
+                            <div class="win">
+                                <strong>82.8%</strong>
+                                <div class="bar">
+                                    <span style="width:82.8%"></span>
+                                </div>
+                            </div>
+
+                            <div class="games">
+                                198
+                            </div>
+
+                            <div class="change up">
+                                ↑ 4
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="load-more">
+                        <button id="loadMoreBtn">
+                            Load More Players
+                        </button>
+                    </div>
+
+                </section>
+
+                <aside class="side-column">
+
+                    <div class="my-ranking">
+
+                        <div class="my-title">
+                            <span>YOUR RANKING</span>
+                            <div class="trend">↑ 6</div>
+                        </div>
+
+                        <div class="my-rank-number">
+                            #24
+                        </div>
+
+                        <div class="my-profile">
+
+                            <div class="player-avatar avatar-purple">
+                                JD
+                            </div>
+
+                            <div>
+                                <strong>Jordan Davis</strong>
+                                <span>@jordandavis</span>
+                            </div>
+
+                        </div>
+
+                        <div class="my-details">
+
+                            <div>
+                                <span>Rating</span>
+                                <strong>1,964</strong>
+                            </div>
+
+                            <div>
+                                <span>Win Rate</span>
+                                <strong>76.4%</strong>
+                            </div>
+
+                        </div>
+
+                        <button id="profileBtn">
+                            View Full Profile
+                        </button>
+
+                    </div>
+
+                    <div class="side-card">
+
+                        <div class="side-heading">
+                            <div>
+                                <h3>Ranking Tiers</h3>
+                                <p>Players by competitive level</p>
+                            </div>
+                        </div>
+
+                        <div class="tier">
+
+                            <div class="tier-icon master">M</div>
+
+                            <div>
+                                <strong>Master</strong>
+                                <span>2,300+ rating</span>
+                            </div>
+
+                            <b>1.8%</b>
+
+                        </div>
+
+                        <div class="tier">
+
+                            <div class="tier-icon diamond">D</div>
+
+                            <div>
+                                <strong>Diamond</strong>
+                                <span>2,000–2,299 rating</span>
+                            </div>
+
+                            <b>7.4%</b>
+
+                        </div>
+
+                        <div class="tier">
+
+                            <div class="tier-icon platinum">P</div>
+
+                            <div>
+                                <strong>Platinum</strong>
+                                <span>1,700–1,999 rating</span>
+                            </div>
+
+                            <b>15.2%</b>
+
+                        </div>
+
+                        <div class="tier">
+
+                            <div class="tier-icon gold">G</div>
+
+                            <div>
+                                <strong>Gold</strong>
+                                <span>1,400–1,699 rating</span>
+                            </div>
+
+                            <b>29.6%</b>
+
+                        </div>
+
+                    </div>
+
+                    <div class="challenge-card">
+
+                        <div class="challenge-icon">⚡</div>
+
+                        <span>RANK CHALLENGE</span>
+
+                        <h3>Reach Top 20</h3>
+
+                        <p>
+                            You are only 4 ranks away from your next milestone.
+                        </p>
+
+                        <div class="challenge-progress">
+                            <div></div>
+                        </div>
+
+                        <small>20 / 24</small>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<div class="compare-modal" id="compareModal">
+
+    <div class="compare-box">
+
+        <button class="close" id="closeCompare">×</button>
+
+        <div class="modal-icon">⇄</div>
+
+        <h2>Compare Players</h2>
+
+        <p>Select two players to compare their performance.</p>
+
+        <label>Player One</label>
+
+        <select id="playerOne">
+            <option>Alex Morgan</option>
+            <option>Ryan Knight</option>
+            <option>Sarah Lee</option>
+            <option>Michael Kim</option>
+        </select>
+
+        <label>Player Two</label>
+
+        <select id="playerTwo">
+            <option>Jordan Davis</option>
+            <option>Daniel Moore</option>
+            <option>Jessica Wong</option>
+            <option>Michael Kim</option>
+        </select>
+
+        <button class="compare-submit" id="compareSubmit">
+            Compare Now
+        </button>
+
+    </div>
+
+</div>
+
+<div class="toast" id="toast">
+
+    <span>✓</span>
+
+    <p>Action completed.</p>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
