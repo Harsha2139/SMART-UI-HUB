@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">✦</div>
+            <span>Learnova</span>
+        </div>
+
+        <nav class="side-nav">
+            <a href="#dashboard" class="active">
+                <span>⌂</span> Dashboard
+            </a>
+            <a href="#courses">
+                <span>▣</span> My Courses
+            </a>
+            <a href="#schedule">
+                <span>◷</span> Schedule
+            </a>
+            <a href="#achievements">
+                <span>◇</span> Achievements
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#" id="helpBtn"><span>?</span> Help Center</a>
+            <a href="#" id="settingsBtn"><span>⚙</span> Settings</a>
+
+            <div class="profile-mini">
+                <div class="avatar">JS</div>
+                <div>
+                    <strong>Jordan Smith</strong>
+                    <small>Student</small>
+                </div>
+                <button id="profileMenu">•••</button>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+            <div class="mobile-brand">
+                <div class="brand-icon">✦</div>
+                Learnova
+            </div>
+
+            <button class="menu-btn" id="menuBtn">☰</button>
+
+            <div class="search-box">
+                <span>⌕</span>
+                <input type="text" id="searchInput" placeholder="Search courses...">
+            </div>
+
+            <div class="top-actions">
+                <button class="top-icon" id="notificationBtn">♢</button>
+                <button class="top-icon" id="calendarBtn">◷</button>
+                <div class="top-avatar">JS</div>
+            </div>
+        </header>
+
+        <section class="content" id="dashboard">
+
+            <div class="welcome">
+                <div>
+                    <span class="hello">MONDAY, OCTOBER 1</span>
+                    <h1>Good morning, Jordan 👋</h1>
+                    <p>Keep going! You're making excellent progress.</p>
+                </div>
+
+                <button class="upgrade-btn" id="upgradeBtn">
+                    ✦ Upgrade Plan
+                </button>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card purple-card">
+                    <div class="stat-icon">▣</div>
+                    <div>
+                        <span>Courses in progress</span>
+                        <strong>06</strong>
+                    </div>
+                    <small>+2 this month</small>
+                </div>
+
+                <div class="stat-card blue-card">
+                    <div class="stat-icon">◷</div>
+                    <div>
+                        <span>Learning hours</span>
+                        <strong>24.5</strong>
+                    </div>
+                    <small>+18% this week</small>
+                </div>
+
+                <div class="stat-card orange-card">
+                    <div class="stat-icon">🔥</div>
+                    <div>
+                        <span>Current streak</span>
+                        <strong>07 days</strong>
+                    </div>
+                    <small>Personal best: 14</small>
+                </div>
+
+                <div class="stat-card green-card">
+                    <div class="stat-icon">✓</div>
+                    <div>
+                        <span>Completed</span>
+                        <strong>12</strong>
+                    </div>
+                    <small>+3 this month</small>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+
+                <section class="panel continue-panel" id="courses">
+                    <div class="panel-heading">
+                        <div>
+                            <span class="section-label">KEEP LEARNING</span>
+                            <h2>Continue learning</h2>
+                        </div>
+                        <button class="text-btn" id="allCoursesBtn">
+                            View all →
+                        </button>
+                    </div>
+
+                    <div class="continue-course">
+                        <div class="course-visual">
+                            <span>&lt;/&gt;</span>
+                        </div>
+
+                        <div class="course-info">
+                            <span class="course-tag">DEVELOPMENT</span>
+                            <h3>Modern Web Development</h3>
+                            <p>Lesson 14 of 22 · JavaScript Functions</p>
+
+                            <div class="progress-line">
+                                <span></span>
+                            </div>
+
+                            <div class="progress-text">
+                                <span>64% completed</span>
+                                <strong>8 lessons left</strong>
+                            </div>
+
+                            <button class="continue-btn" id="continueBtn">
+                                Continue Lesson →
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="panel schedule-panel" id="schedule">
+                    <div class="panel-heading">
+                        <div>
+                            <span class="section-label">UP NEXT</span>
+                            <h2>Today's schedule</h2>
+                        </div>
+                        <button class="text-btn" id="scheduleBtn">View calendar</button>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">
+                            <strong>10:30</strong>
+                            <small>AM</small>
+                        </div>
+
+                        <div class="schedule-line purple-line"></div>
+
+                        <div class="schedule-details">
+                            <strong>UI/UX Design</strong>
+                            <span>Live class · 60 min</span>
+                        </div>
+
+                        <button class="join-btn">Join</button>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">
+                            <strong>02:00</strong>
+                            <small>PM</small>
+                        </div>
+
+                        <div class="schedule-line blue-line"></div>
+
+                        <div class="schedule-details">
+                            <strong>JavaScript Workshop</strong>
+                            <span>Interactive · 90 min</span>
+                        </div>
+
+                        <button class="join-btn">View</button>
+                    </div>
+
+                    <div class="schedule-item">
+                        <div class="time">
+                            <strong>06:30</strong>
+                            <small>PM</small>
+                        </div>
+
+                        <div class="schedule-line orange-line"></div>
+
+                        <div class="schedule-details">
+                            <strong>Weekly Assessment</strong>
+                            <span>Quiz · 30 min</span>
+                        </div>
+
+                        <button class="join-btn">Start</button>
+                    </div>
+                </section>
+
+            </div>
+
+            <section class="panel recommended-panel">
+                <div class="panel-heading">
+                    <div>
+                        <span class="section-label">RECOMMENDED</span>
+                        <h2>Courses you may like</h2>
+                    </div>
+
+                    <button class="text-btn" id="discoverBtn">Discover more →</button>
+                </div>
+
+                <div class="course-grid">
+
+                    <article class="course-card">
+                        <div class="cover cover-purple">
+                            <span>NEW</span>
+                            <button class="favorite">♡</button>
+                            <b>AI</b>
+                        </div>
+
+                        <div class="course-card-body">
+                            <small>ARTIFICIAL INTELLIGENCE</small>
+                            <h3>AI Fundamentals</h3>
+                            <p>⭐ 4.9 · 10 hours</p>
+                            <button class="enroll-btn">View Course</button>
+                        </div>
+                    </article>
+
+                    <article class="course-card">
+                        <div class="cover cover-orange">
+                            <span>POPULAR</span>
+                            <button class="favorite">♡</button>
+                            <b>UX</b>
+                        </div>
+
+                        <div class="course-card-body">
+                            <small>DESIGN</small>
+                            <h3>UX Research Essentials</h3>
+                            <p>⭐ 4.8 · 8 hours</p>
+                            <button class="enroll-btn">View Course</button>
+                        </div>
+                    </article>
+
+                    <article class="course-card">
+                        <div class="cover cover-green">
+                            <span>TRENDING</span>
+                            <button class="favorite">♡</button>
+                            <b>PY</b>
+                        </div>
+
+                        <div class="course-card-body">
+                            <small>PROGRAMMING</small>
+                            <h3>Python for Beginners</h3>
+                            <p>⭐ 4.9 · 15 hours</p>
+                            <button class="enroll-btn">View Course</button>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <section class="bottom-grid">
+
+                <div class="panel achievement-panel" id="achievements">
+                    <div class="panel-heading">
+                        <div>
+                            <span class="section-label">ACHIEVEMENTS</span>
+                            <h2>Your progress</h2>
+                        </div>
+                        <button class="text-btn" id="achievementBtn">View all</button>
+                    </div>
+
+                    <div class="achievement-content">
+                        <div class="ring">
+                            <div>
+                                <strong>72%</strong>
+                                <span>Goal</span>
+                            </div>
+                        </div>
+
+                        <div class="goal-info">
+                            <h3>Monthly learning goal</h3>
+                            <p>18 of 25 hours completed</p>
+
+                            <div class="goal-bar">
+                                <span></span>
+                            </div>
+
+                            <small>7 hours remaining this month</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel activity-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <span class="section-label">ACTIVITY</span>
+                            <h2>Recent activity</h2>
+                        </div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-icon purple">✓</div>
+                        <div>
+                            <strong>Completed a lesson</strong>
+                            <span>JavaScript Basics · 2h ago</span>
+                        </div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-icon blue">★</div>
+                        <div>
+                            <strong>Earned a badge</strong>
+                            <span>Fast Learner · Yesterday</span>
+                        </div>
+                    </div>
+
+                    <div class="activity">
+                        <div class="activity-icon orange">▶</div>
+                        <div>
+                            <strong>Started a course</strong>
+                            <span>UI/UX Design · 2 days ago</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </section>
+    </main>
+</div>
+
+<div class="modal" id="modal">
+    <div class="modal-box">
+        <button class="close-btn" id="closeBtn">×</button>
+        <div class="modal-icon">✦</div>
+        <h2 id="modalTitle">Course</h2>
+        <p id="modalText">Ready to continue?</p>
+        <button class="primary-btn" id="modalAction">Continue</button>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

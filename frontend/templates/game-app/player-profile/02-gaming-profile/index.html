@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Profile | NexusPlay</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+            <div class="logo-mark">N</div>
+            <span>NexusPlay</span>
+        </div>
+
+        <div class="profile-mini">
+            <div class="mini-avatar">RK</div>
+            <div>
+                <strong>Ryan Knight</strong>
+                <span>Level 58</span>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#" class="nav-link active">
+                <span>◉</span>
+                Profile
+            </a>
+
+            <a href="#" class="nav-link">
+                <span>🎮</span>
+                My Games
+            </a>
+
+            <a href="#" class="nav-link">
+                <span>🏆</span>
+                Achievements
+            </a>
+
+            <a href="#" class="nav-link">
+                <span>⚔️</span>
+                Matches
+            </a>
+
+            <a href="#" class="nav-link">
+                <span>👥</span>
+                Friends
+            </a>
+
+            <a href="#" class="nav-link">
+                <span>💬</span>
+                Messages
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#" class="nav-link">
+                <span>⚙️</span>
+                Settings
+            </a>
+
+            <button class="logout" id="logoutBtn">
+                <span>↪</span>
+                Sign Out
+            </button>
+        </div>
+
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <button class="menu-btn" id="menuBtn">☰</button>
+
+            <div class="search-box">
+                <span>⌕</span>
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search players, games or teams..."
+                >
+            </div>
+
+            <div class="top-actions">
+                <button class="top-icon" id="bellBtn">🔔</button>
+
+                <div class="top-avatar">RK</div>
+            </div>
+
+        </header>
+
+        <section class="hero">
+
+            <div class="hero-glow glow-one"></div>
+            <div class="hero-glow glow-two"></div>
+
+            <div class="hero-content">
+
+                <div class="large-avatar">
+                    RK
+                    <span></span>
+                </div>
+
+                <div class="identity">
+
+                    <div class="name-line">
+                        <h1>Ryan Knight</h1>
+                        <span class="pro-badge">PRO</span>
+                    </div>
+
+                    <p class="handle">@ryanknight</p>
+
+                    <p class="description">
+                        Competitive gamer and tactical strategist.
+                        Grinding ranked matches and building the ultimate squad.
+                    </p>
+
+                    <div class="meta">
+                        <span>📍 Bengaluru, India</span>
+                        <span>🎮 PC Gamer</span>
+                        <span>📅 Member since 2023</span>
+                    </div>
+
+                </div>
+
+                <div class="hero-actions">
+                    <button class="primary-btn" id="editBtn">
+                        ✎ Edit Profile
+                    </button>
+
+                    <button class="secondary-btn" id="shareBtn">
+                        ↗
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="hero-stats">
+
+                <div>
+                    <strong>58</strong>
+                    <span>Level</span>
+                </div>
+
+                <div>
+                    <strong>4,820</strong>
+                    <span>XP</span>
+                </div>
+
+                <div>
+                    <strong>1,284</strong>
+                    <span>Matches</span>
+                </div>
+
+                <div>
+                    <strong>78%</strong>
+                    <span>Win Rate</span>
+                </div>
+
+                <div>
+                    <strong>342</strong>
+                    <span>Friends</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="content">
+
+            <div class="content-grid">
+
+                <div class="main-column">
+
+                    <div class="card">
+
+                        <div class="card-heading">
+                            <div>
+                                <h2>Gaming Performance</h2>
+                                <p>Your competitive statistics</p>
+                            </div>
+
+                            <select id="periodSelect">
+                                <option>This Season</option>
+                                <option>Last Season</option>
+                                <option>All Time</option>
+                            </select>
+                        </div>
+
+                        <div class="performance-grid">
+
+                            <div class="performance-item">
+                                <div class="performance-icon purple">🎯</div>
+                                <div>
+                                    <span>Accuracy</span>
+                                    <strong>87.4%</strong>
+                                </div>
+                                <small class="positive">+4.8%</small>
+                            </div>
+
+                            <div class="performance-item">
+                                <div class="performance-icon blue">⚔️</div>
+                                <div>
+                                    <span>K/D Ratio</span>
+                                    <strong>3.42</strong>
+                                </div>
+                                <small class="positive">+0.6</small>
+                            </div>
+
+                            <div class="performance-item">
+                                <div class="performance-icon orange">🏅</div>
+                                <div>
+                                    <span>Wins</span>
+                                    <strong>1,001</strong>
+                                </div>
+                                <small class="positive">+18%</small>
+                            </div>
+
+                            <div class="performance-item">
+                                <div class="performance-icon green">⏱️</div>
+                                <div>
+                                    <span>Play Time</span>
+                                    <strong>482h</strong>
+                                </div>
+                                <small>+12h</small>
+                            </div>
+
+                        </div>
+
+                        <div class="chart-area">
+
+                            <div class="chart-labels">
+                                <span>Win Rate</span>
+                                <strong>78.2%</strong>
+                            </div>
+
+                            <div class="chart">
+                                <div class="grid-line line-one"></div>
+                                <div class="grid-line line-two"></div>
+                                <div class="grid-line line-three"></div>
+
+                                <svg viewBox="0 0 700 190" preserveAspectRatio="none">
+                                    <defs>
+                                        <linearGradient id="chartGradient" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stop-color="#765cff" stop-opacity=".38"/>
+                                            <stop offset="100%" stop-color="#765cff" stop-opacity="0"/>
+                                        </linearGradient>
+                                    </defs>
+
+                                    <path
+                                        d="M0 145 C70 130 80 150 140 118 C200 87 220 125 280 102 C350 76 370 110 425 72 C480 37 505 82 550 62 C610 36 645 58 700 25 L700 190 L0 190 Z"
+                                        fill="url(#chartGradient)"
+                                    />
+
+                                    <path
+                                        d="M0 145 C70 130 80 150 140 118 C200 87 220 125 280 102 C350 76 370 110 425 72 C480 37 505 82 550 62 C610 36 645 58 700 25"
+                                        fill="none"
+                                        stroke="#765cff"
+                                        stroke-width="4"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
+                            </div>
+
+                            <div class="chart-days">
+                                <span>Mon</span>
+                                <span>Tue</span>
+                                <span>Wed</span>
+                                <span>Thu</span>
+                                <span>Fri</span>
+                                <span>Sat</span>
+                                <span>Sun</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card">
+
+                        <div class="card-heading">
+                            <div>
+                                <h2>Favorite Games</h2>
+                                <p>Your most played games</p>
+                            </div>
+
+                            <button class="link-btn" id="allGamesBtn">
+                                View all
+                            </button>
+                        </div>
+
+                        <div class="game-grid">
+
+                            <article class="game-card">
+
+                                <div class="game-image game-purple">
+                                    ⚔️
+                                    <span class="rank">#1</span>
+                                </div>
+
+                                <div class="game-details">
+                                    <h3>Shadow Strike</h3>
+                                    <p>Action • Competitive</p>
+
+                                    <div class="game-progress">
+                                        <div style="width: 88%"></div>
+                                    </div>
+
+                                    <div class="game-bottom">
+                                        <span>88% mastery</span>
+                                        <strong>Lv. 52</strong>
+                                    </div>
+                                </div>
+
+                            </article>
+
+                            <article class="game-card">
+
+                                <div class="game-image game-blue">
+                                    🚀
+                                    <span class="rank">#2</span>
+                                </div>
+
+                                <div class="game-details">
+                                    <h3>Star Frontier</h3>
+                                    <p>Adventure • Strategy</p>
+
+                                    <div class="game-progress">
+                                        <div style="width: 76%"></div>
+                                    </div>
+
+                                    <div class="game-bottom">
+                                        <span>76% mastery</span>
+                                        <strong>Lv. 41</strong>
+                                    </div>
+                                </div>
+
+                            </article>
+
+                            <article class="game-card">
+
+                                <div class="game-image game-orange">
+                                    🏎️
+                                    <span class="rank">#3</span>
+                                </div>
+
+                                <div class="game-details">
+                                    <h3>Velocity Rush</h3>
+                                    <p>Racing • Multiplayer</p>
+
+                                    <div class="game-progress">
+                                        <div style="width: 63%"></div>
+                                    </div>
+
+                                    <div class="game-bottom">
+                                        <span>63% mastery</span>
+                                        <strong>Lv. 34</strong>
+                                    </div>
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <aside class="right-column">
+
+                    <div class="card level-card">
+
+                        <div class="card-heading">
+                            <div>
+                                <h2>Current Level</h2>
+                                <p>Keep playing to level up</p>
+                            </div>
+                        </div>
+
+                        <div class="level-circle">
+                            <div>
+                                <strong>58</strong>
+                                <span>LEVEL</span>
+                            </div>
+                        </div>
+
+                        <div class="level-progress">
+                            <div class="level-progress-top">
+                                <span>4,820 XP</span>
+                                <span>5,500 XP</span>
+                            </div>
+
+                            <div class="progress-track">
+                                <div></div>
+                            </div>
+
+                            <p>680 XP needed for Level 59</p>
+                        </div>
+
+                    </div>
+
+                    <div class="card">
+
+                        <div class="card-heading">
+                            <div>
+                                <h2>Recent Achievements</h2>
+                                <p>Latest unlocked badges</p>
+                            </div>
+                        </div>
+
+                        <div class="achievement-list">
+
+                            <div class="achievement">
+                                <div class="achievement-icon gold">🏆</div>
+                                <div>
+                                    <strong>Elite Champion</strong>
+                                    <span>Reached top 1%</span>
+                                </div>
+                                <small>2h</small>
+                            </div>
+
+                            <div class="achievement">
+                                <div class="achievement-icon purple">⚡</div>
+                                <div>
+                                    <strong>Speed Demon</strong>
+                                    <span>Win 5 matches in a row</span>
+                                </div>
+                                <small>1d</small>
+                            </div>
+
+                            <div class="achievement">
+                                <div class="achievement-icon blue">🎯</div>
+                                <div>
+                                    <strong>Perfect Aim</strong>
+                                    <span>90% accuracy match</span>
+                                </div>
+                                <small>3d</small>
+                            </div>
+
+                            <div class="achievement">
+                                <div class="achievement-icon green">💎</div>
+                                <div>
+                                    <strong>Collector</strong>
+                                    <span>Collected 100 items</span>
+                                </div>
+                                <small>5d</small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="card">
+
+                        <div class="card-heading">
+                            <div>
+                                <h2>Gaming Streak</h2>
+                                <p>Keep your momentum going</p>
+                            </div>
+                        </div>
+
+                        <div class="streak-box">
+
+                            <div class="fire">🔥</div>
+
+                            <div>
+                                <strong>14 Days</strong>
+                                <span>Current streak</span>
+                            </div>
+
+                            <div class="streak-best">
+                                <small>Best</small>
+                                <strong>27</strong>
+                            </div>
+
+                        </div>
+
+                        <div class="days">
+
+                            <div class="completed">
+                                <span>Mon</span>
+                                <b>✓</b>
+                            </div>
+
+                            <div class="completed">
+                                <span>Tue</span>
+                                <b>✓</b>
+                            </div>
+
+                            <div class="completed">
+                                <span>Wed</span>
+                                <b>✓</b>
+                            </div>
+
+                            <div class="completed">
+                                <span>Thu</span>
+                                <b>✓</b>
+                            </div>
+
+                            <div class="completed">
+                                <span>Fri</span>
+                                <b>✓</b>
+                            </div>
+
+                            <div class="today">
+                                <span>Sat</span>
+                                <b>•</b>
+                            </div>
+
+                            <div>
+                                <span>Sun</span>
+                                <b>○</b>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+
+    <div class="modal">
+
+        <button class="close-btn" id="closeModal">×</button>
+
+        <div class="modal-avatar">RK</div>
+
+        <h2>Edit Gaming Profile</h2>
+        <p>Customize the information shown on your profile.</p>
+
+        <label>Display Name</label>
+        <input id="nameInput" type="text" value="Ryan Knight">
+
+        <label>Username</label>
+        <input id="usernameInput" type="text" value="@ryanknight">
+
+        <label>About You</label>
+        <textarea id="bioInput">Competitive gamer and tactical strategist. Grinding ranked matches and building the ultimate squad.</textarea>
+
+        <button class="save-btn" id="saveBtn">
+            Save Profile
+        </button>
+
+    </div>
+
+</div>
+
+<div class="toast" id="toast">
+    <span>✓</span>
+    <p>Action completed successfully.</p>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

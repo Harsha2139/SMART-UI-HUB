@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">✦</div>
+            <span>Eduvia</span>
+        </div>
+
+        <div class="student-mini">
+            <div class="avatar">JS</div>
+            <div>
+                <strong>Jordan Smith</strong>
+                <small>Computer Science</small>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#overview" class="active">
+                <span>⌂</span> Overview
+            </a>
+            <a href="#classes">
+                <span>▣</span> My Classes
+            </a>
+            <a href="#assignments">
+                <span>✓</span> Assignments
+            </a>
+            <a href="#grades">
+                <span>★</span> Grades
+            </a>
+            <a href="#calendar">
+                <span>◷</span> Calendar
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#" id="helpBtn"><span>?</span> Help Center</a>
+            <a href="#" id="settingsBtn"><span>⚙</span> Settings</a>
+            <button class="logout-btn" id="logoutBtn">
+                <span>↪</span> Log out
+            </button>
+        </div>
+
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <button class="menu-btn" id="menuBtn">☰</button>
+
+            <div class="mobile-logo">
+                <div class="brand-icon">✦</div>
+                Eduvia
+            </div>
+
+            <div class="search">
+                <span>⌕</span>
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search classes, assignments..."
+                >
+            </div>
+
+            <div class="top-actions">
+                <button class="top-btn" id="messageBtn">✉</button>
+                <button class="top-btn" id="notificationBtn">♢</button>
+                <div class="profile-avatar">JS</div>
+            </div>
+
+        </header>
+
+        <div class="content" id="overview">
+
+            <section class="welcome">
+                <div>
+                    <span class="date">MONDAY, OCTOBER 1, 2026</span>
+                    <h1>Welcome back, Jordan! 👋</h1>
+                    <p>Here's what's happening with your learning today.</p>
+                </div>
+
+                <button class="calendar-btn" id="todayBtn">
+                    <span>◷</span>
+                    Today
+                </button>
+            </section>
+
+            <section class="hero-card">
+
+                <div class="hero-text">
+                    <span class="hero-label">YOUR WEEKLY GOAL</span>
+
+                    <h2>
+                        You're doing<br>
+                        <span>great!</span> 🚀
+                    </h2>
+
+                    <p>
+                        You've completed 8 hours of learning this week.
+                        Just 2 more hours to reach your weekly goal.
+                    </p>
+
+                    <button class="hero-btn" id="learningBtn">
+                        Continue Learning →
+                    </button>
+                </div>
+
+                <div class="goal-circle">
+                    <div class="circle">
+                        <strong>80%</strong>
+                        <span>Complete</span>
+                    </div>
+                </div>
+
+                <div class="hero-decoration one">✦</div>
+                <div class="hero-decoration two">+</div>
+                <div class="hero-decoration three">○</div>
+
+            </section>
+
+            <section class="stats">
+
+                <div class="stat">
+                    <div class="stat-icon purple">▣</div>
+                    <div>
+                        <small>Active Courses</small>
+                        <strong>05</strong>
+                        <span>+1 this month</span>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-icon blue">✓</div>
+                    <div>
+                        <small>Assignments</small>
+                        <strong>18</strong>
+                        <span>14 completed</span>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-icon orange">★</div>
+                    <div>
+                        <small>Average Grade</small>
+                        <strong>92%</strong>
+                        <span>+4% this month</span>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-icon green">🔥</div>
+                    <div>
+                        <small>Study Streak</small>
+                        <strong>07 days</strong>
+                        <span>Personal best: 12</span>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="main-grid">
+
+                <div class="left-column">
+
+                    <section class="panel" id="classes">
+
+                        <div class="panel-heading">
+                            <div>
+                                <span class="label">LEARNING</span>
+                                <h2>My classes</h2>
+                            </div>
+
+                            <button class="view-btn" id="classesBtn">
+                                View all →
+                            </button>
+                        </div>
+
+                        <div class="class-list">
+
+                            <article class="class-card">
+                                <div class="class-cover purple-cover">
+                                    <span>CS</span>
+                                </div>
+
+                                <div class="class-info">
+                                    <span>COMPUTER SCIENCE</span>
+                                    <h3>Data Structures & Algorithms</h3>
+
+                                    <div class="teacher">
+                                        <div class="teacher-avatar">AR</div>
+                                        <span>Alex Rivera</span>
+                                    </div>
+
+                                    <div class="class-progress">
+                                        <div>
+                                            <span>Progress</span>
+                                            <strong>76%</strong>
+                                        </div>
+
+                                        <div class="progress-bar">
+                                            <span style="width: 76%"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button
+                                    class="class-action"
+                                    data-course="Data Structures & Algorithms"
+                                >
+                                    Continue
+                                </button>
+                            </article>
+
+                            <article class="class-card">
+                                <div class="class-cover blue-cover">
+                                    <span>WD</span>
+                                </div>
+
+                                <div class="class-info">
+                                    <span>WEB DEVELOPMENT</span>
+                                    <h3>Modern Web Technologies</h3>
+
+                                    <div class="teacher">
+                                        <div class="teacher-avatar blue">MK</div>
+                                        <span>Maya Kumar</span>
+                                    </div>
+
+                                    <div class="class-progress">
+                                        <div>
+                                            <span>Progress</span>
+                                            <strong>58%</strong>
+                                        </div>
+
+                                        <div class="progress-bar">
+                                            <span style="width: 58%"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button
+                                    class="class-action"
+                                    data-course="Modern Web Technologies"
+                                >
+                                    Continue
+                                </button>
+                            </article>
+
+                            <article class="class-card">
+                                <div class="class-cover orange-cover">
+                                    <span>AI</span>
+                                </div>
+
+                                <div class="class-info">
+                                    <span>ARTIFICIAL INTELLIGENCE</span>
+                                    <h3>Introduction to Machine Learning</h3>
+
+                                    <div class="teacher">
+                                        <div class="teacher-avatar orange">DS</div>
+                                        <span>David Shah</span>
+                                    </div>
+
+                                    <div class="class-progress">
+                                        <div>
+                                            <span>Progress</span>
+                                            <strong>42%</strong>
+                                        </div>
+
+                                        <div class="progress-bar">
+                                            <span style="width: 42%"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button
+                                    class="class-action"
+                                    data-course="Introduction to Machine Learning"
+                                >
+                                    Continue
+                                </button>
+                            </article>
+
+                        </div>
+
+                    </section>
+
+                    <section class="panel" id="assignments">
+
+                        <div class="panel-heading">
+                            <div>
+                                <span class="label">TASKS</span>
+                                <h2>Upcoming assignments</h2>
+                            </div>
+
+                            <button class="view-btn" id="assignmentsBtn">
+                                View all →
+                            </button>
+                        </div>
+
+                        <div class="assignment-list">
+
+                            <div class="assignment">
+                                <div class="assignment-icon purple">
+                                    <span>⌘</span>
+                                </div>
+
+                                <div class="assignment-info">
+                                    <strong>Sorting Algorithms Report</strong>
+                                    <span>Data Structures · Due Oct 3</span>
+                                </div>
+
+                                <span class="priority high">High</span>
+
+                                <button class="assignment-btn">Open</button>
+                            </div>
+
+                            <div class="assignment">
+                                <div class="assignment-icon blue">
+                                    <span>&lt;/&gt;</span>
+                                </div>
+
+                                <div class="assignment-info">
+                                    <strong>Responsive Website</strong>
+                                    <span>Web Development · Due Oct 5</span>
+                                </div>
+
+                                <span class="priority medium">Medium</span>
+
+                                <button class="assignment-btn">Open</button>
+                            </div>
+
+                            <div class="assignment">
+                                <div class="assignment-icon orange">
+                                    <span>✦</span>
+                                </div>
+
+                                <div class="assignment-info">
+                                    <strong>ML Model Evaluation</strong>
+                                    <span>Machine Learning · Due Oct 7</span>
+                                </div>
+
+                                <span class="priority low">Low</span>
+
+                                <button class="assignment-btn">Open</button>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </div>
+
+                <div class="right-column">
+
+                    <section class="panel calendar-panel" id="calendar">
+
+                        <div class="panel-heading">
+                            <div>
+                                <span class="label">SCHEDULE</span>
+                                <h2>October 2026</h2>
+                            </div>
+
+                            <div class="month-controls">
+                                <button id="prevMonth">‹</button>
+                                <button id="nextMonth">›</button>
+                            </div>
+                        </div>
+
+                        <div class="weekdays">
+                            <span>MON</span>
+                            <span>TUE</span>
+                            <span>WED</span>
+                            <span>THU</span>
+                            <span>FRI</span>
+                            <span>SAT</span>
+                            <span>SUN</span>
+                        </div>
+
+                        <div class="calendar-grid">
+                            <span class="muted">28</span>
+                            <span class="muted">29</span>
+                            <span class="muted">30</span>
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                            <span>4</span>
+
+                            <span>5</span>
+                            <span>6</span>
+                            <span class="event">7</span>
+                            <span>8</span>
+                            <span>9</span>
+                            <span>10</span>
+                            <span>11</span>
+
+                            <span>12</span>
+                            <span class="event">13</span>
+                            <span>14</span>
+                            <span>15</span>
+                            <span class="today">16</span>
+                            <span>17</span>
+                            <span>18</span>
+
+                            <span>19</span>
+                            <span>20</span>
+                            <span class="event">21</span>
+                            <span>22</span>
+                            <span>23</span>
+                            <span>24</span>
+                            <span>25</span>
+
+                            <span>26</span>
+                            <span>27</span>
+                            <span>28</span>
+                            <span>29</span>
+                            <span>30</span>
+                            <span>31</span>
+                            <span class="muted">1</span>
+                        </div>
+
+                        <div class="calendar-events">
+                            <div>
+                                <span class="event-dot purple-dot"></span>
+                                <p>UI/UX Live Class</p>
+                                <strong>10:30 AM</strong>
+                            </div>
+
+                            <div>
+                                <span class="event-dot blue-dot"></span>
+                                <p>JavaScript Workshop</p>
+                                <strong>2:00 PM</strong>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <section class="panel grades-panel" id="grades">
+
+                        <div class="panel-heading">
+                            <div>
+                                <span class="label">PERFORMANCE</span>
+                                <h2>Recent grades</h2>
+                            </div>
+
+                            <button class="view-btn" id="gradesBtn">
+                                Details →
+                            </button>
+                        </div>
+
+                        <div class="grade-item">
+                            <div class="grade-course">
+                                <div class="grade-icon purple">DS</div>
+                                <div>
+                                    <strong>Data Structures</strong>
+                                    <span>Assignment 04</span>
+                                </div>
+                            </div>
+                            <b>95%</b>
+                        </div>
+
+                        <div class="grade-item">
+                            <div class="grade-course">
+                                <div class="grade-icon blue">WD</div>
+                                <div>
+                                    <strong>Web Development</strong>
+                                    <span>Project 02</span>
+                                </div>
+                            </div>
+                            <b>91%</b>
+                        </div>
+
+                        <div class="grade-item">
+                            <div class="grade-course">
+                                <div class="grade-icon orange">AI</div>
+                                <div>
+                                    <strong>Machine Learning</strong>
+                                    <span>Quiz 05</span>
+                                </div>
+                            </div>
+                            <b>89%</b>
+                        </div>
+
+                    </section>
+
+                    <section class="quote-card">
+                        <span class="quote-mark">“</span>
+                        <p>
+                            Success is the sum of small efforts,
+                            repeated day in and day out.
+                        </p>
+                        <small>— Robert Collier</small>
+                    </section>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+<div class="modal" id="modal">
+    <div class="modal-box">
+        <button class="close-btn" id="closeBtn">×</button>
+        <div class="modal-icon">✦</div>
+        <h2 id="modalTitle">Student Dashboard</h2>
+        <p id="modalText">Choose an action to continue.</p>
+        <button class="primary-btn" id="modalAction">Continue</button>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

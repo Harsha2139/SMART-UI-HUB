@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Account</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="topbar">
+        ✨ Welcome back! Manage your account, orders and preferences.
+    </div>
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span>O</span>
+            Orderly
+        </div>
+
+        <div class="search-box">
+            🔍
+            <input type="text" id="searchInput" placeholder="Search products...">
+        </div>
+
+        <div class="nav-actions">
+            <button id="wishlistBtn">♡</button>
+            <button id="notificationBtn">🔔</button>
+            <div class="profile">JB</div>
+        </div>
+
+    </header>
+
+    <main>
+
+        <div class="breadcrumb">
+            Home / My Account
+        </div>
+
+        <section class="account-hero">
+
+            <div class="profile-large">
+                JB
+            </div>
+
+            <div class="hero-info">
+                <span>WELCOME BACK</span>
+                <h1>Jayanth Boodati</h1>
+                <p>Manage your personal information, orders and preferences.</p>
+            </div>
+
+            <button class="edit-profile" id="editProfileBtn">
+                ✎ Edit Profile
+            </button>
+
+        </section>
+
+        <section class="account-layout">
+
+            <aside class="sidebar">
+
+                <button class="side-link active" data-section="overview">
+                    <span>⌂</span>
+                    Overview
+                </button>
+
+                <button class="side-link" data-section="personal">
+                    <span>👤</span>
+                    Personal Information
+                </button>
+
+                <button class="side-link" data-section="orders">
+                    <span>📦</span>
+                    My Orders
+                </button>
+
+                <button class="side-link" data-section="addresses">
+                    <span>📍</span>
+                    Addresses
+                </button>
+
+                <button class="side-link" data-section="payments">
+                    <span>💳</span>
+                    Payment Methods
+                </button>
+
+                <button class="side-link" data-section="security">
+                    <span>🔐</span>
+                    Security
+                </button>
+
+                <button class="side-link" data-section="preferences">
+                    <span>⚙</span>
+                    Preferences
+                </button>
+
+                <div class="sidebar-bottom">
+                    <button id="logoutBtn">
+                        ↪ Logout
+                    </button>
+                </div>
+
+            </aside>
+
+            <section class="content">
+
+                <div class="content-section active" id="overview">
+
+                    <div class="section-heading">
+                        <div>
+                            <span>ACCOUNT CENTER</span>
+                            <h2>Account Overview</h2>
+                        </div>
+                    </div>
+
+                    <div class="overview-grid">
+
+                        <div class="overview-card purple-card">
+                            <div class="card-icon">📦</div>
+                            <span>TOTAL ORDERS</span>
+                            <strong>24</strong>
+                            <small>+3 this month</small>
+                        </div>
+
+                        <div class="overview-card green-card">
+                            <div class="card-icon">💰</div>
+                            <span>TOTAL SAVINGS</span>
+                            <strong>₹8,450</strong>
+                            <small>From offers & coupons</small>
+                        </div>
+
+                        <div class="overview-card orange-card">
+                            <div class="card-icon">🎁</div>
+                            <span>REWARD POINTS</span>
+                            <strong>2,840</strong>
+                            <small>Available to redeem</small>
+                        </div>
+
+                    </div>
+
+                    <div class="profile-card">
+
+                        <div class="card-title">
+                            <div>
+                                <span>PERSONAL DETAILS</span>
+                                <h3>Your Information</h3>
+                            </div>
+
+                            <button class="small-edit" id="smallEditBtn">
+                                Edit
+                            </button>
+                        </div>
+
+                        <div class="details-grid">
+
+                            <div>
+                                <span>FULL NAME</span>
+                                <strong>Jayanth Boodati</strong>
+                            </div>
+
+                            <div>
+                                <span>EMAIL ADDRESS</span>
+                                <strong>jayanth@example.com</strong>
+                            </div>
+
+                            <div>
+                                <span>PHONE NUMBER</span>
+                                <strong>+91 98765 43210</strong>
+                            </div>
+
+                            <div>
+                                <span>MEMBER SINCE</span>
+                                <strong>January 2025</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="quick-section">
+
+                        <h3>Quick Actions</h3>
+
+                        <div class="quick-grid">
+
+                            <button class="quick-card" data-section-target="orders">
+                                <span>📦</span>
+                                <strong>View Orders</strong>
+                                <small>Track your purchases</small>
+                            </button>
+
+                            <button class="quick-card" data-section-target="addresses">
+                                <span>📍</span>
+                                <strong>Manage Addresses</strong>
+                                <small>Update delivery locations</small>
+                            </button>
+
+                            <button class="quick-card" data-section-target="payments">
+                                <span>💳</span>
+                                <strong>Payment Methods</strong>
+                                <small>Manage saved payments</small>
+                            </button>
+
+                            <button class="quick-card" data-section-target="security">
+                                <span>🔐</span>
+                                <strong>Security</strong>
+                                <small>Protect your account</small>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="content-section" id="personal">
+
+                    <div class="section-heading">
+                        <div>
+                            <span>PROFILE</span>
+                            <h2>Personal Information</h2>
+                        </div>
+                    </div>
+
+                    <div class="form-card">
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input id="firstName" value="Jayanth">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input id="lastName" value="Boodati">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input value="jayanth@example.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input value="+91 98765 43210">
+                            </div>
+
+                        </div>
+
+                        <button class="save-btn" id="saveProfile">
+                            Save Changes
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="content-section" id="orders">
+
+                    <div class="section-heading">
+                        <div>
+                            <span>SHOPPING</span>
+                            <h2>My Orders</h2>
+                        </div>
+
+                        <button class="view-all" id="viewOrders">
+                            View All →
+                        </button>
+                    </div>
+
+                    <div class="mini-order">
+
+                        <div class="mini-product purple">
+                            🎧
+                        </div>
+
+                        <div>
+                            <span>#ORD-92841</span>
+                            <h3>Pulse X Wireless Headphones</h3>
+                            <p>₹2,499 • Shipped</p>
+                        </div>
+
+                        <strong class="shipped-text">On the way</strong>
+
+                    </div>
+
+                    <div class="mini-order">
+
+                        <div class="mini-product blue">
+                            ⌚
+                        </div>
+
+                        <div>
+                            <span>#ORD-92137</span>
+                            <h3>FitPro Smart Watch</h3>
+                            <p>₹1,899 • Delivered</p>
+                        </div>
+
+                        <strong class="delivered-text">Delivered</strong>
+
+                    </div>
+
+                </div>
+
+                <div class="content-section" id="addresses">
+
+                    <div class="section-heading">
+                        <div>
+                            <span>DELIVERY</span>
+                            <h2>Saved Addresses</h2>
+                        </div>
+
+                        <button class="add-btn" id="addAddress">
+                            + Add Address
+                        </button>
+                    </div>
+
+                    <div class="address-grid">
+
+                        <div class="address-card selected">
+
+                            <div class="address-top">
+                                <strong>Home</strong>
+                                <span>DEFAULT</span>
+                            </div>
+
+                            <h3>Jayanth Boodati</h3>
+
+                            <p>
+                                24, Lake View Road,<br>
+                                Chengalpattu, Tamil Nadu<br>
+                                603001
+                            </p>
+
+                            <small>📞 +91 98765 43210</small>
+
+                            <div class="address-actions">
+                                <button>Edit</button>
+                                <button>Remove</button>
+                            </div>
+
+                        </div>
+
+                        <div class="address-card">
+
+                            <div class="address-top">
+                                <strong>College</strong>
+                            </div>
+
+                            <h3>Jayanth Boodati</h3>
+
+                            <p>
+                                Student Residence,<br>
+                                Main Campus Road,<br>
+                                Tamil Nadu 603001
+                            </p>
+
+                            <small>📞 +91 98765 43210</small>
+
+                            <div class="address-actions">
+                                <button>Edit</button>
+                                <button>Remove</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="content-section" id="payments">
+
+                    <div class="section-heading">
+                        <div>
+                            <span>PAYMENTS</span>
+                            <h2>Payment Methods</h2>
+                        </div>
+                    </div>
+
+                    <div class="payment-card">
+
+                        <div class="payment-logo">
+                            UPI
+                        </div>
+
+                        <div>
+                            <strong>jayanth@upi</strong>
+                            <span>Primary payment method</span>
+                        </div>
+
+                        <button>⋮</button>
+
+                    </div>
+
+                    <div class="payment-card">
+
+                        <div class="card-logo">
+                            VISA
+                        </div>
+
+                        <div>
+                            <strong>•••• •••• •••• 4821</strong>
+                            <span>Expires 08/29</span>
+                        </div>
+
+                        <button>⋮</button>
+
+                    </div>
+
+                    <button class="add-payment" id="addPayment">
+                        + Add Payment Method
+                    </button>
+
+                </div>
+
+                <div class="content-section" id="security">
+
+                    <div class="section-heading">
+                        <div>
+                            <span>ACCOUNT PROTECTION</span>
+                            <h2>Security</h2>
+                        </div>
+                    </div>
+
+                    <div class="security-card">
+
+                        <div class="security-row">
+                            <div class="security-icon green">✓</div>
+
+                            <div>
+                                <strong>Password</strong>
+                                <p>Your password is strong and secure.</p>
+                            </div>
+
+                            <button class="security-btn">Change</button>
+                        </div>
+
+                        <div class="security-row">
+                            <div class="security-icon purple">🔐</div>
+
+                            <div>
+                                <strong>Two-Factor Authentication</strong>
+                                <p>Add an extra layer of protection.</p>
+                            </div>
+
+                            <label class="switch">
+                                <input type="checkbox" id="twoFactor">
+                                <span></span>
+                            </label>
+                        </div>
+
+                        <div class="security-row">
+                            <div class="security-icon orange">📱</div>
+
+                            <div>
+                                <strong>Login Alerts</strong>
+                                <p>Get notified about new logins.</p>
+                            </div>
+
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span></span>
+                            </label>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="content-section" id="preferences">
+
+                    <div class="section-heading">
+                        <div>
+                            <span>PERSONALIZATION</span>
+                            <h2>Preferences</h2>
+                        </div>
+                    </div>
+
+                    <div class="preference-card">
+
+                        <div>
+                            <strong>Promotional Emails</strong>
+                            <p>Receive offers, deals and product updates.</p>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span></span>
+                        </label>
+
+                    </div>
+
+                    <div class="preference-card">
+
+                        <div>
+                            <strong>Order Updates</strong>
+                            <p>Get notifications about your order status.</p>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span></span>
+                        </label>
+
+                    </div>
+
+                    <div class="preference-card">
+
+                        <div>
+                            <strong>Personalized Recommendations</strong>
+                            <p>Show products based on your interests.</p>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span></span>
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+        <section class="account-banner">
+
+            <div class="banner-icon">💎</div>
+
+            <div>
+                <span>ORDERLY PLUS</span>
+                <h2>Unlock more rewards with your account.</h2>
+                <p>Get exclusive offers, faster delivery and special member benefits.</p>
+            </div>
+
+            <button id="joinBtn">
+                Explore Benefits →
+            </button>
+
+        </section>
+
+    </main>
+
+    <div class="modal" id="profileModal">
+
+        <div class="modal-box">
+
+            <button class="close-modal" id="closeModal">×</button>
+
+            <span>EDIT PROFILE</span>
+
+            <h2>Update Your Profile</h2>
+
+            <div class="modal-form">
+
+                <label>Name</label>
+                <input id="modalName" value="Jayanth Boodati">
+
+                <label>Email</label>
+                <input value="jayanth@example.com">
+
+            </div>
+
+            <button class="modal-save" id="modalSave">
+                Save Profile
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

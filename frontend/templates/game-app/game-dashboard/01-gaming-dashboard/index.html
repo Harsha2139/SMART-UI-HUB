@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Dashboard | GameCore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">G</div>
+            <div>
+                <strong>GameCore</strong>
+                <span>GAMING CENTER</span>
+            </div>
+        </div>
+
+        <div class="user-card">
+
+            <div class="avatar">JD</div>
+
+            <div class="user-info">
+                <strong>Jordan Davis</strong>
+                <span>Elite Player</span>
+            </div>
+
+            <button id="userMenu">•••</button>
+
+        </div>
+
+        <nav>
+
+            <a href="#" class="nav active">
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+            <a href="#" class="nav">
+                <span>🎮</span>
+                My Games
+            </a>
+
+            <a href="#" class="nav">
+                <span>⚔</span>
+                Matches
+            </a>
+
+            <a href="#" class="nav">
+                <span>🏆</span>
+                Leaderboards
+            </a>
+
+            <a href="#" class="nav">
+                <span>👥</span>
+                Community
+            </a>
+
+            <a href="#" class="nav">
+                <span>🎖</span>
+                Achievements
+            </a>
+
+            <div class="nav-title">MANAGE</div>
+
+            <a href="#" class="nav">
+                <span>📊</span>
+                Statistics
+            </a>
+
+            <a href="#" class="nav">
+                <span>⚙</span>
+                Settings
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="upgrade-card">
+
+                <div class="upgrade-icon">⚡</div>
+
+                <strong>Go Pro</strong>
+
+                <p>Unlock advanced gaming statistics.</p>
+
+                <button id="upgradeBtn">
+                    Upgrade
+                </button>
+
+            </div>
+
+            <button class="logout" id="logoutBtn">
+                ↪
+                Sign Out
+            </button>
+
+        </div>
+
+    </aside>
+
+    <main class="main">
+
+        <header class="topbar">
+
+            <button class="menu-btn" id="menuBtn">
+                ☰
+            </button>
+
+            <div class="search">
+
+                <span>⌕</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search games, players..."
+                >
+
+            </div>
+
+            <div class="top-actions">
+
+                <button class="icon-btn" id="searchBtn">
+                    ⌕
+                </button>
+
+                <button class="icon-btn" id="notificationBtn">
+                    🔔
+                    <i></i>
+                </button>
+
+                <button class="profile-btn">
+                    JD
+                </button>
+
+            </div>
+
+        </header>
+
+        <section class="content">
+
+            <div class="welcome">
+
+                <div>
+
+                    <span class="eyebrow">
+                        WELCOME BACK, JORDAN
+                    </span>
+
+                    <h1>
+                        Ready to play?
+                        <span>🎮</span>
+                    </h1>
+
+                    <p>
+                        Track your progress, discover matches and keep climbing.
+                    </p>
+
+                </div>
+
+                <div class="season-box">
+
+                    <span>SEASON 8</span>
+
+                    <strong>42</strong>
+
+                    <small>PLAYER LEVEL</small>
+
+                    <div class="level-bar">
+                        <span></span>
+                    </div>
+
+                    <p>2,340 / 3,000 XP</p>
+
+                </div>
+
+            </div>
+
+            <div class="stats">
+
+                <div class="stat">
+
+                    <div class="stat-icon purple">
+                        🎮
+                    </div>
+
+                    <div>
+                        <span>Games Played</span>
+                        <strong>248</strong>
+                        <small>↑ 14 this week</small>
+                    </div>
+
+                </div>
+
+                <div class="stat">
+
+                    <div class="stat-icon green">
+                        🏆
+                    </div>
+
+                    <div>
+                        <span>Wins</span>
+                        <strong>189</strong>
+                        <small>↑ 12.4% this month</small>
+                    </div>
+
+                </div>
+
+                <div class="stat">
+
+                    <div class="stat-icon orange">
+                        ⚡
+                    </div>
+
+                    <div>
+                        <span>Win Rate</span>
+                        <strong>76.2%</strong>
+                        <small>↑ 4.8% this month</small>
+                    </div>
+
+                </div>
+
+                <div class="stat">
+
+                    <div class="stat-icon blue">
+                        ⭐
+                    </div>
+
+                    <div>
+                        <span>Rating</span>
+                        <strong>1,964</strong>
+                        <small>↑ 86 points</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="dashboard-grid">
+
+                <section class="games-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <h2>Continue Playing</h2>
+                            <p>Pick up where you left off</p>
+                        </div>
+
+                        <button id="viewGames">
+                            View All →
+                        </button>
+
+                    </div>
+
+                    <div class="game-list">
+
+                        <div class="game-item">
+
+                            <div class="game-cover purple-cover">
+                                <span>⚔</span>
+                            </div>
+
+                            <div class="game-info">
+
+                                <strong>Shadow Strike</strong>
+
+                                <span>Ranked • Season 8</span>
+
+                                <div class="progress">
+                                    <span style="width: 78%"></span>
+                                </div>
+
+                                <small>78% season progress</small>
+
+                            </div>
+
+                            <div class="game-rating">
+                                <span>RANK</span>
+                                <strong>Diamond II</strong>
+                            </div>
+
+                            <button
+                                class="play-btn"
+                                data-game="Shadow Strike"
+                            >
+                                ▶
+                            </button>
+
+                        </div>
+
+                        <div class="game-item">
+
+                            <div class="game-cover blue-cover">
+                                <span>🚀</span>
+                            </div>
+
+                            <div class="game-info">
+
+                                <strong>Galaxy Rush</strong>
+
+                                <span>Competitive • Season 5</span>
+
+                                <div class="progress">
+                                    <span style="width: 64%"></span>
+                                </div>
+
+                                <small>64% season progress</small>
+
+                            </div>
+
+                            <div class="game-rating">
+                                <span>RANK</span>
+                                <strong>Platinum I</strong>
+                            </div>
+
+                            <button
+                                class="play-btn"
+                                data-game="Galaxy Rush"
+                            >
+                                ▶
+                            </button>
+
+                        </div>
+
+                        <div class="game-item">
+
+                            <div class="game-cover orange-cover">
+                                <span>🏎</span>
+                            </div>
+
+                            <div class="game-info">
+
+                                <strong>Velocity X</strong>
+
+                                <span>Racing • Season 3</span>
+
+                                <div class="progress">
+                                    <span style="width: 51%"></span>
+                                </div>
+
+                                <small>51% season progress</small>
+
+                            </div>
+
+                            <div class="game-rating">
+                                <span>RANK</span>
+                                <strong>Gold III</strong>
+                            </div>
+
+                            <button
+                                class="play-btn"
+                                data-game="Velocity X"
+                            >
+                                ▶
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="performance-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <h2>Performance</h2>
+                            <p>Your competitive progress</p>
+                        </div>
+
+                        <select id="performanceRange">
+                            <option>Last 7 days</option>
+                            <option>Last 30 days</option>
+                            <option>Last 3 months</option>
+                        </select>
+
+                    </div>
+
+                    <div class="chart-area">
+
+                        <div class="chart-values">
+                            <span>100</span>
+                            <span>75</span>
+                            <span>50</span>
+                            <span>25</span>
+                            <span>0</span>
+                        </div>
+
+                        <div class="chart">
+
+                            <div class="grid-line one"></div>
+                            <div class="grid-line two"></div>
+                            <div class="grid-line three"></div>
+                            <div class="grid-line four"></div>
+
+                            <svg viewBox="0 0 600 220" preserveAspectRatio="none">
+
+                                <defs>
+
+                                    <linearGradient
+                                        id="chartFill"
+                                        x1="0"
+                                        x2="0"
+                                        y1="0"
+                                        y2="1"
+                                    >
+                                        <stop
+                                            offset="0%"
+                                            stop-color="#715cff"
+                                            stop-opacity=".28"
+                                        />
+
+                                        <stop
+                                            offset="100%"
+                                            stop-color="#715cff"
+                                            stop-opacity="0"
+                                        />
+
+                                    </linearGradient>
+
+                                </defs>
+
+                                <path
+                                    class="area"
+                                    d="M0 175
+                                    C40 160 65 170 95 145
+                                    S145 120 175 132
+                                    S220 90 250 112
+                                    S300 135 330 100
+                                    S380 72 410 92
+                                    S450 110 480 65
+                                    S535 48 600 30
+                                    L600 220
+                                    L0 220 Z"
+                                />
+
+                                <path
+                                    class="line"
+                                    d="M0 175
+                                    C40 160 65 170 95 145
+                                    S145 120 175 132
+                                    S220 90 250 112
+                                    S300 135 330 100
+                                    S380 72 410 92
+                                    S450 110 480 65
+                                    S535 48 600 30"
+                                />
+
+                            </svg>
+
+                            <div class="chart-point p1"></div>
+                            <div class="chart-point p2"></div>
+                            <div class="chart-point p3"></div>
+                            <div class="chart-point p4"></div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="chart-days">
+                        <span>Mon</span>
+                        <span>Tue</span>
+                        <span>Wed</span>
+                        <span>Thu</span>
+                        <span>Fri</span>
+                        <span>Sat</span>
+                        <span>Sun</span>
+                    </div>
+
+                    <div class="performance-footer">
+
+                        <div>
+                            <span>Current Rating</span>
+                            <strong>1,964</strong>
+                        </div>
+
+                        <div>
+                            <span>Peak Rating</span>
+                            <strong>2,021</strong>
+                        </div>
+
+                        <div class="positive">
+                            <span>This Week</span>
+                            <strong>+86</strong>
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+            <div class="bottom-grid">
+
+                <section class="matches-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <h2>Recent Matches</h2>
+                            <p>Your latest competitive games</p>
+                        </div>
+
+                        <button id="matchHistory">
+                            Match History →
+                        </button>
+
+                    </div>
+
+                    <div class="match-table">
+
+                        <div class="table-head">
+                            <span>GAME</span>
+                            <span>RESULT</span>
+                            <span>RATING</span>
+                            <span>DATE</span>
+                        </div>
+
+                        <div class="match-row">
+
+                            <div class="match-game">
+                                <div class="small-cover purple-cover">⚔</div>
+                                <div>
+                                    <strong>Shadow Strike</strong>
+                                    <span>Ranked Match</span>
+                                </div>
+                            </div>
+
+                            <div class="result win">
+                                <strong>Victory</strong>
+                                <span>2 - 1</span>
+                            </div>
+
+                            <div class="rating-change up">
+                                +24
+                            </div>
+
+                            <div class="date">
+                                Today, 10:42 AM
+                            </div>
+
+                        </div>
+
+                        <div class="match-row">
+
+                            <div class="match-game">
+                                <div class="small-cover blue-cover">🚀</div>
+                                <div>
+                                    <strong>Galaxy Rush</strong>
+                                    <span>Competitive</span>
+                                </div>
+                            </div>
+
+                            <div class="result win">
+                                <strong>Victory</strong>
+                                <span>3 - 0</span>
+                            </div>
+
+                            <div class="rating-change up">
+                                +31
+                            </div>
+
+                            <div class="date">
+                                Yesterday, 8:20 PM
+                            </div>
+
+                        </div>
+
+                        <div class="match-row">
+
+                            <div class="match-game">
+                                <div class="small-cover orange-cover">🏎</div>
+                                <div>
+                                    <strong>Velocity X</strong>
+                                    <span>Ranked Race</span>
+                                </div>
+                            </div>
+
+                            <div class="result loss">
+                                <strong>Defeat</strong>
+                                <span>1 - 2</span>
+                            </div>
+
+                            <div class="rating-change down">
+                                -18
+                            </div>
+
+                            <div class="date">
+                                Yesterday, 5:15 PM
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="activity-card">
+
+                    <div class="card-heading">
+
+                        <div>
+                            <h2>Activity</h2>
+                            <p>Latest achievements</p>
+                        </div>
+
+                        <button id="activityBtn">
+                            •••
+                        </button>
+
+                    </div>
+
+                    <div class="activity-list">
+
+                        <div class="activity">
+
+                            <div class="activity-icon green">
+                                🏆
+                            </div>
+
+                            <div>
+                                <strong>New achievement unlocked</strong>
+                                <span>Win 10 ranked matches</span>
+                            </div>
+
+                            <small>2h</small>
+
+                        </div>
+
+                        <div class="activity">
+
+                            <div class="activity-icon purple">
+                                ↑
+                            </div>
+
+                            <div>
+                                <strong>Rank increased</strong>
+                                <span>You reached Diamond II</span>
+                            </div>
+
+                            <small>5h</small>
+
+                        </div>
+
+                        <div class="activity">
+
+                            <div class="activity-icon orange">
+                                👥
+                            </div>
+
+                            <div>
+                                <strong>New friend request</strong>
+                                <span>Alex Morgan sent a request</span>
+                            </div>
+
+                            <small>1d</small>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<div class="modal" id="gameModal">
+
+    <div class="modal-box">
+
+        <button class="close" id="closeModal">×</button>
+
+        <div class="modal-game-icon" id="modalGameIcon">
+            🎮
+        </div>
+
+        <span class="modal-label">NOW PLAYING</span>
+
+        <h2 id="modalTitle">Shadow Strike</h2>
+
+        <p>
+            Your game session is ready. Good luck and have fun!
+        </p>
+
+        <div class="modal-stats">
+
+            <div>
+                <span>Current Rank</span>
+                <strong id="modalRank">Diamond II</strong>
+            </div>
+
+            <div>
+                <span>Win Rate</span>
+                <strong>76.2%</strong>
+            </div>
+
+        </div>
+
+        <button class="start-btn" id="startGame">
+            Start Game
+        </button>
+
+    </div>
+
+</div>
+
+<div class="toast" id="toast">
+
+    <span>✓</span>
+
+    <p>Action completed.</p>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

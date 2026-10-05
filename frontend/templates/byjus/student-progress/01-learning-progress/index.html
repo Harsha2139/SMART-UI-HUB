@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Progress | Eduvia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+    <div class="brand">
+        <div class="brand-logo">E</div>
+        <div>
+            <h2>Eduvia</h2>
+            <span>Learning Progress</span>
+        </div>
+    </div>
+
+    <div class="top-right">
+        <button class="notification" id="notificationBtn">🔔</button>
+        <div class="profile">
+            <div class="avatar">JS</div>
+            <div>
+                <strong>Jayanth</strong>
+                <small>Student</small>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <div class="side-profile">
+            <div class="large-avatar">JS</div>
+            <h3>Jayanth</h3>
+            <p>Computer Science</p>
+        </div>
+
+        <nav>
+            <button class="nav-item active">📊 <span>Progress</span></button>
+            <button class="nav-item">📚 <span>My Courses</span></button>
+            <button class="nav-item">🎯 <span>Goals</span></button>
+            <button class="nav-item">🏆 <span>Achievements</span></button>
+            <button class="nav-item">📅 <span>Activity</span></button>
+        </nav>
+
+        <div class="upgrade-card">
+            <div>🚀</div>
+            <h4>Keep learning!</h4>
+            <p>Complete today's goal to maintain your streak.</p>
+            <button id="goalBtn">View Goal</button>
+        </div>
+    </aside>
+
+    <main class="main">
+
+        <section class="welcome">
+            <div>
+                <span class="eyebrow">YOUR LEARNING JOURNEY</span>
+                <h1>Track your progress 📈</h1>
+                <p>See how far you've come and keep moving forward.</p>
+            </div>
+
+            <div class="streak">
+                <div class="fire">🔥</div>
+                <div>
+                    <strong>12 Days</strong>
+                    <span>Current streak</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+
+            <div class="stat-card purple">
+                <div class="stat-icon">📚</div>
+                <span>Courses Completed</span>
+                <strong>8</strong>
+                <small>+2 this month</small>
+            </div>
+
+            <div class="stat-card blue">
+                <div class="stat-icon">⏱️</div>
+                <span>Learning Hours</span>
+                <strong>64.5</strong>
+                <small>+8.2 this week</small>
+            </div>
+
+            <div class="stat-card orange">
+                <div class="stat-icon">🎯</div>
+                <span>Average Score</span>
+                <strong>87%</strong>
+                <small>+4% improvement</small>
+            </div>
+
+            <div class="stat-card green">
+                <div class="stat-icon">🏆</div>
+                <span>Certificates</span>
+                <strong>5</strong>
+                <small>2 earned recently</small>
+            </div>
+
+        </section>
+
+        <section class="content-grid">
+
+            <div class="main-column">
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Course Progress</h2>
+                            <p>Your active learning courses</p>
+                        </div>
+
+                        <button class="filter-btn" id="filterBtn">
+                            This Month ▾
+                        </button>
+                    </div>
+
+                    <div class="course">
+
+                        <div class="course-icon javascript">JS</div>
+
+                        <div class="course-info">
+                            <div class="course-title">
+                                <strong>JavaScript Mastery</strong>
+                                <span>72%</span>
+                            </div>
+
+                            <div class="progress-track">
+                                <div class="progress-fill purple-fill" style="width:72%"></div>
+                            </div>
+
+                            <div class="course-meta">
+                                <span>18 of 25 lessons</span>
+                                <span>8h 40m left</span>
+                            </div>
+                        </div>
+
+                        <button class="continue-btn">Continue</button>
+                    </div>
+
+                    <div class="course">
+
+                        <div class="course-icon python">Py</div>
+
+                        <div class="course-info">
+                            <div class="course-title">
+                                <strong>Python Programming</strong>
+                                <span>58%</span>
+                            </div>
+
+                            <div class="progress-track">
+                                <div class="progress-fill blue-fill" style="width:58%"></div>
+                            </div>
+
+                            <div class="course-meta">
+                                <span>14 of 24 lessons</span>
+                                <span>11h 20m left</span>
+                            </div>
+                        </div>
+
+                        <button class="continue-btn">Continue</button>
+                    </div>
+
+                    <div class="course">
+
+                        <div class="course-icon design">UI</div>
+
+                        <div class="course-info">
+                            <div class="course-title">
+                                <strong>UI/UX Design</strong>
+                                <span>41%</span>
+                            </div>
+
+                            <div class="progress-track">
+                                <div class="progress-fill orange-fill" style="width:41%"></div>
+                            </div>
+
+                            <div class="course-meta">
+                                <span>9 of 22 lessons</span>
+                                <span>14h 10m left</span>
+                            </div>
+                        </div>
+
+                        <button class="continue-btn">Continue</button>
+                    </div>
+
+                    <div class="course">
+
+                        <div class="course-icon database">DB</div>
+
+                        <div class="course-info">
+                            <div class="course-title">
+                                <strong>Database Systems</strong>
+                                <span>28%</span>
+                            </div>
+
+                            <div class="progress-track">
+                                <div class="progress-fill green-fill" style="width:28%"></div>
+                            </div>
+
+                            <div class="course-meta">
+                                <span>6 of 21 lessons</span>
+                                <span>18h 35m left</span>
+                            </div>
+                        </div>
+
+                        <button class="continue-btn">Continue</button>
+                    </div>
+                </div>
+
+                <div class="panel activity-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Weekly Activity</h2>
+                            <p>Your learning time this week</p>
+                        </div>
+
+                        <strong class="hours">8.5h</strong>
+                    </div>
+
+                    <div class="chart">
+
+                        <div class="chart-column">
+                            <span class="bar" style="height:45%"></span>
+                            <small>Mon</small>
+                        </div>
+
+                        <div class="chart-column">
+                            <span class="bar" style="height:68%"></span>
+                            <small>Tue</small>
+                        </div>
+
+                        <div class="chart-column">
+                            <span class="bar" style="height:52%"></span>
+                            <small>Wed</small>
+                        </div>
+
+                        <div class="chart-column">
+                            <span class="bar today" style="height:82%"></span>
+                            <small>Thu</small>
+                        </div>
+
+                        <div class="chart-column">
+                            <span class="bar" style="height:61%"></span>
+                            <small>Fri</small>
+                        </div>
+
+                        <div class="chart-column">
+                            <span class="bar" style="height:35%"></span>
+                            <small>Sat</small>
+                        </div>
+
+                        <div class="chart-column">
+                            <span class="bar" style="height:25%"></span>
+                            <small>Sun</small>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <aside class="right-column">
+
+                <div class="panel goal-panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Weekly Goal</h2>
+                            <p>Keep your momentum</p>
+                        </div>
+                        <span>🔥</span>
+                    </div>
+
+                    <div class="goal-circle">
+                        <div>
+                            <strong>70%</strong>
+                            <span>completed</span>
+                        </div>
+                    </div>
+
+                    <h3>7 / 10 hours</h3>
+                    <p class="goal-text">
+                        You're doing great! Just 3 more hours to reach your weekly goal.
+                    </p>
+
+                    <button class="goal-action" id="studyBtn">
+                        Start Learning
+                    </button>
+                </div>
+
+                <div class="panel achievements">
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Achievements</h2>
+                            <p>Your recent milestones</p>
+                        </div>
+                    </div>
+
+                    <div class="achievement">
+                        <div class="achievement-icon">🔥</div>
+                        <div>
+                            <strong>12 Day Streak</strong>
+                            <span>Keep it going!</span>
+                        </div>
+                    </div>
+
+                    <div class="achievement">
+                        <div class="achievement-icon">⭐</div>
+                        <div>
+                            <strong>Top Performer</strong>
+                            <span>Scored above 90%</span>
+                        </div>
+                    </div>
+
+                    <div class="achievement">
+                        <div class="achievement-icon">🎓</div>
+                        <div>
+                            <strong>Course Complete</strong>
+                            <span>Finished HTML Basics</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+</div>
+
+<div class="modal-overlay" id="modal">
+    <div class="modal">
+        <button class="close-btn" id="closeBtn">×</button>
+        <div class="modal-icon">🎯</div>
+        <h2 id="modalTitle">Keep Learning!</h2>
+        <p id="modalText">
+            Complete 3 more hours this week to achieve your learning goal.
+        </p>
+        <button class="modal-button" id="modalAction">Start Learning</button>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

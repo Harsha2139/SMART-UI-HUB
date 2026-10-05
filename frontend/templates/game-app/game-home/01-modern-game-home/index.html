@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameHub | Modern Game Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+
+    <a href="#" class="logo">
+        <span class="logo-icon">G</span>
+        <span>Game<span>Hub</span></span>
+    </a>
+
+    <nav class="main-nav">
+        <a href="#" class="active">Home</a>
+        <a href="#games">Games</a>
+        <a href="#categories">Categories</a>
+        <a href="#community">Community</a>
+    </nav>
+
+    <div class="header-actions">
+        <button class="search-btn" id="searchBtn">⌕</button>
+        <button class="login-btn" id="loginBtn">Sign In</button>
+        <div class="profile-avatar">JS</div>
+    </div>
+
+</header>
+
+<main>
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-tag">
+                <span>🔥</span>
+                FEATURED GAME
+            </div>
+
+            <h1>
+                Enter the
+                <span>Neon Realm</span>
+            </h1>
+
+            <p>
+                Explore futuristic worlds, challenge powerful enemies,
+                and build your own legendary journey in this immersive
+                multiplayer adventure.
+            </p>
+
+            <div class="hero-meta">
+                <span>⭐ 4.9/5</span>
+                <span>🎮 Multiplayer</span>
+                <span>🔞 16+</span>
+            </div>
+
+            <div class="hero-buttons">
+                <button class="play-btn" id="playBtn">
+                    ▶ Play Now
+                </button>
+
+                <button class="details-btn" id="detailsBtn">
+                    View Details
+                </button>
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+            <div class="orb orb-one"></div>
+            <div class="orb orb-two"></div>
+
+            <div class="character">
+                <div class="helmet"></div>
+                <div class="head"></div>
+                <div class="body"></div>
+                <div class="weapon"></div>
+            </div>
+
+            <div class="floating-card card-top">
+                <span>⚡</span>
+                <div>
+                    <strong>2.4M+</strong>
+                    <small>Players Online</small>
+                </div>
+            </div>
+
+            <div class="floating-card card-bottom">
+                <span>🏆</span>
+                <div>
+                    <strong>Season 08</strong>
+                    <small>Live Now</small>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="section" id="games">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="section-label">DISCOVER</span>
+                <h2>Trending Games</h2>
+                <p>Popular games everyone is playing right now.</p>
+            </div>
+
+            <button class="view-all" id="viewAllBtn">
+                View All →
+            </button>
+
+        </div>
+
+        <div class="game-grid">
+
+            <article class="game-card">
+
+                <div class="game-cover cyber">
+                    <span class="game-badge">HOT</span>
+                    <div class="cover-icon">⚔</div>
+                    <span class="rating">⭐ 4.8</span>
+                </div>
+
+                <div class="game-info">
+                    <h3>Cyber Warriors</h3>
+                    <p>Action • Multiplayer</p>
+
+                    <div class="game-bottom">
+                        <strong>Free</strong>
+                        <button class="small-play">Play</button>
+                    </div>
+                </div>
+
+            </article>
+
+            <article class="game-card">
+
+                <div class="game-cover kingdom">
+                    <span class="game-badge">NEW</span>
+                    <div class="cover-icon">🏰</div>
+                    <span class="rating">⭐ 4.7</span>
+                </div>
+
+                <div class="game-info">
+                    <h3>Kingdom Rise</h3>
+                    <p>Strategy • Adventure</p>
+
+                    <div class="game-bottom">
+                        <strong>$29.99</strong>
+                        <button class="small-play">View</button>
+                    </div>
+                </div>
+
+            </article>
+
+            <article class="game-card">
+
+                <div class="game-cover racer">
+                    <div class="cover-icon">🏎</div>
+                    <span class="rating">⭐ 4.9</span>
+                </div>
+
+                <div class="game-info">
+                    <h3>Velocity X</h3>
+                    <p>Racing • Sports</p>
+
+                    <div class="game-bottom">
+                        <strong>$19.99</strong>
+                        <button class="small-play">View</button>
+                    </div>
+                </div>
+
+            </article>
+
+            <article class="game-card">
+
+                <div class="game-cover space">
+                    <span class="game-badge">NEW</span>
+                    <div class="cover-icon">🚀</div>
+                    <span class="rating">⭐ 4.6</span>
+                </div>
+
+                <div class="game-info">
+                    <h3>Galaxy Frontier</h3>
+                    <p>Space • RPG</p>
+
+                    <div class="game-bottom">
+                        <strong>$24.99</strong>
+                        <button class="small-play">View</button>
+                    </div>
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="section categories" id="categories">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="section-label">EXPLORE</span>
+                <h2>Browse Categories</h2>
+                <p>Find your next favorite game.</p>
+            </div>
+
+        </div>
+
+        <div class="category-grid">
+
+            <button class="category-card action">
+                <span>⚔️</span>
+                <strong>Action</strong>
+                <small>128 Games</small>
+            </button>
+
+            <button class="category-card adventure">
+                <span>🗺️</span>
+                <strong>Adventure</strong>
+                <small>94 Games</small>
+            </button>
+
+            <button class="category-card strategy">
+                <span>♟️</span>
+                <strong>Strategy</strong>
+                <small>76 Games</small>
+            </button>
+
+            <button class="category-card racing">
+                <span>🏎️</span>
+                <strong>Racing</strong>
+                <small>62 Games</small>
+            </button>
+
+            <button class="category-card sports">
+                <span>🏆</span>
+                <strong>Sports</strong>
+                <small>53 Games</small>
+            </button>
+
+            <button class="category-card puzzle">
+                <span>🧩</span>
+                <strong>Puzzle</strong>
+                <small>81 Games</small>
+            </button>
+
+        </div>
+
+    </section>
+
+    <section class="community" id="community">
+
+        <div>
+            <span class="section-label">COMMUNITY</span>
+            <h2>Join the GameHub community</h2>
+            <p>
+                Connect with gamers, share achievements,
+                discover new games, and build your squad.
+            </p>
+        </div>
+
+        <button id="communityBtn">Join Community →</button>
+
+    </section>
+
+</main>
+
+<footer>
+
+    <div class="footer-brand">
+        <div class="logo-icon">G</div>
+        <strong>GameHub</strong>
+    </div>
+
+    <p>© 2026 GameHub. Built for gamers.</p>
+
+    <div class="socials">
+        <button>𝕏</button>
+        <button>◎</button>
+        <button>◉</button>
+    </div>
+
+</footer>
+
+<div class="modal-overlay" id="modal">
+
+    <div class="modal">
+
+        <button class="close-btn" id="closeBtn">×</button>
+
+        <div class="modal-icon" id="modalIcon">🎮</div>
+
+        <h2 id="modalTitle">Welcome to GameHub</h2>
+
+        <p id="modalText">
+            Discover new games and start your next adventure.
+        </p>
+
+        <button class="modal-action" id="modalAction">
+            Continue
+        </button>
+
+    </div>
+
+</div>
+
+<div class="search-overlay" id="searchOverlay">
+
+    <div class="search-box">
+
+        <button class="close-search" id="closeSearch">×</button>
+
+        <h2>Search Games</h2>
+
+        <p>Find games, categories and adventures.</p>
+
+        <div class="search-input">
+            <span>⌕</span>
+            <input
+                type="text"
+                id="gameSearch"
+                placeholder="Search for a game..."
+            >
+        </div>
+
+        <div class="search-result" id="searchResult">
+            Start typing to search the game collection.
+        </div>
+
+    </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

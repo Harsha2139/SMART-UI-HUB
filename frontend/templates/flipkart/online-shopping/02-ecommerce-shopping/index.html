@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketly - E-Commerce Shopping</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="announcement">
+        <span>🚀 Free delivery on orders above ₹499</span>
+        <span>💳 Extra 10% cashback with selected payments</span>
+        <span>🎁 New users get ₹200 OFF</span>
+    </div>
+
+    <header class="header">
+        <a href="#" class="brand">
+            <div class="brand-icon">M</div>
+            <div>
+                <strong>Marketly</strong>
+                <small>everything you love</small>
+            </div>
+        </a>
+
+        <div class="search">
+            <span>⌕</span>
+            <input id="searchInput" type="text" placeholder="Search products, categories or brands">
+            <button id="searchBtn">Search</button>
+        </div>
+
+        <div class="header-buttons">
+            <button id="locationBtn">📍 <span>Location</span></button>
+            <button id="loginBtn">👤 <span>Login</span></button>
+            <button id="cartBtn" class="cart-button">
+                🛒
+                <span>Cart</span>
+                <b id="cartCount">0</b>
+            </button>
+        </div>
+
+        <button class="mobile-menu" id="mobileMenu">☰</button>
+    </header>
+
+    <nav class="navigation">
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#offers">Offers</a>
+        <a href="#products">Best Sellers</a>
+        <a href="#new">New Arrivals</a>
+        <a href="#footer">Help Center</a>
+    </nav>
+
+    <main id="home">
+
+        <section class="hero">
+            <div class="hero-left">
+                <span class="hero-tag">✨ SUMMER SHOPPING FEST</span>
+
+                <h1>
+                    Everything you need,
+                    <span>all in one place.</span>
+                </h1>
+
+                <p>
+                    Explore thousands of products from electronics and fashion
+                    to home essentials and everyday favorites.
+                </p>
+
+                <div class="hero-actions">
+                    <button class="primary" id="exploreBtn">
+                        Explore Products →
+                    </button>
+                    <button class="watch-btn" id="offerBtn">
+                        🔥 Today's Offers
+                    </button>
+                </div>
+
+                <div class="mini-features">
+                    <div>
+                        <b>10M+</b>
+                        <span>Happy shoppers</span>
+                    </div>
+                    <div>
+                        <b>50K+</b>
+                        <span>Products</span>
+                    </div>
+                    <div>
+                        <b>4.8/5</b>
+                        <span>Customer rating</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="hero-circle"></div>
+
+                <div class="hero-product product-main">
+                    <span>📱</span>
+                    <div>
+                        <small>SMARTPHONE</small>
+                        <strong>From ₹14,999</strong>
+                    </div>
+                </div>
+
+                <div class="hero-product product-top">
+                    <span>🎧</span>
+                    <strong>Up to 60% OFF</strong>
+                </div>
+
+                <div class="hero-product product-bottom">
+                    <span>👟</span>
+                    <strong>Fashion Sale</strong>
+                </div>
+
+                <div class="sale-badge">
+                    <strong>70%</strong>
+                    <small>OFF</small>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="categories">
+            <div class="section-title">
+                <div>
+                    <span>EXPLORE MORE</span>
+                    <h2>Popular Categories</h2>
+                </div>
+                <button id="allCategories">View all →</button>
+            </div>
+
+            <div class="category-list">
+                <button class="category active" data-category="all">
+                    <div class="category-image c1">🛍️</div>
+                    <strong>All</strong>
+                    <small>50K+ items</small>
+                </button>
+
+                <button class="category" data-category="electronics">
+                    <div class="category-image c2">💻</div>
+                    <strong>Electronics</strong>
+                    <small>12K+ items</small>
+                </button>
+
+                <button class="category" data-category="fashion">
+                    <div class="category-image c3">👗</div>
+                    <strong>Fashion</strong>
+                    <small>18K+ items</small>
+                </button>
+
+                <button class="category" data-category="home">
+                    <div class="category-image c4">🛋️</div>
+                    <strong>Home</strong>
+                    <small>8K+ items</small>
+                </button>
+
+                <button class="category" data-category="beauty">
+                    <div class="category-image c5">💄</div>
+                    <strong>Beauty</strong>
+                    <small>7K+ items</small>
+                </button>
+
+                <button class="category" data-category="sports">
+                    <div class="category-image c6">🏸</div>
+                    <strong>Sports</strong>
+                    <small>5K+ items</small>
+                </button>
+            </div>
+        </section>
+
+        <section class="section offers" id="offers">
+            <div class="section-title">
+                <div>
+                    <span>HOT RIGHT NOW</span>
+                    <h2>Special Offers</h2>
+                </div>
+            </div>
+
+            <div class="offer-grid">
+
+                <div class="offer-card offer-one">
+                    <div>
+                        <span>MEGA DEAL</span>
+                        <h3>Tech<br>Mania</h3>
+                        <p>Latest gadgets at unbelievable prices.</p>
+                        <button data-offer="electronics">Shop Now →</button>
+                    </div>
+                    <div class="offer-icon">🎮</div>
+                </div>
+
+                <div class="offer-card offer-two">
+                    <div>
+                        <span>FASHION WEEK</span>
+                        <h3>Style<br>Reloaded</h3>
+                        <p>Fresh looks. Fresh prices.</p>
+                        <button data-offer="fashion">Shop Now →</button>
+                    </div>
+                    <div class="offer-icon">👚</div>
+                </div>
+
+                <div class="offer-card offer-three">
+                    <div>
+                        <span>HOME FEST</span>
+                        <h3>Make It<br>Beautiful</h3>
+                        <p>Upgrade your favorite space.</p>
+                        <button data-offer="home">Shop Now →</button>
+                    </div>
+                    <div class="offer-icon">🏡</div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section" id="products">
+
+            <div class="section-title product-title">
+                <div>
+                    <span>JUST FOR YOU</span>
+                    <h2>Best Selling Products</h2>
+                </div>
+
+                <div class="controls">
+                    <button id="filterBtn">☷ Filters</button>
+
+                    <select id="sortSelect">
+                        <option value="default">Sort by</option>
+                        <option value="low">Price: Low</option>
+                        <option value="high">Price: High</option>
+                        <option value="rating">Rating</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="filter-panel" id="filterPanel">
+                <strong>Filter by:</strong>
+                <button data-filter="all">All</button>
+                <button data-filter="under1000">Under ₹1,000</button>
+                <button data-filter="under5000">Under ₹5,000</button>
+                <button data-filter="premium">₹5,000+</button>
+            </div>
+
+            <div class="products" id="productsGrid">
+
+                <article class="product" data-category="electronics" data-price="1499" data-rating="4.8" data-name="noise cancelling headphones">
+                    <button class="wish">♡</button>
+                    <div class="product-picture p-purple">
+                        <span>🎧</span>
+                        <b>−50%</b>
+                    </div>
+                    <div class="product-body">
+                        <small>Electronics</small>
+                        <h3>Noise Cancelling Headphones</h3>
+                        <div class="stars">★★★★★ <i>4.8</i></div>
+                        <div class="price">
+                            <strong>₹1,499</strong>
+                            <del>₹2,999</del>
+                        </div>
+                        <button class="add" data-id="1" data-name="Noise Cancelling Headphones" data-price="1499">Add to Cart</button>
+                    </div>
+                </article>
+
+                <article class="product" data-category="electronics" data-price="18999" data-rating="4.9" data-name="premium smartphone">
+                    <button class="wish">♡</button>
+                    <div class="product-picture p-blue">
+                        <span>📱</span>
+                        <b>−24%</b>
+                    </div>
+                    <div class="product-body">
+                        <small>Electronics</small>
+                        <h3>Premium 5G Smartphone</h3>
+                        <div class="stars">★★★★★ <i>4.9</i></div>
+                        <div class="price">
+                            <strong>₹18,999</strong>
+                            <del>₹24,999</del>
+                        </div>
+                        <button class="add" data-id="2" data-name="Premium 5G Smartphone" data-price="18999">Add to Cart</button>
+                    </div>
+                </article>
+
+                <article class="product" data-category="fashion" data-price="1299" data-rating="4.6" data-name="oversized hoodie">
+                    <button class="wish">♡</button>
+                    <div class="product-picture p-pink">
+                        <span>🧥</span>
+                        <b>−35%</b>
+                    </div>
+                    <div class="product-body">
+                        <small>Fashion</small>
+                        <h3>Premium Oversized Hoodie</h3>
+                        <div class="stars">★★★★☆ <i>4.6</i></div>
+                        <div class="price">
+                            <strong>₹1,299</strong>
+                            <del>₹1,999</del>
+                        </div>
+                        <button class="add" data-id="3" data-name="Premium Oversized Hoodie" data-price="1299">Add to Cart</button>
+                    </div>
+                </article>
+
+                <article class="product" data-category="home" data-price="2499" data-rating="4.7" data-name="coffee maker">
+                    <button class="wish">♡</button>
+                    <div class="product-picture p-orange">
+                        <span>☕</span>
+                        <b>−30%</b>
+                    </div>
+                    <div class="product-body">
+                        <small>Home</small>
+                        <h3>Automatic Coffee Maker</h3>
+                        <div class="stars">★★★★★ <i>4.7</i></div>
+                        <div class="price">
+                            <strong>₹2,499</strong>
+                            <del>₹3,599</del>
+                        </div>
+                        <button class="add" data-id="4" data-name="Automatic Coffee Maker" data-price="2499">Add to Cart</button>
+                    </div>
+                </article>
+
+                <article class="product" data-category="beauty" data-price="799" data-rating="4.5" data-name="beauty care kit">
+                    <button class="wish">♡</button>
+                    <div class="product-picture p-yellow">
+                        <span>💄</span>
+                        <b>−40%</b>
+                    </div>
+                    <div class="product-body">
+                        <small>Beauty</small>
+                        <h3>Complete Beauty Care Kit</h3>
+                        <div class="stars">★★★★☆ <i>4.5</i></div>
+                        <div class="price">
+                            <strong>₹799</strong>
+                            <del>₹1,299</del>
+                        </div>
+                        <button class="add" data-id="5" data-name="Complete Beauty Care Kit" data-price="799">Add to Cart</button>
+                    </div>
+                </article>
+
+                <article class="product" data-category="sports" data-price="3299" data-rating="4.8" data-name="smart fitness watch">
+                    <button class="wish">♡</button>
+                    <div class="product-picture p-cyan">
+                        <span>⌚</span>
+                        <b>−27%</b>
+                    </div>
+                    <div class="product-body">
+                        <small>Sports</small>
+                        <h3>Smart Fitness Watch</h3>
+                        <div class="stars">★★★★★ <i>4.8</i></div>
+                        <div class="price">
+                            <strong>₹3,299</strong>
+                            <del>₹4,499</del>
+                        </div>
+                        <button class="add" data-id="6" data-name="Smart Fitness Watch" data-price="3299">Add to Cart</button>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="empty-results" id="emptyResults">
+                <span>🔎</span>
+                <h3>No products found</h3>
+                <p>Try another search or filter.</p>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div>
+                <span>GET THE BEST DEALS</span>
+                <h2>Don't miss a great offer.</h2>
+                <p>Subscribe and get exclusive deals directly in your inbox.</p>
+            </div>
+
+            <form id="newsletterForm">
+                <input type="email" id="emailInput" placeholder="Enter your email" required>
+                <button>Subscribe</button>
+            </form>
+        </section>
+
+    </main>
+
+    <div class="overlay" id="overlay"></div>
+
+    <aside class="cart" id="cart">
+        <div class="cart-head">
+            <div>
+                <small>YOUR ORDER</small>
+                <h2>Shopping Cart</h2>
+            </div>
+            <button id="closeCart">×</button>
+        </div>
+
+        <div class="cart-list" id="cartList">
+            <div class="empty-cart">
+                <span>🛒</span>
+                <h3>Your cart is empty</h3>
+                <p>Add products to get started.</p>
+            </div>
+        </div>
+
+        <div class="cart-bottom">
+            <div>
+                <span>Total</span>
+                <strong id="cartTotal">₹0</strong>
+            </div>
+            <button id="checkoutBtn">Checkout →</button>
+        </div>
+    </aside>
+
+    <div class="modal" id="quickModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeQuick">×</button>
+
+            <div class="quick-image" id="quickImage">📱</div>
+
+            <small id="quickCategory">Electronics</small>
+            <h2 id="quickName">Product</h2>
+            <div class="stars">★★★★★ <i>4.8</i></div>
+
+            <p>
+                A premium product designed for everyday use with
+                excellent quality, modern features and great value.
+            </p>
+
+            <strong class="quick-price" id="quickPrice">₹0</strong>
+
+            <button id="quickAdd">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">
+        <span>✓</span>
+        <p id="toastText">Added to cart</p>
+    </div>
+
+    <footer id="footer">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <a href="#" class="brand footer-brand">
+                    <div class="brand-icon">M</div>
+                    <div>
+                        <strong>Marketly</strong>
+                        <small>everything you love</small>
+                    </div>
+                </a>
+                <p>
+                    Your colorful destination for shopping,
+                    discovering and saving more every day.
+                </p>
+            </div>
+
+            <div>
+                <h4>Shop</h4>
+                <a href="#categories">Categories</a>
+                <a href="#products">Best Sellers</a>
+                <a href="#offers">Offers</a>
+                <a href="#">New Arrivals</a>
+            </div>
+
+            <div>
+                <h4>Customer Care</h4>
+                <a href="#">Help Center</a>
+                <a href="#">Track Order</a>
+                <a href="#">Returns</a>
+                <a href="#">Shipping</a>
+            </div>
+
+            <div>
+                <h4>Connect</h4>
+                <div class="social">
+                    <button>📸</button>
+                    <button>▶</button>
+                    <button>𝕏</button>
+                    <button>f</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <span>© 2026 Marketly. All rights reserved.</span>
+            <span>Secure shopping • Fast delivery • Easy returns</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

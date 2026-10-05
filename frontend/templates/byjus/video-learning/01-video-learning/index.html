@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Learning</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+
+    <div class="brand">
+        <div class="brand-icon">▶</div>
+        <span>Learnly</span>
+    </div>
+
+    <div class="search">
+        <span>⌕</span>
+        <input id="searchInput" type="text" placeholder="Search lessons and courses...">
+    </div>
+
+    <div class="top-actions">
+        <button class="icon-btn" id="notificationBtn">♢</button>
+        <button class="icon-btn" id="messageBtn">✉</button>
+
+        <div class="profile">
+            <div class="avatar">JS</div>
+            <div>
+                <strong>Jordan Smith</strong>
+                <small>Student</small>
+            </div>
+            <span>⌄</span>
+        </div>
+    </div>
+
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+
+        <div class="course-heading">
+            <span>YOUR COURSE</span>
+            <h2>Web Development</h2>
+            <p>Modern Web Technologies</p>
+        </div>
+
+        <div class="course-progress">
+            <div>
+                <span>Course Progress</span>
+                <strong>64%</strong>
+            </div>
+            <div class="progress">
+                <span></span>
+            </div>
+        </div>
+
+        <nav>
+
+            <a href="#" class="active">
+                <span>▶</span>
+                Course Content
+            </a>
+
+            <a href="#notes">
+                <span>▤</span>
+                My Notes
+            </a>
+
+            <a href="#discussion">
+                <span>☷</span>
+                Discussion
+            </a>
+
+            <a href="#resources">
+                <span>▣</span>
+                Resources
+            </a>
+
+        </nav>
+
+        <div class="module-list">
+
+            <div class="module-title">
+                <span>MODULE 1</span>
+                <strong>HTML Fundamentals</strong>
+            </div>
+
+            <button class="lesson completed">
+                <span class="lesson-number">✓</span>
+                <div>
+                    <strong>Introduction to HTML</strong>
+                    <small>12:45</small>
+                </div>
+            </button>
+
+            <button class="lesson completed">
+                <span class="lesson-number">✓</span>
+                <div>
+                    <strong>HTML Elements</strong>
+                    <small>18:20</small>
+                </div>
+            </button>
+
+            <button class="lesson current">
+                <span class="lesson-number">▶</span>
+                <div>
+                    <strong>Forms & Inputs</strong>
+                    <small>24:15</small>
+                </div>
+            </button>
+
+            <button class="lesson">
+                <span class="lesson-number">4</span>
+                <div>
+                    <strong>Semantic HTML</strong>
+                    <small>16:40</small>
+                </div>
+            </button>
+
+            <div class="module-title second">
+                <span>MODULE 2</span>
+                <strong>CSS Foundations</strong>
+            </div>
+
+            <button class="lesson locked">
+                <span class="lesson-number">5</span>
+                <div>
+                    <strong>CSS Selectors</strong>
+                    <small>20:10</small>
+                </div>
+                <span class="lock">◆</span>
+            </button>
+
+            <button class="lesson locked">
+                <span class="lesson-number">6</span>
+                <div>
+                    <strong>Box Model</strong>
+                    <small>22:30</small>
+                </div>
+                <span class="lock">◆</span>
+            </button>
+
+        </div>
+
+        <button class="back-course" id="backCourseBtn">
+            ← Back to Course
+        </button>
+
+    </aside>
+
+    <main class="content">
+
+        <div class="breadcrumb">
+            <span>Web Development</span>
+            <b>›</b>
+            <span>HTML Fundamentals</span>
+            <b>›</b>
+            <strong>Forms & Inputs</strong>
+        </div>
+
+        <section class="video-section">
+
+            <div class="video-player" id="videoPlayer">
+
+                <div class="video-content">
+
+                    <div class="video-top">
+                        <span class="live-tag">LESSON 03</span>
+                        <button id="videoMore">•••</button>
+                    </div>
+
+                    <div class="play-center" id="playButton">
+                        <div class="play-circle">▶</div>
+                    </div>
+
+                    <div class="video-title">
+                        <span>HTML FUNDAMENTALS</span>
+                        <h1>Forms & Inputs</h1>
+                    </div>
+
+                    <div class="video-controls">
+
+                        <div class="timeline">
+                            <div class="timeline-progress" id="timelineProgress"></div>
+                        </div>
+
+                        <div class="controls-row">
+
+                            <div class="left-controls">
+                                <button id="playControl">▶</button>
+                                <button id="backwardBtn">↶</button>
+                                <button id="forwardBtn">↷</button>
+
+                                <span class="time">
+                                    <span id="currentTime">14:32</span>
+                                    /
+                                    <span>24:15</span>
+                                </span>
+                            </div>
+
+                            <div class="right-controls">
+                                <button id="volumeBtn">🔊</button>
+
+                                <button id="speedBtn">1x</button>
+
+                                <button id="fullscreenBtn">⛶</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="lesson-heading">
+
+                <div>
+                    <span class="category">HTML FUNDAMENTALS · LESSON 03</span>
+                    <h2>Forms & Inputs</h2>
+                    <p>
+                        Learn how to create interactive forms and collect
+                        information from users using HTML.
+                    </p>
+                </div>
+
+                <button class="complete-btn" id="completeBtn">
+                    ✓ Mark Complete
+                </button>
+
+            </div>
+
+        </section>
+
+        <section class="tabs">
+
+            <button class="tab active" data-tab="overview">Overview</button>
+            <button class="tab" data-tab="notes">Notes</button>
+            <button class="tab" data-tab="discussion">Discussion</button>
+            <button class="tab" data-tab="resources">Resources</button>
+
+        </section>
+
+        <section class="tab-content">
+
+            <div class="tab-panel active" id="overview">
+
+                <div class="overview-grid">
+
+                    <div class="learning-card">
+
+                        <span class="small-label">ABOUT THIS LESSON</span>
+
+                        <h3>What you'll learn</h3>
+
+                        <div class="learning-item">
+                            <div>✓</div>
+                            <span>Understand the structure of HTML forms</span>
+                        </div>
+
+                        <div class="learning-item">
+                            <div>✓</div>
+                            <span>Work with text, email and password inputs</span>
+                        </div>
+
+                        <div class="learning-item">
+                            <div>✓</div>
+                            <span>Create buttons and selection controls</span>
+                        </div>
+
+                        <div class="learning-item">
+                            <div>✓</div>
+                            <span>Build accessible form layouts</span>
+                        </div>
+
+                    </div>
+
+                    <div class="instructor-card">
+
+                        <span class="small-label">YOUR INSTRUCTOR</span>
+
+                        <div class="instructor">
+                            <div class="instructor-avatar">MK</div>
+
+                            <div>
+                                <strong>Maya Kumar</strong>
+                                <span>Senior Web Developer</span>
+                            </div>
+                        </div>
+
+                        <p>
+                            Maya has over 8 years of experience building
+                            modern web applications and teaching developers.
+                        </p>
+
+                        <button id="instructorBtn">
+                            View Profile →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="tab-panel" id="notes">
+
+                <div class="notes-box">
+
+                    <div>
+                        <span class="small-label">PERSONAL NOTES</span>
+                        <h3>Take notes while learning</h3>
+                    </div>
+
+                    <textarea
+                        id="notesInput"
+                        placeholder="Write your notes for this lesson..."
+                    ></textarea>
+
+                    <div class="notes-footer">
+                        <span id="savedText">Your notes are saved locally.</span>
+                        <button id="saveNotes">Save Notes</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="tab-panel" id="discussion">
+
+                <div class="discussion-box">
+
+                    <span class="small-label">STUDENT DISCUSSION</span>
+
+                    <h3>Ask questions and share ideas</h3>
+
+                    <div class="comment">
+                        <div class="comment-avatar">AR</div>
+
+                        <div>
+                            <strong>Alex Rivera</strong>
+                            <p>
+                                Does the required attribute work with all
+                                types of form inputs?
+                            </p>
+                            <small>12 minutes ago</small>
+                        </div>
+                    </div>
+
+                    <button id="commentBtn" class="discussion-btn">
+                        Join Discussion
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="tab-panel" id="resources">
+
+                <div class="resource-list">
+
+                    <span class="small-label">LESSON RESOURCES</span>
+
+                    <h3>Useful learning materials</h3>
+
+                    <button class="resource">
+                        <span class="resource-icon purple">▤</span>
+                        <div>
+                            <strong>HTML Forms Cheat Sheet</strong>
+                            <small>PDF · 1.2 MB</small>
+                        </div>
+                        <b>↓</b>
+                    </button>
+
+                    <button class="resource">
+                        <span class="resource-icon blue">&lt;/&gt;</span>
+                        <div>
+                            <strong>Practice Code Examples</strong>
+                            <small>ZIP · 450 KB</small>
+                        </div>
+                        <b>↓</b>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="next-lesson">
+
+            <div>
+                <span class="small-label">UP NEXT</span>
+                <h2>Semantic HTML</h2>
+                <p>Lesson 04 · 16:40</p>
+            </div>
+
+            <button id="nextLessonBtn">
+                Next Lesson →
+            </button>
+
+        </section>
+
+    </main>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<div class="modal" id="modal">
+
+    <div class="modal-box">
+
+        <button class="close-modal" id="closeModal">×</button>
+
+        <div class="modal-icon">▶</div>
+
+        <h2 id="modalTitle">Lesson</h2>
+
+        <p id="modalText">
+            Continue learning from where you left off.
+        </p>
+
+        <button class="modal-action" id="modalAction">
+            Continue
+        </button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

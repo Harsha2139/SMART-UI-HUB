@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="brand">
+        <div class="brand-icon">🎮</div>
+        <div>
+            <h2>GameVault</h2>
+            <span>Your Game Library</span>
+        </div>
+    </div>
+
+    <div class="header-search">
+        🔍
+        <input type="text" id="searchInput" placeholder="Search your games...">
+    </div>
+
+    <div class="header-actions">
+        <button id="downloadBtn">⬇️ Downloads</button>
+        <button class="notification" id="notificationBtn">🔔</button>
+        <div class="avatar" id="profileBtn">J</div>
+    </div>
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+
+        <div class="menu-title">LIBRARY</div>
+
+        <button class="menu-item active">
+            <span>🎮</span>
+            All Games
+            <b>24</b>
+        </button>
+
+        <button class="menu-item" data-filter="Installed">
+            <span>💾</span>
+            Installed
+            <b>12</b>
+        </button>
+
+        <button class="menu-item" data-filter="Favorites">
+            <span>❤️</span>
+            Favorites
+            <b>7</b>
+        </button>
+
+        <button class="menu-item" data-filter="Recent">
+            <span>🕘</span>
+            Recently Played
+            <b>5</b>
+        </button>
+
+        <div class="menu-title">COLLECTIONS</div>
+
+        <button class="menu-item">
+            <span>⚔️</span>
+            Action
+        </button>
+
+        <button class="menu-item">
+            <span>🏎️</span>
+            Racing
+        </button>
+
+        <button class="menu-item">
+            <span>🧙</span>
+            RPG
+        </button>
+
+        <button class="menu-item">
+            <span>🧠</span>
+            Strategy
+        </button>
+
+        <div class="storage-box">
+            <div class="storage-top">
+                <span>Storage</span>
+                <strong>68%</strong>
+            </div>
+
+            <div class="storage-bar">
+                <div></div>
+            </div>
+
+            <p>680 GB of 1 TB used</p>
+
+            <button id="manageStorage">Manage Storage</button>
+        </div>
+
+    </aside>
+
+    <main class="main">
+
+        <section class="welcome">
+            <div>
+                <span class="eyebrow">YOUR COLLECTION</span>
+                <h1>Welcome back, Jayanth 👋</h1>
+                <p>Pick a game and continue your adventure.</p>
+            </div>
+
+            <button class="browse-btn" id="browseBtn">
+                + Browse Games
+            </button>
+        </section>
+
+        <section class="stats">
+
+            <div class="stat-card purple">
+                <span>🎮</span>
+                <div>
+                    <strong>24</strong>
+                    <p>Total Games</p>
+                </div>
+            </div>
+
+            <div class="stat-card blue">
+                <span>💾</span>
+                <div>
+                    <strong>12</strong>
+                    <p>Installed</p>
+                </div>
+            </div>
+
+            <div class="stat-card orange">
+                <span>⏱️</span>
+                <div>
+                    <strong>148h</strong>
+                    <p>Play Time</p>
+                </div>
+            </div>
+
+            <div class="stat-card green">
+                <span>🏆</span>
+                <div>
+                    <strong>38</strong>
+                    <p>Achievements</p>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="section-heading">
+            <div>
+                <h2>My Games</h2>
+                <p id="gameCount">Showing 8 games</p>
+            </div>
+
+            <select id="sortSelect">
+                <option value="default">Recently Added</option>
+                <option value="name">Name A-Z</option>
+                <option value="rating">Highest Rated</option>
+            </select>
+        </div>
+
+        <section class="games-grid" id="gamesGrid">
+
+            <article class="game-card"
+                     data-name="Cyber Drift"
+                     data-rating="4.9"
+                     data-status="Installed">
+
+                <div class="game-cover cover-purple">
+                    <span class="cover-icon">🏎️</span>
+                    <span class="status">INSTALLED</span>
+                    <button class="heart">♡</button>
+                </div>
+
+                <div class="game-details">
+                    <div>
+                        <h3>Cyber Drift</h3>
+                        <p>Racing • 18 GB</p>
+                    </div>
+                    <span class="rating">⭐ 4.9</span>
+                </div>
+
+                <div class="progress">
+                    <div style="width: 82%"></div>
+                </div>
+
+                <div class="card-bottom">
+                    <span>82% Complete</span>
+                    <button class="play-game">▶ Play</button>
+                </div>
+
+            </article>
+
+            <article class="game-card"
+                     data-name="Shadow Quest"
+                     data-rating="4.8"
+                     data-status="Installed">
+
+                <div class="game-cover cover-red">
+                    <span class="cover-icon">⚔️</span>
+                    <span class="status">INSTALLED</span>
+                    <button class="heart">♡</button>
+                </div>
+
+                <div class="game-details">
+                    <div>
+                        <h3>Shadow Quest</h3>
+                        <p>Action • 32 GB</p>
+                    </div>
+                    <span class="rating">⭐ 4.8</span>
+                </div>
+
+                <div class="progress">
+                    <div style="width: 64%"></div>
+                </div>
+
+                <div class="card-bottom">
+                    <span>64% Complete</span>
+                    <button class="play-game">▶ Play</button>
+                </div>
+
+            </article>
+
+            <article class="game-card"
+                     data-name="Galaxy Command"
+                     data-rating="4.7"
+                     data-status="Installed">
+
+                <div class="game-cover cover-blue">
+                    <span class="cover-icon">🚀</span>
+                    <span class="status">INSTALLED</span>
+                    <button class="heart">♡</button>
+                </div>
+
+                <div class="game-details">
+                    <div>
+                        <h3>Galaxy Command</h3>
+                        <p>Strategy • 24 GB</p>
+                    </div>
+                    <span class="rating">⭐ 4.7</span>
+                </div>
+
+                <div class="progress">
+                    <div style="width: 43%"></div>
+                </div>
+
+                <div class="card-bottom">
+                    <span>43% Complete</span>
+                    <button class="play-game">▶ Play</button>
+                </div>
+
+            </article>
+
+            <article class="game-card"
+                     data-name="Mystic Lands"
+                     data-rating="4.6"
+                     data-status="Installed">
+
+                <div class="game-cover cover-pink">
+                    <span class="cover-icon">🧙</span>
+                    <span class="status">INSTALLED</span>
+                    <button class="heart">♡</button>
+                </div>
+
+                <div class="game-details">
+                    <div>
+                        <h3>Mystic Lands</h3>
+                        <p>RPG • 41 GB</p>
+                    </div>
+                    <span class="rating">⭐ 4.6</span>
+                </div>
+
+                <div class="progress">
+                    <div style="width: 91%"></div>
+                </div>
+
+                <div class="card-bottom">
+                    <span>91% Complete</span>
+                    <button class="play-game">▶ Play</button>
+                </div>
+
+            </article>
+
+            <article class="game-card"
+                     data-name="Street Rivals"
+                     data-rating="4.5"
+                     data-status="Favorites">
+
+                <div class="game-cover cover-orange">
+                    <span class="cover-icon">🏁</span>
+                    <span class="status">FAVORITE</span>
+                    <button class="heart">♥</button>
+                </div>
+
+                <div class="game-details">
+                    <div>
+                        <h3>Street Rivals</h3>
+                        <p>Racing • 15 GB</p>
+                    </div>
+                    <span class="rating">⭐ 4.5</span>
+                </div>
+
+                <div class="progress">
+                    <div style="width: 55%"></div>
+                </div>
+
+                <div class="card-bottom">
+                    <span>55% Complete</span>
+                    <button class="play-game">▶ Play</button>
+                </div>
+
+            </article>
+
+            <article class="game-card"
+                     data-name="Kingdom Rise"
+                     data-rating="4.8"
+                     data-status="Recent">
+
+                <div class="game-cover cover-green">
+                    <span class="cover-icon">🏰</span>
+                    <span class="status">RECENT</span>
+                    <button class="heart">♡</button>
+                </div>
+
+                <div class="game-details">
+                    <div>
+                        <h3>Kingdom Rise</h3>
+                        <p>Strategy • 28 GB</p>
+                    </div>
+                    <span class="rating">⭐ 4.8</span>
+                </div>
+
+                <div class="progress">
+                    <div style="width: 37%"></div>
+                </div>
+
+                <div class="card-bottom">
+                    <span>37% Complete</span>
+                    <button class="play-game">▶ Play</button>
+                </div>
+
+            </article>
+
+            <article class="game-card"
+                     data-name="Neon Warriors"
+                     data-rating="4.4"
+                     data-status="Favorites">
+
+                <div class="game-cover cover-cyan">
+                    <span class="cover-icon">🥷</span>
+                    <span class="status">FAVORITE</span>
+                    <button class="heart">♥</button>
+                </div>
+
+                <div class="game-details">
+                    <div>
+                        <h3>Neon Warriors</h3>
+                        <p>Action • 22 GB</p>
+                    </div>
+                    <span class="rating">⭐ 4.4</span>
+                </div>
+
+                <div class="progress">
+                    <div style="width: 72%"></div>
+                </div>
+
+                <div class="card-bottom">
+                    <span>72% Complete</span>
+                    <button class="play-game">▶ Play</button>
+                </div>
+
+            </article>
+
+            <article class="game-card"
+                     data-name="Ocean Explorer"
+                     data-rating="4.3"
+                     data-status="Recent">
+
+                <div class="game-cover cover-teal">
+                    <span class="cover-icon">🌊</span>
+                    <span class="status">RECENT</span>
+                    <button class="heart">♡</button>
+                </div>
+
+                <div class="game-details">
+                    <div>
+                        <h3>Ocean Explorer</h3>
+                        <p>Adventure • 19 GB</p>
+                    </div>
+                    <span class="rating">⭐ 4.3</span>
+                </div>
+
+                <div class="progress">
+                    <div style="width: 29%"></div>
+                </div>
+
+                <div class="card-bottom">
+                    <span>29% Complete</span>
+                    <button class="play-game">▶ Play</button>
+                </div>
+
+            </article>
+
+        </section>
+
+    </main>
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+
+    <div class="modal">
+
+        <button class="close-modal" id="closeModal">×</button>
+
+        <div class="modal-icon" id="modalIcon">🎮</div>
+
+        <h2 id="modalTitle">GameVault</h2>
+
+        <p id="modalText">
+            Manage your gaming collection.
+        </p>
+
+        <button class="modal-action" id="modalAction">
+            Continue
+        </button>
+
+    </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

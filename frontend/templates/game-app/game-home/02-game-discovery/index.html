@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Discovery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">🎮</span>
+            <span>GameZone</span>
+        </div>
+
+        <div class="search-box">
+            <span>🔍</span>
+            <input type="text" id="searchInput" placeholder="Search games...">
+        </div>
+
+        <div class="header-actions">
+            <button class="icon-btn" id="notificationBtn">🔔</button>
+            <button class="profile-btn" id="profileBtn">
+                <span class="avatar">J</span>
+                <span>Jayanth</span>
+                <span>⌄</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="page">
+
+        <aside class="sidebar">
+            <div class="side-title">DISCOVER</div>
+
+            <button class="side-link active">
+                <span>✨</span> Discover
+            </button>
+
+            <button class="side-link">
+                <span>🔥</span> Trending
+            </button>
+
+            <button class="side-link">
+                <span>🆕</span> New Releases
+            </button>
+
+            <button class="side-link">
+                <span>⭐</span> Top Rated
+            </button>
+
+            <div class="side-title">GENRES</div>
+
+            <button class="side-link genre-btn" data-genre="Action">
+                <span>⚔️</span> Action
+            </button>
+
+            <button class="side-link genre-btn" data-genre="Adventure">
+                <span>🗺️</span> Adventure
+            </button>
+
+            <button class="side-link genre-btn" data-genre="Racing">
+                <span>🏎️</span> Racing
+            </button>
+
+            <button class="side-link genre-btn" data-genre="Strategy">
+                <span>♟️</span> Strategy
+            </button>
+
+            <button class="side-link genre-btn" data-genre="Sports">
+                <span>🏆</span> Sports
+            </button>
+
+            <div class="sidebar-bottom">
+                <button class="side-link">
+                    <span>⚙️</span> Settings
+                </button>
+                <button class="side-link">
+                    <span>❓</span> Help
+                </button>
+            </div>
+        </aside>
+
+        <main class="content">
+
+            <section class="hero">
+                <div class="hero-content">
+                    <span class="hero-tag">🔥 GAME OF THE WEEK</span>
+                    <h1>Discover Your<br><span>Next Adventure</span></h1>
+                    <p>
+                        Explore exciting worlds, discover new games,
+                        and find your next favorite adventure.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <button class="primary-btn" id="exploreBtn">
+                            Explore Games →
+                        </button>
+                        <button class="secondary-btn" id="watchBtn">
+                            ▶ Watch Trailer
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hero-game">
+                    <div class="game-art">
+                        🐉
+                    </div>
+                    <div class="floating-card card-one">
+                        ⭐ 4.9
+                    </div>
+                    <div class="floating-card card-two">
+                        👥 2.4M Players
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-header">
+                <div>
+                    <h2>Popular Right Now</h2>
+                    <p>Games everyone is playing</p>
+                </div>
+
+                <button class="view-btn" id="viewAllBtn">View All →</button>
+            </div>
+
+            <section class="games-grid" id="gamesGrid">
+
+                <article class="game-card" data-name="Shadow Realm" data-genre="Action">
+                    <div class="game-image purple">
+                        <span class="game-symbol">⚔️</span>
+                        <span class="badge">HOT</span>
+                    </div>
+                    <div class="game-info">
+                        <div>
+                            <h3>Shadow Realm</h3>
+                            <p>Action • RPG</p>
+                        </div>
+                        <span class="rating">⭐ 4.8</span>
+                    </div>
+                    <button class="play-btn">Play Now</button>
+                </article>
+
+                <article class="game-card" data-name="Speed Legends" data-genre="Racing">
+                    <div class="game-image orange">
+                        <span class="game-symbol">🏎️</span>
+                        <span class="badge">NEW</span>
+                    </div>
+                    <div class="game-info">
+                        <div>
+                            <h3>Speed Legends</h3>
+                            <p>Racing • Sports</p>
+                        </div>
+                        <span class="rating">⭐ 4.7</span>
+                    </div>
+                    <button class="play-btn">Play Now</button>
+                </article>
+
+                <article class="game-card" data-name="Galaxy Wars" data-genre="Strategy">
+                    <div class="game-image blue">
+                        <span class="game-symbol">🚀</span>
+                        <span class="badge">TOP</span>
+                    </div>
+                    <div class="game-info">
+                        <div>
+                            <h3>Galaxy Wars</h3>
+                            <p>Strategy • Sci-Fi</p>
+                        </div>
+                        <span class="rating">⭐ 4.9</span>
+                    </div>
+                    <button class="play-btn">Play Now</button>
+                </article>
+
+                <article class="game-card" data-name="Mystic Valley" data-genre="Adventure">
+                    <div class="game-image pink">
+                        <span class="game-symbol">🧙</span>
+                    </div>
+                    <div class="game-info">
+                        <div>
+                            <h3>Mystic Valley</h3>
+                            <p>Adventure • Fantasy</p>
+                        </div>
+                        <span class="rating">⭐ 4.6</span>
+                    </div>
+                    <button class="play-btn">Play Now</button>
+                </article>
+
+            </section>
+
+            <div class="section-header second-header">
+                <div>
+                    <h2>Explore Categories</h2>
+                    <p>Find games based on your mood</p>
+                </div>
+            </div>
+
+            <section class="category-grid">
+
+                <button class="category-card action-category" data-genre="Action">
+                    <span>⚔️</span>
+                    <strong>Action</strong>
+                    <small>124 Games</small>
+                </button>
+
+                <button class="category-card adventure-category" data-genre="Adventure">
+                    <span>🗺️</span>
+                    <strong>Adventure</strong>
+                    <small>98 Games</small>
+                </button>
+
+                <button class="category-card racing-category" data-genre="Racing">
+                    <span>🏎️</span>
+                    <strong>Racing</strong>
+                    <small>76 Games</small>
+                </button>
+
+                <button class="category-card strategy-category" data-genre="Strategy">
+                    <span>♟️</span>
+                    <strong>Strategy</strong>
+                    <small>63 Games</small>
+                </button>
+
+            </section>
+
+        </main>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <button class="close-btn" id="closeModal">×</button>
+            <div class="modal-icon">🎮</div>
+            <h2 id="modalTitle">GameZone</h2>
+            <p id="modalText">Discover amazing games.</p>
+            <button class="primary-btn" id="modalAction">Continue</button>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoply - Modern Online Shopping</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Offer Bar -->
+    <div class="top-bar">
+        <p>🎉 Mega Sale is Live — Extra 20% OFF on selected products!</p>
+        <button id="closeOffer">×</button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">🛍️</span>
+            <span>Shoply</span>
+        </div>
+
+        <div class="search-box">
+            <span>🔍</span>
+            <input type="text" id="searchInput" placeholder="Search for products, brands and more...">
+            <button id="searchButton">Search</button>
+        </div>
+
+        <div class="header-actions">
+            <button class="account-btn" id="accountButton">
+                <span>👤</span>
+                <span>Login</span>
+            </button>
+
+            <button class="wishlist-btn" id="wishlistButton">
+                ❤️
+                <span class="count" id="wishlistCount">0</span>
+            </button>
+
+            <button class="cart-btn" id="cartButton">
+                🛒
+                <span>Cart</span>
+                <span class="count" id="cartCount">0</span>
+            </button>
+        </div>
+
+        <button class="menu-btn" id="menuButton">☰</button>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#deals">Deals</a>
+        <a href="#products">Products</a>
+        <a href="#footer">Contact</a>
+    </nav>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <span class="hero-badge">🔥 BIGGEST SALE OF THE SEASON</span>
+
+                <h1>
+                    Shop More.<br>
+                    <span>Save More.</span>
+                </h1>
+
+                <p>
+                    Discover trending products, exciting deals and
+                    everyday essentials at amazing prices.
+                </p>
+
+                <div class="hero-buttons">
+                    <button class="primary-btn" id="shopNowButton">
+                        Shop Now →
+                    </button>
+
+                    <button class="secondary-btn" id="dealButton">
+                        View Deals
+                    </button>
+                </div>
+
+                <div class="hero-stats">
+                    <div>
+                        <strong>50K+</strong>
+                        <span>Products</span>
+                    </div>
+
+                    <div>
+                        <strong>4.8★</strong>
+                        <span>Customer Rating</span>
+                    </div>
+
+                    <div>
+                        <strong>24/7</strong>
+                        <span>Support</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="floating-card card-one">
+                    <span>⚡</span>
+                    <div>
+                        <strong>Flash Deal</strong>
+                        <small>Up to 70% OFF</small>
+                    </div>
+                </div>
+
+                <div class="shopping-circle">
+                    <div class="product-bubble bubble-one">🎧</div>
+                    <div class="product-bubble bubble-two">👟</div>
+                    <div class="product-bubble bubble-three">📱</div>
+                    <div class="product-bubble bubble-four">⌚</div>
+                    <div class="main-bag">🛍️</div>
+                </div>
+
+                <div class="floating-card card-two">
+                    <span>🚚</span>
+                    <div>
+                        <strong>Free Delivery</strong>
+                        <small>On orders above ₹499</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="section" id="categories">
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">EXPLORE</span>
+                    <h2>Shop by Category</h2>
+                </div>
+                <button class="view-all" id="viewCategories">View All →</button>
+            </div>
+
+            <div class="category-grid">
+                <button class="category-card active" data-category="all">
+                    <div class="category-icon purple">✨</div>
+                    <strong>All</strong>
+                    <span>Everything</span>
+                </button>
+
+                <button class="category-card" data-category="electronics">
+                    <div class="category-icon blue">📱</div>
+                    <strong>Electronics</strong>
+                    <span>2,450 items</span>
+                </button>
+
+                <button class="category-card" data-category="fashion">
+                    <div class="category-icon pink">👕</div>
+                    <strong>Fashion</strong>
+                    <span>8,200 items</span>
+                </button>
+
+                <button class="category-card" data-category="beauty">
+                    <div class="category-icon orange">💄</div>
+                    <strong>Beauty</strong>
+                    <span>3,120 items</span>
+                </button>
+
+                <button class="category-card" data-category="home">
+                    <div class="category-icon green">🏠</div>
+                    <strong>Home</strong>
+                    <span>4,560 items</span>
+                </button>
+
+                <button class="category-card" data-category="sports">
+                    <div class="category-icon yellow">⚽</div>
+                    <strong>Sports</strong>
+                    <span>1,890 items</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Deals -->
+        <section class="section deals-section" id="deals">
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">LIMITED TIME</span>
+                    <h2>Today's Hot Deals 🔥</h2>
+                </div>
+
+                <div class="timer">
+                    <span>Ends in</span>
+                    <strong id="dealTimer">08:42:15</strong>
+                </div>
+            </div>
+
+            <div class="deal-grid">
+
+                <div class="deal-card deal-purple">
+                    <div>
+                        <span class="deal-tag">UP TO 60% OFF</span>
+                        <h3>Tech<br>Essentials</h3>
+                        <p>Upgrade your setup today.</p>
+                        <button class="deal-shop" data-category="electronics">
+                            Shop Electronics →
+                        </button>
+                    </div>
+                    <div class="deal-emoji">🎧</div>
+                </div>
+
+                <div class="deal-card deal-pink">
+                    <div>
+                        <span class="deal-tag">UP TO 50% OFF</span>
+                        <h3>Fashion<br>Fest</h3>
+                        <p>Fresh styles for everyone.</p>
+                        <button class="deal-shop" data-category="fashion">
+                            Shop Fashion →
+                        </button>
+                    </div>
+                    <div class="deal-emoji">👟</div>
+                </div>
+
+                <div class="deal-card deal-orange">
+                    <div>
+                        <span class="deal-tag">STARTING ₹299</span>
+                        <h3>Home<br>Makeover</h3>
+                        <p>Make your space beautiful.</p>
+                        <button class="deal-shop" data-category="home">
+                            Shop Home →
+                        </button>
+                    </div>
+                    <div class="deal-emoji">🛋️</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Products -->
+        <section class="section" id="products">
+            <div class="section-heading product-heading">
+                <div>
+                    <span class="section-label">TRENDING NOW</span>
+                    <h2>Popular Products</h2>
+                </div>
+
+                <div class="sort-box">
+                    <label for="sortSelect">Sort:</label>
+                    <select id="sortSelect">
+                        <option value="default">Recommended</option>
+                        <option value="low">Price: Low to High</option>
+                        <option value="high">Price: High to Low</option>
+                        <option value="rating">Top Rated</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="product-grid" id="productGrid">
+
+                <article class="product-card" data-category="electronics" data-name="wireless headphones">
+                    <button class="heart" data-id="1">♡</button>
+                    <div class="product-image gradient-purple">
+                        <span>🎧</span>
+                        <small>BESTSELLER</small>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Electronics</span>
+                        <h3>Wireless Headphones Pro</h3>
+                        <div class="rating">★★★★★ <span>(324)</span></div>
+                        <div class="price-row">
+                            <strong>₹1,499</strong>
+                            <del>₹2,999</del>
+                            <b>50% OFF</b>
+                        </div>
+                        <button class="add-cart" data-id="1" data-name="Wireless Headphones Pro" data-price="1499">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="electronics" data-name="smartphone">
+                    <button class="heart" data-id="2">♡</button>
+                    <div class="product-image gradient-blue">
+                        <span>📱</span>
+                        <small>HOT</small>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Electronics</span>
+                        <h3>Smartphone X12 5G</h3>
+                        <div class="rating">★★★★★ <span>(892)</span></div>
+                        <div class="price-row">
+                            <strong>₹18,999</strong>
+                            <del>₹24,999</del>
+                            <b>24% OFF</b>
+                        </div>
+                        <button class="add-cart" data-id="2" data-name="Smartphone X12 5G" data-price="18999">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="fashion" data-name="running shoes">
+                    <button class="heart" data-id="3">♡</button>
+                    <div class="product-image gradient-pink">
+                        <span>👟</span>
+                        <small>TRENDING</small>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Fashion</span>
+                        <h3>Urban Running Shoes</h3>
+                        <div class="rating">★★★★☆ <span>(218)</span></div>
+                        <div class="price-row">
+                            <strong>₹2,299</strong>
+                            <del>₹3,999</del>
+                            <b>43% OFF</b>
+                        </div>
+                        <button class="add-cart" data-id="3" data-name="Urban Running Shoes" data-price="2299">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="beauty" data-name="skincare set">
+                    <button class="heart" data-id="4">♡</button>
+                    <div class="product-image gradient-orange">
+                        <span>🧴</span>
+                        <small>NEW</small>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Beauty</span>
+                        <h3>Premium Skincare Set</h3>
+                        <div class="rating">★★★★★ <span>(157)</span></div>
+                        <div class="price-row">
+                            <strong>₹899</strong>
+                            <del>₹1,499</del>
+                            <b>40% OFF</b>
+                        </div>
+                        <button class="add-cart" data-id="4" data-name="Premium Skincare Set" data-price="899">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="home" data-name="smart lamp">
+                    <button class="heart" data-id="5">♡</button>
+                    <div class="product-image gradient-green">
+                        <span>💡</span>
+                        <small>SMART</small>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Home</span>
+                        <h3>Smart Ambient Lamp</h3>
+                        <div class="rating">★★★★★ <span>(403)</span></div>
+                        <div class="price-row">
+                            <strong>₹1,099</strong>
+                            <del>₹1,899</del>
+                            <b>42% OFF</b>
+                        </div>
+                        <button class="add-cart" data-id="5" data-name="Smart Ambient Lamp" data-price="1099">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="sports" data-name="fitness watch">
+                    <button class="heart" data-id="6">♡</button>
+                    <div class="product-image gradient-cyan">
+                        <span>⌚</span>
+                        <small>FITNESS</small>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Sports</span>
+                        <h3>FitTrack Smart Watch</h3>
+                        <div class="rating">★★★★☆ <span>(631)</span></div>
+                        <div class="price-row">
+                            <strong>₹2,799</strong>
+                            <del>₹4,499</del>
+                            <b>38% OFF</b>
+                        </div>
+                        <button class="add-cart" data-id="6" data-name="FitTrack Smart Watch" data-price="2799">
+                            Add to Cart
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+
+            <p class="no-products" id="noProducts">
+                😕 No products found. Try another search.
+            </p>
+        </section>
+
+        <!-- Trust Strip -->
+        <section class="trust-section">
+            <div class="trust-item">
+                <div>🚚</div>
+                <div>
+                    <strong>Free Delivery</strong>
+                    <span>On orders above ₹499</span>
+                </div>
+            </div>
+
+            <div class="trust-item">
+                <div>🔒</div>
+                <div>
+                    <strong>Secure Payments</strong>
+                    <span>100% protected checkout</span>
+                </div>
+            </div>
+
+            <div class="trust-item">
+                <div>↩️</div>
+                <div>
+                    <strong>Easy Returns</strong>
+                    <span>7-day return policy</span>
+                </div>
+            </div>
+
+            <div class="trust-item">
+                <div>💬</div>
+                <div>
+                    <strong>24/7 Support</strong>
+                    <span>We're here to help</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Cart Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Cart Drawer -->
+    <aside class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <div>
+                <span class="section-label">YOUR BAG</span>
+                <h2>Shopping Cart</h2>
+            </div>
+            <button id="closeCart">×</button>
+        </div>
+
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <div>🛒</div>
+                <h3>Your cart is empty</h3>
+                <p>Add something you love!</p>
+            </div>
+        </div>
+
+        <div class="cart-footer">
+            <div class="subtotal">
+                <span>Subtotal</span>
+                <strong id="cartTotal">₹0</strong>
+            </div>
+            <button class="checkout-btn" id="checkoutButton">
+                Proceed to Checkout →
+            </button>
+        </div>
+    </aside>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-box">
+            <button class="modal-close" id="closeModal">×</button>
+            <div class="modal-icon">👋</div>
+            <h2>Welcome to Shoply</h2>
+            <p>Login to enjoy a personalized shopping experience.</p>
+
+            <input type="text" placeholder="Enter your mobile number" id="phoneInput">
+
+            <button class="primary-btn full" id="loginButton">
+                Continue →
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <span>✓</span>
+        <p id="toastMessage">Added to cart!</p>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="logo-icon">🛍️</span>
+                    <span>Shoply</span>
+                </div>
+                <p>Making online shopping colorful, simple and exciting.</p>
+            </div>
+
+            <div>
+                <h4>Shop</h4>
+                <a href="#categories">Categories</a>
+                <a href="#deals">Deals</a>
+                <a href="#products">Trending</a>
+            </div>
+
+            <div>
+                <h4>Help</h4>
+                <a href="#">Contact Us</a>
+                <a href="#">Returns</a>
+                <a href="#">Shipping</a>
+            </div>
+
+            <div>
+                <h4>Follow Us</h4>
+                <div class="socials">
+                    <button>📸</button>
+                    <button>𝕏</button>
+                    <button>▶️</button>
+                    <button>💼</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 Shoply. All rights reserved.</span>
+            <span>Made with 💜 for modern shoppers</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

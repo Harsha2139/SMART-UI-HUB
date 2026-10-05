@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Product Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-banner">
+        ⚡ Mega Deals are Live — Extra 15% OFF on selected products
+    </div>
+
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-icon">N</span>
+            <span>NovaCart</span>
+        </div>
+
+        <div class="search-box">
+            <span>⌕</span>
+            <input type="text" id="searchInput" placeholder="Search products...">
+        </div>
+
+        <div class="nav-actions">
+            <button id="wishlistBtn" class="icon-btn">♡</button>
+            <button id="cartBtn" class="icon-btn cart-icon">
+                🛒
+                <span id="cartCount">0</span>
+            </button>
+            <div class="profile">JD</div>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="breadcrumb">
+            Home / Electronics / Audio / Headphones
+        </div>
+
+        <section class="product-layout">
+
+            <div class="gallery-section">
+
+                <div class="thumbnail-list">
+                    <button class="thumb active" data-image="🎧">🎧</button>
+                    <button class="thumb" data-image="🔊">🔊</button>
+                    <button class="thumb" data-image="🎵">🎵</button>
+                    <button class="thumb" data-image="📦">📦</button>
+                </div>
+
+                <div class="main-product-image" id="mainImage">
+                    🎧
+                </div>
+
+                <div class="gallery-actions">
+                    <button id="wishlistProduct">♡ Add to Wishlist</button>
+                    <button>↗ Share</button>
+                </div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="brand-tag">NOVA AUDIO</div>
+
+                <h1>Pulse X Wireless Headphones</h1>
+
+                <p class="subtitle">
+                    Premium wireless headphones with immersive sound,
+                    adaptive noise cancellation and all-day comfort.
+                </p>
+
+                <div class="rating-row">
+                    <span class="rating">4.8 ★</span>
+                    <span>2,481 ratings</span>
+                    <span class="dot">•</span>
+                    <span>684 reviews</span>
+                </div>
+
+                <div class="price-card">
+                    <div class="price">
+                        ₹4,999
+                        <span>₹7,999</span>
+                    </div>
+                    <div class="discount">38% OFF</div>
+                    <p>Inclusive of all taxes</p>
+                </div>
+
+                <div class="deal-box">
+                    <div class="deal-icon">🔥</div>
+                    <div>
+                        <strong>Limited Time Deal</strong>
+                        <p>Extra ₹500 OFF with selected payment methods</p>
+                    </div>
+                </div>
+
+                <div class="option-section">
+                    <div class="option-title">
+                        Color
+                        <strong id="selectedColor">Midnight Black</strong>
+                    </div>
+
+                    <div class="color-options">
+                        <button class="color active" data-color="Midnight Black"></button>
+                        <button class="color blue" data-color="Ocean Blue"></button>
+                        <button class="color pink" data-color="Rose Pink"></button>
+                        <button class="color green" data-color="Forest Green"></button>
+                    </div>
+                </div>
+
+                <div class="option-section">
+                    <div class="option-title">
+                        Quantity
+                    </div>
+
+                    <div class="quantity">
+                        <button id="minus">−</button>
+                        <span id="quantity">1</span>
+                        <button id="plus">+</button>
+                    </div>
+                </div>
+
+                <div class="delivery">
+                    <div class="delivery-title">📍 Check delivery</div>
+
+                    <div class="pincode-box">
+                        <input id="pincode" type="text" maxlength="6" placeholder="Enter pincode">
+                        <button id="checkDelivery">Check</button>
+                    </div>
+
+                    <p id="deliveryMessage"></p>
+                </div>
+
+                <div class="main-actions">
+                    <button class="add-cart" id="addCart">
+                        🛒 Add to Cart
+                    </button>
+
+                    <button class="buy-now" id="buyNow">
+                        Buy Now
+                    </button>
+                </div>
+
+                <div class="features">
+
+                    <div class="feature">
+                        <span>🚚</span>
+                        <div>
+                            <strong>Free Delivery</strong>
+                            <small>On orders above ₹499</small>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <span>↩️</span>
+                        <div>
+                            <strong>7 Day Returns</strong>
+                            <small>Easy return policy</small>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <span>🛡️</span>
+                        <div>
+                            <strong>1 Year Warranty</strong>
+                            <small>Manufacturer warranty</small>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <span>🔒</span>
+                        <div>
+                            <strong>Secure Payment</strong>
+                            <small>100% secure checkout</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="highlights">
+
+            <div class="section-heading">
+                <div>
+                    <span>WHY YOU'LL LOVE IT</span>
+                    <h2>Designed for everyday listening</h2>
+                </div>
+            </div>
+
+            <div class="highlight-grid">
+
+                <div class="highlight-card purple">
+                    <div class="highlight-icon">🎧</div>
+                    <h3>Immersive Audio</h3>
+                    <p>Powerful bass and crystal-clear vocals for a rich listening experience.</p>
+                </div>
+
+                <div class="highlight-card blue">
+                    <div class="highlight-icon">🔇</div>
+                    <h3>Noise Cancellation</h3>
+                    <p>Block unwanted background noise and stay focused on your music.</p>
+                </div>
+
+                <div class="highlight-card orange">
+                    <div class="highlight-icon">🔋</div>
+                    <h3>40 Hour Battery</h3>
+                    <p>Enjoy long listening sessions without constantly charging.</p>
+                </div>
+
+                <div class="highlight-card green">
+                    <div class="highlight-icon">✨</div>
+                    <h3>Ultra Comfortable</h3>
+                    <p>Soft memory-foam cushions provide comfort throughout the day.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="specifications">
+
+            <div class="section-heading">
+                <span>PRODUCT DETAILS</span>
+                <h2>Specifications</h2>
+            </div>
+
+            <div class="spec-grid">
+
+                <div>
+                    <span>Driver Size</span>
+                    <strong>40 mm</strong>
+                </div>
+
+                <div>
+                    <span>Battery Life</span>
+                    <strong>Up to 40 hours</strong>
+                </div>
+
+                <div>
+                    <span>Connectivity</span>
+                    <strong>Bluetooth 5.3</strong>
+                </div>
+
+                <div>
+                    <span>Charging</span>
+                    <strong>USB-C Fast Charge</strong>
+                </div>
+
+                <div>
+                    <span>Weight</span>
+                    <strong>245 g</strong>
+                </div>
+
+                <div>
+                    <span>Warranty</span>
+                    <strong>1 Year</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="reviews">
+
+            <div class="review-summary">
+                <div>
+                    <span>Customer Reviews</span>
+                    <h2>4.8 <small>/ 5</small></h2>
+                    <div class="stars">★★★★★</div>
+                    <p>Based on 684 reviews</p>
+                </div>
+
+                <div class="rating-bars">
+
+                    <div>
+                        <span>5</span>
+                        <div class="bar"><i style="width: 88%"></i></div>
+                        <small>88%</small>
+                    </div>
+
+                    <div>
+                        <span>4</span>
+                        <div class="bar"><i style="width: 8%"></i></div>
+                        <small>8%</small>
+                    </div>
+
+                    <div>
+                        <span>3</span>
+                        <div class="bar"><i style="width: 3%"></i></div>
+                        <small>3%</small>
+                    </div>
+
+                    <div>
+                        <span>2</span>
+                        <div class="bar"><i style="width: 1%"></i></div>
+                        <small>1%</small>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-user">
+                    <div class="avatar">AK</div>
+                    <div>
+                        <strong>Arjun Kumar</strong>
+                        <small>Verified Purchase</small>
+                    </div>
+                    <span>★★★★★</span>
+                </div>
+
+                <p>
+                    Excellent sound quality and the battery life is impressive.
+                    The headphones are comfortable even after several hours.
+                </p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-user">
+                    <div class="avatar">RS</div>
+                    <div>
+                        <strong>Riya Sharma</strong>
+                        <small>Verified Purchase</small>
+                    </div>
+                    <span>★★★★★</span>
+                </div>
+
+                <p>
+                    The noise cancellation works really well. The design also
+                    feels premium and stylish.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <div class="toast" id="toast">
+        Added to cart successfully!
+    </div>
+
+    <div class="cart-drawer" id="cartDrawer">
+
+        <div class="drawer-header">
+            <h2>Your Cart</h2>
+            <button id="closeCart">×</button>
+        </div>
+
+        <div class="cart-product">
+            <div class="cart-image">🎧</div>
+
+            <div>
+                <strong>Pulse X Headphones</strong>
+                <p>Midnight Black</p>
+                <span>₹4,999</span>
+            </div>
+        </div>
+
+        <div class="cart-total">
+            <span>Total</span>
+            <strong id="cartTotal">₹4,999</strong>
+        </div>
+
+        <button class="checkout-btn">Proceed to Checkout</button>
+
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

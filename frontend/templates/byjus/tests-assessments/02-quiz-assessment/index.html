@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Assessment | Eduvia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <div class="brand">
+            <div class="brand-icon">E</div>
+            <div>
+                <h2>Eduvia</h2>
+                <span>Learn. Practice. Grow.</span>
+            </div>
+        </div>
+
+        <div class="top-actions">
+            <button class="icon-btn" id="notificationBtn">🔔</button>
+            <div class="profile">
+                <div class="avatar">JS</div>
+                <div>
+                    <strong>Jayanth</strong>
+                    <small>Student</small>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="page">
+
+        <section class="quiz-header">
+            <div>
+                <span class="tag">QUIZ ASSESSMENT</span>
+                <h1>JavaScript Fundamentals</h1>
+                <p>Test your knowledge and strengthen your programming skills.</p>
+            </div>
+
+            <div class="quiz-info">
+                <div>
+                    <span>Questions</span>
+                    <strong>10</strong>
+                </div>
+                <div>
+                    <span>Time</span>
+                    <strong>10 min</strong>
+                </div>
+                <div>
+                    <span>Points</span>
+                    <strong>100</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="quiz-layout">
+
+            <div class="quiz-card">
+
+                <div class="question-top">
+                    <div>
+                        <span class="question-number" id="questionNumber">Question 1 of 10</span>
+                        <div class="progress-bar">
+                            <div class="progress" id="progress"></div>
+                        </div>
+                    </div>
+
+                    <div class="timer">
+                        ⏱ <span id="timer">10:00</span>
+                    </div>
+                </div>
+
+                <div class="question-area">
+                    <span class="topic">JavaScript Basics</span>
+
+                    <h2 id="questionText">
+                        Which keyword is used to declare a variable in JavaScript?
+                    </h2>
+
+                    <div class="options" id="options"></div>
+                </div>
+
+                <div class="quiz-footer">
+                    <button class="secondary-btn" id="previousBtn">
+                        ← Previous
+                    </button>
+
+                    <button class="review-btn" id="reviewBtn">
+                        ☆ Mark for Review
+                    </button>
+
+                    <button class="primary-btn" id="nextBtn">
+                        Next →
+                    </button>
+                </div>
+
+            </div>
+
+            <aside class="sidebar">
+
+                <div class="side-card">
+                    <div class="side-title">
+                        <h3>Question Navigator</h3>
+                        <span id="answeredCount">0/10</span>
+                    </div>
+
+                    <div class="question-grid" id="questionGrid"></div>
+
+                    <div class="legend">
+                        <span><i class="answered"></i> Answered</span>
+                        <span><i class="review"></i> Review</span>
+                        <span><i class="current"></i> Current</span>
+                    </div>
+                </div>
+
+                <div class="score-card">
+                    <div class="score-icon">🎯</div>
+                    <h3>Keep going!</h3>
+                    <p>Answer all questions to complete your assessment.</p>
+                    <div class="mini-progress">
+                        <div id="miniProgress"></div>
+                    </div>
+                </div>
+
+                <button class="submit-btn" id="submitBtn">
+                    Submit Quiz
+                </button>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+    <div class="modal-overlay" id="submitModal">
+        <div class="modal">
+            <div class="modal-icon">✓</div>
+            <h2>Submit Quiz?</h2>
+            <p id="submitMessage">
+                Are you sure you want to submit your quiz?
+            </p>
+
+            <div class="modal-actions">
+                <button class="secondary-btn" id="cancelSubmit">Continue Quiz</button>
+                <button class="primary-btn" id="confirmSubmit">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="resultModal">
+        <div class="modal result-modal">
+            <div class="result-circle" id="resultScore">0%</div>
+            <span class="tag">QUIZ COMPLETED</span>
+            <h2>Great job! 🎉</h2>
+            <p id="resultText"></p>
+
+            <button class="primary-btn" id="restartBtn">
+                Try Again
+            </button>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

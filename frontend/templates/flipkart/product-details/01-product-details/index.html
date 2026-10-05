@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | Discoverly</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-strip">
+        <span>✨ Exclusive deals just for you</span>
+        <span>Free delivery on orders above ₹499</span>
+    </div>
+
+    <header class="header">
+        <a href="#" class="logo">
+            <span class="logo-icon">✦</span>
+            Discoverly
+        </a>
+
+        <div class="search">
+            <span>⌕</span>
+            <input id="searchInput" type="text" placeholder="Search products...">
+            <button id="searchBtn">Search</button>
+        </div>
+
+        <div class="header-actions">
+            <button id="wishlistButton" class="header-action">♡ <span>Wishlist</span></button>
+            <button id="cartButton" class="header-action">
+                🛒 <span>Cart</span>
+                <b id="cartCount">0</b>
+            </button>
+            <button class="avatar">JD</button>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="breadcrumb">
+            Home <span>›</span> Electronics <span>›</span> Audio <span>›</span>
+            AirBeat Pro
+        </div>
+
+        <section class="product-section">
+
+            <div class="gallery">
+
+                <div class="thumbnail-list">
+
+                    <button class="thumbnail active" data-emoji="🎧">
+                        🎧
+                    </button>
+
+                    <button class="thumbnail" data-emoji="🎵">
+                        🎵
+                    </button>
+
+                    <button class="thumbnail" data-emoji="🔊">
+                        🔊
+                    </button>
+
+                    <button class="thumbnail" data-emoji="📦">
+                        📦
+                    </button>
+
+                </div>
+
+                <div class="main-image">
+
+                    <span class="discount-badge">35% OFF</span>
+
+                    <button class="image-heart" id="imageHeart">♡</button>
+
+                    <div class="image-circle">
+                        <span id="mainEmoji">🎧</span>
+                    </div>
+
+                    <div class="image-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="brand-row">
+                    <span class="brand">AIRBEAT</span>
+                    <span class="verified">✓ Verified Brand</span>
+                </div>
+
+                <h1>AirBeat Pro Wireless Headphones</h1>
+
+                <p class="subtitle">
+                    Premium wireless audio with immersive sound,
+                    active noise cancellation and all-day comfort.
+                </p>
+
+                <div class="rating-row">
+                    <span class="rating-box">4.8 ★</span>
+                    <strong>384 Ratings</strong>
+                    <span class="separator">|</span>
+                    <strong>126 Reviews</strong>
+                </div>
+
+                <div class="price-section">
+                    <div class="price">
+                        ₹2,899
+                    </div>
+
+                    <del>₹4,499</del>
+
+                    <span class="save">
+                        Save ₹1,600
+                    </span>
+                </div>
+
+                <p class="tax-text">Inclusive of all taxes</p>
+
+                <div class="offer-box">
+
+                    <div class="offer-title">
+                        <span>⚡</span>
+                        Special Offers
+                    </div>
+
+                    <div class="offer">
+                        <b>10% instant discount</b>
+                        on selected bank cards
+                    </div>
+
+                    <div class="offer">
+                        <b>Extra ₹200 off</b>
+                        on orders above ₹2,999
+                    </div>
+
+                    <button id="viewOffers">View all offers →</button>
+
+                </div>
+
+                <div class="choice-section">
+
+                    <div class="choice-heading">
+                        <strong>Color</strong>
+                        <span id="selectedColor">Midnight Black</span>
+                    </div>
+
+                    <div class="color-options">
+
+                        <button
+                            class="color-option active black"
+                            data-color="Midnight Black">
+                        </button>
+
+                        <button
+                            class="color-option blue"
+                            data-color="Ocean Blue">
+                        </button>
+
+                        <button
+                            class="color-option pink"
+                            data-color="Rose Pink">
+                        </button>
+
+                        <button
+                            class="color-option white"
+                            data-color="Pearl White">
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="delivery">
+
+                    <div class="delivery-title">
+                        <span>📍</span>
+                        <strong>Delivery</strong>
+                    </div>
+
+                    <div class="delivery-input">
+                        <input
+                            id="pincode"
+                            type="text"
+                            maxlength="6"
+                            placeholder="Enter pincode"
+                        >
+                        <button id="checkDelivery">Check</button>
+                    </div>
+
+                    <p id="deliveryMessage">
+                        Enter your pincode to check delivery availability.
+                    </p>
+
+                </div>
+
+                <div class="quantity-row">
+
+                    <strong>Quantity</strong>
+
+                    <div class="quantity">
+                        <button id="minus">−</button>
+                        <span id="quantity">1</span>
+                        <button id="plus">+</button>
+                    </div>
+
+                    <span class="stock">● In Stock</span>
+
+                </div>
+
+                <div class="action-buttons">
+
+                    <button class="add-cart" id="addCart">
+                        🛒 Add to Cart
+                    </button>
+
+                    <button class="buy-now" id="buyNow">
+                        Buy Now →
+                    </button>
+
+                </div>
+
+                <div class="benefits">
+
+                    <div>
+                        <span>🚚</span>
+                        <strong>Free Delivery</strong>
+                        <small>On eligible orders</small>
+                    </div>
+
+                    <div>
+                        <span>↩️</span>
+                        <strong>7-Day Returns</strong>
+                        <small>Easy return policy</small>
+                    </div>
+
+                    <div>
+                        <span>🛡️</span>
+                        <strong>1 Year Warranty</strong>
+                        <small>Brand warranty</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="details-section">
+
+            <div class="tabs">
+
+                <button class="tab active" data-tab="description">
+                    Description
+                </button>
+
+                <button class="tab" data-tab="specifications">
+                    Specifications
+                </button>
+
+                <button class="tab" data-tab="reviews">
+                    Reviews
+                </button>
+
+                <button class="tab" data-tab="shipping">
+                    Shipping & Returns
+                </button>
+
+            </div>
+
+            <div class="tab-content active" id="description">
+
+                <div class="description-grid">
+
+                    <div>
+                        <span class="section-label">PRODUCT DETAILS</span>
+                        <h2>Sound that keeps up with you.</h2>
+
+                        <p>
+                            AirBeat Pro is designed for people who want
+                            powerful sound without sacrificing comfort.
+                            Enjoy rich bass, balanced vocals and crystal-clear
+                            calls throughout your day.
+                        </p>
+
+                        <p>
+                            The lightweight design makes it comfortable for
+                            long listening sessions while advanced noise
+                            cancellation helps you stay focused.
+                        </p>
+                    </div>
+
+                    <div class="feature-cards">
+
+                        <div>
+                            <span>🎵</span>
+                            <strong>40mm Drivers</strong>
+                            <small>Rich and balanced audio</small>
+                        </div>
+
+                        <div>
+                            <span>🔇</span>
+                            <strong>ANC Technology</strong>
+                            <small>Reduce outside noise</small>
+                        </div>
+
+                        <div>
+                            <span>🔋</span>
+                            <strong>40 Hours</strong>
+                            <small>Long-lasting battery</small>
+                        </div>
+
+                        <div>
+                            <span>🎙️</span>
+                            <strong>Clear Calls</strong>
+                            <small>Dual microphone system</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="tab-content" id="specifications">
+
+                <div class="spec-grid">
+
+                    <div>
+                        <span>Brand</span>
+                        <strong>AirBeat</strong>
+                    </div>
+
+                    <div>
+                        <span>Model</span>
+                        <strong>AB Pro 01</strong>
+                    </div>
+
+                    <div>
+                        <span>Connectivity</span>
+                        <strong>Bluetooth 5.3</strong>
+                    </div>
+
+                    <div>
+                        <span>Battery</span>
+                        <strong>40 Hours</strong>
+                    </div>
+
+                    <div>
+                        <span>Driver Size</span>
+                        <strong>40mm</strong>
+                    </div>
+
+                    <div>
+                        <span>Charging</span>
+                        <strong>USB-C</strong>
+                    </div>
+
+                    <div>
+                        <span>Weight</span>
+                        <strong>248g</strong>
+                    </div>
+
+                    <div>
+                        <span>Warranty</span>
+                        <strong>1 Year</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="tab-content" id="reviews">
+
+                <div class="review-summary">
+
+                    <div class="overall-rating">
+                        <strong>4.8</strong>
+                        <div>★★★★★</div>
+                        <small>384 ratings</small>
+                    </div>
+
+                    <div class="rating-bars">
+
+                        <div>
+                            <span>5</span>
+                            <div><i style="width: 88%"></i></div>
+                            <small>88%</small>
+                        </div>
+
+                        <div>
+                            <span>4</span>
+                            <div><i style="width: 8%"></i></div>
+                            <small>8%</small>
+                        </div>
+
+                        <div>
+                            <span>3</span>
+                            <div><i style="width: 3%"></i></div>
+                            <small>3%</small>
+                        </div>
+
+                        <div>
+                            <span>2</span>
+                            <div><i style="width: 1%"></i></div>
+                            <small>1%</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="reviews">
+
+                    <article>
+                        <div class="review-top">
+                            <strong>Rahul K.</strong>
+                            <span>Verified Purchase</span>
+                        </div>
+                        <div class="stars">★★★★★</div>
+                        <h3>Excellent sound quality</h3>
+                        <p>
+                            Very comfortable and the noise cancellation
+                            works really well. Battery life is also great.
+                        </p>
+                    </article>
+
+                    <article>
+                        <div class="review-top">
+                            <strong>Priya S.</strong>
+                            <span>Verified Purchase</span>
+                        </div>
+                        <div class="stars">★★★★★</div>
+                        <h3>Great headphones</h3>
+                        <p>
+                            The design feels premium and the audio is
+                            clear even at higher volume.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+
+            <div class="tab-content" id="shipping">
+
+                <div class="shipping-grid">
+
+                    <div>
+                        <span>🚚</span>
+                        <h3>Fast Delivery</h3>
+                        <p>
+                            Free standard delivery on eligible orders.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>↩️</span>
+                        <h3>Easy Returns</h3>
+                        <p>
+                            Return eligible products within 7 days.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>🛡️</span>
+                        <h3>Secure Shopping</h3>
+                        <p>
+                            Your payment and personal information stay protected.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="related-section">
+
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">YOU MAY ALSO LIKE</span>
+                    <h2>Similar products</h2>
+                </div>
+            </div>
+
+            <div class="related-grid">
+
+                <article class="related-card">
+                    <div class="related-image purple-bg">
+                        <span>🎧</span>
+                    </div>
+                    <div>
+                        <small>Audio</small>
+                        <h3>SoundMax Wireless</h3>
+                        <strong>₹2,499</strong>
+                        <button class="related-add">Add to Cart</button>
+                    </div>
+                </article>
+
+                <article class="related-card">
+                    <div class="related-image blue-bg">
+                        <span>🔊</span>
+                    </div>
+                    <div>
+                        <small>Audio</small>
+                        <h3>MiniBoom Speaker</h3>
+                        <strong>₹1,899</strong>
+                        <button class="related-add">Add to Cart</button>
+                    </div>
+                </article>
+
+                <article class="related-card">
+                    <div class="related-image pink-bg">
+                        <span>🎵</span>
+                    </div>
+                    <div>
+                        <small>Audio</small>
+                        <h3>WavePods Lite</h3>
+                        <strong>₹1,699</strong>
+                        <button class="related-add">Add to Cart</button>
+                    </div>
+                </article>
+
+                <article class="related-card">
+                    <div class="related-image orange-bg">
+                        <span>🎧</span>
+                    </div>
+                    <div>
+                        <small>Audio</small>
+                        <h3>StudioBeat X</h3>
+                        <strong>₹3,299</strong>
+                        <button class="related-add">Add to Cart</button>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <div class="cart-drawer" id="cartDrawer">
+
+        <div class="drawer-header">
+            <div>
+                <span class="section-label">YOUR BAG</span>
+                <h2>Shopping Cart</h2>
+            </div>
+
+            <button id="closeCart">×</button>
+        </div>
+
+        <div class="cart-items" id="cartItems">
+
+            <div class="empty-cart">
+                <span>🛒</span>
+                <h3>Your cart is empty</h3>
+                <p>Add products to see them here.</p>
+            </div>
+
+        </div>
+
+        <div class="cart-footer">
+
+            <div>
+                <span>Total</span>
+                <strong id="cartTotal">₹0</strong>
+            </div>
+
+            <button id="checkout">
+                Proceed to Checkout →
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div class="toast" id="toast">
+        <span>✓</span>
+        <p>Done</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

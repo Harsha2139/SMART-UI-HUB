@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Browser</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="brand">
+        <div class="brand-icon">🕹️</div>
+        <div>
+            <h2>PlaySpace</h2>
+            <span>Game Browser</span>
+        </div>
+    </div>
+
+    <div class="search">
+        <span>🔍</span>
+        <input id="searchInput" type="text" placeholder="Search games, genres...">
+    </div>
+
+    <div class="header-actions">
+        <button id="wishlistBtn">♡</button>
+        <button id="notificationBtn">🔔</button>
+        <div class="avatar" id="profileBtn">J</div>
+    </div>
+</header>
+
+<div class="page">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-title">BROWSE</div>
+
+        <button class="nav-item active" data-filter="all">
+            <span>🏠</span>
+            All Games
+        </button>
+
+        <button class="nav-item" data-filter="popular">
+            <span>🔥</span>
+            Popular
+        </button>
+
+        <button class="nav-item" data-filter="new">
+            <span>✨</span>
+            New Releases
+        </button>
+
+        <button class="nav-item" data-filter="free">
+            <span>🎁</span>
+            Free Games
+        </button>
+
+        <div class="sidebar-title">GENRES</div>
+
+        <button class="nav-item genre" data-genre="Action">
+            <span>⚔️</span>
+            Action
+        </button>
+
+        <button class="nav-item genre" data-genre="Adventure">
+            <span>🌎</span>
+            Adventure
+        </button>
+
+        <button class="nav-item genre" data-genre="Racing">
+            <span>🏎️</span>
+            Racing
+        </button>
+
+        <button class="nav-item genre" data-genre="Strategy">
+            <span>♟️</span>
+            Strategy
+        </button>
+
+        <button class="nav-item genre" data-genre="Sports">
+            <span>🏆</span>
+            Sports
+        </button>
+
+        <div class="sidebar-footer">
+            <button class="nav-item">
+                <span>⚙️</span>
+                Settings
+            </button>
+
+            <button class="nav-item">
+                <span>❓</span>
+                Help Center
+            </button>
+        </div>
+
+    </aside>
+
+    <main class="content">
+
+        <section class="top-area">
+
+            <div>
+                <span class="eyebrow">EXPLORE THE COLLECTION</span>
+                <h1>Find Your Next Game</h1>
+                <p>Browse thousands of adventures and discover something you'll love.</p>
+            </div>
+
+            <button class="filter-btn" id="filterBtn">
+                ⚙ Filters
+            </button>
+
+        </section>
+
+        <section class="featured">
+
+            <div class="featured-content">
+                <span class="featured-label">⭐ EDITOR'S CHOICE</span>
+
+                <h2>Legends<br>Awaken</h2>
+
+                <p>
+                    Enter a world of legendary heroes, mysterious kingdoms
+                    and epic battles.
+                </p>
+
+                <div class="featured-meta">
+                    <span>⭐ 4.9</span>
+                    <span>⚔️ RPG</span>
+                    <span>👥 Multiplayer</span>
+                </div>
+
+                <div class="featured-buttons">
+                    <button class="primary-btn" id="featuredBtn">
+                        View Game →
+                    </button>
+
+                    <button class="outline-btn" id="trailerBtn">
+                        ▶ Trailer
+                    </button>
+                </div>
+            </div>
+
+            <div class="featured-art">
+                🐉
+                <div class="art-orb orb-one"></div>
+                <div class="art-orb orb-two"></div>
+            </div>
+
+        </section>
+
+        <div class="section-header">
+            <div>
+                <h2>Browse Games</h2>
+                <p id="resultCount">Showing 8 games</p>
+            </div>
+
+            <select id="sortSelect">
+                <option value="recommended">Recommended</option>
+                <option value="rating">Highest Rated</option>
+                <option value="name">Name A-Z</option>
+                <option value="price">Lowest Price</option>
+            </select>
+        </div>
+
+        <section class="game-grid" id="gameGrid">
+
+            <article class="game-card"
+                     data-name="Legends Awaken"
+                     data-genre="Adventure"
+                     data-type="popular"
+                     data-price="29"
+                     data-rating="4.9">
+
+                <div class="cover cover-one">
+                    <span>🐉</span>
+                    <b>POPULAR</b>
+                    <button class="favorite">♡</button>
+                </div>
+
+                <div class="card-content">
+                    <div class="title-row">
+                        <div>
+                            <h3>Legends Awaken</h3>
+                            <p>Adventure • RPG</p>
+                        </div>
+                        <strong>⭐ 4.9</strong>
+                    </div>
+
+                    <div class="price-row">
+                        <span>$29.99</span>
+                        <button class="view-game">View Game</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="game-card"
+                     data-name="Neon Racer"
+                     data-genre="Racing"
+                     data-type="new"
+                     data-price="19"
+                     data-rating="4.8">
+
+                <div class="cover cover-two">
+                    <span>🏎️</span>
+                    <b>NEW</b>
+                    <button class="favorite">♡</button>
+                </div>
+
+                <div class="card-content">
+                    <div class="title-row">
+                        <div>
+                            <h3>Neon Racer</h3>
+                            <p>Racing • Sports</p>
+                        </div>
+                        <strong>⭐ 4.8</strong>
+                    </div>
+
+                    <div class="price-row">
+                        <span>$19.99</span>
+                        <button class="view-game">View Game</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="game-card"
+                     data-name="Galaxy Empire"
+                     data-genre="Strategy"
+                     data-type="popular"
+                     data-price="24"
+                     data-rating="4.7">
+
+                <div class="cover cover-three">
+                    <span>🚀</span>
+                    <b>POPULAR</b>
+                    <button class="favorite">♡</button>
+                </div>
+
+                <div class="card-content">
+                    <div class="title-row">
+                        <div>
+                            <h3>Galaxy Empire</h3>
+                            <p>Strategy • Sci-Fi</p>
+                        </div>
+                        <strong>⭐ 4.7</strong>
+                    </div>
+
+                    <div class="price-row">
+                        <span>$24.99</span>
+                        <button class="view-game">View Game</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="game-card"
+                     data-name="Shadow Arena"
+                     data-genre="Action"
+                     data-type="new"
+                     data-price="0"
+                     data-rating="4.6">
+
+                <div class="cover cover-four">
+                    <span>⚔️</span>
+                    <b>FREE</b>
+                    <button class="favorite">♡</button>
+                </div>
+
+                <div class="card-content">
+                    <div class="title-row">
+                        <div>
+                            <h3>Shadow Arena</h3>
+                            <p>Action • Fighting</p>
+                        </div>
+                        <strong>⭐ 4.6</strong>
+                    </div>
+
+                    <div class="price-row">
+                        <span>Free</span>
+                        <button class="view-game">View Game</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="game-card"
+                     data-name="Kingdom Wars"
+                     data-genre="Strategy"
+                     data-type="popular"
+                     data-price="34"
+                     data-rating="4.8">
+
+                <div class="cover cover-five">
+                    <span>🏰</span>
+                    <b>TOP RATED</b>
+                    <button class="favorite">♡</button>
+                </div>
+
+                <div class="card-content">
+                    <div class="title-row">
+                        <div>
+                            <h3>Kingdom Wars</h3>
+                            <p>Strategy • RPG</p>
+                        </div>
+                        <strong>⭐ 4.8</strong>
+                    </div>
+
+                    <div class="price-row">
+                        <span>$34.99</span>
+                        <button class="view-game">View Game</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="game-card"
+                     data-name="Ocean Quest"
+                     data-genre="Adventure"
+                     data-type="new"
+                     data-price="14"
+                     data-rating="4.5">
+
+                <div class="cover cover-six">
+                    <span>🌊</span>
+                    <b>NEW</b>
+                    <button class="favorite">♡</button>
+                </div>
+
+                <div class="card-content">
+                    <div class="title-row">
+                        <div>
+                            <h3>Ocean Quest</h3>
+                            <p>Adventure • Exploration</p>
+                        </div>
+                        <strong>⭐ 4.5</strong>
+                    </div>
+
+                    <div class="price-row">
+                        <span>$14.99</span>
+                        <button class="view-game">View Game</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="game-card"
+                     data-name="Street Champions"
+                     data-genre="Sports"
+                     data-type="popular"
+                     data-price="21"
+                     data-rating="4.4">
+
+                <div class="cover cover-seven">
+                    <span>🏆</span>
+                    <b>POPULAR</b>
+                    <button class="favorite">♡</button>
+                </div>
+
+                <div class="card-content">
+                    <div class="title-row">
+                        <div>
+                            <h3>Street Champions</h3>
+                            <p>Sports • Multiplayer</p>
+                        </div>
+                        <strong>⭐ 4.4</strong>
+                    </div>
+
+                    <div class="price-row">
+                        <span>$21.99</span>
+                        <button class="view-game">View Game</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="game-card"
+                     data-name="Mystic Realms"
+                     data-genre="Adventure"
+                     data-type="free"
+                     data-price="0"
+                     data-rating="4.3">
+
+                <div class="cover cover-eight">
+                    <span>🧙</span>
+                    <b>FREE</b>
+                    <button class="favorite">♡</button>
+                </div>
+
+                <div class="card-content">
+                    <div class="title-row">
+                        <div>
+                            <h3>Mystic Realms</h3>
+                            <p>Adventure • Fantasy</p>
+                        </div>
+                        <strong>⭐ 4.3</strong>
+                    </div>
+
+                    <div class="price-row">
+                        <span>Free</span>
+                        <button class="view-game">View Game</button>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <section class="bottom-banner">
+            <div>
+                <span>🎁 WEEKLY PICKS</span>
+                <h2>Fresh games every week</h2>
+                <p>Discover new releases, hidden gems and community favorites.</p>
+            </div>
+
+            <button id="weeklyBtn">Explore Picks →</button>
+        </section>
+
+    </main>
+</div>
+
+<div class="filter-panel" id="filterPanel">
+
+    <div class="filter-box">
+
+        <button class="close-filter" id="closeFilter">×</button>
+
+        <h2>Filter Games</h2>
+        <p>Choose what you want to see.</p>
+
+        <label>Genre</label>
+
+        <select id="genreFilter">
+            <option value="all">All Genres</option>
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Racing">Racing</option>
+            <option value="Strategy">Strategy</option>
+            <option value="Sports">Sports</option>
+        </select>
+
+        <label>Game Type</label>
+
+        <select id="typeFilter">
+            <option value="all">All Games</option>
+            <option value="popular">Popular</option>
+            <option value="new">New Releases</option>
+            <option value="free">Free Games</option>
+        </select>
+
+        <button class="apply-btn" id="applyFilter">Apply Filters</button>
+
+    </div>
+
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+
+    <div class="modal">
+
+        <button class="close-modal" id="closeModal">×</button>
+
+        <div class="modal-icon" id="modalIcon">🎮</div>
+
+        <h2 id="modalTitle">Game</h2>
+
+        <p id="modalText">Game information will appear here.</p>
+
+        <button class="modal-action" id="modalAction">
+            Continue
+        </button>
+
+    </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

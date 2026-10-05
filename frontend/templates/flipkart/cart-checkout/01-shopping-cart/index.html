@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-strip">
+        🎉 Free delivery on orders above ₹499
+    </div>
+
+    <header class="navbar">
+        <div class="logo">
+            <span>V</span>
+            VeloCart
+        </div>
+
+        <div class="search">
+            🔍
+            <input type="text" id="searchInput" placeholder="Search products...">
+        </div>
+
+        <div class="nav-actions">
+            <button>♡</button>
+            <button class="cart-button">
+                🛒
+                <span id="cartBadge">3</span>
+            </button>
+            <div class="avatar">JD</div>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="breadcrumb">
+            Home / Shopping Cart
+        </div>
+
+        <section class="page-heading">
+            <div>
+                <span class="eyebrow">YOUR SHOPPING BAG</span>
+                <h1>Shopping Cart</h1>
+                <p id="itemSummary">3 items in your cart</p>
+            </div>
+
+            <button class="continue-btn" id="continueShopping">
+                ← Continue Shopping
+            </button>
+        </section>
+
+        <div class="cart-layout">
+
+            <section class="cart-section">
+
+                <div class="cart-header">
+                    <div>
+                        <input type="checkbox" id="selectAll" checked>
+                        <label for="selectAll">Select all</label>
+                    </div>
+
+                    <button id="removeSelected">
+                        Remove selected
+                    </button>
+                </div>
+
+                <div class="cart-item" data-price="2499">
+
+                    <input class="item-check" type="checkbox" checked>
+
+                    <div class="product-image purple">
+                        🎧
+                    </div>
+
+                    <div class="product-details">
+                        <span class="category">AUDIO</span>
+                        <h3>Pulse Wireless Headphones</h3>
+                        <p>Midnight Black • Bluetooth 5.3</p>
+
+                        <div class="availability">
+                            <span>●</span> In stock
+                        </div>
+
+                        <button class="remove-item">
+                            Remove
+                        </button>
+                    </div>
+
+                    <div class="item-price">
+                        <strong>₹2,499</strong>
+                        <del>₹3,999</del>
+
+                        <div class="quantity-control">
+                            <button class="minus">−</button>
+                            <span class="quantity">1</span>
+                            <button class="plus">+</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="cart-item" data-price="1899">
+
+                    <input class="item-check" type="checkbox" checked>
+
+                    <div class="product-image blue">
+                        ⌚
+                    </div>
+
+                    <div class="product-details">
+                        <span class="category">WEARABLES</span>
+                        <h3>FitPro Smart Watch</h3>
+                        <p>Ocean Blue • AMOLED Display</p>
+
+                        <div class="availability">
+                            <span>●</span> In stock
+                        </div>
+
+                        <button class="remove-item">
+                            Remove
+                        </button>
+                    </div>
+
+                    <div class="item-price">
+                        <strong>₹1,899</strong>
+                        <del>₹2,999</del>
+
+                        <div class="quantity-control">
+                            <button class="minus">−</button>
+                            <span class="quantity">1</span>
+                            <button class="plus">+</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="cart-item" data-price="999">
+
+                    <input class="item-check" type="checkbox" checked>
+
+                    <div class="product-image orange">
+                        🔊
+                    </div>
+
+                    <div class="product-details">
+                        <span class="category">AUDIO</span>
+                        <h3>Mini Boom Speaker</h3>
+                        <p>Sunset Orange • Portable</p>
+
+                        <div class="availability">
+                            <span>●</span> In stock
+                        </div>
+
+                        <button class="remove-item">
+                            Remove
+                        </button>
+                    </div>
+
+                    <div class="item-price">
+                        <strong>₹999</strong>
+                        <del>₹1,499</del>
+
+                        <div class="quantity-control">
+                            <button class="minus">−</button>
+                            <span class="quantity">1</span>
+                            <button class="plus">+</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="savings-card">
+                    <div class="saving-icon">💰</div>
+                    <div>
+                        <strong>You're saving ₹3,100 on this order</strong>
+                        <p>Great choice! Your selected products have special offers.</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <aside class="summary">
+
+                <div class="summary-card">
+
+                    <h2>Order Summary</h2>
+
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <strong id="subtotal">₹5,397</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Discount</span>
+                        <strong class="green" id="discount">− ₹1,600</strong>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Delivery</span>
+                        <strong class="green">FREE</strong>
+                    </div>
+
+                    <div class="coupon">
+                        <input id="couponInput" placeholder="Enter coupon code">
+                        <button id="applyCoupon">Apply</button>
+                    </div>
+
+                    <p class="coupon-message" id="couponMessage"></p>
+
+                    <div class="total-row">
+                        <span>Total</span>
+                        <strong id="total">₹3,797</strong>
+                    </div>
+
+                    <button class="checkout" id="checkout">
+                        Proceed to Checkout →
+                    </button>
+
+                    <div class="secure">
+                        🔒 Secure and encrypted payment
+                    </div>
+
+                </div>
+
+                <div class="payment-card">
+                    <strong>We accept</strong>
+
+                    <div class="payment-methods">
+                        <span>VISA</span>
+                        <span>UPI</span>
+                        <span>◉ Pay</span>
+                        <span>MC</span>
+                    </div>
+                </div>
+
+            </aside>
+
+        </div>
+
+        <section class="recommendations">
+
+            <div class="section-title">
+                <div>
+                    <span>YOU MAY ALSO LIKE</span>
+                    <h2>Complete your setup</h2>
+                </div>
+            </div>
+
+            <div class="recommendation-grid">
+
+                <div class="recommendation-card">
+                    <div class="recommendation-image pink">🎮</div>
+                    <span>Gaming</span>
+                    <h3>Wireless Game Controller</h3>
+                    <strong>₹1,799</strong>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="recommendation-image green">🎒</div>
+                    <span>Accessories</span>
+                    <h3>Urban Travel Backpack</h3>
+                    <strong>₹1,299</strong>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="recommendation-image yellow">⌨️</div>
+                    <span>Workspace</span>
+                    <h3>Mechanical Keyboard</h3>
+                    <strong>₹2,499</strong>
+                    <button>Add to Cart</button>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="recommendation-image violet">🖱️</div>
+                    <span>Workspace</span>
+                    <h3>Pro Wireless Mouse</h3>
+                    <strong>₹899</strong>
+                    <button>Add to Cart</button>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

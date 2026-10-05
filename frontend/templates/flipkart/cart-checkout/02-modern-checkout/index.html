@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Checkout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="topbar">
+        🔒 Secure Checkout &nbsp; • &nbsp; Your payment information is protected
+    </div>
+
+    <header class="navbar">
+        <div class="logo">
+            <span>N</span>
+            NovaCart
+        </div>
+
+        <div class="checkout-status">
+            <div class="step active">
+                <b>1</b>
+                <span>Details</span>
+            </div>
+
+            <i></i>
+
+            <div class="step active">
+                <b>2</b>
+                <span>Payment</span>
+            </div>
+
+            <i></i>
+
+            <div class="step">
+                <b>3</b>
+                <span>Complete</span>
+            </div>
+        </div>
+
+        <div class="secure-label">🛡️ Secure</div>
+    </header>
+
+    <main>
+
+        <div class="page-title">
+            <span>CHECKOUT</span>
+            <h1>Complete your order</h1>
+            <p>Almost there! Just confirm your details and payment.</p>
+        </div>
+
+        <div class="checkout-layout">
+
+            <section class="checkout-content">
+
+                <div class="card address-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <span class="number">01</span>
+                            <div>
+                                <h2>Delivery Address</h2>
+                                <p>Where should we deliver your order?</p>
+                            </div>
+                        </div>
+
+                        <button id="changeAddress">+ Add New</button>
+                    </div>
+
+                    <div class="address-grid">
+
+                        <label class="address-option selected">
+                            <input type="radio" name="address" checked>
+
+                            <div class="radio"></div>
+
+                            <div>
+                                <div class="address-top">
+                                    <strong>Home</strong>
+                                    <span>DEFAULT</span>
+                                </div>
+
+                                <p>
+                                    Jayanth Boodati<br>
+                                    24, Green Park Road<br>
+                                    Chennai, Tamil Nadu 600001
+                                </p>
+
+                                <small>📞 +91 98765 43210</small>
+                            </div>
+
+                            <button class="edit-address">Edit</button>
+                        </label>
+
+                        <label class="address-option">
+                            <input type="radio" name="address">
+
+                            <div class="radio"></div>
+
+                            <div>
+                                <div class="address-top">
+                                    <strong>Office</strong>
+                                </div>
+
+                                <p>
+                                    Jayanth Boodati<br>
+                                    Tech Park, Tower B<br>
+                                    Chennai, Tamil Nadu 600096
+                                </p>
+
+                                <small>📞 +91 98765 43210</small>
+                            </div>
+
+                            <button class="edit-address">Edit</button>
+                        </label>
+
+                    </div>
+                </div>
+
+                <div class="card delivery-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <span class="number">02</span>
+                            <div>
+                                <h2>Delivery Method</h2>
+                                <p>Choose your preferred delivery option</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="delivery-options">
+
+                        <label class="delivery-option selected">
+                            <input type="radio" name="delivery" value="0" checked>
+
+                            <div class="delivery-icon">🚚</div>
+
+                            <div class="delivery-info">
+                                <strong>Standard Delivery</strong>
+                                <p>Arrives between Oct 4 – Oct 6</p>
+                            </div>
+
+                            <strong class="delivery-price">FREE</strong>
+                        </label>
+
+                        <label class="delivery-option">
+                            <input type="radio" name="delivery" value="149">
+
+                            <div class="delivery-icon express">⚡</div>
+
+                            <div class="delivery-info">
+                                <strong>Express Delivery</strong>
+                                <p>Arrives tomorrow by 9 PM</p>
+                            </div>
+
+                            <strong class="delivery-price">₹149</strong>
+                        </label>
+
+                    </div>
+                </div>
+
+                <div class="card payment-card">
+
+                    <div class="card-heading">
+                        <div>
+                            <span class="number">03</span>
+                            <div>
+                                <h2>Payment Method</h2>
+                                <p>Choose how you want to pay</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="payment-tabs">
+
+                        <button class="payment-tab active" data-payment="upi">
+                            <span>◉</span>
+                            UPI
+                        </button>
+
+                        <button class="payment-tab" data-payment="card">
+                            <span>▣</span>
+                            Card
+                        </button>
+
+                        <button class="payment-tab" data-payment="netbanking">
+                            <span>⌂</span>
+                            Net Banking
+                        </button>
+
+                        <button class="payment-tab" data-payment="cod">
+                            <span>₹</span>
+                            Cash on Delivery
+                        </button>
+
+                    </div>
+
+                    <div class="payment-panel" id="upiPanel">
+
+                        <h3>Pay with UPI</h3>
+                        <p class="panel-text">Enter your UPI ID to continue.</p>
+
+                        <div class="input-group">
+                            <label>UPI ID</label>
+
+                            <div class="input-wrap">
+                                <span>◉</span>
+                                <input id="upiInput" placeholder="example@upi">
+                            </div>
+
+                            <small id="upiMessage"></small>
+                        </div>
+
+                        <button class="verify-btn" id="verifyUpi">
+                            Verify UPI ID
+                        </button>
+
+                    </div>
+
+                    <div class="payment-panel hidden" id="cardPanel">
+
+                        <h3>Card Details</h3>
+                        <p class="panel-text">Your card information is securely encrypted.</p>
+
+                        <div class="input-group">
+                            <label>Card Number</label>
+
+                            <div class="input-wrap">
+                                <span>▣</span>
+                                <input id="cardNumber" maxlength="19" placeholder="1234 5678 9012 3456">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+
+                            <div class="input-group">
+                                <label>Expiry</label>
+                                <input class="normal-input" maxlength="5" placeholder="MM/YY" id="expiry">
+                            </div>
+
+                            <div class="input-group">
+                                <label>CVV</label>
+                                <input class="normal-input" maxlength="3" placeholder="•••" id="cvv">
+                            </div>
+
+                        </div>
+
+                        <div class="input-group">
+                            <label>Name on Card</label>
+                            <input class="normal-input" placeholder="Enter card holder name" id="cardName">
+                        </div>
+
+                    </div>
+
+                    <div class="payment-panel hidden" id="netbankingPanel">
+
+                        <h3>Net Banking</h3>
+                        <p class="panel-text">Select your bank to continue.</p>
+
+                        <select id="bankSelect">
+                            <option value="">Select your bank</option>
+                            <option>State Bank of India</option>
+                            <option>HDFC Bank</option>
+                            <option>ICICI Bank</option>
+                            <option>Axis Bank</option>
+                            <option>Kotak Mahindra Bank</option>
+                        </select>
+
+                    </div>
+
+                    <div class="payment-panel hidden" id="codPanel">
+
+                        <div class="cod-box">
+                            <span>💵</span>
+                            <div>
+                                <h3>Cash on Delivery</h3>
+                                <p>
+                                    Pay ₹3,947 in cash when your order arrives.
+                                    An additional handling charge of ₹50 applies.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <aside class="order-sidebar">
+
+                <div class="order-card">
+
+                    <div class="order-title">
+                        <h2>Your Order</h2>
+                        <span>2 items</span>
+                    </div>
+
+                    <div class="order-product">
+
+                        <div class="product-image purple">
+                            🎧
+                            <span>1</span>
+                        </div>
+
+                        <div>
+                            <strong>Pulse X Headphones</strong>
+                            <p>Midnight Black</p>
+                            <small>₹2,499</small>
+                        </div>
+
+                        <b>₹2,499</b>
+
+                    </div>
+
+                    <div class="order-product">
+
+                        <div class="product-image blue">
+                            ⌚
+                            <span>1</span>
+                        </div>
+
+                        <div>
+                            <strong>FitPro Smart Watch</strong>
+                            <p>Ocean Blue</p>
+                            <small>₹1,899</small>
+                        </div>
+
+                        <b>₹1,899</b>
+
+                    </div>
+
+                    <div class="coupon-box">
+
+                        <div>
+                            <span>🏷️</span>
+                            <input id="coupon" placeholder="Promo code">
+                        </div>
+
+                        <button id="applyCoupon">Apply</button>
+
+                    </div>
+
+                    <p class="coupon-message" id="couponMessage"></p>
+
+                    <div class="price-list">
+
+                        <div>
+                            <span>Subtotal</span>
+                            <b>₹4,398</b>
+                        </div>
+
+                        <div>
+                            <span>Discount</span>
+                            <b class="green">− ₹600</b>
+                        </div>
+
+                        <div>
+                            <span>Delivery</span>
+                            <b id="deliveryCharge">FREE</b>
+                        </div>
+
+                    </div>
+
+                    <div class="grand-total">
+                        <span>Total</span>
+                        <strong id="grandTotal">₹3,798</strong>
+                    </div>
+
+                    <button class="place-order" id="placeOrder">
+                        Place Order
+                        <span>→</span>
+                    </button>
+
+                    <div class="trust">
+                        <div>🔒</div>
+                        <p>
+                            <strong>Safe & Secure Payment</strong><br>
+                            Your payment details are encrypted.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="help-card">
+                    <span>💬</span>
+                    <div>
+                        <strong>Need help?</strong>
+                        <p>Our support team is available 24/7.</p>
+                        <button id="supportBtn">Contact Support →</button>
+                    </div>
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+    <div class="success-modal" id="successModal">
+
+        <div class="success-box">
+
+            <button class="close-modal" id="closeModal">×</button>
+
+            <div class="success-icon">✓</div>
+
+            <h2>Order Placed!</h2>
+
+            <p>
+                Your order has been successfully placed.
+                We'll send the confirmation details to you shortly.
+            </p>
+
+            <div class="order-number">
+                Order ID: <strong>NC20261001428</strong>
+            </div>
+
+            <button id="continueBtn">
+                Continue Shopping
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
