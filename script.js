@@ -72,10 +72,10 @@ const CATEGORY_DATA = [
         slug:"ai-agent-management",
         title:"AI Agent Management",
         templates:[
-          "01-agent-dashboard",
-          "02-agent-builder",
-          "03-agent-monitoring",
-          "04-multi-agent-hub"
+          "01-modern-saas-dashboard",
+          "02-analytics-saas",
+          "03-productivity-saas",
+          "04-enterprise-saas"
         ]
       }
 
